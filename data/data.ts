@@ -7,12 +7,12 @@
 interface Team {
   name: string;
   photos: string[];
-  merch: {
+  merch: Array<{
     id: string;
     imageUrl: string;
     name: string;
     price: number;
-  }[];
+  }>;
 }
 
 export const teams: Team[] = [
