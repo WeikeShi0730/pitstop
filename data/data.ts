@@ -1,86 +1,27 @@
-export const teams: Array<object> = [
+// interface Merch {
+//   id: string;
+//   imageUrl: string;
+//   name: string;
+//   price: number;
+// }
+interface Team {
+  name: string;
+  photos: string[];
+  merch: {
+    id: string;
+    imageUrl: string;
+    name: string;
+    price: number;
+  }[];
+}
+
+export const teams: Team[] = [
   {
-    Mercedes: {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
-  },
-  {
-    "Red Bull": {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
-  },
-  {
-    Ferrari: {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
-  },
-  {
-    Mclaren: {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
-  },
-  {
-    Alpine: {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
-  },
-  {
-    "Aston Martin": {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
-  },
-  {
-    "Alpha Tauri": [
+    name: "Mercedes",
+    photos: [],
+    merch: [
       {
-        id: 0,
+        id: "",
         imageUrl: "",
         name: "",
         price: 0,
@@ -88,42 +29,48 @@ export const teams: Array<object> = [
     ],
   },
   {
-    "Alfa Romeo": {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
+    name: "Red Bull",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
-    Williams: {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
+    name: "Ferrari",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
-    Hass: {
-      photos: [],
-      merch: [
-        {
-          id: 0,
-          imageUrl: "",
-          name: "",
-          price: 0,
-        },
-      ],
-    },
+    name: "Mclaren",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
+  },
+  {
+    name: "Alpine",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
+  },
+  {
+    name: "Aston Martin",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
+  },
+  {
+    name: "Alpha Tauri",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
+  },
+  {
+    name: "Alfa Romeo",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
+  },
+  {
+    name: "Williams",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
+  },
+  {
+    name: "Hass",
+    photos: [],
+    merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
 ];

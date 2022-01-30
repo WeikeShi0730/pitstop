@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Nav = (): JSX.Element => {
+const Nav = () => {
   return (
     <div>
       <ul>
