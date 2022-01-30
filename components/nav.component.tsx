@@ -1,16 +1,43 @@
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Nav = () => {
   return (
     <nav>
-      <Link href="/">
-        <a>Home</a>
-      </Link>{" "}
-      |{" "}
-      <Link href="/about">
-        <a>About</a>
-      </Link>
+      <div className="bg-slate-700 text-slate-200 flex items-center p-2">
+        <div className="relative w-48 h-16 mx-10">
+          <Link href="/">
+            <a>
+              <Image
+                src="/pitstop.png"
+                alt="logo"
+                layout="fill"
+                objectFit="contain"
+              />
+            </a>
+          </Link>
+        </div>
+        <div className="mx-5">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </div>
+        <div className="mx-5">
+          <Link href="/">
+            <a>Teams</a>
+          </Link>
+        </div>
+        <div className="mx-5">
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </div>
+        <div className="mx-5 ml-auto">
+          <Link href="/signin">
+            <a>Sign In</a>
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 };
