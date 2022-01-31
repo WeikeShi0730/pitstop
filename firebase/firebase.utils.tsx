@@ -1,7 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
-import { teams } from "../data/data.js";
+import { teams } from "../data/data";
+
+import { Teams } from "../interfaces";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -19,6 +21,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 //** Firestore *****************************/
+//** Uplaod data */
 const uploadData = async () => {
   try {
     for (const team of teams) {
@@ -29,5 +32,17 @@ const uploadData = async () => {
     // console.error("Error adding document: ", e);
   }
 };
-
 // uploadData();
+
+//** Get data */
+// Optimize with Graphql!!!!!
+export const firestoreGetDocs = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, "teams"));
+    let data: Teams[] = [];
+    querySnapshot.forEach((each) => data.push(each.data() as Teams));
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

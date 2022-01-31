@@ -23,7 +23,7 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5">
-          <Link href="/">
+          <Link href="/teams">
             <a>Teams</a>
           </Link>
         </div>
