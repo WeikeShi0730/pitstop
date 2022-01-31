@@ -3,7 +3,7 @@ import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
 import { teams } from "../data/data";
 
-import { Teams } from "../interfaces";
+import { Teams } from "../interfaces/index";
 
 // Web app's Firebase configuration
 const firebaseConfig = {

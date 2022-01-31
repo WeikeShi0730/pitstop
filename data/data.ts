@@ -4,67 +4,67 @@
 //   name: string;
 //   price: number;
 // }
-import { Teams } from "../interfaces";
+import { Teams } from "../interfaces/index";
 
 export const teams: Teams[] = [
   {
     name: "Mercedes",
     photos: [],
-    backgroundImg: "https://ibb.co/j5Q14v0",
+    backgroundImg: "https://i.ibb.co/LPc2pzj/Mercedes.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Red Bull",
     photos: [],
-    backgroundImg: "https://ibb.co/7NNtpZ0",
+    backgroundImg: "https://i.ibb.co/bRR5vCG/Red-Bull.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Ferrari",
     photos: [],
-    backgroundImg: "https://ibb.co/1q9LSFM",
+    backgroundImg: "https://i.ibb.co/qsRdZTC/Ferrari.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Mclaren",
     photos: [],
-    backgroundImg: "https://ibb.co/VYg7d8n",
+    backgroundImg: "https://i.ibb.co/F45S9tZ/McLaren.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Alpine",
     photos: [],
-    backgroundImg: "https://ibb.co/sPC4Nyz",
+    backgroundImg: "https://i.ibb.co/rt3hz4N/Alpine.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Aston Martin",
     photos: [],
-    backgroundImg: "https://ibb.co/1JXnFGQ",
+    backgroundImg: "https://i.ibb.co/wrQL5hg/Aston-Martin.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Alpha Tauri",
     photos: [],
-    backgroundImg: "https://ibb.co/94T2V5d",
+    backgroundImg: "https://i.ibb.co/7pWVRm0/Alpha-Tauri.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Alfa Romeo",
     photos: [],
-    backgroundImg: "https://ibb.co/sss7HcK",
+    backgroundImg: "https://i.ibb.co/RQQ8yt3/Alfa-Romeo.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Williams",
     photos: [],
-    backgroundImg: "https://ibb.co/QP4m60p",
+    backgroundImg: "https://i.ibb.co/fks0CJq/Williams.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
   {
     name: "Hass",
     photos: [],
-    backgroundImg: "https://ibb.co/JRp73KP",
+    backgroundImg: "https://i.ibb.co/0j9Msc3/Haas.png",
     merch: [{ id: "", imageUrl: "", name: "", price: 0 }],
   },
 ];
