@@ -12,16 +12,16 @@ const TeamOnHomepage = ({ backgroundImg, name }: TeamOnHomepageType) => {
   };
   return (
     // h ????????????
-    <div className="relative w-2/5 h-72 m-5">
+    <div className="relative w-2/5 h-72 m-5 rounded-large">
       <Image
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover rounded-large"
         loader={imgLoader}
         unoptimized
         src={backgroundImg}
         alt={`${name} background image`}
         layout="fill"
       />
-      <div className="flex justify-center items-center absolute w-full h-full z-10 opacity-0 hover:opacity-100 backdrop-blur-sm">
+      <div className="flex justify-center items-center absolute w-full h-full z-10 rounded-large opacity-0 hover:opacity-100 hover:backdrop-blur-sm">
         <Link href="/">
           <a className="bg-slate-700 text-slate-200 p-3 rounded-md shadow-slate-700 shadow-md">
             Shop {name}
