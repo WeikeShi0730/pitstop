@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FiShoppingCart } from "react-icons/fi";
 
 const Nav = () => {
   return (
@@ -33,6 +34,13 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5 ml-auto">
+          <Link href="/cart">
+            <a>
+              <FiShoppingCart />
+            </a>
+          </Link>
+        </div>
+        <div className="mx-5">
           <Link href="/signin">
             <a>Sign In</a>
           </Link>
