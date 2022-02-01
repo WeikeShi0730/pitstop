@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 interface TeamOnHomepageType {
   key: string;
@@ -13,14 +14,20 @@ const TeamOnHomepage = ({ backgroundImg, name }: TeamOnHomepageType) => {
     // h ????????????
     <div className="relative w-2/5 h-72 m-5">
       <Image
-        className="rounded-tr-3xl"
+        className="absolute inset-0 w-full h-full object-cover"
         loader={imgLoader}
         unoptimized
         src={backgroundImg}
         alt={`${name} background image`}
         layout="fill"
-        objectFit="contain"
       />
+      <div className="flex justify-center items-center absolute w-full h-full z-10 opacity-0 hover:opacity-100 backdrop-blur-sm">
+        <Link href="/">
+          <a className="bg-slate-700 text-slate-200 p-3 rounded-md shadow-slate-700 shadow-md">
+            Shop {name}
+          </a>
+        </Link>
+      </div>
     </div>
   );
 };
