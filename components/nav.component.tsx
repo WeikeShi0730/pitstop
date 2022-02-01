@@ -41,7 +41,7 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5">
-          <Link href="/signin">
+          <Link href="/login">
             <a>Sign In</a>
           </Link>
         </div>

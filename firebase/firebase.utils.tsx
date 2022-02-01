@@ -1,9 +1,25 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  setPersistence,
+  browserLocalPersistence,
+  onAuthStateChanged,
+  signOut,
+  sendPasswordResetEmail,
+  updatePassword,
+  reauthenticateWithCredential,
+  User,
+} from "firebase/auth";
 
 import { teams } from "../data/data";
 
-import { Teams } from "../interfaces/index";
+import { Teams, SignInType, SignUpType } from "../interfaces/index";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -18,10 +34,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// Initialize firestore
 const db = getFirestore();
+// Initialize authentication
+export const auth = getAuth();
 
 //** Firestore *****************************/
-//** Uplaod data */
+// Uplaod data */
 const uploadData = async () => {
   try {
     for (const team of teams) {
@@ -43,6 +62,58 @@ export const firestoreGetDocs = async () => {
     querySnapshot.forEach((each) => data.push(each.data() as Teams));
     return data;
   } catch (error) {
+    throw error;
+  }
+};
+
+//** Auth *****************************/
+export const signInWithGoogle = async () => {
+  try {
+    await setPersistence(auth, browserLocalPersistence);
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
+  try {
+    await createUserWithEmailAndPassword(
+      auth,
+      signUpInfo.email,
+      signUpInfo.password
+    );
+    await updateProfile(auth.currentUser as User, {
+      displayName: signUpInfo.displayName,
+    });
+    // const { password, ...signUpInfoWithoutPassword } = signUpInfo;
+    // await createUserFirestore(signUpInfoWithoutPassword);
+    // return signUpInfoWithoutPassword;
+  } catch (error) {
+    console.error("Error creating the profile: ", error);
+    throw error;
+  }
+};
+
+export const signInWithEmail = async (signInInfo: SignInType) => {
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      signInInfo.email,
+      signInInfo.password
+    );
+  } catch (error) {
+    console.error("Error signing: ", error);
+    throw error;
+  }
+};
+
+export const signOutGoogle = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error("Error signing out: ", error);
     throw error;
   }
 };
