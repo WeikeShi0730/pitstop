@@ -26,7 +26,7 @@ import {
 
 import { teams } from "../data/data";
 
-import { Teams, SignInType, SignUpType } from "../interfaces/index";
+import { Team, SignInType, SignUpType } from "../interfaces/index";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -65,8 +65,8 @@ const uploadData = async () => {
 export const firestoreGetDocs = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "teams"));
-    let data: Teams[] = [];
-    querySnapshot.forEach((each) => data.push(each.data() as Teams));
+    let data: Team[] = [];
+    querySnapshot.forEach((each) => data.push(each.data() as Team));
     return data;
   } catch (error) {
     throw error;
@@ -78,7 +78,7 @@ export const firestoreGetDoc = async (id: string) => {
     const docRef = doc(db, "teams", id);
     const docSnapshot = await getDoc(docRef);
     if (docSnapshot.exists()) {
-      return docSnapshot.data() as Teams;
+      return docSnapshot.data() as Team;
     } else {
       throw "No doc found";
     }

@@ -1,4 +1,4 @@
-export interface Teams {
+export interface Team {
   id: string;
   name: string;
   photos: string[];

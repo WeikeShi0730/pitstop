@@ -4,10 +4,10 @@ import {
   firestoreGetDocs,
   firestoreGetDoc,
 } from "../../firebase/firebase.utils";
-import { Teams } from "../../interfaces";
+import { Team } from "../../interfaces";
 
 interface TeamType {
-  team: Teams;
+  team: Team;
 }
 
 const TeamHome = ({ team }: TeamType) => {
@@ -22,7 +22,7 @@ export default TeamHome;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const teams: Teams[] = await firestoreGetDocs();
+    const teams: Team[] = await firestoreGetDocs();
     const ids = teams.map((team) => team.name);
     const paths = ids.map((id) => ({ params: { id: id } }));
     return {
@@ -41,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const id = context.params?.id as string;
-    const team: Teams = await firestoreGetDoc(id);
+    const team: Team = await firestoreGetDoc(id);
     return {
       props: { team },
     };
