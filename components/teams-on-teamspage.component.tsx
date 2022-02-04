@@ -1,16 +1,16 @@
 import { Team } from "../interfaces";
-import TeamOnHomepage from "./team-on-homepage.component";
+import TeamOnTeamsPage from "./team-on-teamspage.component";
 interface TeamsType {
   teams: Team[];
 }
 
-const TeamsOnHomepage = ({ teams }: TeamsType) => {
+const TeamsOnTeamsPage = ({ teams }: TeamsType) => {
   return (
     <div className="flex flex-wrap items-center justify-center">
       {teams.map(
         (team: { backgroundImg: string; name: string; id: string }) => {
           return (
-            <TeamOnHomepage
+            <TeamOnTeamsPage
               key={team.name}
               id={team.id}
               backgroundImg={team.backgroundImg}
@@ -23,4 +23,4 @@ const TeamsOnHomepage = ({ teams }: TeamsType) => {
   );
 };
 
-export default TeamsOnHomepage;
+export default TeamsOnTeamsPage;

@@ -10,7 +10,7 @@ interface TeamType {
   team: Team;
 }
 
-const TeamHome = ({ team }: TeamType) => {
+const TeamHomePage = ({ team }: TeamType) => {
   return (
     <Layout title={`Pitstop | ${team.name}`}>
       <div>{team.name}</div>
@@ -18,7 +18,7 @@ const TeamHome = ({ team }: TeamType) => {
   );
 };
 
-export default TeamHome;
+export default TeamHomePage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {

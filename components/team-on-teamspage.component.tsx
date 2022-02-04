@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-interface TeamOnHomepageType {
+interface TeamOnTeamsPageType {
   key: string;
   id: string;
   backgroundImg: string;
   name: string;
 }
 
-const TeamOnHomepage = ({ backgroundImg, name, id }: TeamOnHomepageType) => {
+const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
   const imgLoader = ({ src }: { src: string }) => {
     return src;
   };
@@ -33,4 +33,4 @@ const TeamOnHomepage = ({ backgroundImg, name, id }: TeamOnHomepageType) => {
   );
 };
 
-export default TeamOnHomepage;
+export default TeamOnTeamsPage;
