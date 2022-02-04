@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import { firestoreGetDocs } from "../firebase/firebase.utils";
 import { Teams } from "../interfaces";
 import Layout from "../components/layout.component";

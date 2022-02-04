@@ -1,4 +1,5 @@
 export interface Teams {
+  id: string;
   name: string;
   photos: string[];
   backgroundImg: string;

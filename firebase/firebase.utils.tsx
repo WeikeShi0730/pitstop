@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  getDoc,
+  getDocs,
+} from "firebase/firestore";
 import {
   getAuth,
   signInWithPopup,
@@ -44,7 +51,7 @@ export const auth = getAuth();
 const uploadData = async () => {
   try {
     for (const team of teams) {
-      await addDoc(collection(db, "teams"), team);
+      await setDoc(doc(db, "teams", team.id), team);
     }
     // console.log("Document written with ID: ", docRef.id);
   } catch (e) {
@@ -61,6 +68,20 @@ export const firestoreGetDocs = async () => {
     let data: Teams[] = [];
     querySnapshot.forEach((each) => data.push(each.data() as Teams));
     return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const firestoreGetDoc = async (id: string) => {
+  try {
+    const docRef = doc(db, "teams", id);
+    const docSnapshot = await getDoc(docRef);
+    if (docSnapshot.exists()) {
+      return docSnapshot.data() as Teams;
+    } else {
+      throw "No doc found";
+    }
   } catch (error) {
     throw error;
   }

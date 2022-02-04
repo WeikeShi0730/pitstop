@@ -7,13 +7,18 @@ interface TeamsType {
 const TeamsOnHomepage = ({ teams }: TeamsType) => {
   return (
     <div className="flex flex-wrap items-center justify-center">
-      {teams.map((team: { backgroundImg: string; name: string }) => (
-        <TeamOnHomepage
-          key={team.name}
-          backgroundImg={team.backgroundImg}
-          name={team.name}
-        />
-      ))}
+      {teams.map(
+        (team: { backgroundImg: string; name: string; id: string }) => {
+          return (
+            <TeamOnHomepage
+              key={team.name}
+              id={team.id}
+              backgroundImg={team.backgroundImg}
+              name={team.name}
+            />
+          );
+        }
+      )}
     </div>
   );
 };
