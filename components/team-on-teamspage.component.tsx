@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { imgLoader } from "./image-loader";
 interface TeamOnTeamsPageType {
   key: string;
   id: string;
@@ -9,10 +10,6 @@ interface TeamOnTeamsPageType {
 }
 
 const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
-  const imgLoader = ({ src }: { src: string }) => {
-    return src;
-  };
-
   // const backfaceInvisible = {
   //   backfaceVisibility: "hidden",
   // } as const;
@@ -34,7 +31,6 @@ const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
     // <div className="relative w-full h-72 m-5 rounded-large hover:shadow-2xl shadow-black">
     <div className="relative w-full h-24">
       <Image
-        
         className="absolute inset-0 w-full h-full object-cover"
         loader={imgLoader}
         unoptimized

@@ -6,14 +6,13 @@ interface ProductsList {
 }
 
 const ProductsList = ({ productsList }: ProductsList) => {
-  console.log(productsList);
   return (
     <div>
       {productsList.map((product: ProductType, index: number) => {
         return (
-          <>
+          <div key={index}>
             <Product product={product} index={index} />
-          </>
+          </div>
         );
       })}
     </div>

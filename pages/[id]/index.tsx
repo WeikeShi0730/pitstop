@@ -12,7 +12,6 @@ interface Team {
 }
 
 const TeamHomePage = ({ team }: Team) => {
-  console.log(team);
   return (
     <Layout title={`Pitstop | ${team.name}`}>
       <ProductsList productsList={team.productsList} />
