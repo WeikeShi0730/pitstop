@@ -14,7 +14,7 @@ export interface ProductType {
 // export interface ProductsListType {
 //   productsList: ProductType[];
 // }
-export interface Team {
+export interface TeamType {
   id: string;
   name: string;
   photos: string[];

@@ -1,7 +1,7 @@
-import { Team } from "../interfaces";
+import { TeamType } from "../interfaces";
 import TeamOnTeamsPage from "./team-on-teamspage.component";
 interface TeamsType {
-  teams: Team[];
+  teams: TeamType[];
 }
 
 const TeamsOnTeamsPage = ({ teams }: TeamsType) => {

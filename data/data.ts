@@ -4,9 +4,9 @@
 //   name: string;
 //   price: number;
 // }
-import { Team } from "../interfaces/index";
+import { TeamType } from "../interfaces/index";
 
-export const teams: Team[] = [
+export const teams: TeamType[] = [
   {
     id: "mercedes",
     name: "Mercedes",

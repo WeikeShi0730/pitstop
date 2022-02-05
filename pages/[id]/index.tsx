@@ -5,13 +5,13 @@ import {
   firestoreGetDocs,
   firestoreGetDoc,
 } from "../../firebase/firebase.utils";
-import { Team } from "../../interfaces";
+import { TeamType } from "../../interfaces";
 
-interface TeamType {
-  team: Team;
+interface Team {
+  team: TeamType;
 }
 
-const TeamHomePage = ({ team }: TeamType) => {
+const TeamHomePage = ({ team }: Team) => {
   console.log(team);
   return (
     <Layout title={`Pitstop | ${team.name}`}>
@@ -24,7 +24,7 @@ export default TeamHomePage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const teams: Team[] = await firestoreGetDocs();
+    const teams: TeamType[] = await firestoreGetDocs();
     const ids = teams.map((team) => team.name);
     const paths = ids.map((id) => ({ params: { id: id } }));
     return {
@@ -43,7 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const id = context.params?.id as string;
-    const team: Team = await firestoreGetDoc(id);
+    const team: TeamType = await firestoreGetDoc(id);
     return {
       props: { team },
     };
