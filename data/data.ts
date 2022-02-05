@@ -1,4 +1,4 @@
-// interface Merch {
+// interface productsList {
 //   id: string;
 //   imageUrl: string;
 //   name: string;
@@ -12,7 +12,7 @@ export const teams: Team[] = [
     name: "Mercedes",
     photos: [],
     backgroundImg: "https://i.ibb.co/LPc2pzj/Mercedes.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -62,7 +62,7 @@ export const teams: Team[] = [
     name: "Red Bull",
     photos: [],
     backgroundImg: "https://i.ibb.co/bRR5vCG/Red-Bull.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -114,7 +114,7 @@ export const teams: Team[] = [
     name: "Ferrari",
     photos: [],
     backgroundImg: "https://i.ibb.co/qsRdZTC/Ferrari.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -161,10 +161,10 @@ export const teams: Team[] = [
   },
   {
     id: "mclaren",
-    name: "Mclaren",
+    name: "McLaren",
     photos: [],
     backgroundImg: "https://i.ibb.co/F45S9tZ/McLaren.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -221,7 +221,7 @@ export const teams: Team[] = [
     name: "Alpine",
     photos: [],
     backgroundImg: "https://i.ibb.co/rt3hz4N/Alpine.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -264,7 +264,7 @@ export const teams: Team[] = [
     name: "Aston Martin",
     photos: [],
     backgroundImg: "https://i.ibb.co/wrQL5hg/Aston-Martin.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -314,7 +314,7 @@ export const teams: Team[] = [
     name: "Alpha Tauri",
     photos: [],
     backgroundImg: "https://i.ibb.co/7pWVRm0/Alpha-Tauri.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -357,7 +357,7 @@ export const teams: Team[] = [
     name: "Alfa Romeo",
     photos: [],
     backgroundImg: "https://i.ibb.co/RQQ8yt3/Alfa-Romeo.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -393,7 +393,7 @@ export const teams: Team[] = [
     name: "Williams",
     photos: [],
     backgroundImg: "https://i.ibb.co/fks0CJq/Williams.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:
@@ -436,7 +436,7 @@ export const teams: Team[] = [
     name: "Haas",
     photos: [],
     backgroundImg: "https://i.ibb.co/0j9Msc3/Haas.png",
-    merch: [
+    productsList: [
       {
         id: "",
         imageUrl:

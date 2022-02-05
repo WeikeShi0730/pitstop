@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "../../components/layout.component";
+import ProductsList from "../../components/products-list.component";
 import {
   firestoreGetDocs,
   firestoreGetDoc,
@@ -11,9 +12,10 @@ interface TeamType {
 }
 
 const TeamHomePage = ({ team }: TeamType) => {
+  console.log(team);
   return (
     <Layout title={`Pitstop | ${team.name}`}>
-      <div>{team.name}</div>
+      <ProductsList productsList={team.productsList} />
     </Layout>
   );
 };

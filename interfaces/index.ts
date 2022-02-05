@@ -1,16 +1,26 @@
+// interface Product {
+//   id: string;
+//   imageUrl: string;
+//   name: string;
+//   price: number;
+// }
+
+export interface ProductType {
+  id: string;
+  imageUrl: string;
+  name: string;
+  price: number;
+}
+// export interface ProductsListType {
+//   productsList: ProductType[];
+// }
 export interface Team {
   id: string;
   name: string;
   photos: string[];
   backgroundImg: string;
-  merch: Array<{
-    id: string;
-    imageUrl: string;
-    name: string;
-    price: number;
-  }>;
+  productsList: ProductType[];
 }
-
 export interface SignInType {
   email: string;
   password: string;
