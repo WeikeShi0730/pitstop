@@ -32,9 +32,9 @@ const Product = ({ product, index }: Product) => {
               <div className="">CAD</div>
               <div className="text-2xl">{price}</div>
             </div>
-            <div className="bg-orange-theme text-slate-200 w-fit p-3">
+            <button className="bg-orange-theme text-slate-200 w-fit p-3">
               Add to cart
-            </div>
+            </button>
           </div>
         </div>
       </div>
