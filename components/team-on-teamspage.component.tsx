@@ -10,22 +10,6 @@ interface TeamOnTeamsPageType {
 }
 
 const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
-  // const backfaceInvisible = {
-  //   backfaceVisibility: "hidden",
-  // } as const;
-
-  // const DIV = styled.div`
-  //   -webkit-backface-visibility: hidden; /* the magic ingredient */
-  //   -webkit-transform: skew(0, -12deg);
-  //   overflow: hidden;
-  //   position: relative;
-  // `;
-
-  // const DIV2 = styled.div`
-  //   -webkit-transform: skew(0, 12deg);
-  //   position: relative;
-  // `;
-
   return (
     // h ????????????
     // <div className="relative w-full h-72 m-5 rounded-large hover:shadow-2xl shadow-black">

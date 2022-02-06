@@ -35,7 +35,7 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5 ml-auto">
-          <Link href="/cart">
+          <Link href="/">
             <a>
               <FiShoppingCart />
             </a>
