@@ -6,6 +6,7 @@ import {
   setDoc,
   getDoc,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -26,7 +27,13 @@ import {
 
 import { teams } from "../data/data";
 
-import { TeamType, SignInType, SignUpType } from "../interfaces/index";
+import {
+  TeamType,
+  SignInType,
+  SignUpType,
+  CartItemType,
+  ProductType,
+} from "../interfaces/index";
 import { getDisplayName } from "next/dist/shared/lib/utils";
 
 // Web app's Firebase configuration
@@ -88,15 +95,51 @@ export const firestoreGetDoc = async (id: string) => {
   }
 };
 
+const createUserInFirestore = async (displayName: string, email: string) => {
+  await setDoc(doc(db, "users", auth.currentUser?.uid as string), {
+    user: { displayName: displayName, email: email },
+    cartItems: [],
+  });
+};
+
+export const updateUserCartFirestore = async (newProduct: ProductType) => {
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const docSnap = await getDoc(currentUserRef);
+    if (docSnap.exists()) {
+      const currentUser = docSnap.data();
+      let cartItems: CartItemType[] = currentUser.cartItems;
+      let newCartItem: CartItemType = { product: newProduct, count: 1 };
+      for (const cartItem of cartItems) {
+        if (cartItem.product.name === newProduct.name) {
+          cartItems.splice(cartItems.indexOf(cartItem), 1);
+          const newItem = {
+            product: newProduct,
+            count: cartItem.count + 1,
+          };
+          newCartItem = newItem;
+          break;
+        }
+      }
+      cartItems.push(newCartItem);
+      await updateDoc(currentUserRef, {
+        cartItems: cartItems,
+      });
+    } else {
+      throw "No doc found";
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
 //** Auth *****************************/
 export const signInWithGoogle = async () => {
   try {
     await setPersistence(auth, browserLocalPersistence);
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
-    console.log(result);
     const { displayName, email } = result.user;
-
     await createUserInFirestore(displayName as string, email as string);
   } catch (error) {
     throw error;
@@ -119,13 +162,6 @@ export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
     console.error("Error creating the profile: ", error);
     throw error;
   }
-};
-
-const createUserInFirestore = async (displayName: string, email: string) => {
-  await setDoc(doc(db, "users", displayName), {
-    user: { displayName: displayName, email: email },
-    cart: [],
-  });
 };
 
 export const signInWithEmail = async (signInInfo: SignInType) => {

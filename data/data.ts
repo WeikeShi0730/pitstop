@@ -350,36 +350,31 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: "",
-        imageUrl:
-          "/products/williams/Nicholas Latifi headshot.jpg",
+        imageUrl: "/products/williams/Nicholas Latifi headshot.jpg",
         name: "Nicholas Latifi headshot",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/williams/George Russell number.jpg",
+        imageUrl: "/products/williams/George Russell number.jpg",
         name: "George Russell number",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/williams/Nicholas Latifi figure.jpg",
+        imageUrl: "/products/williams/Nicholas Latifi figure.jpg",
         name: "Nicholas Latifi figure",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/williams/George Russell facts.jpg",
+        imageUrl: "/products/williams/George Russell facts.jpg",
         name: "George Russell facts",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/williams/Williams F1 team logo.jpg",
+        imageUrl: "/products/williams/Williams F1 team logo.jpg",
         name: "Williams F1 team logo",
         price: 1.88,
       },
@@ -393,50 +388,43 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: "",
-        imageUrl:
-          "/products/haas/Haas F1 team logo.jpg",
+        imageUrl: "/products/haas/Haas F1 team logo.jpg",
         name: "Haas F1 team logo",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/haas/Nikita Mazepin leaderboard.jpg",
+        imageUrl: "/products/haas/Nikita Mazepin leaderboard.jpg",
         name: "Nikita Mazepin leaderboard",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/haas/Mick Schumacher leaderboard.jpg",
+        imageUrl: "/products/haas/Mick Schumacher leaderboard.jpg",
         name: "Mick Schumacher leaderboard",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/haas/Haas 2021 car.jpg",
+        imageUrl: "/products/haas/Haas 2021 car.jpg",
         name: "Haas 2021 car",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/haas/Nikita Mazespin.jpg",
+        imageUrl: "/products/haas/Nikita Mazespin.jpg",
         name: "Nikita Mazespin",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/haas/Very angry Steiner.jpg",
+        imageUrl: "/products/haas/Very angry Steiner.jpg",
         name: "Very angry Steiner",
         price: 1.88,
       },
       {
         id: "",
-        imageUrl:
-          "/products/haas/Mick Schumacher figure.jpg",
+        imageUrl: "/products/haas/Mick Schumacher figure.jpg",
         name: "Mick Schumacher figure",
         price: 1.88,
       },

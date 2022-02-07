@@ -1,6 +1,8 @@
-import { ProductType } from "../interfaces";
+import { useState, useEffect } from "react";
+import { ProductType, CartItemType } from "../interfaces";
 import Image from "next/image";
 import { imgLoader } from "./image-loader";
+import { updateUserCartFirestore } from "../firebase/firebase.utils";
 
 interface Product {
   product: ProductType;
@@ -9,10 +11,54 @@ interface Product {
 
 const Product = ({ product, index }: Product) => {
   const { id, name, imageUrl, price } = product;
+  // const [cartItems, setCartItems] = useState([]);
 
-  const mlauto = index % 2 === 0 ? "" : "ml-auto ";
+  // Dynamic styles
+  const mlauto = index % 2 === 0 ? "" : "ml-auto";
   const flexrowreverse = index % 2 === 0 ? "flex-row-reverse" : "";
   const skew = index % 2 === 0 ? "-skew-x-12" : "skew-x-12";
+
+  const handleClick = async () => {
+    await updateUserCartFirestore(product);
+  };
+
+  // const handleClick = () => {
+  //   cartItems.forEach((cartItem, index) => {
+  //     console.log(index);
+  //     console.log("ININNNNNI");
+  //     // if (cartItem.product.name === name) {
+  //     //   console.log("found");
+  //     //   const [cartItem, ...otherCartItems] = cartItems;
+  //     //   const newNumber = cartItem.number + 1;
+  //     //   const newItem = {
+  //     //     product: product,
+  //     //     number: newNumber,
+  //     //   };
+  //     //   setCartItems([...otherCartItems, newItem]);
+  //     //   return;
+  //     // } else {
+  //     //   console.log("new");
+  //     //   setCartItems((cartItems) => [
+  //     //     ...cartItems,
+  //     //     { product: product, number: 1 },
+  //     //   ]);
+  //     //   return;
+  //     // }
+  //   });
+  //   // setCart((cartItems) => [...cartItems, newCartItem]);
+  // };
+
+  // useEffect(() => {
+  //   const updateUserCart = async () => {
+  //     try {
+  //       await updateUserCartFirestore(cartItems);
+  //     } catch (error: any) {
+  //       console.error(error.message);
+  //     }
+  //   };
+  //   updateUserCart();
+  // }, [cartItems]);
+
   return (
     <div className="flex justify-center mx-auto w-full">
       <div
@@ -38,7 +84,10 @@ const Product = ({ product, index }: Product) => {
               <div className="">CAD</div>
               <div className="text-2xl">{price}</div>
             </div>
-            <button className="bg-orange-theme text-slate-200 w-fit p-3">
+            <button
+              onClick={handleClick}
+              className="bg-orange-theme text-slate-200 w-fit p-3"
+            >
               Add to cart
             </button>
           </div>

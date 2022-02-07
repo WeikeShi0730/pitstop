@@ -27,11 +27,9 @@ export interface CurrentUserType {
   currentUser: any;
 }
 
-export interface CartType {
-  id: string;
-  imageUrl: string;
-  name: string;
-  price: number;
+export interface CartItemType {
+  product: ProductType;
+  count: number;
 }
 
 export interface CurrentUserState {
@@ -44,10 +42,10 @@ export interface CurrentUserAction extends Action {
 }
 
 export interface CartState {
-  cart: CartType;
+  cart: CartItemType;
 }
 
 export interface CartAction extends Action {
   type: string;
-  cart: CartType[];
+  cart: CartItemType[];
 }
