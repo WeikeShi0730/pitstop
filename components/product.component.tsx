@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { ProductType, CartItemType } from "../interfaces";
+import { ProductType } from "../interfaces";
 import Image from "next/image";
 import { imgLoader } from "./image-loader";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
@@ -11,7 +10,6 @@ interface Product {
 
 const Product = ({ product, index }: Product) => {
   const { id, name, imageUrl, price } = product;
-  // const [cartItems, setCartItems] = useState([]);
 
   // Dynamic styles
   const mlauto = index % 2 === 0 ? "" : "ml-auto";
@@ -21,43 +19,6 @@ const Product = ({ product, index }: Product) => {
   const handleClick = async () => {
     await updateUserCartFirestore(product);
   };
-
-  // const handleClick = () => {
-  //   cartItems.forEach((cartItem, index) => {
-  //     console.log(index);
-  //     console.log("ININNNNNI");
-  //     // if (cartItem.product.name === name) {
-  //     //   console.log("found");
-  //     //   const [cartItem, ...otherCartItems] = cartItems;
-  //     //   const newNumber = cartItem.number + 1;
-  //     //   const newItem = {
-  //     //     product: product,
-  //     //     number: newNumber,
-  //     //   };
-  //     //   setCartItems([...otherCartItems, newItem]);
-  //     //   return;
-  //     // } else {
-  //     //   console.log("new");
-  //     //   setCartItems((cartItems) => [
-  //     //     ...cartItems,
-  //     //     { product: product, number: 1 },
-  //     //   ]);
-  //     //   return;
-  //     // }
-  //   });
-  //   // setCart((cartItems) => [...cartItems, newCartItem]);
-  // };
-
-  // useEffect(() => {
-  //   const updateUserCart = async () => {
-  //     try {
-  //       await updateUserCartFirestore(cartItems);
-  //     } catch (error: any) {
-  //       console.error(error.message);
-  //     }
-  //   };
-  //   updateUserCart();
-  // }, [cartItems]);
 
   return (
     <div className="flex justify-center mx-auto w-full">
