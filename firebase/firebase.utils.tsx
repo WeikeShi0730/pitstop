@@ -27,6 +27,7 @@ import {
 import { teams } from "../data/data";
 
 import { TeamType, SignInType, SignUpType } from "../interfaces/index";
+import { getDisplayName } from "next/dist/shared/lib/utils";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -92,7 +93,11 @@ export const signInWithGoogle = async () => {
   try {
     await setPersistence(auth, browserLocalPersistence);
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    const result = await signInWithPopup(auth, provider);
+    console.log(result);
+    const { displayName, email } = result.user;
+
+    await createUserInFirestore(displayName as string, email as string);
   } catch (error) {
     throw error;
   }
@@ -109,13 +114,18 @@ export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
     await updateProfile(auth.currentUser as User, {
       displayName: signUpInfo.displayName,
     });
-    // const { password, ...signUpInfoWithoutPassword } = signUpInfo;
-    // await createUserFirestore(signUpInfoWithoutPassword);
-    // return signUpInfoWithoutPassword;
+    await createUserInFirestore(signUpInfo.displayName, signUpInfo.email);
   } catch (error) {
     console.error("Error creating the profile: ", error);
     throw error;
   }
+};
+
+const createUserInFirestore = async (displayName: string, email: string) => {
+  await setDoc(doc(db, "users", displayName), {
+    user: { displayName: displayName, email: email },
+    cart: [],
+  });
 };
 
 export const signInWithEmail = async (signInInfo: SignInType) => {
