@@ -100,6 +100,7 @@ export const signInWithGoogle = async () => {
 
 export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
   try {
+    await setPersistence(auth, browserLocalPersistence);
     await createUserWithEmailAndPassword(
       auth,
       signUpInfo.email,
