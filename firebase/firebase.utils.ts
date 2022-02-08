@@ -111,7 +111,7 @@ export const updateUserCartFirestore = async (newProduct: ProductType) => {
       let cartItems: CartItemType[] = currentUser.cartItems;
       let newCartItem: CartItemType = { product: newProduct, count: 1 };
       for (const cartItem of cartItems) {
-        if (cartItem.product.name === newProduct.name) {
+        if (cartItem.product.id === newProduct.id) {
           cartItems.splice(cartItems.indexOf(cartItem), 1);
           const newItem = {
             product: newProduct,

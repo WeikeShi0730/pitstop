@@ -9,7 +9,7 @@ interface Product {
 }
 
 const Product = ({ product, index }: Product) => {
-  const { id, name, imageUrl, price } = product;
+  const { name, imageUrl, price } = product;
 
   // Dynamic styles
   const mlauto = index % 2 === 0 ? "" : "ml-auto";

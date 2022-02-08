@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from 'react';
 // import Select from "react-select";
 // import { toast } from "react-toastify";
 import { signUpWithEmailAndPassword } from "../firebase/firebase.utils";
@@ -7,7 +7,7 @@ import { SignUpType } from "../interfaces/index";
 const SignUp = () => {
   //   const [value, setValue] = useState("");
 
-  const [signUpInfo, setSignUpInfo] = useState<SignUpType>({
+  const [signUpInfo, setSignUpInfo] = React.useState<SignUpType>({
     displayName: "",
     email: "",
     password: "",
