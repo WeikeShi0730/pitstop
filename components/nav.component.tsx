@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FiShoppingCart } from "react-icons/fi";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase/firebase.utils";
 
 const Nav = () => {
+  const [currentUser] = useAuthState(auth);
   return (
     <nav>
       <div className="bg-slate-700 text-slate-200 flex items-center p-2">
@@ -42,9 +45,15 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5">
-          <Link href="/login">
-            <a>Sign In</a>
-          </Link>
+          {currentUser ? (
+            <Link href={`/account/${currentUser?.uid as string}`}>
+              <a>{currentUser.displayName}</a>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <a>Sign In</a>
+            </Link>
+          )}
         </div>
       </div>
     </nav>
