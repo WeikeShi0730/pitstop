@@ -7,6 +7,7 @@ import {
   getDoc,
   getDocs,
   updateDoc,
+  onSnapshot,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -131,6 +132,11 @@ export const updateUserCartFirestore = async (newProduct: ProductType) => {
   } catch (error) {
     throw error;
   }
+};
+
+export const streamCurrentUserCartItems = (uid: string, snapshot: any) => {
+  const currentUserRef = doc(db, "users", uid);
+  return onSnapshot(currentUserRef, snapshot);
 };
 
 //** Auth *****************************/

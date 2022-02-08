@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FiShoppingCart } from "react-icons/fi";
+import CartIcon from "./cart-icon.component";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase.utils";
 
@@ -40,7 +40,7 @@ const Nav = () => {
         <div className="mx-5 ml-auto">
           <Link href="/">
             <a>
-              <FiShoppingCart />
+              <CartIcon currentUser={currentUser} />
             </a>
           </Link>
         </div>
