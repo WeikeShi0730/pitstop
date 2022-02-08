@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { SignInType } from "../interfaces";
 import { signInWithGoogle, signInWithEmail } from "../firebase/firebase.utils";
 
 const SignIn = () => {
+  const router = useRouter();
   const [signInInfo, setSignInInfo] = useState<SignInType>({
     email: "",
     password: "",
@@ -11,7 +13,7 @@ const SignIn = () => {
   const handleClick = async () => {
     try {
       await signInWithGoogle();
-      //   history.push("/");
+      router.push("/");
     } catch (error) {
       console.error("error signing in with google: ", error);
     }
@@ -20,7 +22,7 @@ const SignIn = () => {
     event.preventDefault();
     try {
       await signInWithEmail(signInInfo);
-      //   history.push("/");
+      router.push("/");
     } catch (error) {
       //   toast.error("error signing in: " + error.message, {
       //     position: toast.POSITION.TOP_CENTER,
@@ -39,7 +41,7 @@ const SignIn = () => {
   };
 
   const handleClickForgotPassword = () => {
-    // history.push("/reset-password");
+    router.push("/reset-password");
   };
 
   return (

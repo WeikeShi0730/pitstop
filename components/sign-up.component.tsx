@@ -1,12 +1,11 @@
-import * as React from 'react';
-// import Select from "react-select";
+import * as React from "react";
+import { useRouter } from "next/router";
 // import { toast } from "react-toastify";
 import { signUpWithEmailAndPassword } from "../firebase/firebase.utils";
 import { SignUpType } from "../interfaces/index";
 
 const SignUp = () => {
-  //   const [value, setValue] = useState("");
-
+  const router = useRouter();
   const [signUpInfo, setSignUpInfo] = React.useState<SignUpType>({
     displayName: "",
     email: "",
@@ -27,7 +26,7 @@ const SignUp = () => {
     event.preventDefault();
     try {
       await signUpWithEmailAndPassword(signUpInfo);
-      //   history.push("/");
+      router.push("/");
       //   toast.success("success ✅", {
       //     position: toast.POSITION.TOP_CENTER,
       //     theme: "dark",
@@ -88,7 +87,10 @@ const SignUp = () => {
             />
           </div>
           <div className="flex justify-center items-center mt-6">
-            <button className="text-xs md:text-sm bg-gray-800 py-2 px-4 text-white rounded border focus:outline-none font-light">
+            <button
+              type="submit"
+              className="text-xs md:text-sm bg-gray-800 py-2 px-4 text-white rounded border focus:outline-none font-light"
+            >
               Sign up
             </button>
           </div>
