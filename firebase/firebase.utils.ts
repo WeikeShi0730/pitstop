@@ -185,3 +185,12 @@ export const signOutGoogle = async () => {
     throw error;
   }
 };
+
+export const sendChangePasswordEmail = async (email: string) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+  } catch (error) {
+    console.error("Error updating password: ", error);
+    throw error;
+  }
+};
