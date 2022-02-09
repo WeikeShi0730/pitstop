@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import { CartItemType } from "../interfaces/index";
+import {
+  CartItemType,
+  CurrentUserType,
+  SnapshotType,
+} from "../interfaces/index";
 import { streamCurrentUserCartItems } from "../firebase/firebase.utils";
 
-const CartIcon = ({ currentUser }: any) => {
+const CartIcon = ({ currentUser }: CurrentUserType) => {
   const [itemCount, setItemCount] = useState<number>();
   useEffect(() => {
     const unsubscribe = currentUser
       ? streamCurrentUserCartItems(
           currentUser?.uid as string,
-          (snapshot: any) => {
+          (snapshot: SnapshotType["snapshot"]) => {
             const itemCount = snapshot
               .data()
-              .cartItems.reduce((acc: number, currentValue: CartItemType) => {
+              ?.cartItems.reduce((acc: number, currentValue: CartItemType) => {
                 return acc + currentValue.count;
               }, 0);
             setItemCount(itemCount);

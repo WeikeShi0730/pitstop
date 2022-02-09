@@ -1,4 +1,6 @@
 import { Action } from "redux";
+import { User } from "firebase/auth";
+import { DocumentSnapshot } from "firebase/firestore";
 
 export interface ProductType {
   id: string;
@@ -23,6 +25,10 @@ export interface SignUpType {
   password: string;
 }
 
+export interface CurrentUserType {
+  currentUser: User | undefined | null;
+}
+
 // export interface CurrentUserType {
 //   currentUser: any;
 // }
@@ -30,6 +36,14 @@ export interface SignUpType {
 export interface CartItemType {
   product: ProductType;
   count: number;
+}
+
+export interface SnapshotFnType {
+  snapshotfn: (snapshot: DocumentSnapshot) => void
+}
+
+export interface SnapshotType {
+  snapshot: DocumentSnapshot
 }
 
 // export interface CurrentUserState {

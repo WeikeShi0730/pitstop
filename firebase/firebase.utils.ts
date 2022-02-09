@@ -34,6 +34,7 @@ import {
   SignUpType,
   CartItemType,
   ProductType,
+  SnapshotFnType,
 } from "../interfaces/index";
 import { getDisplayName } from "next/dist/shared/lib/utils";
 
@@ -134,7 +135,10 @@ export const updateUserCartFirestore = async (newProduct: ProductType) => {
   }
 };
 
-export const streamCurrentUserCartItems = (uid: string, snapshot: any) => {
+export const streamCurrentUserCartItems = (
+  uid: string,
+  snapshot: SnapshotFnType["snapshotfn"]
+) => {
   const currentUserRef = doc(db, "users", uid);
   return onSnapshot(currentUserRef, snapshot);
 };
