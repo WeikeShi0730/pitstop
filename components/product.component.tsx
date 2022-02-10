@@ -23,7 +23,7 @@ const Product = ({ product, index }: Product) => {
   return (
     <div className="flex justify-center mx-auto w-full">
       <div
-        className={`relative flex m-10 w-2/3 rounded-lg backdrop-blur-md bg-gradient-to-r ${flexrowreverse}`}
+        className={`relative flex m-10 w-2/3 rounded-lg bg-opacity-80 backdrop-blur-md bg-gradient-to-r ${flexrowreverse}`}
       >
         <div className="flex relative w-1/2 h-48 justify-center items-center m-auto p-3 ">
           <Image

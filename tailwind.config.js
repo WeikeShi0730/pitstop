@@ -15,6 +15,16 @@ module.exports = {
       large: "1rem",
     },
     extend: {
+      height: {
+        76: "18rem",
+        78: "19rem",
+        82: "22rem",
+        97: "28rem",
+        98: "31rem",
+        99: "38rem",
+        100: "40rem",
+        "fit-content": "fit-content(2em)",
+      },
       colors: {
         orange: {
           theme: "#E87121",

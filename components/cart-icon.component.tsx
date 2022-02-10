@@ -10,7 +10,8 @@ import {
 import { streamCurrentUserCartItems } from "../firebase/firebase.utils";
 
 const CartIcon = ({ currentUser }: CurrentUserType) => {
-  const [itemCount, setItemCount] = useState<number>();
+  const [cartItemCount, setCartItemCount] = useState<number>();
+  const [cartItems, setCartItems] = useState();
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(() => !open));
@@ -25,12 +26,15 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
       ? streamCurrentUserCartItems(
           currentUser?.uid as string,
           (snapshot: SnapshotType["snapshot"]) => {
-            const itemCount = snapshot
-              .data()
-              ?.cartItems.reduce((acc: number, currentValue: CartItemType) => {
+            const cartItems = snapshot.data()?.cartItems;
+            const itemCount = cartItems.reduce(
+              (acc: number, currentValue: CartItemType) => {
                 return acc + currentValue.count;
-              }, 0);
-            setItemCount(itemCount);
+              },
+              0
+            );
+            setCartItems(cartItems);
+            setCartItemCount(itemCount);
           }
         )
       : () => {};
@@ -44,14 +48,14 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
         onClick={handleClick}
       >
         <FiShoppingCart />
-        <div>{itemCount}</div>
+        {cartItemCount && cartItemCount > 0 ? <div>{cartItemCount}</div> : null}
       </button>
       {open ? (
         <div
-          className="absolute left-1/2 -translate-x-1/2 translate-y-4 bg-slate-500 w-60 h-96"
+          className="absolute left-1/2 -translate-x-2/3 translate-y-4 z-10 rounded-t-lg bg-slate-100"
           ref={ref}
         >
-          <CartDropdown />
+          <CartDropdown cartItems={cartItems} />
         </div>
       ) : null}
     </div>
