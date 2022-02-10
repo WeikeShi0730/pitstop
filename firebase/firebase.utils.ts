@@ -23,6 +23,7 @@ import {
   sendPasswordResetEmail,
   updatePassword,
   reauthenticateWithCredential,
+  User,
 } from "firebase/auth";
 
 import { teams } from "../data/data";
@@ -34,7 +35,7 @@ import {
   CartItemType,
   ProductType,
   SnapshotFnType,
-  CurrentUserType,
+  CurrentUserFnType,
 } from "../interfaces/index";
 import { getDisplayName } from "next/dist/shared/lib/utils";
 
@@ -148,9 +149,7 @@ export const signInWithGoogle = async () => {
   try {
     await setPersistence(auth, browserLocalPersistence);
     const provider = new GoogleAuthProvider();
-    const result = await signInWithPopup(auth, provider);
-    const { displayName, email } = result.user;
-    await createUserInFirestore(displayName as string, email as string);
+    await signInWithPopup(auth, provider);
   } catch (error) {
     throw error;
   }
@@ -164,7 +163,7 @@ export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
       signUpInfo.email,
       signUpInfo.password
     );
-    await updateProfile(auth.currentUser as CurrentUserType["currentUser"], {
+    await updateProfile(auth.currentUser as User, {
       displayName: signUpInfo.displayName,
     });
     await createUserInFirestore(signUpInfo.displayName, signUpInfo.email);
@@ -205,6 +204,6 @@ export const sendChangePasswordEmail = async (email: string) => {
   }
 };
 
-export const subscribeToAuthState = (cb: any) => {
+export const subscribeToAuthState = (cb: CurrentUserFnType["currentUser"]) => {
   return onAuthStateChanged(auth, cb);
 };

@@ -26,7 +26,11 @@ export interface SignUpType {
 }
 
 export interface CurrentUserType {
-  currentUser: User;
+  currentUser: User | null;
+}
+
+export interface CurrentUserFnType {
+  currentUser: (user: User | null) => void;
 }
 
 // export interface CurrentUserType {
