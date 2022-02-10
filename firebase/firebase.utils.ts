@@ -23,7 +23,6 @@ import {
   sendPasswordResetEmail,
   updatePassword,
   reauthenticateWithCredential,
-  User,
 } from "firebase/auth";
 
 import { teams } from "../data/data";
@@ -35,6 +34,7 @@ import {
   CartItemType,
   ProductType,
   SnapshotFnType,
+  CurrentUserType,
 } from "../interfaces/index";
 import { getDisplayName } from "next/dist/shared/lib/utils";
 
@@ -164,7 +164,7 @@ export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
       signUpInfo.email,
       signUpInfo.password
     );
-    await updateProfile(auth.currentUser as User, {
+    await updateProfile(auth.currentUser as CurrentUserType["currentUser"], {
       displayName: signUpInfo.displayName,
     });
     await createUserInFirestore(signUpInfo.displayName, signUpInfo.email);
@@ -203,4 +203,8 @@ export const sendChangePasswordEmail = async (email: string) => {
     console.error("Error updating password: ", error);
     throw error;
   }
+};
+
+export const subscribeToAuthState = (cb: any) => {
+  return onAuthStateChanged(auth, cb);
 };

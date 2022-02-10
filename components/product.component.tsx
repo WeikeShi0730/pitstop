@@ -13,7 +13,7 @@ const Product = ({ product, index }: Product) => {
 
   // Dynamic styles
   const mlauto = index % 2 === 0 ? "" : "ml-auto";
-  const flexrowreverse = index % 2 === 0 ? "flex-row-reverse" : "";
+  const flexrowreverse = index % 2 === 0 ? "flex-row-reverse from-slate-400 to-cyan-400" : "from-rose-400 to-slate-400";
   const skew = index % 2 === 0 ? "-skew-x-12" : "skew-x-12";
 
   const handleClick = async () => {
@@ -23,9 +23,9 @@ const Product = ({ product, index }: Product) => {
   return (
     <div className="flex justify-center mx-auto w-full">
       <div
-        className={`relative flex m-10 w-2/3 bg-slate-200 ${flexrowreverse}`}
+        className={`relative flex m-10 w-2/3 rounded-lg backdrop-blur-md bg-gradient-to-r ${flexrowreverse}`}
       >
-        <div className="flex relative w-1/2 h-48 justify-center items-center m-auto p-3">
+        <div className="flex relative w-1/2 h-48 justify-center items-center m-auto p-3 ">
           <Image
             src={imageUrl}
             className="w-full h-full object-contain"
@@ -35,10 +35,10 @@ const Product = ({ product, index }: Product) => {
             layout="fill"
           />
         </div>
-        <div
+        {/* <div
           className={`absolute left-1/2 -translate-x-1/2 bg-slate-200 w-1/12 h-full z-50 ${skew}`}
-        ></div>
-        <div className={`flex flex-col p-10 bg-slate-400 w-1/2`}>
+        ></div> */}
+        <div className="flex flex-col relative w-1/2 p-10">
           <div className={`text-3xl my-3 ${mlauto}`}>{name}</div>
           <div className={`flex items-center gap-3 mt-24 ${mlauto}`}>
             <div className="flex items-end gap-1">
@@ -47,7 +47,7 @@ const Product = ({ product, index }: Product) => {
             </div>
             <button
               onClick={handleClick}
-              className="bg-orange-theme text-slate-200 w-fit p-3"
+              className="bg-orange-theme text-slate-200 w-fit p-3 rounded-lg"
             >
               Add to cart
             </button>

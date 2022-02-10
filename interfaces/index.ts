@@ -26,7 +26,7 @@ export interface SignUpType {
 }
 
 export interface CurrentUserType {
-  currentUser: User | undefined | null;
+  currentUser: User;
 }
 
 // export interface CurrentUserType {
@@ -39,11 +39,11 @@ export interface CartItemType {
 }
 
 export interface SnapshotFnType {
-  snapshotfn: (snapshot: DocumentSnapshot) => void
+  snapshotfn: (snapshot: DocumentSnapshot) => void;
 }
 
 export interface SnapshotType {
-  snapshot: DocumentSnapshot
+  snapshot: DocumentSnapshot;
 }
 
 // export interface CurrentUserState {

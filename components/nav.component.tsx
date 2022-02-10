@@ -1,11 +1,24 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import CartIcon from "./cart-icon.component";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase/firebase.utils";
+import { auth, subscribeToAuthState } from "../firebase/firebase.utils";
+import { CurrentUserType } from "../interfaces";
 
 const Nav = () => {
-  const [currentUser] = useAuthState(auth);
+  const [currentUser, setCurrentUser] = useState<
+    CurrentUserType["currentUser"]
+  >(auth.currentUser as CurrentUserType["currentUser"]);
+
+  useEffect(() => {
+    const subscribe = subscribeToAuthState(
+      (user: CurrentUserType["currentUser"]) => {
+        setCurrentUser(user);
+      }
+    );
+    return () => subscribe();
+  });
+
   return (
     <nav>
       <div className="bg-slate-700 text-slate-200 flex items-center p-2">
