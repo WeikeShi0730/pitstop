@@ -51,11 +51,11 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5 ml-auto">
-          <Link href="/">
-            <a>
+          {/* <Link href="/">
+            <a> */}
               <CartIcon currentUser={currentUser} />
-            </a>
-          </Link>
+            {/* </a>
+          </Link> */}
         </div>
         <div className="mx-5">
           {currentUser ? (

@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import CartDropdown from "./cart-dropdown.component";
+import { useClickOutside } from "../utils/use-click-outside";
 import {
   CartItemType,
   CurrentUserType,
@@ -9,6 +11,15 @@ import { streamCurrentUserCartItems } from "../firebase/firebase.utils";
 
 const CartIcon = ({ currentUser }: CurrentUserType) => {
   const [itemCount, setItemCount] = useState<number>();
+  const [open, setOpen] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useClickOutside(ref, () => setOpen(() => !open));
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setOpen(() => !open);
+  };
+
   useEffect(() => {
     const unsubscribe = currentUser
       ? streamCurrentUserCartItems(
@@ -27,9 +38,22 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
   }, [currentUser]);
 
   return (
-    <div className="flex items-center justify-center space-x-2">
-      <FiShoppingCart />
-      <div>{itemCount}</div>
+    <div className="relative">
+      <button
+        className="flex items-center justify-center space-x-2"
+        onClick={handleClick}
+      >
+        <FiShoppingCart />
+        <div>{itemCount}</div>
+      </button>
+      {open ? (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 translate-y-4 bg-slate-500 w-60 h-96"
+          ref={ref}
+        >
+          <CartDropdown />
+        </div>
+      ) : null}
     </div>
   );
 };
