@@ -52,7 +52,7 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
               ⊖
             </button>
           </div>
-          <div className="">{count}</div>
+          <div className="px-1 w-6 flex justify-center">{count}</div>
           <div className="mx-2">
             <button onClick={handleClick} name="ADD">
               ⊕

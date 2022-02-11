@@ -50,7 +50,11 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
         onClick={handleClick}
       >
         <FiShoppingCart />
-        {cartItemCount && cartItemCount > 0 ? <div>{cartItemCount}</div> : null}
+        <div className="p-1 w-12 flex justify-start">
+          {cartItemCount && cartItemCount > 0 ? (
+            <div>{cartItemCount}</div>
+          ) : null}
+        </div>
       </button>
       {open ? (
         <div
