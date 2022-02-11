@@ -50,7 +50,7 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
         onClick={handleClick}
       >
         <FiShoppingCart />
-        <div className="p-1 w-12 flex justify-start">
+        <div className="p-1 w-8 flex justify-start">
           {cartItemCount && cartItemCount > 0 ? (
             <div>{cartItemCount}</div>
           ) : null}
@@ -58,7 +58,7 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
       </button>
       {open ? (
         <div
-          className="absolute left-1/2 -translate-x-2/3 translate-y-4 z-10 rounded-lg bg-slate-100"
+          className="absolute left-1/2 -translate-x-2/3 translate-y-4 z-10 rounded-lg bg-slate-200"
           ref={ref}
         >
           <CartDropdown cartItems={cartItems} />

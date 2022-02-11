@@ -17,9 +17,9 @@ const CartDropdown = ({ cartItems }: CartItems) => {
 
   return (
     <>
-      <div className="relative w-80 max-h-96 h-fit-content overflow-auto disable-scrollbars">
+            <div className="relative w-80 max-h-96 h-fit-content overflow-auto disable-scrollbars">
         {cartItems && cartItems.length > 0 ? (
-          cartItems.map((cartItem, index) => {
+            cartItems.map((cartItem, index) => {
             return <CartDropdownItems key={index} cartItem={cartItem} />;
           })
         ) : (
@@ -28,7 +28,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
           </div>
         )}
       </div>
-      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-100">
+      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300">
         <div>Subtotal: CAD</div>
         <div className="text-4xl">{subtotal}</div>
       </div>

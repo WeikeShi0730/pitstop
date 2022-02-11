@@ -33,17 +33,16 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
 
   return (
     <div className="flex items-center m-2 text-black">
-      <div className="image flex flex-col relative w-20 h-20">
+      <div className="image flex flex-col relative w-1/3 h-20">
         <Image
           src={imageUrl}
-          className="w-full h-full object-contain rounded-lg"
+          className="w-full h-full object-cover rounded-lg"
           unoptimized
           alt={`${name} image`}
           layout="fill"
         />
       </div>
-      {/* !!!!!!!!!!!!!!!!!!!!text occupy image space.............. */}
-      <div className="text ml-2">
+      <div className="text ml-2 w-2/3">
         <div className="name">{name}</div>
         <div className="qty flex">
           <div className="">Qty:</div>
@@ -61,7 +60,7 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
         </div>
         <div className="Unt">Price: {price}</div>
       </div>
-      <div className="cancel flex right-2 absolute">
+      <div className="cancel flex right-4 absolute">
         <button onClick={handleClick} name="DELETE">
           🅧
         </button>
