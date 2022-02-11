@@ -34,10 +34,10 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
   return (
     <div className="flex items-center m-2 text-black">
       <div className="image flex flex-col relative w-1/3 h-20">
-        <div className="relative w-11/12 h-full">
+        <div className="relative w-11/12 h-full bg-[#F8F8F8] rounded-lg">
           <Image
             src={imageUrl}
-            className="object-cover rounded-lg"
+            className="object-contain"
             unoptimized
             alt={`${name} image`}
             layout="fill"
