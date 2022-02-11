@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { imgLoader } from "./image-loader";
@@ -15,7 +15,7 @@ const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
     // <div className="relative w-full h-72 m-5 rounded-large hover:shadow-2xl shadow-black">
     <div className="relative w-full h-24">
       <Image
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 object-cover"
         loader={imgLoader}
         unoptimized
         src={backgroundImg}

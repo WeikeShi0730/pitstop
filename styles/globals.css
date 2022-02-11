@@ -20,7 +20,7 @@ a {
 } */
 body {
   background-image: url("/background.jpg");
-  background-size: initial;
+  background-size: cover;
   background-repeat: repeat-y;
   background-attachment: scroll;
   background-position: center;

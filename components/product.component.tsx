@@ -29,10 +29,10 @@ const Product = ({ product, index }: Product) => {
         className={`relative flex m-10 w-2/3 rounded-lg bg-opacity-80 backdrop-blur-sm bg-slate-400 ${flexrowreverse}`}
       >
         <div className="flex relative w-1/2 h-56 justify-center items-center m-auto p-3">
-          <div className="relative w-2/3 h-full ">
+          <div className="relative w-2/3 h-full bg-[#F8F8F8] rounded-lg">
             <Image
               src={imageUrl}
-              className="object-cover rounded-lg"
+              className="object-contain"
               loader={imgLoader}
               unoptimized
               alt={`${name} image`}

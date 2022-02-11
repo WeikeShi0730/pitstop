@@ -6,15 +6,23 @@ interface TeamsType {
 
 const TeamsOnTeamsPage = ({ teams }: TeamsType) => {
   return (
-    <div className="flex flex-wrap items-center justify-center">
+    <div className="flex flex-col justify-center relative">
       {teams.map(
-        (team: { backgroundImg: string; name: string; id: string }) => {
+        ({
+          name,
+          id,
+          backgroundImg,
+        }: {
+          backgroundImg: string;
+          name: string;
+          id: string;
+        }) => {
           return (
             <TeamOnTeamsPage
-              key={team.name}
-              id={team.id}
-              backgroundImg={team.backgroundImg}
-              name={team.name}
+              key={id}
+              id={id}
+              backgroundImg={backgroundImg}
+              name={name}
             />
           );
         }
