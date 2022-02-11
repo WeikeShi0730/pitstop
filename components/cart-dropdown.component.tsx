@@ -6,7 +6,7 @@ interface CartItems {
   cartItems: CartItemType[] | undefined;
 }
 const CartDropdown = ({ cartItems }: CartItems) => {
-  const [subtotal, setSubtotal] = useState<string>("0");
+  const [subtotal, setSubtotal] = useState<string>("0.00");
 
   useEffect(() => {
     const tempTotal = cartItems?.reduce((acc: number, currentValue) => {

@@ -105,26 +105,75 @@ const createUserInFirestore = async (displayName: string, email: string) => {
   });
 };
 
-export const updateUserCartFirestore = async (newProduct: ProductType) => {
+export const updateUserCartFirestore = async (
+  product: ProductType,
+  action: string
+) => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const docSnap = await getDoc(currentUserRef);
     if (docSnap.exists()) {
       const currentUser = docSnap.data();
       let cartItems: CartItemType[] = currentUser.cartItems;
-      let newCartItem: CartItemType = { product: newProduct, count: 1 };
-      for (const cartItem of cartItems) {
-        if (cartItem.product.id === newProduct.id) {
-          cartItems.splice(cartItems.indexOf(cartItem), 1);
-          const newItem = {
-            product: newProduct,
-            count: cartItem.count + 1,
-          };
-          newCartItem = newItem;
+      const cartItem = cartItems.filter(
+        (cartItem) => cartItem.product.id === product.id
+      );
+      switch (action) {
+        case "ADD": {
+          if (cartItem.length === 0) {
+            // new item
+            const newCartItem: CartItemType = { product: product, count: 1 };
+            cartItems.push(newCartItem);
+          } else {
+            // existing item
+            cartItems[cartItems.indexOf(cartItem[0])].count++;
+          }
+
+          // let newCartItem: CartItemType = { product: product, count: 1 };
+          // for (const cartItem of cartItems) {
+          //   if (cartItem.product.id === product.id) {
+          //     cartItems.splice(cartItems.indexOf(cartItem), 1);
+          //     const newItem = {
+          //       product: product,
+          //       count: cartItem.count + 1,
+          //     };
+          //     newCartItem = newItem;
+          //     break;
+          //   }
+          // }
+          // cartItems.push(newCartItem);
+          // await updateDoc(currentUserRef, {
+          //   cartItems: cartItems,
+          // });
           break;
         }
+        case "REMOVE": {
+          if (cartItem.length === 0) {
+          } else if (cartItem[0].count === 1) {
+            cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
+          } else if (cartItem[0].count > 1) {
+            cartItems[cartItems.indexOf(cartItem[0])].count--;
+          }
+          break;
+        }
+
+        // case "SET": {
+
+        // }
+
+        case "DELETE": {
+          if (cartItem.length === 0) {
+            throw "No items found in your cart.";
+          } else {
+            cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
+          }
+          break;
+        }
+
+        // default:
+        //   {
+        //   }
       }
-      cartItems.push(newCartItem);
       await updateDoc(currentUserRef, {
         cartItems: cartItems,
       });
@@ -149,7 +198,9 @@ export const signInWithGoogle = async () => {
   try {
     await setPersistence(auth, browserLocalPersistence);
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    const result = await signInWithPopup(auth, provider);
+    // const signUpInfo = result.user as SignUpType;
+    // await createUserInFirestore(signUpInfo.displayName, signUpInfo.email);
   } catch (error) {
     throw error;
   }
@@ -161,7 +212,7 @@ export const signUpWithEmailAndPassword = async (signUpInfo: SignUpType) => {
     await createUserWithEmailAndPassword(
       auth,
       signUpInfo.email,
-      signUpInfo.password
+      signUpInfo.password as string
     );
     await updateProfile(auth.currentUser as User, {
       displayName: signUpInfo.displayName,

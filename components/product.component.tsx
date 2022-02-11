@@ -13,11 +13,14 @@ const Product = ({ product, index }: Product) => {
 
   // Dynamic styles
   const mlauto = index % 2 === 0 ? "" : "ml-auto";
-  const flexrowreverse = index % 2 === 0 ? "flex-row-reverse from-slate-400 to-cyan-400" : "from-rose-400 to-slate-400";
+  const flexrowreverse =
+    index % 2 === 0
+      ? "flex-row-reverse from-slate-400 to-cyan-400"
+      : "from-rose-400 to-slate-400";
   const skew = index % 2 === 0 ? "-skew-x-12" : "skew-x-12";
 
   const handleClick = async () => {
-    await updateUserCartFirestore(product);
+    await updateUserCartFirestore(product, "ADD");
   };
 
   return (
