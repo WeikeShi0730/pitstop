@@ -18,6 +18,14 @@ a {
 * {
   box-sizing: border-box;
 } */
+body {
+  background-image: url("/background.jpg");
+  background-size: initial;
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+  background-position: center;
+}
+
 .disable-scrollbars::-webkit-scrollbar {
   background: transparent; /* Chrome/Safari/Webkit */
   width: 0px;
