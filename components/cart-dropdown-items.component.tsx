@@ -34,13 +34,15 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
   return (
     <div className="flex items-center m-2 text-black">
       <div className="image flex flex-col relative w-1/3 h-20">
-        <Image
-          src={imageUrl}
-          className="w-full h-full object-cover rounded-lg"
-          unoptimized
-          alt={`${name} image`}
-          layout="fill"
-        />
+        <div className="relative w-11/12 h-full">
+          <Image
+            src={imageUrl}
+            className="object-cover rounded-lg"
+            unoptimized
+            alt={`${name} image`}
+            layout="fill"
+          />
+        </div>
       </div>
       <div className="text ml-2 w-2/3">
         <div className="name">{name}</div>

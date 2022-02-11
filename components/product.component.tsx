@@ -28,15 +28,17 @@ const Product = ({ product, index }: Product) => {
       <div
         className={`relative flex m-10 w-2/3 rounded-lg bg-opacity-80 backdrop-blur-md bg-gradient-to-r ${flexrowreverse}`}
       >
-        <div className="flex relative w-1/2 h-48 justify-center items-center m-auto p-3 ">
-          <Image
-            src={imageUrl}
-            className="w-full h-full object-contain"
-            loader={imgLoader}
-            unoptimized
-            alt={`${name} image`}
-            layout="fill"
-          />
+        <div className="flex relative w-1/2 h-56 justify-center items-center m-auto p-3">
+          <div className="relative w-2/3 h-full ">
+            <Image
+              src={imageUrl}
+              className="object-cover rounded-lg"
+              loader={imgLoader}
+              unoptimized
+              alt={`${name} image`}
+              layout="fill"
+            />
+          </div>
         </div>
         {/* <div
           className={`absolute left-1/2 -translate-x-1/2 bg-slate-200 w-1/12 h-full z-50 ${skew}`}
