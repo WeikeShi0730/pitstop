@@ -2,8 +2,8 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "../../components/layout.component";
 import ProductsList from "../../components/products-list.component";
 import {
-  firestoreGetDocs,
-  firestoreGetDoc,
+  firestoreGetTeamsDocs,
+  firestoreGetTeamsDoc,
 } from "../../firebase/firebase.utils";
 import { TeamType } from "../../interfaces";
 
@@ -23,7 +23,7 @@ export default TeamHomePage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const teams: TeamType[] = await firestoreGetDocs();
+    const teams: TeamType[] = await firestoreGetTeamsDocs();
     const ids = teams.map((team) => team.name);
     const paths = ids.map((id) => ({ params: { id: id } }));
     return {
@@ -42,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const id = context.params?.id as string;
-    const team: TeamType = await firestoreGetDoc(id);
+    const team: TeamType = await firestoreGetTeamsDoc(id);
     return {
       props: { team },
     };
@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 // export const getStaticProps: GetStaticProps = async () => {
 //     try {
-//       const teams: Teams[] = await firestoreGetDocs();
+//       const teams: Teams[] = await firestoreGetTeamsDocs();
 //       return {
 //         props: {
 //           teams,

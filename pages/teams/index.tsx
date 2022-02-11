@@ -1,10 +1,10 @@
 import type { GetStaticProps } from "next";
-import { firestoreGetDocs } from "../../firebase/firebase.utils";
-import { Team } from "../../interfaces";
+import { firestoreGetTeamsDocs } from "../../firebase/firebase.utils";
+import { TeamType } from "../../interfaces";
 import Layout from "../../components/layout.component";
 import TeamsOnTeamsPage from "../../components/teams-on-teamspage.component";
 interface TeamsType {
-  teams: Team[];
+  teams: TeamType[];
 }
 
 const TeamsPage = ({ teams }: TeamsType) => {
@@ -17,7 +17,7 @@ const TeamsPage = ({ teams }: TeamsType) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const teams: Team[] = await firestoreGetDocs();
+    const teams: TeamsType["teams"] = await firestoreGetTeamsDocs();
     return {
       props: {
         teams,
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   } catch (error: any) {
     console.error(error.message);
-    const teams: Team[] = [];
+    const teams: TeamsType["teams"] = [];
     return {
       props: {
         teams,

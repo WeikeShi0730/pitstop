@@ -73,7 +73,7 @@ const uploadData = async () => {
 
 //** Get data */
 // Optimize with Graphql!!!!!
-export const firestoreGetDocs = async () => {
+export const firestoreGetTeamsDocs = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "teams"));
     let data: TeamType[] = [];
@@ -84,7 +84,7 @@ export const firestoreGetDocs = async () => {
   }
 };
 
-export const firestoreGetDoc = async (id: string) => {
+export const firestoreGetTeamsDoc = async (id: string) => {
   try {
     const docRef = doc(db, "teams", id);
     const docSnapshot = await getDoc(docRef);
@@ -103,6 +103,15 @@ const createUserInFirestore = async (displayName: string, email: string) => {
     user: { displayName: displayName, email: email },
     cartItems: [],
   });
+};
+
+const getUserInFirestore = async (uid: string) => {
+  const docRef = doc(db, "users", uid);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    return true;
+  }
+  return false;
 };
 
 export const updateUserCartFirestore = async (
@@ -128,23 +137,6 @@ export const updateUserCartFirestore = async (
             // existing item
             cartItems[cartItems.indexOf(cartItem[0])].count++;
           }
-
-          // let newCartItem: CartItemType = { product: product, count: 1 };
-          // for (const cartItem of cartItems) {
-          //   if (cartItem.product.id === product.id) {
-          //     cartItems.splice(cartItems.indexOf(cartItem), 1);
-          //     const newItem = {
-          //       product: product,
-          //       count: cartItem.count + 1,
-          //     };
-          //     newCartItem = newItem;
-          //     break;
-          //   }
-          // }
-          // cartItems.push(newCartItem);
-          // await updateDoc(currentUserRef, {
-          //   cartItems: cartItems,
-          // });
           break;
         }
         case "REMOVE": {
@@ -199,8 +191,14 @@ export const signInWithGoogle = async () => {
     await setPersistence(auth, browserLocalPersistence);
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
-    // const signUpInfo = result.user as SignUpType;
-    // await createUserInFirestore(signUpInfo.displayName, signUpInfo.email);
+
+    // check if firestore already have this uid, if not create a new doc
+    const { uid } = result.user;
+    const exist = await getUserInFirestore(uid);
+    if (!exist) {
+      const { displayName, email } = result.user;
+      await createUserInFirestore(displayName as string, email as string);
+    }
   } catch (error) {
     throw error;
   }

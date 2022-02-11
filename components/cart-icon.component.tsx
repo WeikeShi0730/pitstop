@@ -27,14 +27,16 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
           currentUser?.uid as string,
           (snapshot: SnapshotType["snapshot"]) => {
             const cartItems = snapshot.data()?.cartItems;
-            const itemCount = cartItems.reduce(
-              (acc: number, currentValue: CartItemType) => {
-                return acc + currentValue.count;
-              },
-              0
-            );
-            setCartItems(cartItems);
-            setCartItemCount(itemCount);
+            if (cartItems) {
+              const itemCount = cartItems.reduce(
+                (acc: number, currentValue: CartItemType) => {
+                  return acc + currentValue.count;
+                },
+                0
+              );
+              setCartItems(cartItems);
+              setCartItemCount(itemCount);
+            }
           }
         )
       : () => {};
