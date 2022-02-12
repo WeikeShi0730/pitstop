@@ -11,23 +11,26 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name } = event.currentTarget;
-
-    switch (name) {
-      case "ADD": {
-        updateUserCartFirestore(cartItem.product, "ADD");
-        break;
+    try {
+      switch (name) {
+        case "ADD": {
+          await updateUserCartFirestore(cartItem.product, "ADD");
+          break;
+        }
+        case "REMOVE": {
+          await updateUserCartFirestore(cartItem.product, "REMOVE");
+          break;
+        }
+        case "DELETE": {
+          await updateUserCartFirestore(cartItem.product, "DELETE");
+          break;
+        }
       }
-      case "REMOVE": {
-        updateUserCartFirestore(cartItem.product, "REMOVE");
-        break;
-      }
-      case "DELETE": {
-        updateUserCartFirestore(cartItem.product, "DELETE");
-        break;
-      }
+    } catch (error: any) {
+      console.error(error.message);
     }
   };
 

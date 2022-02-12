@@ -116,7 +116,8 @@ const getUserInFirestore = async (uid: string) => {
 
 export const updateUserCartFirestore = async (
   product: ProductType,
-  action: string
+  action: string,
+  count?: number
 ) => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
@@ -149,9 +150,16 @@ export const updateUserCartFirestore = async (
           break;
         }
 
-        // case "SET": {
-
-        // }
+        case "SET": {
+          if ((count as number) >= 0) {
+            cartItems[cartItems.indexOf(cartItem[0])].count = count as number;
+          } else if ((count as number) === 0) {
+            // cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
+          } else {
+            throw "Input amount not valid.";
+          }
+          break;
+        }
 
         case "DELETE": {
           if (cartItem.length === 0) {

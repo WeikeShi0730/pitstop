@@ -14,8 +14,8 @@ const SignIn = () => {
     try {
       await signInWithGoogle();
       router.push("/");
-    } catch (error) {
-      console.error("error signing in with google: ", error);
+    } catch (error: any) {
+      console.error("error signing in with google: ", error.message);
     }
   };
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,12 +23,12 @@ const SignIn = () => {
     try {
       await signInWithEmail(signInInfo);
       router.push("/");
-    } catch (error) {
+    } catch (error: any) {
       //   toast.error("error signing in: " + error.message, {
       //     position: toast.POSITION.TOP_CENTER,
       //     theme: "dark",
       //   });
-      console.error("error signing in with email: ", error);
+      console.error("error signing in with email: ", error.message);
     }
   };
 

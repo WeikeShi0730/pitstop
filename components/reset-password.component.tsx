@@ -15,8 +15,8 @@ const ResetPassword = () => {
     try {
       await sendChangePasswordEmail(email);
       alert("Password reset email sent to: " + email);
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
+      console.error(error.message);
     }
   };
 

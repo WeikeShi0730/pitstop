@@ -14,27 +14,38 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
 
   const subtotal = (count * price).toFixed(2);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name } = event.currentTarget;
-
-    switch (name) {
-      case "ADD": {
-        updateUserCartFirestore(cartItem.product, "ADD");
-        break;
+    try {
+      switch (name) {
+        case "ADD": {
+          await updateUserCartFirestore(cartItem.product, "ADD");
+          break;
+        }
+        case "REMOVE": {
+          await updateUserCartFirestore(cartItem.product, "REMOVE");
+          break;
+        }
+        case "DELETE": {
+          await updateUserCartFirestore(cartItem.product, "DELETE");
+          break;
+        }
       }
-      case "REMOVE": {
-        updateUserCartFirestore(cartItem.product, "REMOVE");
-        break;
-      }
-      case "DELETE": {
-        updateUserCartFirestore(cartItem.product, "DELETE");
-        break;
-      }
+    } catch (error: any) {
+      console.error(error.message);
     }
   };
 
-  console.log(cartItem);
+  const handleChange = async (event: React.FormEvent<HTMLInputElement>) => {
+    // event.preventDefault();
+    const { value } = event.currentTarget;
+    try {
+      await updateUserCartFirestore(cartItem.product, "SET", parseInt(value));
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
   return (
     <div className="flex justify-center m-2 text-black  h-full">
       <div className="flex w-2/3 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg">
@@ -65,8 +76,17 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                   ⊖
                 </button>
               </div>
-              <div className="px-1 w-6 flex justify-center text-xl">
-                {count}
+              <div className="px-1 flex justify-center text-xl">
+                {/* {count} */}
+                <form>
+                  <input
+                    className="w-12 bg-transparent text-center underline underline-offset-2 decoration-1"
+                    type="number"
+                    value={count}
+                    onChange={handleChange}
+                    max={999}
+                  />
+                </form>
               </div>
               <div className="mx-3 text-xl">
                 <button onClick={handleClick} name="ADD">
