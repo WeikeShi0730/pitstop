@@ -39,9 +39,15 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
 
   const handleChange = async (event: React.FormEvent<HTMLInputElement>) => {
     // event.preventDefault();
-    const { value } = event.currentTarget;
+    const { value, max } = event.currentTarget;
+    // should have 0 count
+    let intValue = parseInt(value) <= parseInt(max) ? value : max;
     try {
-      await updateUserCartFirestore(cartItem.product, "SET", parseInt(value));
+      await updateUserCartFirestore(
+        cartItem.product,
+        "SET",
+        parseInt(intValue)
+      );
     } catch (error: any) {
       console.error(error.message);
     }
