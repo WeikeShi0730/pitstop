@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
+import { updateUserCartFirestore } from "../firebase/firebase.utils";
 
 interface CartItem {
   cartItem: CartItemType;
@@ -11,7 +12,25 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
-  const handleClick = () => {};
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const { name } = event.currentTarget;
+
+    switch (name) {
+      case "ADD": {
+        updateUserCartFirestore(cartItem.product, "ADD");
+        break;
+      }
+      case "REMOVE": {
+        updateUserCartFirestore(cartItem.product, "REMOVE");
+        break;
+      }
+      case "DELETE": {
+        updateUserCartFirestore(cartItem.product, "DELETE");
+        break;
+      }
+    }
+  };
 
   console.log(cartItem);
   return (
