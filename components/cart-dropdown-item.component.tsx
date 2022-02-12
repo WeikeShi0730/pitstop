@@ -5,7 +5,7 @@ import { updateUserCartFirestore } from "../firebase/firebase.utils";
 interface CartItem {
   cartItem: CartItemType;
 }
-const CartDropdownItems = ({ cartItem }: CartItem) => {
+const CartDropdownItem = ({ cartItem }: CartItem) => {
   const {
     count,
     product: { imageUrl, name, price },
@@ -34,7 +34,7 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
   return (
     <div className="flex items-center m-2 text-black">
       <div className="image flex flex-col relative w-1/3 h-20">
-        <div className="relative w-11/12 h-full bg-[#F8F8F8] rounded-lg">
+        <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
           <Image
             src={imageUrl}
             className="object-contain"
@@ -62,7 +62,7 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
         </div>
         <div className="Unt">Price: {price}</div>
       </div>
-      <div className="cancel flex right-4 absolute">
+      <div className="delete flex right-4 absolute">
         <button onClick={handleClick} name="DELETE">
           🅧
         </button>
@@ -71,4 +71,4 @@ const CartDropdownItems = ({ cartItem }: CartItem) => {
   );
 };
 
-export default CartDropdownItems;
+export default CartDropdownItem;
