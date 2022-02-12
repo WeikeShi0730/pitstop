@@ -8,12 +8,16 @@ interface CartItems {
 const CartDropdown = ({ cartItems }: CartItems) => {
   const [subtotal, setSubtotal] = useState<string>("0.00");
 
-  useEffect(() => {
-    const tempTotal = cartItems?.reduce((acc: number, currentValue) => {
+  const total = cartItems
+    ?.reduce((acc: number, currentValue) => {
       return acc + currentValue.count * currentValue.product.price;
-    }, 0);
-    setSubtotal(tempTotal?.toFixed(2) as string);
-  }, [cartItems]);
+    }, 0)
+    ?.toFixed(2);
+
+  // useEffect(() => {
+  //   const tempTotal =
+  //   setSubtotal(tempTotal?.toFixed(2) as string);
+  // }, [cartItems]);
 
   return (
     <>
@@ -30,7 +34,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
       </div>
       <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300">
         <div>Total: CAD</div>
-        <div className="text-4xl">{subtotal}</div>
+        <div className="text-4xl">{total}</div>
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <Link href="/checkout">

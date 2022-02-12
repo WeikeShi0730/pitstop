@@ -36,7 +36,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
 
   console.log(cartItem);
   return (
-    <div className="flex justify-center m-2 text-black w-full h-full">
+    <div className="flex justify-center m-2 text-black  h-full">
       <div className="flex w-2/3 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg">
         <div className="image flex flex-col relative w-1/3 h-48">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
@@ -54,7 +54,6 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
             <div className="name text-2xl">{name}</div>
           </div>
           <div className="details flex items-center justify-between">
-            {/* <div className="absolute top-1/2 -translate-y-1/2"> */}
             <div className="unt flex items-end">
               <div className="">Unit price: CAD</div>
               <div className="text-xl">{price}</div>
@@ -80,7 +79,6 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                 🅧
               </button>
             </div>
-            {/* </div> */}
           </div>
           <div className="subtotal flex w-full justify-end items-end space-x-2">
             <div className="">Subtotal: CAD</div>
