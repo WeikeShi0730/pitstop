@@ -153,9 +153,11 @@ export const updateUserCartFirestore = async (
         case "SET": {
           if ((count as number) >= 0) {
             cartItems[cartItems.indexOf(cartItem[0])].count = count as number;
-          } else if ((count as number) === 0) {
-            // cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
-          } else {
+          } 
+          // else if ((count as number) === 0) {
+          //   cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
+          // } 
+          else {
             throw "Input amount not valid.";
           }
           break;

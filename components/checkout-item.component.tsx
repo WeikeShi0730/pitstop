@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
@@ -12,7 +13,9 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
-  const subtotal = (count * price).toFixed(2);
+  const [displayValue, setDisplayValue] = useState<number | string>(count);
+
+  const subtotal = ((displayValue as number) * price).toFixed(2);
 
   const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -38,25 +41,57 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   };
 
   const handleChange = async (event: React.FormEvent<HTMLInputElement>) => {
-    // event.preventDefault();
-    const { value, max } = event.currentTarget;
-    // should have 0 count
-    let intValue = parseInt(value) <= parseInt(max) ? value : max;
+    event.preventDefault();
+    const { value, max, min } = event.currentTarget;
+    const intValue = parseInt(value);
+    const intMax = parseInt(max);
+    const intMin = parseInt(min);
+    try {
+      if (isNaN(intValue) || intValue === 0) {
+        setDisplayValue("");
+      } else {
+        let setValue = intValue <= intMax ? intValue : intMax;
+        setValue = setValue >= intMin ? setValue : intMin;
+        setDisplayValue(setValue);
+        await submitCount(setValue);
+      }
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
+
+  const handleOnBlur = async (event: React.FormEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const { value, min } = event.currentTarget;
+    const intMin = parseInt(min);
+    const intValue = parseInt(value);
+    try {
+      if (isNaN(intValue)) {
+        setDisplayValue(intMin);
+        await submitCount(intMin);
+      }
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
+
+  const submitCount = async (setValue: number) => {
     try {
       await updateUserCartFirestore(
         cartItem.product,
         "SET",
-        parseInt(intValue)
+        setValue as number
       );
     } catch (error: any) {
       console.error(error.message);
     }
   };
+
   return (
     <div className="flex justify-center m-2 text-black  h-full">
       <div className="flex w-2/3 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg">
         <div className="image flex flex-col relative w-1/3 h-48">
-          <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
+          <div className="relative w-full h-full bg-[#F8F8F8] rounded-l-lg">
             <Image
               src={imageUrl}
               className="object-contain"
@@ -82,15 +117,16 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                   ⊖
                 </button>
               </div>
-              <div className="px-1 flex justify-center text-xl">
-                {/* {count} */}
+              <div className="flex justify-center text-xl">
                 <form>
                   <input
-                    className="w-12 bg-transparent text-center underline underline-offset-2 decoration-1"
+                    className="w-10 bg-transparent text-center underline underline-offset-2 decoration-1 outline-none"
                     type="number"
-                    value={count}
+                    value={displayValue}
                     onChange={handleChange}
-                    max={999}
+                    onBlur={handleOnBlur}
+                    max="999"
+                    min="1"
                   />
                 </form>
               </div>

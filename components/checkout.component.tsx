@@ -48,7 +48,7 @@ const Checkout = () => {
     <>
       <div className="flex justify-center  h-full m-2">
         <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
-          Your cart
+          Your cart 🛒
         </div>
       </div>
       {cartItems && cartItems.length > 0 ? (
