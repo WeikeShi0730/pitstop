@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
@@ -52,7 +52,6 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
       } else {
         let setValue = intValue <= intMax ? intValue : intMax;
         setValue = setValue >= intMin ? setValue : intMin;
-        setDisplayValue(setValue);
         await submitCount(setValue);
       }
     } catch (error: any) {
@@ -86,6 +85,10 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
       console.error(error.message);
     }
   };
+
+  useEffect(() => {
+    setDisplayValue(() => count);
+  }, [count]);
 
   return (
     <div className="flex justify-center m-2 text-black  h-full">

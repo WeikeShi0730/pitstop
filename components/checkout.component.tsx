@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import CheckoutItem from "./checkout-item.component";
 import {
   streamCurrentUserCartItems,
@@ -10,6 +11,7 @@ import {
   SnapshotType,
   CartItemType,
 } from "../interfaces/index";
+import { FaCcStripe } from "react-icons/Fa";
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState<CartItemType[]>();
@@ -46,7 +48,7 @@ const Checkout = () => {
   }, [currentUser]);
   return (
     <>
-      <div className="flex justify-center  h-full m-2">
+      <div className="flex justify-center h-full m-2">
         <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
           Your cart 🛒
         </div>
@@ -68,6 +70,14 @@ const Checkout = () => {
           </div>
         </div>
       ) : null}
+      <div className="flex justify-center h-full">
+        <button className="flex justify-center items-center w-1/5 m-5 px-2 rounded-lg bg-indigo-500 text-slate-200">
+          <div className="m-1">Checkout with</div>
+          <div className="m-1">
+            <FaCcStripe size={50} />
+          </div>
+        </button>
+      </div>
     </>
   );
 };
