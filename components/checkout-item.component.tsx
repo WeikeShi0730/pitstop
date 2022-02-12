@@ -12,6 +12,8 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
+  const subtotal = (count * price).toFixed(2);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name } = event.currentTarget;
@@ -80,9 +82,9 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
             </div>
             {/* </div> */}
           </div>
-          <div className="subtotal flex w-full justify-end items-end">
+          <div className="subtotal flex w-full justify-end items-end space-x-2">
             <div className="">Subtotal: CAD</div>
-            <div className="text-2xl"> {(count * price).toFixed(2)}</div>
+            <div className="text-2xl">{subtotal}</div>
           </div>
         </div>
       </div>

@@ -17,6 +17,10 @@ const Checkout = () => {
     CurrentUserType["currentUser"]
   >(auth.currentUser as CurrentUserType["currentUser"]);
 
+  const total = cartItems?.reduce((acc: number, currentItem) => {
+    return acc + currentItem.count * currentItem.product.price;
+  }, 0);
+
   useEffect(() => {
     const subscribe = subscribeToAuthState(
       (user: CurrentUserType["currentUser"]) => {
@@ -39,16 +43,30 @@ const Checkout = () => {
     return () => unsubscribe();
   }, [currentUser]);
   return (
-    <div>
-      <div className="">Your cart</div>
+    <>
+      <div className="flex justify-center w-full h-full m-2">
+        <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
+          Your cart
+        </div>
+      </div>
       {cartItems && cartItems.length > 0 ? (
         cartItems.map((cartItem, index) => {
           return <CheckoutItem key={index} cartItem={cartItem} />;
         })
       ) : (
-        <div className="">Your cart is empty!</div>
+        <div className="flex justify-center items-center h-full text-xl">
+          Your cart is empty!
+        </div>
       )}
-    </div>
+      {cartItems && cartItems.length > 0 ? (
+        <div className="flex justify-center w-full h-full m-2">
+          <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
+            <div className="text-xl">Total: CAD</div>
+            <div className="text-3xl">{total?.toFixed(2)}</div>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 };
 
