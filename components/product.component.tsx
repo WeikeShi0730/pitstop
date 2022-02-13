@@ -20,7 +20,12 @@ const Product = ({ product, index }: Product) => {
   const skew = index % 2 === 0 ? "-skew-x-12" : "skew-x-12";
 
   const handleClick = async () => {
-    await updateUserCartFirestore(product, "ADD");
+    try {
+      await updateUserCartFirestore(product, "ADD");
+      // notificaiton
+    } catch (error: any) {
+      console.error(error.message);
+    }
   };
 
   return (
@@ -52,7 +57,7 @@ const Product = ({ product, index }: Product) => {
             </div>
             <button
               onClick={handleClick}
-              className="bg-orange-theme text-slate-200 w-fit p-3 rounded-lg"
+              className="bg-orange-theme text-slate-200 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-salte-50"
             >
               Add to cart
             </button>

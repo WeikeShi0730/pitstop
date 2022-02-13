@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
@@ -14,6 +14,13 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   } = cartItem as CartItemType;
 
   const [displayValue, setDisplayValue] = useState<number | string>(count);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const close = () => {
+    const component = ref.current as HTMLDivElement;
+    component.classList.add("opacity-0");
+    component.classList.add("h-0");
+  };
 
   const subtotal = ((displayValue as number) * price).toFixed(2);
 
@@ -27,11 +34,21 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
           break;
         }
         case "REMOVE": {
+          if (cartItem.count === 1) {
+            close();
+            setTimeout(async () => {
+              await updateUserCartFirestore(cartItem.product, "REMOVE");
+            }, 500);
+            break;
+          }
           await updateUserCartFirestore(cartItem.product, "REMOVE");
           break;
         }
         case "DELETE": {
-          await updateUserCartFirestore(cartItem.product, "DELETE");
+          close();
+          setTimeout(async () => {
+            await updateUserCartFirestore(cartItem.product, "DELETE");
+          }, 500);
           break;
         }
       }
@@ -91,8 +108,11 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   }, [count]);
 
   return (
-    <div className="flex justify-center m-2 text-black  h-full">
-      <div className="flex w-2/3 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg">
+    <div className="flex justify-center m-2 text-black h-full">
+      <div
+        ref={ref}
+        className="flex w-1/2 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg transition-all duration-500 ease-in-out"
+      >
         <div className="image flex flex-col relative w-1/3 h-48">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-l-lg">
             <Image

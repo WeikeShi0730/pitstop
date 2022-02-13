@@ -49,13 +49,13 @@ const Checkout = () => {
   return (
     <>
       <div className="flex justify-center h-full m-2">
-        <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
+        <div className="flex w-1/2 m-5 justify-start text-2xl border-b-2 border-slate-700">
           Your cart 🛒
         </div>
       </div>
       {cartItems && cartItems.length > 0 ? (
-        cartItems.map((cartItem, index) => {
-          return <CheckoutItem key={index} cartItem={cartItem} />;
+        cartItems.map((cartItem) => {
+          return <CheckoutItem key={cartItem.product.id} cartItem={cartItem} />;
         })
       ) : (
         <div className="flex justify-center items-center h-full text-xl">
@@ -65,7 +65,7 @@ const Checkout = () => {
       {cartItems && cartItems.length > 0 ? (
         <>
           <div className="flex justify-center h-full m-2">
-            <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
+            <div className="flex w-1/2 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
               <div className="text-xl">Total: CAD</div>
               <div className="text-3xl">{total}</div>
             </div>
