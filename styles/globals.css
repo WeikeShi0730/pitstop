@@ -21,9 +21,9 @@ a {
 body {
   background-image: url("/background.jpg");
   background-size: cover;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
   background-attachment: scroll;
-  background-position: center;
+  background-position: top center;
 }
 
 .disable-scrollbars::-webkit-scrollbar {
@@ -44,6 +44,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
