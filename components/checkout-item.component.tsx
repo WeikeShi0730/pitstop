@@ -19,7 +19,6 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   const close = () => {
     const component = ref.current as HTMLDivElement;
     component.classList.add("opacity-0");
-    component.classList.add("h-0");
   };
 
   const subtotal = ((displayValue as number) * price).toFixed(2);

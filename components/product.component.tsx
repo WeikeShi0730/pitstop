@@ -22,7 +22,7 @@ const Product = ({ product, index }: Product) => {
   const handleClick = async () => {
     try {
       await updateUserCartFirestore(product, "ADD");
-      // notificaiton
+      // notificaiton !!!!!!!!!!!!!!!!!!!
     } catch (error: any) {
       console.error(error.message);
     }

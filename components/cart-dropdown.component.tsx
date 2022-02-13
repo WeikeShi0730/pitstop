@@ -21,10 +21,13 @@ const CartDropdown = ({ cartItems }: CartItems) => {
 
   return (
     <>
-      <div className="relative w-80 max-h-96 h-fit-content overflow-auto disable-scrollbars">
+      {/* h-fit-content */}
+      <div className="relative w-80 max-h-96 overflow-auto disable-scrollbars">
         {cartItems && cartItems.length > 0 ? (
-          cartItems.map((cartItem, index) => {
-            return <CartDropdownItem key={index} cartItem={cartItem} />;
+          cartItems.map((cartItem) => {
+            return (
+              <CartDropdownItem key={cartItem.product.id} cartItem={cartItem} />
+            );
           })
         ) : (
           <div className="h-full flex flex-col justify-center items-center text-black text-2xl m-5">

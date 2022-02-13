@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
@@ -11,6 +12,13 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
+  const ref = useRef<HTMLDivElement>(null);
+
+  const close = () => {
+    const component = ref.current as HTMLDivElement;
+    component.classList.add("opacity-0");
+  };
+
   const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name } = event.currentTarget;
@@ -21,11 +29,22 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
           break;
         }
         case "REMOVE": {
+          if (cartItem.count === 1) {
+            close();
+            setTimeout(async () => {
+              await updateUserCartFirestore(cartItem.product, "REMOVE");
+            }, 500);
+            break;
+          }
           await updateUserCartFirestore(cartItem.product, "REMOVE");
           break;
         }
         case "DELETE": {
-          await updateUserCartFirestore(cartItem.product, "DELETE");
+          close();
+
+          setTimeout(async () => {
+            await updateUserCartFirestore(cartItem.product, "DELETE");
+          }, 500);
           break;
         }
       }
@@ -35,7 +54,10 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
   };
 
   return (
-    <div className="flex items-center m-2 text-black">
+    <div
+      className="flex items-center m-2 text-black transition-all duration-500 ease-in-out"
+      ref={ref}
+    >
       <div className="image flex flex-col relative w-1/3 h-20">
         <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
           <Image
