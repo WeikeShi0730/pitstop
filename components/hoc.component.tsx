@@ -14,7 +14,6 @@ const withSubscribtion = <P extends object>(
   Component: React.FunctionComponent<P>
 ) => {
   const useComponent = (props: P) => {
-    console.log(props);
     const [cartItems, setCartItems] = useState<CartItemType[]>();
     const [currentUser, setCurrentUser] = useState<
       CurrentUserType["currentUser"]

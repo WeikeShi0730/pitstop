@@ -26,25 +26,25 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             </div>
           </a>
         </Link>
-        <div className="mx-5">
+        <div className="mx-5 hover:underline decoration-orange-theme underline-offset-4 decoration-1">
           <Link href="/">
             <a>Home</a>
           </Link>
         </div>
-        <div className="mx-5">
+        <div className="mx-5 hover:underline decoration-orange-theme underline-offset-4 decoration-1">
           <Link href="/teams">
             <a>Teams</a>
           </Link>
         </div>
-        <div className="mx-5">
+        <div className="mx-5 hover:underline decoration-orange-theme underline-offset-4 decoration-1">
           <Link href="/about">
             <a>About</a>
           </Link>
         </div>
-        <div className="mx-5 ml-auto">
+        <div className="mx-5 ml-auto hover:underline decoration-orange-theme underline-offset-4 decoration-1">
           <CartIcon cartItems={cartItems} />
         </div>
-        <div className="mx-5">
+        <div className="mx-5 hover:underline decoration-orange-theme underline-offset-4 decoration-1">
           {currentUser ? (
             <Link href={`/account/${currentUser?.uid as string}`}>
               <a>{currentUser.displayName}</a>

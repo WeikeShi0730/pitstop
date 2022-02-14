@@ -14,11 +14,6 @@ const CartDropdown = ({ cartItems }: CartItems) => {
     }, 0)
     ?.toFixed(2);
 
-  // useEffect(() => {
-  //   const tempTotal =
-  //   setSubtotal(tempTotal?.toFixed(2) as string);
-  // }, [cartItems]);
-
   return (
     <>
       {/* h-fit-content */}
@@ -41,7 +36,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <Link href="/checkout">
-          <a className="p-3 text-center w-full bg-black rounded-b-lg">
+          <a className="p-3 text-center w-full bg-slate-700 text-slate-200 rounded-b-lg hover:bg-slate-600 hover:text-slate-50">
             Checkout
           </a>
         </Link>

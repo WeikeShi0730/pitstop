@@ -110,7 +110,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     <div className="flex justify-center m-2 text-black h-full">
       <div
         ref={ref}
-        className="flex w-1/2 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg transition-all duration-500 ease-in-out"
+        className="flex w-2/3 h-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg transition-all duration-500 ease-in-out"
       >
         <div className="image flex flex-col relative w-1/3 h-48">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-l-lg">

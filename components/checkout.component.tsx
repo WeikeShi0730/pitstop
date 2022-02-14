@@ -17,7 +17,7 @@ const Checkout = ({ cartItems }: CartItems) => {
   return (
     <>
       <div className="flex justify-center h-full m-2">
-        <div className="flex w-1/2 m-5 justify-start text-2xl border-b-2 border-slate-700">
+        <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
           Your cart 🛒
         </div>
       </div>
@@ -33,13 +33,13 @@ const Checkout = ({ cartItems }: CartItems) => {
       {cartItems && cartItems.length > 0 ? (
         <>
           <div className="flex justify-center h-full m-2">
-            <div className="flex w-1/2 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
+            <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
               <div className="text-xl">Total: CAD</div>
               <div className="text-3xl">{total}</div>
             </div>
           </div>
           <div className="flex justify-center h-full">
-            <button className="flex justify-center items-center w-1/5 m-5 px-2 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500">
+            <button className="flex justify-center items-center w-1/5 min-w-fit m-5 px-2 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500">
               <div className="m-1">Checkout with</div>
               <div className="m-1">
                 <FaCcStripe size={50} />
