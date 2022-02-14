@@ -187,7 +187,7 @@ export const updateUserCartFirestore = async (
   }
 };
 
-export const streamCurrentUserCartItems = (
+export const subscribeToCurrentUserCartItems = (
   uid: string,
   snapshot: SnapshotFnType["snapshotfn"]
 ) => {

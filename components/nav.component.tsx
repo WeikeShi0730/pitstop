@@ -1,24 +1,15 @@
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import CartIcon from "./cart-icon.component";
-import { auth, subscribeToAuthState } from "../firebase/firebase.utils";
-import { CurrentUserType } from "../interfaces";
+import { CurrentUserType, CartItemType } from "../interfaces";
+import withSubscribtion from "./hoc.component";
 
-const Nav = () => {
-  const [currentUser, setCurrentUser] = useState<
-    CurrentUserType["currentUser"]
-  >(auth.currentUser as CurrentUserType["currentUser"]);
+interface UserAndCart {
+  currentUser: CurrentUserType["currentUser"];
+  cartItems: CartItemType[];
+}
 
-  useEffect(() => {
-    const subscribe = subscribeToAuthState(
-      (user: CurrentUserType["currentUser"]) => {
-        setCurrentUser(user);
-      }
-    );
-    return () => subscribe();
-  });
-
+const Nav = ({ currentUser, cartItems }: UserAndCart) => {
   return (
     <nav>
       <div className="bg-slate-700 text-slate-200 flex items-center p-2">
@@ -51,11 +42,7 @@ const Nav = () => {
           </Link>
         </div>
         <div className="mx-5 ml-auto">
-          {/* <Link href="/">
-            <a> */}
-              <CartIcon currentUser={currentUser} />
-            {/* </a>
-          </Link> */}
+          <CartIcon cartItems={cartItems} />
         </div>
         <div className="mx-5">
           {currentUser ? (
@@ -73,4 +60,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default withSubscribtion(Nav);

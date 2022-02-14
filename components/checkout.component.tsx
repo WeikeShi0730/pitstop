@@ -1,51 +1,19 @@
-import { useState, useEffect } from "react";
-import Image from "next/image";
 import CheckoutItem from "./checkout-item.component";
-import {
-  streamCurrentUserCartItems,
-  subscribeToAuthState,
-  auth,
-} from "../firebase/firebase.utils";
-import {
-  CurrentUserType,
-  SnapshotType,
-  CartItemType,
-} from "../interfaces/index";
+import { CartItemType } from "../interfaces/index";
 import { FaCcStripe } from "react-icons/Fa";
+import withSubscribtion from "./hoc.component";
 
-const Checkout = () => {
-  const [cartItems, setCartItems] = useState<CartItemType[]>();
-  const [currentUser, setCurrentUser] = useState<
-    CurrentUserType["currentUser"]
-  >(auth.currentUser as CurrentUserType["currentUser"]);
+interface CartItems {
+  cartItems: CartItemType[];
+}
 
+const Checkout = ({ cartItems }: CartItems) => {
   const total = cartItems
-    ?.reduce((acc: number, currentItem) => {
+    ?.reduce((acc: number, currentItem: CartItemType) => {
       return acc + currentItem.count * currentItem.product.price;
     }, 0)
     ?.toFixed(2);
 
-  useEffect(() => {
-    const subscribe = subscribeToAuthState(
-      (user: CurrentUserType["currentUser"]) => {
-        setCurrentUser(user);
-      }
-    );
-    return () => subscribe();
-  });
-
-  useEffect(() => {
-    const unsubscribe = currentUser
-      ? streamCurrentUserCartItems(
-          currentUser?.uid as string,
-          (snapshot: SnapshotType["snapshot"]) => {
-            const cartItems = snapshot.data()?.cartItems;
-            setCartItems(cartItems);
-          }
-        )
-      : () => {};
-    return () => unsubscribe();
-  }, [currentUser]);
   return (
     <>
       <div className="flex justify-center h-full m-2">
@@ -54,7 +22,7 @@ const Checkout = () => {
         </div>
       </div>
       {cartItems && cartItems.length > 0 ? (
-        cartItems.map((cartItem) => {
+        cartItems.map((cartItem: CartItemType) => {
           return <CheckoutItem key={cartItem.product.id} cartItem={cartItem} />;
         })
       ) : (
@@ -84,4 +52,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default withSubscribtion(Checkout);

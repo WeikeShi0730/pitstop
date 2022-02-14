@@ -1,17 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import CartDropdown from "./cart-dropdown.component";
 import { useClickOutside } from "../utils/use-click-outside";
-import {
-  CartItemType,
-  CurrentUserType,
-  SnapshotType,
-} from "../interfaces/index";
-import { streamCurrentUserCartItems } from "../firebase/firebase.utils";
+import { CartItemType } from "../interfaces/index";
 
-const CartIcon = ({ currentUser }: CurrentUserType) => {
-  const [cartItemCount, setCartItemCount] = useState<number>();
-  const [cartItems, setCartItems] = useState();
+interface CartItems {
+  cartItems: CartItemType[];
+}
+
+const CartIcon = ({ cartItems }: CartItems) => {
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(() => !open));
@@ -21,27 +18,11 @@ const CartIcon = ({ currentUser }: CurrentUserType) => {
     setOpen(() => !open);
   };
 
-  useEffect(() => {
-    const unsubscribe = currentUser
-      ? streamCurrentUserCartItems(
-          currentUser?.uid as string,
-          (snapshot: SnapshotType["snapshot"]) => {
-            const cartItems = snapshot.data()?.cartItems;
-            if (cartItems) {
-              const itemCount = cartItems.reduce(
-                (acc: number, currentValue: CartItemType) => {
-                  return acc + currentValue.count;
-                },
-                0
-              );
-              setCartItems(cartItems);
-              setCartItemCount(itemCount);
-            }
-          }
-        )
-      : () => {};
-    return () => unsubscribe();
-  }, [currentUser]);
+  const cartItemCount = cartItems
+    ? cartItems.reduce((acc: number, currentValue: CartItemType) => {
+        return acc + currentValue.count;
+      }, 0)
+    : 0;
 
   return (
     <div className="relative">
