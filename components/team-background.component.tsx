@@ -8,7 +8,6 @@ interface Team {
 const TeamBackground = ({ team }: Team) => {
   const { photos, fullname } = team;
   const photo = photos[Math.floor(Math.random() * photos.length)];
-  console.log(photo);
 
   return (
     <div className="relative bg-slate-50 flex p-10 shadow-2xl">
@@ -17,6 +16,7 @@ const TeamBackground = ({ team }: Team) => {
       </div>
       <div className="relative w-full h-96">
         <Image
+          // priority
           src={photo}
           //   src="/team backgrounds/williams/2.jpeg"
           className="object-cover rounded-lg"

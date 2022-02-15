@@ -12,7 +12,11 @@ export const teams: TeamType[] = [
     id: "mercedes",
     name: "Mercedes",
     fullname: "Mercedes-AMG Petronas F1 Team",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/sRmnv9L/image.jpg",
+      "https://i.ibb.co/fF0rWmQ/1.jpg",
+      "https://i.ibb.co/CQYWdk1/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/LPc2pzj/Mercedes.png",
     productsList: [
       {
@@ -57,7 +61,11 @@ export const teams: TeamType[] = [
     id: "redbull",
     name: "Red Bull",
     fullname: "Red Bull Racing",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/6H5RfPB/image.png",
+      "https://i.ibb.co/wCMGngx/1.jpg",
+      "https://i.ibb.co/HF3S0Zc/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/bRR5vCG/Red-Bull.png",
     productsList: [
       {
@@ -102,7 +110,11 @@ export const teams: TeamType[] = [
     id: "ferrari",
     name: "Ferrari",
     fullname: "Scuderia Ferrari",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/b7Fh3Kv/image.png",
+      "https://i.ibb.co/XFbT34Q/1.jpg",
+      "https://i.ibb.co/B6XSdH2/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/qsRdZTC/Ferrari.png",
     productsList: [
       {
@@ -147,7 +159,11 @@ export const teams: TeamType[] = [
     id: "mclaren",
     name: "McLaren",
     fullname: "McLaren F1 Team",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/0rrx1VC/image.jpg",
+      "https://i.ibb.co/mc96Ymq/1.jpg",
+      "https://i.ibb.co/Ct7F53x/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/F45S9tZ/McLaren.png",
     productsList: [
       {
@@ -198,7 +214,11 @@ export const teams: TeamType[] = [
     id: "alpine",
     name: "Alpine",
     fullname: "Alpine F1 Team",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/4pMddxq/image.jpg",
+      "https://i.ibb.co/6NjwWb0/1.jpg",
+      "https://i.ibb.co/7K5MMgB/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/rt3hz4N/Alpine.png",
     productsList: [
       {
@@ -237,7 +257,11 @@ export const teams: TeamType[] = [
     id: "astonmartin",
     name: "Aston Martin",
     fullname: "Aston Martin Aramco Cognizant F1 Team",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/5KLbV6b/image.jpg",
+      "https://i.ibb.co/p2B9QTZ/1.jpg",
+      " https://i.ibb.co/2d7wSqr/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/wrQL5hg/Aston-Martin.png",
     productsList: [
       {
@@ -283,7 +307,11 @@ export const teams: TeamType[] = [
     id: "alphatauri",
     name: "Alpha Tauri",
     fullname: "Scuderia AlphaTauri",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/pwjTCx9/image.jpg",
+      "https://i.ibb.co/NpRnsPL/1.jpg",
+      "https://i.ibb.co/B2V3dZR/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/7pWVRm0/Alpha-Tauri.png",
     productsList: [
       {
@@ -322,7 +350,11 @@ export const teams: TeamType[] = [
     id: "alfaromeo",
     name: "Alfa Romeo",
     fullname: "Alfa Romeo F1 Team ORLEN",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/RS9GyGT/image.jpg",
+      "https://i.ibb.co/jV5HSW4/1.jpg",
+      "https://i.ibb.co/kQPqPTk/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/RQQ8yt3/Alfa-Romeo.png",
     productsList: [
       {
@@ -355,7 +387,11 @@ export const teams: TeamType[] = [
     id: "williams",
     name: "Williams",
     fullname: "Williams Racing",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/2nCGNkp/image.jpg",
+      "https://i.ibb.co/7WRX1Nw/1.jpg",
+      "https://i.ibb.co/jgCXWp6/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/fks0CJq/Williams.png",
     productsList: [
       {
@@ -394,7 +430,11 @@ export const teams: TeamType[] = [
     id: "haas",
     name: "Haas",
     fullname: "Uralkali Haas F1 Team",
-    photos: [],
+    photos: [
+      "https://i.ibb.co/p45BB2Q/image.jpg",
+      "https://i.ibb.co/dDfVb19/1.jpg",
+      "https://i.ibb.co/qMtN2KF/2.jpg",
+    ],
     backgroundImg: "https://i.ibb.co/0j9Msc3/Haas.png",
     productsList: [
       {
