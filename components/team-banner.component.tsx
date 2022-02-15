@@ -9,7 +9,7 @@ interface TeamOnTeamsPageType {
   name: string;
 }
 
-const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
+const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
   return (
     // h ????????????
     // <div className="relative w-full h-72 m-5 rounded-large hover:shadow-2xl shadow-black">
@@ -33,4 +33,4 @@ const TeamOnTeamsPage = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
   );
 };
 
-export default TeamOnTeamsPage;
+export default TeamBanner;

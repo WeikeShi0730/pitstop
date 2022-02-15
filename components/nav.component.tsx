@@ -6,7 +6,7 @@ import withSubscribtion from "./hoc.component";
 
 interface UserAndCart {
   currentUser: CurrentUserType["currentUser"];
-  cartItems: CartItemType[];
+  cartItems: CartItemType[] | null;
 }
 
 const Nav = ({ currentUser, cartItems }: UserAndCart) => {
@@ -18,7 +18,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             <div className="relative w-48 h-16 mx-10">
               <Image
                 priority
-                src="/pitstop.png"
+                src="/pitstop-logos/pitstop.png"
                 alt="logo"
                 layout="fill"
                 objectFit="contain"

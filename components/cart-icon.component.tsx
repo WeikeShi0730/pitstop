@@ -5,7 +5,7 @@ import { useClickOutside } from "../utils/use-click-outside";
 import { CartItemType } from "../interfaces/index";
 
 interface CartItems {
-  cartItems: CartItemType[];
+  cartItems: CartItemType[] | null;
 }
 
 const CartIcon = ({ cartItems }: CartItems) => {
