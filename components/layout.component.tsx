@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Nav from "./nav.component";
 import Head from "next/head";
+import BackToTop from "./back-to-top.component";
 
 type Props = {
   children?: ReactNode;
@@ -19,6 +20,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     <header>
       <Nav currentUser={null} cartItems={null} />
     </header>
+    <BackToTop />
     {children}
     <footer>
       {/* <hr />

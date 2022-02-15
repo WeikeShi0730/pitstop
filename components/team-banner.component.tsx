@@ -15,7 +15,7 @@ const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
     // <div className="relative w-full h-72 m-5 rounded-large hover:shadow-2xl shadow-black">
     <div className="relative w-full h-24">
       <Image
-        className="absolute inset-0 object-cover"
+        className="object-cover"
         loader={imgLoader}
         unoptimized
         src={backgroundImg}
