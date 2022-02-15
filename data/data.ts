@@ -5,12 +5,13 @@
 //   price: number;
 // }
 import { TeamType } from "../interfaces/index";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export const teams: TeamType[] = [
   {
     id: "mercedes",
     name: "Mercedes",
+    fullname: "Mercedes-AMG Petronas F1 Team",
     photos: [],
     backgroundImg: "https://i.ibb.co/LPc2pzj/Mercedes.png",
     productsList: [
@@ -55,6 +56,7 @@ export const teams: TeamType[] = [
   {
     id: "redbull",
     name: "Red Bull",
+    fullname: "Red Bull Racing",
     photos: [],
     backgroundImg: "https://i.ibb.co/bRR5vCG/Red-Bull.png",
     productsList: [
@@ -99,6 +101,7 @@ export const teams: TeamType[] = [
   {
     id: "ferrari",
     name: "Ferrari",
+    fullname: "Scuderia Ferrari",
     photos: [],
     backgroundImg: "https://i.ibb.co/qsRdZTC/Ferrari.png",
     productsList: [
@@ -143,6 +146,7 @@ export const teams: TeamType[] = [
   {
     id: "mclaren",
     name: "McLaren",
+    fullname: "McLaren F1 Team",
     photos: [],
     backgroundImg: "https://i.ibb.co/F45S9tZ/McLaren.png",
     productsList: [
@@ -193,6 +197,7 @@ export const teams: TeamType[] = [
   {
     id: "alpine",
     name: "Alpine",
+    fullname: "Alpine F1 Team",
     photos: [],
     backgroundImg: "https://i.ibb.co/rt3hz4N/Alpine.png",
     productsList: [
@@ -231,6 +236,7 @@ export const teams: TeamType[] = [
   {
     id: "astonmartin",
     name: "Aston Martin",
+    fullname: "Aston Martin Aramco Cognizant F1 Team",
     photos: [],
     backgroundImg: "https://i.ibb.co/wrQL5hg/Aston-Martin.png",
     productsList: [
@@ -276,6 +282,7 @@ export const teams: TeamType[] = [
   {
     id: "alphatauri",
     name: "Alpha Tauri",
+    fullname: "Scuderia AlphaTauri",
     photos: [],
     backgroundImg: "https://i.ibb.co/7pWVRm0/Alpha-Tauri.png",
     productsList: [
@@ -314,6 +321,7 @@ export const teams: TeamType[] = [
   {
     id: "alfaromeo",
     name: "Alfa Romeo",
+    fullname: "Alfa Romeo F1 Team ORLEN",
     photos: [],
     backgroundImg: "https://i.ibb.co/RQQ8yt3/Alfa-Romeo.png",
     productsList: [
@@ -346,6 +354,7 @@ export const teams: TeamType[] = [
   {
     id: "williams",
     name: "Williams",
+    fullname: "Williams Racing",
     photos: [],
     backgroundImg: "https://i.ibb.co/fks0CJq/Williams.png",
     productsList: [
@@ -384,6 +393,7 @@ export const teams: TeamType[] = [
   {
     id: "haas",
     name: "Haas",
+    fullname: "Uralkali Haas F1 Team",
     photos: [],
     backgroundImg: "https://i.ibb.co/0j9Msc3/Haas.png",
     productsList: [

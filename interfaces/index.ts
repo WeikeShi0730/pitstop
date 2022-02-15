@@ -11,6 +11,7 @@ export interface ProductType {
 export interface TeamType {
   id: string;
   name: string;
+  fullname: string;
   photos: string[];
   backgroundImg: string;
   productsList: ProductType[];
