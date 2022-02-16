@@ -10,7 +10,7 @@ interface CartItems {
   cartItems: CartItemType[] | null;
 }
 
-const stripePromise = getStripe();
+// const stripePromise = getStripe();
 
 const Checkout = ({ cartItems }: CartItems) => {
   const total = cartItems
@@ -19,13 +19,61 @@ const Checkout = ({ cartItems }: CartItems) => {
     }, 0)
     ?.toFixed(2);
 
-  const options = {
-    // passing the client secret obtained in step 2
-    clientSecret: `{{${process.env.STRIPE_SECRET_KEY}}}`,
-    // Fully customizable with appearance API.
-    appearance: {
-      /*...*/
-    },
+  // const options = {
+  //   // passing the client secret obtained in step 2
+  //   clientSecret: `{{${process.env.STRIPE_SECRET_KEY}}}`,
+  //   // Fully customizable with appearance API.
+  //   appearance: {
+  //     /*...*/
+  //   },
+  // };
+  async function fetchPostJSON(url: string, data?: {}) {
+    try {
+      // Default options are marked with *
+      const response = await fetch(url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *client
+        body: JSON.stringify(data || {}), // body data type must match "Content-Type" header
+      });
+      return await response.json(); // parses JSON response into native JavaScript objects
+    } catch (err) {
+      if (err instanceof Error) {
+        throw new Error(err.message);
+      }
+      throw err;
+    }
+  }
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    const checkoutSession = await fetchPostJSON("/api/checkout/session", {
+      total: total,
+    });
+    if ((checkoutSession as any).statusCode === 500) {
+      console.error((checkoutSession as any).message);
+      return;
+    }
+
+    // Redirect to Checkout.
+    const stripe = await getStripe();
+    const { error } = await stripe!.redirectToCheckout({
+      // Make the id field from the Checkout Session creation API response
+      // available to this file, so you can provide it as parameter here
+      // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+      sessionId: checkoutSession.id,
+    });
+    // If `redirectToCheckout` fails due to a browser or network
+    // error, display the localized error message to your customer
+    // using `error.message`.
+    console.warn(error.message);
   };
 
   return (
@@ -64,9 +112,9 @@ const Checkout = ({ cartItems }: CartItems) => {
         {/* <Elements stripe={stripePromise} options={options}>
           <CheckoutForm />
         </Elements> */}
-        <form action="/api/checkout/session" method="POST">
+        <form onSubmit={handleSubmit} method="POST">
           <button
-            role="link"
+            // role="link"
             id="submit"
             type="submit"
             className="flex justify-center items-center w-1/5 min-w-fit m-5 px-2 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500"
