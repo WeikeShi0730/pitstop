@@ -52,7 +52,7 @@ const Checkout = ({ cartItems }: CartItems) => {
     }
   }
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const checkoutSession = await fetchPostJSON("/api/checkout/session", {
       total: total,
@@ -78,37 +78,38 @@ const Checkout = ({ cartItems }: CartItems) => {
 
   return (
     <div className="">
-      <div className="w-1/2 float-left">
-        <div className="flex justify-center h-full m-2">
-          <div className="flex w-full m-5 justify-start text-2xl border-b-2 border-slate-700">
-            Your cart 🛒
-          </div>
+      <div className="flex justify-center h-full m-2">
+        <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
+          Your cart 🛒
         </div>
-        <div className="relative max-h-96 overflow-auto disable-scrollbars">
-          {cartItems && cartItems.length > 0 ? (
-            cartItems.map((cartItem: CartItemType) => {
-              return (
-                <div key={cartItem.product.id} className="flex h-full m-2">
-                  <CheckoutItem cartItem={cartItem} />
-                </div>
-              );
-            })
-          ) : (
-            <div className="flex justify-center items-center text-xl">
-              Your cart is empty!
-            </div>
-          )}
-        </div>
-        {cartItems && cartItems.length > 0 ? (
-          <div className="flex justify-center h-full m-2">
-            <div className="flex w-full m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
-              <div className="text-xl">Total: CAD</div>
-              <div className="text-3xl">{total}</div>
-            </div>
-          </div>
-        ) : null}
       </div>
-      <div className="w-1/2 float-right">
+      {/* <div className="relative max-h-96 overflow-auto disable-scrollbars"> */}
+      {cartItems && cartItems.length > 0 ? (
+        cartItems.map((cartItem: CartItemType) => {
+          return (
+            <div
+              key={cartItem.product.id}
+              className="flex justify-center h-full m-2"
+            >
+              <CheckoutItem key={cartItem.product.id} cartItem={cartItem} />
+            </div>
+          );
+        })
+      ) : (
+        <div className="flex justify-center items-center text-xl">
+          Your cart is empty!
+        </div>
+      )}
+      {/* </div> */}
+      {cartItems && cartItems.length > 0 ? (
+        <div className="flex justify-center h-full m-2">
+          <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
+            <div className="text-xl">Total: CAD</div>
+            <div className="text-3xl">{total}</div>
+          </div>
+        </div>
+      ) : null}
+      <div className="flex justify-center">
         {/* <Elements stripe={stripePromise} options={options}>
           <CheckoutForm />
         </Elements> */}

@@ -107,7 +107,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   }, [count]);
 
   return (
-    <div className="flex justify-center m-5 w-full text-black">
+    <div className="flex justify-center w-2/3 mx-5 text-black">
       <div
         ref={ref}
         className="flex w-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg transition-all duration-500 ease-in-out"

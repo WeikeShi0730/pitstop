@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         payment_method_types: ["card"],
         line_items: [
           {
-            name: "Custom amount donation",
+            name: "Total",
             amount: formatAmountForStripe(total, "CAD"),
             currency: "CAD",
             quantity: 1,
