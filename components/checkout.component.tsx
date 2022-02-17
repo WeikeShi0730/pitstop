@@ -18,7 +18,7 @@ const Checkout = ({ cartItems }: CartItems) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const checkoutSession = await fetchPostJSON("/api/checkout/session", {
+    const checkoutSession = await fetchPostJSON("/api/checkout-session", {
       total: total,
     });
     if ((checkoutSession as any).statusCode === 500) {
@@ -36,7 +36,7 @@ const Checkout = ({ cartItems }: CartItems) => {
 
   return (
     <div className="">
-      <div className="flex justify-center h-full m-2">
+      <div className="flex justify-center m-2">
         <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
           Your cart 🛒
         </div>
@@ -47,7 +47,7 @@ const Checkout = ({ cartItems }: CartItems) => {
           return (
             <div
               key={cartItem.product.id}
-              className="flex justify-center h-full m-2"
+              className="flex justify-center m-2"
             >
               <CheckoutItem key={cartItem.product.id} cartItem={cartItem} />
             </div>
@@ -60,7 +60,7 @@ const Checkout = ({ cartItems }: CartItems) => {
       )}
       {/* </div> */}
       {cartItems && cartItems.length > 0 ? (
-        <div className="flex justify-center h-full m-2">
+        <div className="flex justify-center m-2">
           <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
             <div className="text-xl">Total: CAD</div>
             <div className="text-3xl">{total}</div>

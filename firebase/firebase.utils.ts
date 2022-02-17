@@ -91,7 +91,7 @@ export const firestoreGetTeamsDoc = async (id: string) => {
     if (docSnapshot.exists()) {
       return docSnapshot.data() as TeamType;
     } else {
-      throw "No doc found";
+      throw Error("No doc found");
     }
   } catch (error) {
     throw error;
@@ -153,19 +153,19 @@ export const updateUserCartFirestore = async (
         case "SET": {
           if ((count as number) >= 0) {
             cartItems[cartItems.indexOf(cartItem[0])].count = count as number;
-          } 
+          }
           // else if ((count as number) === 0) {
           //   cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
-          // } 
+          // }
           else {
-            throw "Input amount not valid.";
+            throw Error("Input amount not valid.");
           }
           break;
         }
 
         case "DELETE": {
           if (cartItem.length === 0) {
-            throw "No items found in your cart.";
+            throw Error("No items found in your cart.");
           } else {
             cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
           }
@@ -180,7 +180,23 @@ export const updateUserCartFirestore = async (
         cartItems: cartItems,
       });
     } else {
-      throw "No doc found";
+      throw Error("No doc found");
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const clearCartFirebase = async () => {
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const docSnap = await getDoc(currentUserRef);
+    if (docSnap.exists()) {
+      await updateDoc(currentUserRef, {
+        cartItems: [],
+      });
+    } else {
+      throw Error("No doc found");
     }
   } catch (error) {
     throw error;
