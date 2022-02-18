@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Nav from "./nav.component";
 import Head from "next/head";
+import Footer from "./footer.component";
 import BackToTop from "./back-to-top.component";
 
 type Props = {
@@ -23,8 +24,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     <BackToTop />
     {children}
     <footer>
-      {/* <hr />
-      <span>I am here to stay (Footer)</span> */}
+      <Footer />
     </footer>
   </div>
 );

@@ -10,12 +10,12 @@ const CheckoutResult = ({ data }: any) => {
     data?.payment_intent?.status === "succeeded" ? (
       <>
         <div className="text-4xl">🥳</div>
-        <div className="text">Your order is confirmed!</div>
+        <div className="text">Your order has been confirmed!</div>
       </>
     ) : (
       <>
         <div className="text-4xl">😭</div>
-        <div className="text">Something went wrong, please try again!</div>
+        <div className="text">Your order didn&apos;t go through, please try again!</div>
       </>
     )
   ) : (
