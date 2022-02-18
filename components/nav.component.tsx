@@ -36,11 +36,6 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             <a>Teams</a>
           </Link>
         </div>
-        <div className="mx-5 hover:underline decoration-orange-theme underline-offset-4 decoration-1">
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </div>
         <div className="mx-5 ml-auto hover:underline decoration-orange-theme underline-offset-4 decoration-1">
           <CartIcon cartItems={cartItems} />
         </div>

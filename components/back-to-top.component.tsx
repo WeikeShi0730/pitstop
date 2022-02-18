@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { BiArrowToTop } from "react-icons/bi";
 
 const BackToTop = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
@@ -23,14 +24,19 @@ const BackToTop = () => {
   };
 
   return (
-    <div className="fixed bottom-10 right-10 z-50">
+    <div className="fixed bottom-10 right-10 z-50 text-4xl bg-slate-300 bg-opacity-80 backdrop-blur-md rounded-lg">
       <button onClick={handleClick}>
-        <div className={`relative w-10 h-10 ${scrollPosition ? "" : "hidden"}`}>
-          <Image
+        <div
+          className={`flex justify-center items-center relative w-10 h-10  ${
+            scrollPosition ? "" : "hidden"
+          }`}
+        >
+          {/* <Image
             src="/utils/back-to-top.png"
             alt="back to top button"
             layout="fill"
-          />
+          /> */}
+          <BiArrowToTop />
         </div>
       </button>
     </div>

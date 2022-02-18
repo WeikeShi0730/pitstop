@@ -23,7 +23,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </header>
     <BackToTop />
     {children}
-    <footer>
+    <footer className="relative mt-auto">
       <Footer />
     </footer>
   </div>
