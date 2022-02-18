@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div className="flex flex-col h-screen">
+  <div className="flex flex-col h-screen justify-between">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -23,7 +23,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </header>
     <BackToTop />
     {children}
-    <footer className="relative mt-auto">
+    <footer className="mt-auto">
       <Footer />
     </footer>
   </div>

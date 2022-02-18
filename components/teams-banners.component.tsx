@@ -6,7 +6,8 @@ interface TeamsType {
 
 const TeamsBanners = ({ teams }: TeamsType) => {
   return (
-    <div className="flex flex-col justify-center relative">
+    <div className="flex flex-col justify-center m-auto p-10 relative w-full box-border border-8">
+      {/* <div className=""> */}
       {teams.map(
         ({
           name,

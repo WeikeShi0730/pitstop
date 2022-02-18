@@ -15,7 +15,9 @@ const CheckoutResult = ({ data }: any) => {
     ) : (
       <>
         <div className="text-4xl">😭</div>
-        <div className="text">Your order didn&apos;t go through, please try again!</div>
+        <div className="text">
+          Your order didn&apos;t go through, please try again!
+        </div>
       </>
     )
   ) : (
@@ -26,7 +28,7 @@ const CheckoutResult = ({ data }: any) => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col justify-center items-center w-full h-36 p-5 text-slate-50 bg-opacity-80 backdrop-blur-md bg-slate-500">
+      <div className="flex flex-col justify-center items-center w-96 h-36 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
         {view}
       </div>
     </div>
