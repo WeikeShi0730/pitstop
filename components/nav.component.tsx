@@ -88,29 +88,35 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
       </div>
       <div
         className={`${
-          open ? "w-48 bg-opacity-80 backdrop-blur-md" : "w-0"
-        } absolute right-0 flex flex-col overflow-x-hidden divide-y divide-slate-400 bg-slate-100 text-slate-700 h-screen transform-gpu transition-all duration-200 ease-in-out`}
+          open ? "w-full backdrop-brightness-75 backdrop-blur-sm" : ""
+        } absolute h-screen`}
       >
-        <div className="w-full py-5 text-center">
-          <Link href="/">
-            <a className="w-48">Home</a>
-          </Link>
-        </div>
-        <div className="w-full py-5 text-center">
-          <Link href="/teams">
-            <a>Teams</a>
-          </Link>
-        </div>
-        <div className="w-full py-5 text-center">
-          {currentUser ? (
-            <Link href={`/account/${currentUser?.uid as string}`}>
-              <a>My account</a>
+        <div
+          className={`${
+            open ? "w-48 bg-opacity-90 backdrop-blur-md" : "w-0"
+          } absolute right-0 flex flex-col items-end overflow-x-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700 h-screen transition-all transform-gpu duration-200 ease-in-out`}
+        >
+          <div className="w-48 py-5 text-center">
+            <Link href="/">
+              <a>Home</a>
             </Link>
-          ) : (
-            <Link href="/login">
-              <a>Sign In</a>
+          </div>
+          <div className="w-48 py-5 text-center">
+            <Link href="/teams">
+              <a>Teams</a>
             </Link>
-          )}
+          </div>
+          <div className="w-48 py-5 text-center">
+            {currentUser ? (
+              <Link href={`/account/${currentUser?.uid as string}`}>
+                <a>My account</a>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <a>Sign In</a>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </nav>
