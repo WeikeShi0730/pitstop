@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="social-media  flex justify-center gap-10">
-        <div className="">
+        <div>
           <a
             target="_blank"
             href="https://github.com/WeikeShi0730"
@@ -27,7 +27,7 @@ const Footer = () => {
             <FiGithub />
           </a>
         </div>
-        <div className="">
+        <div>
           <a
             target="_blank"
             href="https://www.linkedin.com/in/weike-shi/"
@@ -36,7 +36,7 @@ const Footer = () => {
             <FiLinkedin />
           </a>
         </div>
-        <div className="">
+        <div>
           <a
             target="_blank"
             href="https://twitter.com/vicshi97"
@@ -48,19 +48,29 @@ const Footer = () => {
       </div>
       <div className="links flex justify-center gap-8">
         <Link href="/">
-          <a>Home</a>
+          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+            Home
+          </a>
         </Link>
         <Link href="/teams">
-          <a>Teams</a>
+          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+            Teams
+          </a>
         </Link>
         <Link href="/account">
-          <a>Account</a>
+          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+            Account
+          </a>
         </Link>
         <Link href="/contact">
-          <a>Contact</a>
+          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+            Contact
+          </a>
         </Link>
         <Link href="/about">
-          <a>About</a>
+          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+            About
+          </a>
         </Link>
       </div>
       <div className="rights flex justify-center items-center gap-4 mb-10">
