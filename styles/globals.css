@@ -18,9 +18,14 @@ a {
 * {
   box-sizing: border-box;
 } */
+
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-image: url("/background.jpg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
   background-attachment: scroll;
   background-position: top center;
@@ -35,6 +40,11 @@ body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
+
+/* .disable-scroll {
+  height: 100%;
+  overflow: auto;
+} */
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

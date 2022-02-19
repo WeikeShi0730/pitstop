@@ -42,9 +42,9 @@ const Product = ({ product, index }: Product) => {
           />
         </div>
       </div>
-      <div className="flex flex-col justify-center relative p-3 border-y-2 border-slate-50">
+      <div className="flex flex-col justify-center relative m-3 py-2 border-y-2 border-slate-50">
         <div className="text-xl my-1 text-left">{name}</div>
-        <div className="flex items-center justify-evenly my-1 gap-3">
+        <div className="flex items-center justify-between my-1 gap-3">
           <div className="flex items-end gap-1">
             <div className="">CAD</div>
             <div className="text-xl">{price}</div>
