@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { imgLoader } from "./image-loader";
+import { imgLoader } from "../utils/image-loader";
 interface TeamOnTeamsPageType {
   key: string;
   id: string;

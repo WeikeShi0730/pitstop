@@ -1,6 +1,6 @@
 import { ProductType } from "../interfaces";
 import Image from "next/image";
-import { imgLoader } from "./image-loader";
+import { imgLoader } from "../utils/image-loader";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
 
 interface Product {
