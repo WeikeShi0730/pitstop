@@ -13,7 +13,7 @@ const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
   return (
     // h ????????????
     // <div className="relative w-full h-72 m-5 rounded-large hover:shadow-2xl shadow-black">
-    <div className="relative w-full h-32 border-2 rounded-lg my-3 border-slate-700 hover:h-36 hover:scale-105 hover:z-10 transform-gpu transition-all duration-500 ease-in-out">
+    <div className="relative w-full h-32 border-2 rounded-lg my-3 border-slate-700 hover:h-36 hover:scale-105 hover:z-10 transform-gpu transition-all duration-200 ease-in-out">
       <Image
         className="object-cover rounded-md"
         loader={imgLoader}

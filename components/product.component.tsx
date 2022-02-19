@@ -12,12 +12,12 @@ const Product = ({ product, index }: Product) => {
   const { name, imageUrl, price } = product;
 
   // Dynamic styles
-  const mlauto = index % 2 === 0 ? "" : "ml-auto";
-  const flexrowreverse =
-    index % 2 === 0
-      ? "flex-row-reverse from-slate-400 to-cyan-400"
-      : "from-rose-400 to-slate-400";
-  const skew = index % 2 === 0 ? "-skew-x-12" : "skew-x-12";
+  // const mlauto = index % 2 === 0 ? "" : "ml-auto";
+  // const flexrowreverse =
+  //   index % 2 === 0
+  //     ? "flex-row-reverse from-slate-400 to-cyan-400"
+  //     : "from-rose-400 to-slate-400";
+  // const skew = index % 2 === 0 ? "-skew-x-12" : "skew-x-12";
 
   const handleClick = async () => {
     try {
@@ -29,42 +29,36 @@ const Product = ({ product, index }: Product) => {
   };
 
   return (
-    <div className="flex justify-center mx-auto w-full">
-      <div
-        className={`relative flex m-10 w-2/3 rounded-lg bg-opacity-80 backdrop-blur-sm bg-slate-400 ${flexrowreverse}`}
-      >
-        <div className="flex relative w-1/2 h-56 justify-center items-center m-auto p-3">
-          <div className="relative w-2/3 h-full bg-[#F8F8F8] rounded-lg">
-            <Image
-              src={imageUrl}
-              className="object-contain"
-              loader={imgLoader}
-              unoptimized
-              alt={`${name} image`}
-              layout="fill"
-            />
-          </div>
+    <div className="p-5 m-5 rounded-lg w-96 text-center text-slate-700 bg-opacity-80 backdrop-blur-sm bg-slate-400 transform-gpu transition-all duration-200 ease-in-out hover:shadow-2xl hover:shadow-slate-700">
+      <div className="flex relative w-full h-56 justify-center items-center m-auto p-3">
+        <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transform-gpu transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-500">
+          <Image
+            src={imageUrl}
+            className="object-contain"
+            loader={imgLoader}
+            unoptimized
+            alt={`${name} image`}
+            layout="fill"
+          />
         </div>
-        {/* <div
-          className={`absolute left-1/2 -translate-x-1/2 bg-slate-200 w-1/12 h-full z-50 ${skew}`}
-        ></div> */}
-        <div className="flex flex-col relative w-1/2 p-10">
-          <div className={`text-3xl my-3 ${mlauto}`}>{name}</div>
-          <div className={`flex items-center gap-3 mt-24 ${mlauto}`}>
-            <div className="flex items-end gap-1">
-              <div className="">CAD</div>
-              <div className="text-2xl">{price}</div>
-            </div>
-            <button
-              onClick={handleClick}
-              className="bg-orange-theme text-slate-200 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-salte-50"
-            >
-              Add to cart
-            </button>
+      </div>
+      <div className="flex flex-col justify-center relative p-3 border-y-2 border-slate-50">
+        <div className="text-xl my-1 text-left">{name}</div>
+        <div className="flex items-center justify-evenly my-1 gap-3">
+          <div className="flex items-end gap-1">
+            <div className="">CAD</div>
+            <div className="text-xl">{price}</div>
           </div>
+          <button
+            onClick={handleClick}
+            className="bg-orange-theme text-slate-200 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-salte-50 transform-gpu transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-700"
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
