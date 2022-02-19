@@ -36,7 +36,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <Link href="/checkout">
-          <a className="p-3 text-center w-full bg-slate-700 text-slate-200 rounded-b-lg hover:bg-slate-600 hover:text-slate-50">
+          <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg hover:bg-orange-500 hover:text-slate-50">
             Checkout
           </a>
         </Link>

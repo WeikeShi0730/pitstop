@@ -7,8 +7,8 @@ interface ProductsList {
 
 const ProductsList = ({ productsList }: ProductsList) => {
   return (
-    <div className="flex justify-center w-full my-20">
-      <div className="flex flex-row flex-wrap justify-center w-4/5">
+    <div className="w-full flex justify-center my-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 justify-items-center">
         {productsList.map((product: ProductType, index: number) => {
           return (
             <div key={index}>
