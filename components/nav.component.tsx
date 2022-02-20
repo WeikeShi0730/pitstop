@@ -96,7 +96,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
       <div
         className={`${
           open ? "w-48 bg-opacity-90 backdrop-blur-md" : "w-0"
-        } absolute top-0 right-0 -z-10 pt-20 flex flex-col items-end overflow-x-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700 h-screen transition-all transform-gpu duration-500 ease-in-out`}
+        } absolute top-0 right-0 -z-10 pt-20 flex flex-col items-end overflow-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700 h-screen transition-all transform-gpu duration-500 ease-in-out`}
       >
         <div className="w-48 py-5 text-center">
           <Link href="/">
