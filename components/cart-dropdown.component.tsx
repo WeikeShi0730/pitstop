@@ -17,7 +17,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
   return (
     <>
       {/* h-fit-content */}
-      <div className="relative w-80 max-h-96 overflow-auto disable-scrollbars">
+      <div className="relative w-full max-h-96 overflow-auto disable-scrollbars">
         {cartItems && cartItems.length > 0 ? (
           cartItems.map((cartItem) => {
             return (

@@ -39,7 +39,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
       </button>
       {open ? (
         <div
-          className="absolute left-1/2 -translate-x-2/3 translate-y-4 z-20 rounded-lg bg-slate-200"
+          className="absolute w-80 left-1/2 -translate-x-2/3 translate-y-4 z-20 rounded-lg bg-slate-200"
           ref={ref}
         >
           <CartDropdown cartItems={cartItems} />
