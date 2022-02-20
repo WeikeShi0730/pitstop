@@ -49,15 +49,19 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             </Link>
           </div>
           <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
+            <Link href="/products">
+              <a>Products</a>
+            </Link>
+          </div>
+          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
             <Link href="/teams">
               <a>Teams</a>
             </Link>
           </div>
-
-          <div className={`mx-5 flex ml-auto ${underlineStyle}`}>
+          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
             <SearchBar />
           </div>
-          <div className={`mx-5 flex ${underlineStyle}`}>
+          <div className={`mx-5 flex ml-auto ${underlineStyle}`}>
             <CartIcon cartItems={cartItems} />
           </div>
           <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
@@ -119,8 +123,16 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
               className="h-full flex flex-col items-end overflow-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700"
             >
               <div className="w-48 py-5 text-center">
+                <SearchBar />
+              </div>
+              <div className="w-48 py-5 text-center">
                 <Link href="/">
                   <a>Home</a>
+                </Link>
+              </div>
+              <div className="w-48 py-5 text-center">
+                <Link href="/products">
+                  <a>Products</a>
                 </Link>
               </div>
               <div className="w-48 py-5 text-center">

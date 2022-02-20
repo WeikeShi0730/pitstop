@@ -6,7 +6,7 @@ import {
   firestoreGetTeamsDocs,
   firestoreGetTeamsDoc,
 } from "../../firebase/firebase.utils";
-import { TeamType } from "../../interfaces";
+import { TeamType, ProductType } from "../../interfaces";
 
 interface Team {
   team: TeamType;
@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   try {
     const id = context.params?.id as string;
-    const team: TeamType = await firestoreGetTeamsDoc(id);
+    const team: ProductType[] | TeamType = await firestoreGetTeamsDoc(id);
     return {
       props: { team },
     };
@@ -59,22 +59,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-//     try {
-//       const teams: Teams[] = await firestoreGetTeamsDocs();
-//       return {
-//         props: {
-//           teams,
-//         },
-//       };
-//     } catch (error: any) {
-//       console.error(error.message);
-//       const teams: Teams[] = [];
-//       return {
-//         props: {
-//           teams,
-//         },
-//       };
-//     }
-//   };

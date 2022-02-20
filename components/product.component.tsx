@@ -8,7 +8,7 @@ interface Product {
   index: number;
 }
 
-const Product = ({ product, index }: Product) => {
+const Product = ({ product }: Product) => {
   const { name, imageUrl, price } = product;
 
   // Dynamic styles
@@ -63,16 +63,3 @@ const Product = ({ product, index }: Product) => {
 };
 
 export default Product;
-
-{
-  /* <div className="flex relative w-48 h-48">
-        <Image
-          src={imageUrl}
-          className="w-full h-full object-cover"
-          loader={imgLoader}
-          unoptimized
-          alt={`${name} background image`}
-          layout="fill"
-        />
-      </div> */
-}

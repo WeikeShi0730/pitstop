@@ -27,7 +27,7 @@ html {
 
 body {
   background-image: url("/background.png");
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
   background-attachment: local;
   background-position: top center;

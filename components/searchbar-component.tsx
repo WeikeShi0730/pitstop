@@ -27,7 +27,10 @@ const SearchBar = () => {
 
   return (
     <div className="flex justify-center items-center gap-2 overflow-hidden">
-      <button onClick={handleOnClick}>
+      <button
+        className="flex justify-center items-center py-2"
+        onClick={handleOnClick}
+      >
         <FiSearch />
       </button>
       <Transition
@@ -39,7 +42,7 @@ const SearchBar = () => {
         leaveFrom="translate-x-0"
         leaveTo="translate-x-36"
       >
-        <div ref={ref} className="flex justify-center items-center gap-2">
+        <div ref={ref} className="flex justify-center items-center">
           <form>
             <input
               className="bg-transparent outline-none border-b border-orange-theme w-36"
