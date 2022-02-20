@@ -23,7 +23,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
 
   return (
     <nav>
-      <div className="bg-slate-700 text-slate-200 flex items-center p-2 h-auto">
+      <div className="bg-slate-700 text-slate-200 flex items-center p-2 h-20">
         <Link href="/">
           <a>
             <div className="relative w-40 h-16 mx-5">
@@ -88,35 +88,36 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
       </div>
       <div
         className={`${
-          open ? "w-full backdrop-brightness-75 backdrop-blur-sm" : ""
-        } absolute h-screen`}
+          open
+            ? "absolute w-full -z-50 top-0 h-screen backdrop-brightness-75 backdrop-blur-sm"
+            : ""
+        }`}
+      ></div>
+      <div
+        className={`${
+          open ? "w-48 bg-opacity-90 backdrop-blur-md" : "w-0"
+        } absolute top-0 right-0 -z-10 pt-20 flex flex-col items-end overflow-x-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700 h-screen transition-all transform-gpu duration-500 ease-in-out`}
       >
-        <div
-          className={`${
-            open ? "w-48 bg-opacity-90 backdrop-blur-md" : "w-0"
-          } absolute right-0 flex flex-col items-end overflow-x-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700 h-screen transition-all transform-gpu duration-200 ease-in-out`}
-        >
-          <div className="w-48 py-5 text-center">
-            <Link href="/">
-              <a>Home</a>
+        <div className="w-48 py-5 text-center">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </div>
+        <div className="w-48 py-5 text-center">
+          <Link href="/teams">
+            <a>Teams</a>
+          </Link>
+        </div>
+        <div className="w-48 py-5 text-center">
+          {currentUser ? (
+            <Link href={`/account/${currentUser?.uid as string}`}>
+              <a>My account</a>
             </Link>
-          </div>
-          <div className="w-48 py-5 text-center">
-            <Link href="/teams">
-              <a>Teams</a>
+          ) : (
+            <Link href="/login">
+              <a>Sign In</a>
             </Link>
-          </div>
-          <div className="w-48 py-5 text-center">
-            {currentUser ? (
-              <Link href={`/account/${currentUser?.uid as string}`}>
-                <a>My account</a>
-              </Link>
-            ) : (
-              <Link href="/login">
-                <a>Sign In</a>
-              </Link>
-            )}
-          </div>
+          )}
         </div>
       </div>
     </nav>
