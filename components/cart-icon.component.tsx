@@ -40,12 +40,12 @@ const CartIcon = ({ cartItems }: CartItems) => {
       </button>
       <Transition
         show={open}
-        enter="transition ease-in-out duration-150"
-        enterFrom="opacity-0 scale-90"
-        enterTo="opacity-100 scale-100"
-        leave="transition ease-in-out duration-150"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-90"
+        enter="transition-all ease-in-out duration-200"
+        enterFrom="opacity-0 scale-90 translate-y-10"
+        enterTo="opacity-100 scale-100 translate-y-0"
+        leave="transition-all ease-in-out duration-200"
+        leaveFrom="opacity-100 scale-100 translate-y-0" 
+        leaveTo="opacity-0 scale-90 translate-y-10"
       >
         <div
           className="absolute w-80 left-1/2 -translate-x-2/3 translate-y-4 z-20 rounded-lg bg-slate-200"

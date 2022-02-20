@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
 import CartIcon from "./cart-icon.component";
+import SearchBar from "./searchbar-component";
 import { CurrentUserType, CartItemType } from "../interfaces";
 import withSubscribtion from "./hoc.component";
 import { useClickOutside } from "../utils/use-click-outside";
@@ -52,7 +53,11 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
               <a>Teams</a>
             </Link>
           </div>
+
           <div className={`mx-5 flex ml-auto ${underlineStyle}`}>
+            <SearchBar />
+          </div>
+          <div className={`mx-5 flex ${underlineStyle}`}>
             <CartIcon cartItems={cartItems} />
           </div>
           <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
@@ -100,17 +105,18 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         ></div>
         <div className="absolute w-48 h-screen top-0 right-0 -z-10 pt-20 ">
           <Transition
+            className="h-full"
             show={open}
-            enter="transition duration-500 ease-in-out"
+            enter="transition duration-200 ease-in-out"
             enterFrom="translate-x-48"
             enterTo="translate-x-0"
-            leave="transition duration-500 ease-in-out"
+            leave="transition duration-200 ease-in-out"
             leaveFrom="translate-x-0"
             leaveTo="translate-x-48"
           >
             <div
               ref={ref}
-              className="h-screen flex flex-col items-end overflow-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700"
+              className="h-full flex flex-col items-end overflow-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700"
             >
               <div className="w-48 py-5 text-center">
                 <Link href="/">
