@@ -12,7 +12,7 @@ interface TeamOnTeamsPageType {
 const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
   return (
     // h ????????????
-    <div className="relative w-full h-32 rounded-lg my-3 hover:h-36 hover:scale-105 hover:z-10 transform-gpu transition-all duration-200 ease-in-out">
+    <div className="relative w-full h-32 rounded-lg my-3 hover:h-36 hover:scale-105 hover:z-10 transition-all duration-200 ease-in-out">
       <Image
         className="object-cover rounded-md"
         loader={imgLoader}

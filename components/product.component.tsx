@@ -29,9 +29,9 @@ const Product = ({ product, index }: Product) => {
   };
 
   return (
-    <div className="p-5 m-5 rounded-lg w-96 text-center text-black bg-opacity-80 backdrop-blur-sm bg-slate-400 transform-gpu transition-all duration-200 ease-in-out hover:shadow-2xl hover:shadow-slate-700">
+    <div className="p-5 m-5 rounded-lg w-96 text-center text-black bg-opacity-80 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-2xl hover:shadow-slate-700">
       <div className="flex relative w-full h-56 justify-center items-center m-auto p-3">
-        <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transform-gpu transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-500">
+        <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-500">
           <Image
             src={imageUrl}
             className="object-contain"
@@ -51,7 +51,7 @@ const Product = ({ product, index }: Product) => {
           </div>
           <button
             onClick={handleClick}
-            className="bg-orange-theme text-slate-50 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transform-gpu transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-700"
+            className="bg-orange-theme text-slate-50 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-700"
           >
             Add to cart
           </button>
