@@ -108,7 +108,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
             })
           ) : (
             <p className="flex gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
-              Didn&apos;t find anything related to
+              Didn&apos;t find products related to
               <p className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
                 &quot;{name}&quot;
               </p>

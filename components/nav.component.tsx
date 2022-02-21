@@ -29,7 +29,6 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
 
   return (
     <nav>
-      <div className="relative">
         <div className="bg-slate-700 text-slate-200 flex items-center p-2 h-20">
           <Link href="/">
             <a>
@@ -62,7 +61,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
           <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             <SearchBar />
           </div>
-          <div className={`mx-5 flex ml-auto ${underlineStyle}`}>
+          <div className={`mx-5 ml-auto flex ${underlineStyle}`}>
             <CartIcon cartItems={cartItems} />
           </div>
           <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
@@ -155,7 +154,6 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             </div>
           </Transition>
         </div>
-      </div>
     </nav>
   );
 };

@@ -42,7 +42,7 @@ const PageNumber = ({
       prev.classList.add("text-slate-400");
       prev.classList.add("hover:bg-transparent");
     }
-    if (currentPage === numPages) {
+    if (currentPage === numPages || numPages === 0) {
       next.classList.add("text-slate-400");
       next.classList.add("hover:bg-transparent");
     }
@@ -65,7 +65,7 @@ const PageNumber = ({
           {pageList}
           <button
             className="buttonNext w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
-            disabled={currentPage === numPages ? true : false}
+            disabled={currentPage === numPages || numPages === 0 ? true : false}
             onClick={() => setCurrentPage(currentPage + 1)}
           >
             &#62;
