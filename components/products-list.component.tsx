@@ -96,11 +96,29 @@ const ProductsList = ({ productsList }: ProductsList) => {
 
   return (
     <div>
-      <div className="flex justify-center my-10 lg:my-16 w-full">
-        <SortingBar handleChange={handleChange} />
-      </div>
       <div className="w-full flex justify-center my-10 lg:my-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 justify-items-center">
+          {name !== undefined &&
+          name !== null &&
+          name.length > 0 &&
+          dividedList.length > 0 ? (
+            <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 w-full py-1 border-b-2 border-slate-700">
+              Seach results for
+              <p className="text-2xl underline underline-offset-0 decoration-orange-theme italic">
+                &quot;{name}&quot;
+              </p>
+              :
+            </p>
+          ) : dividedList.length > 0 ? (
+            <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 w-full py-1 border-b-2 border-slate-700">
+              All products:
+            </p>
+          ) : null}
+          {dividedList.length > 0 ? (
+            <div className="flex mx-5 gap-x-2 justify-self-end items-center col-span-1 lg:col-span-2 2xl:col-span-3">
+              <SortingBar handleChange={handleChange} />
+            </div>
+          ) : null}
           {dividedList.length > 0 ? (
             dividedList.map((product: ProductType, index: number) => {
               return (
@@ -110,21 +128,24 @@ const ProductsList = ({ productsList }: ProductsList) => {
               );
             })
           ) : (
-            <p className="flex gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
+            <p className="flex p-5 gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
               Didn&apos;t find products related to
               <p className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
                 &quot;{name}&quot;
               </p>
+              .
             </p>
           )}
+          {dividedList.length > 0 ? (
+            <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1 lg:col-span-2 2xl:col-span-3">
+              <PageNumber
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                numPages={Math.ceil(filteredList.length / numProductsOnPage)}
+              />
+            </div>
+          ) : null}
         </div>
-      </div>
-      <div className="flex justify-center my-10 lg:my-16 w-full">
-        <PageNumber
-          setCurrentPage={setCurrentPage}
-          currentPage={currentPage}
-          numPages={Math.ceil(filteredList.length / numProductsOnPage)}
-        />
       </div>
     </div>
   );
