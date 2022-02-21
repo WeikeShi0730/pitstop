@@ -1,60 +1,10 @@
 import { Tab } from "@headlessui/react";
-import { ProductType } from "../interfaces";
 
 interface SortingBarType {
-  productsList: ProductType[];
-  setSortedList: (sortedList: ProductType[]) => void;
+  handleChange: (index: number) => void;
 }
 
-const SortingBar = ({ productsList, setSortedList }: SortingBarType) => {
-  const handleChange = (index: number) => {
-    switch (index) {
-      case 0: {
-        productsList.sort(
-          (product1, product2) => product1.price - product2.price
-        );
-        break;
-      }
-      case 1: {
-        productsList.sort(
-          (product1, product2) => product2.price - product1.price
-        );
-        break;
-      }
-      case 2: {
-        productsList.sort((product1, product2) => {
-          var nameProduct1 = product1.name.toUpperCase();
-          var nameProduct2 = product2.name.toUpperCase();
-          if (nameProduct1 < nameProduct2) {
-            return -1;
-          }
-          if (nameProduct1 > nameProduct2) {
-            return 1;
-          }
-          return 0;
-        });
-        break;
-      }
-      case 3: {
-        productsList.sort((product1, product2) => {
-          var nameProduct1 = product1.name.toUpperCase();
-          var nameProduct2 = product2.name.toUpperCase();
-          if (nameProduct1 > nameProduct2) {
-            return -1;
-          }
-          if (nameProduct1 < nameProduct2) {
-            return 1;
-          }
-          return 0;
-        });
-        break;
-      }
-      default:
-        break;
-    }
-    const productsListCopy = productsList.map((product) => product);
-    setSortedList(productsListCopy);
-  };
+const SortingBar = ({ handleChange }: SortingBarType) => {
   const tabStyle = (selected: boolean) => {
     return `w-full py-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
       selected

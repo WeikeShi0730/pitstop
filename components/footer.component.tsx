@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
-import { RiTrademarkLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -17,7 +16,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="social-media  flex justify-center gap-10">
+      <div className="social-media flex justify-center gap-10">
         <div>
           <a
             target="_blank"
@@ -74,8 +73,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="rights flex justify-center items-center gap-4 mb-10">
-        <RiTrademarkLine />
-        <p>2022 Pitstop, All rights reserved</p>
+        <p>™️ 2022 Pitstop, All rights reserved</p>
       </div>
     </div>
   );

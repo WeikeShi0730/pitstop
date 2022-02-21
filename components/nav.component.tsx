@@ -3,7 +3,7 @@ import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
 import CartIcon from "./cart-icon.component";
-import SearchBar from "./searchbar-component";
+import SearchBar from "./search-bar.component";
 import { CurrentUserType, CartItemType } from "../interfaces";
 import withSubscribtion from "./hoc.component";
 import { useClickOutside } from "../utils/use-click-outside";
@@ -17,6 +17,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   useClickOutside(ref, () => setOpen(() => !open));
+
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setOpen(() => !open);

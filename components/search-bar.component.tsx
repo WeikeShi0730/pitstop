@@ -1,11 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
+import { useRouter } from "next/router";
 import { FiSearch } from "react-icons/fi";
 import { useClickOutside } from "../utils/use-click-outside";
 
 const SearchBar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
+  const [input, setInput] = useState<string>("");
   const ref = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useClickOutside(ref, () => setOpen(() => !open));
   const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -13,21 +16,19 @@ const SearchBar = () => {
     setOpen(() => !open);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
+    const { value } = event.currentTarget;
+    setInput(() => value);
   };
 
-  //   useEffect(() => {
-  //     const searchbar = document.getElementsByClassName("searchbar");
-  //     console.log(searchbar);
-  //     if (open) {
-  //       searchbar[0].classList.add("translate-x-0");
-  //       searchbar[0].classList.remove("translate-x-28");
-  //     } else if (!open) {
-  //       searchbar[0].classList.add("translate-x-28");
-  //       searchbar[0].classList.remove("translate-x-0");
-  //     }
-  //   }, [open]);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push({
+      pathname: "/products",
+      query: { name: input },
+    });
+  };
 
   return (
     <div className="flex justify-center items-center gap-2 overflow-hidden">
@@ -51,9 +52,11 @@ const SearchBar = () => {
             <input
               className="bg-transparent outline-none border-b border-orange-theme w-36"
               autoComplete="off"
+              autoFocus={true}
               type="text"
               name="name"
               placeholder="Search..."
+              onChange={handleChange}
             />
             <button type="submit">&rarr;</button>
           </form>

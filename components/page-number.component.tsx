@@ -3,19 +3,16 @@ import { Tab } from "@headlessui/react";
 import { useEffect } from "react";
 
 interface PageNumberType {
-  productsList: ProductType[];
   setCurrentPage: (currentPage: number) => void;
-  numProductsOnPage: number;
+  numPages: number;
   currentPage: number;
 }
 
 const PageNumber = ({
-  productsList,
   setCurrentPage,
-  numProductsOnPage,
+  numPages,
   currentPage,
 }: PageNumberType) => {
-  const numPages = Math.ceil(productsList.length / numProductsOnPage);
   let pageList = [];
 
   for (var i = 0; i < numPages; i++) {
