@@ -18,7 +18,6 @@ const TeamBackground = ({ team }: Team) => {
         <Image
           // priority
           src={photo}
-          //   src="/team backgrounds/williams/2.jpeg"
           className="object-cover rounded-lg"
           unoptimized
           alt="background image"

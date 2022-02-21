@@ -19,7 +19,7 @@ const TeamHomePage = ({ team }: Team) => {
         <TeamBackground team={team} />
       </div>
       <div>
-        <ProductsList productsList={team.productsList} />
+        <ProductsList productsList={team.productsList as ProductType[]} />
       </div>
     </Layout>
   );

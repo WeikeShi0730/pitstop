@@ -9,12 +9,12 @@ export interface ProductType {
   price: number;
 }
 export interface TeamType {
-  id: string;
-  name: string;
+  id?: string;
+  name?: string;
   fullname: string;
   photos: string[];
-  backgroundImg: string;
-  productsList: ProductType[];
+  backgroundImg?: string;
+  productsList?: ProductType[];
 }
 export interface SignInType {
   email: string;
