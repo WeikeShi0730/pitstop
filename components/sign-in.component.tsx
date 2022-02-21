@@ -13,7 +13,7 @@ const SignIn = () => {
   const handleClick = async () => {
     try {
       await signInWithGoogle();
-      router.push("/");
+      router.back();
     } catch (error: any) {
       console.error("error signing in with google: ", error.message);
     }
@@ -22,7 +22,7 @@ const SignIn = () => {
     event.preventDefault();
     try {
       await signInWithEmail(signInInfo);
-      router.push("/");
+      router.back();
     } catch (error: any) {
       //   toast.error("error signing in: " + error.message, {
       //     position: toast.POSITION.TOP_CENTER,

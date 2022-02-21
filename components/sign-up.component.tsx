@@ -26,7 +26,7 @@ const SignUp = () => {
     event.preventDefault();
     try {
       await signUpWithEmailAndPassword(signUpInfo);
-      router.push("/");
+      router.back();
       //   toast.success("success ✅", {
       //     position: toast.POSITION.TOP_CENTER,
       //     theme: "dark",
