@@ -43,28 +43,28 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
               </div>
             </a>
           </Link>
-          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
+          <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             <Link href="/">
               <a>Home</a>
             </Link>
           </div>
-          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
+          <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             <Link href="/products">
               <a>Products</a>
             </Link>
           </div>
-          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
+          <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             <Link href="/teams">
               <a>Teams</a>
             </Link>
           </div>
-          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
+          <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             <SearchBar />
           </div>
           <div className={`mx-5 flex ml-auto ${underlineStyle}`}>
             <CartIcon cartItems={cartItems} />
           </div>
-          <div className={`mx-5 hidden md:flex ${underlineStyle}`}>
+          <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             {currentUser ? (
               <Link href={`/account/${currentUser?.uid as string}`}>
                 <a>{currentUser.displayName}</a>
@@ -75,7 +75,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
               </Link>
             )}
           </div>
-          <div className="flex items-center justify-between md:hidden mx-5">
+          <div className="flex items-center justify-between lg:hidden mx-5">
             <button
               onClick={handleOnClick}
               className="flex h-6 w-6 items-center space-x-2 focus:outline-none"
@@ -107,40 +107,40 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
               : ""
           }`}
         ></div>
-        <div className="absolute h-screen top-0 right-0 -z-50 pt-20 ">
+        <div className="absolute h-screen top-0 right-0 -z-50 pt-20">
           <Transition
             className="h-full"
             show={open}
             enter="transition duration-200 ease-in-out"
-            enterFrom="translate-x-48"
+            enterFrom="translate-x-52"
             enterTo="translate-x-0"
             leave="transition duration-200 ease-in-out"
             leaveFrom="translate-x-0"
-            leaveTo="translate-x-48"
+            leaveTo="translate-x-52"
           >
             <div
               ref={ref}
               className="h-full flex flex-col items-end overflow-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700"
             >
-              <div className="w-48 py-5 text-center">
+              <div className="w-52 py-5 text-center">
                 <SearchBar />
               </div>
-              <div className="w-48 py-5 text-center">
+              <div className="w-52 py-5 text-center">
                 <Link href="/">
                   <a>Home</a>
                 </Link>
               </div>
-              <div className="w-48 py-5 text-center">
+              <div className="w-52 py-5 text-center">
                 <Link href="/products">
                   <a>Products</a>
                 </Link>
               </div>
-              <div className="w-48 py-5 text-center">
+              <div className="w-52 py-5 text-center">
                 <Link href="/teams">
                   <a>Teams</a>
                 </Link>
               </div>
-              <div className="w-48 py-5 text-center">
+              <div className="w-52 py-5 text-center">
                 {currentUser ? (
                   <Link href={`/account/${currentUser?.uid as string}`}>
                     <a>My account</a>

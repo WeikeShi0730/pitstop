@@ -40,16 +40,16 @@ const SearchBar = () => {
       <Transition
         show={open}
         enter="transition duration-500 ease-in-out transform"
-        enterFrom="translate-x-48"
-        enterTo="translate-x-0"
+        enterFrom="scale-x-90 opacity-0"
+        enterTo="scale-x-100 opacity-100"
         leave="transition duration-500 ease-in-out transform"
-        leaveFrom="translate-x-0"
-        leaveTo="translate-x-48"
+        leaveFrom="scale-x-100 opacity-100"
+        leaveTo="scale-x-90 opacity-0"
       >
         <div ref={ref} className="flex justify-center items-center">
           <form onSubmit={handleSubmit}>
             <input
-              className="bg-transparent outline-none border-b border-orange-theme w-"
+              className="bg-transparent outline-none border-b border-orange-theme w-36"
               autoComplete="off"
               type="text"
               name="name"
