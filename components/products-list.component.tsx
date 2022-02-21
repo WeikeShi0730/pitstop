@@ -37,18 +37,21 @@ const ProductsList = ({ productsList }: ProductsList) => {
   const handleChange = (index: number) => {
     switch (index) {
       case 0: {
+        return productsList;
+      }
+      case 1: {
         filteredList.sort(
           (product1, product2) => product1.price - product2.price
         );
         break;
       }
-      case 1: {
+      case 2: {
         filteredList.sort(
           (product1, product2) => product2.price - product1.price
         );
         break;
       }
-      case 2: {
+      case 3: {
         filteredList.sort((product1, product2) => {
           var nameProduct1 = product1.name.toUpperCase();
           var nameProduct2 = product2.name.toUpperCase();
@@ -62,7 +65,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
         });
         break;
       }
-      case 3: {
+      case 4: {
         filteredList.sort((product1, product2) => {
           var nameProduct1 = product1.name.toUpperCase();
           var nameProduct2 = product2.name.toUpperCase();
