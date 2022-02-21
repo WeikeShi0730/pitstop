@@ -107,7 +107,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
               : ""
           }`}
         ></div>
-        <div className="absolute w-48 h-screen top-0 right-0 -z-10 pt-20 ">
+        <div className="absolute h-screen top-0 right-0 -z-50 pt-20 ">
           <Transition
             className="h-full"
             show={open}
