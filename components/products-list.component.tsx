@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { ProductType } from "../interfaces";
 import PageNumber from "../components/page-number.component";
 import SortingBar from "./sorting-bar.component";
+import Fuse from "fuse.js";
 
 interface ProductsList {
   productsList: ProductType[];
@@ -17,16 +18,20 @@ const ProductsList = ({ productsList }: ProductsList) => {
   const [dividedList, setDevidedList] = useState(sortedList);
   const router = useRouter();
 
+  const options = {
+    threshold: 0.5,
+    keys: ["name"],
+  };
+  const fuse = new Fuse(productsList, options);
   const { name } = router.query;
   useEffect(() => {
     const filteredList =
       name !== undefined && name !== null && name.length > 0
-        ? productsList.filter((product) =>
-            product.name.includes(name as string)
-          )
+        ? fuse.search(name as string).map((each) => each.item)
         : productsList;
     setFilteredList(filteredList);
     setSortedList(filteredList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name, productsList]);
 
   const handleChange = (index: number) => {
@@ -115,7 +120,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
         <PageNumber
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
-          numPages={Math.ceil(productsList.length / numProductsOnPage)}
+          numPages={Math.ceil(filteredList.length / numProductsOnPage)}
         />
       </div>
     </div>
