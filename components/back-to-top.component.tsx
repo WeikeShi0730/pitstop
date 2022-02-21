@@ -31,11 +31,6 @@ const BackToTop = () => {
             scrollPosition ? "" : "hidden"
           }`}
         >
-          {/* <Image
-            src="/utils/back-to-top.png"
-            alt="back to top button"
-            layout="fill"
-          /> */}
           <BiArrowToTop />
         </div>
       </button>

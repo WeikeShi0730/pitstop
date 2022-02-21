@@ -13,6 +13,10 @@ const SearchBar = () => {
     setOpen(() => !open);
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   //   useEffect(() => {
   //     const searchbar = document.getElementsByClassName("searchbar");
   //     console.log(searchbar);
@@ -36,21 +40,22 @@ const SearchBar = () => {
       <Transition
         show={open}
         enter="transition duration-500 ease-in-out transform"
-        enterFrom="translate-x-36"
+        enterFrom="translate-x-48"
         enterTo="translate-x-0"
         leave="transition duration-500 ease-in-out transform"
         leaveFrom="translate-x-0"
-        leaveTo="translate-x-36"
+        leaveTo="translate-x-48"
       >
         <div ref={ref} className="flex justify-center items-center">
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
-              className="bg-transparent outline-none border-b border-orange-theme w-36"
+              className="bg-transparent outline-none border-b border-orange-theme w-"
               autoComplete="off"
               type="text"
               name="name"
               placeholder="Search..."
             />
+            <button type="submit">&rarr;</button>
           </form>
         </div>
       </Transition>
