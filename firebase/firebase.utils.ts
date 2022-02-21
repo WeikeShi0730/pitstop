@@ -62,14 +62,14 @@ export const auth = getAuth();
 const uploadData = async () => {
   try {
     for (const team of teams) {
-      await setDoc(doc(db, "teams", team.id), team);
+      await setDoc(doc(db, "teams", team.id as string), team);
     }
     // console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     // console.error("Error adding document: ", e);
   }
 };
-// uploadData();
+uploadData();
 
 //** Get data */
 // Optimize with Graphql!!!!!
