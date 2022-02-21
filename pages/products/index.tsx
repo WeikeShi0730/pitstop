@@ -37,3 +37,5 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   }
 };
+
+// ALSO GET BG IMAGE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

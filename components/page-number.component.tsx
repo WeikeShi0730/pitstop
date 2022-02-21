@@ -37,17 +37,17 @@ const PageNumber = ({
   useEffect(() => {
     const prev = document.getElementsByClassName("buttonPrev")[0];
     const next = document.getElementsByClassName("buttonNext")[0];
+    prev.classList.remove("text-slate-400");
+    prev.classList.remove("hover:bg-transparent");
+    next.classList.remove("text-slate-400");
+    next.classList.remove("hover:bg-transparent");
     if (currentPage === 1) {
       prev.classList.add("text-slate-400");
       prev.classList.add("hover:bg-transparent");
-    } else if (currentPage === numPages) {
+    }
+    if (currentPage === numPages) {
       next.classList.add("text-slate-400");
       next.classList.add("hover:bg-transparent");
-    } else {
-      prev.classList.remove("text-slate-400");
-      prev.classList.remove("hover:bg-transparent");
-      next.classList.remove("text-slate-400");
-      next.classList.remove("hover:bg-transparent");
     }
   }, [currentPage, numPages]);
 
