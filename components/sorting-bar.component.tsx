@@ -6,7 +6,7 @@ interface SortingBarType {
 
 const SortingBar = ({ handleChange }: SortingBarType) => {
   const tabStyle = (selected: boolean) => {
-    return `w-full py-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
+    return `font-light w-full py-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
       selected
         ? "bg-orange-theme shadow text-slate-50"
         : "hover:bg-slate-50 text-slate-700"

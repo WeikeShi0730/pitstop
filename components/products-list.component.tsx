@@ -102,7 +102,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
           name !== null &&
           name.length > 0 &&
           dividedList.length > 0 ? (
-            <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 w-full py-1 border-b-2 border-slate-700">
+            <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
               Seach results for
               <p className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
                 &quot;{name}&quot;
@@ -110,7 +110,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
               :
             </p>
           ) : dividedList.length > 0 ? (
-            <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 w-full py-1 border-b-2 border-slate-700">
+            <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
               All products:
             </p>
           ) : null}

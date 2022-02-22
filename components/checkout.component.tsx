@@ -37,18 +37,14 @@ const Checkout = ({ cartItems }: CartItems) => {
   return (
     <div className="">
       <div className="flex justify-center m-2">
-        <div className="flex w-2/3 m-5 justify-start text-2xl border-b-2 border-slate-700">
+        <div className="flex w-2/3 m-5 justify-start text-2xl border-b border-slate-700">
           Your cart 🛒
         </div>
       </div>
-      {/* <div className="relative max-h-96 overflow-auto disable-scrollbars"> */}
       {cartItems && cartItems.length > 0 ? (
         cartItems.map((cartItem: CartItemType) => {
           return (
-            <div
-              key={cartItem.product.id}
-              className="flex justify-center m-2"
-            >
+            <div key={cartItem.product.id} className="flex justify-center m-2">
               <CheckoutItem key={cartItem.product.id} cartItem={cartItem} />
             </div>
           );
@@ -58,7 +54,6 @@ const Checkout = ({ cartItems }: CartItems) => {
           Your cart is empty!
         </div>
       )}
-      {/* </div> */}
       {cartItems && cartItems.length > 0 ? (
         <div className="flex justify-center m-2">
           <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
