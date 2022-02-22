@@ -46,7 +46,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto mt-10 mb-4 bg-white rounded-lg border border-primaryBorder shadow-default py-8 px-10">
+      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
         <div className="text-base lg:text-lg font-light text-primary mt-4 mb-12 text-center">
           Alrady have an account? Sign in 🔐
         </div>
@@ -57,7 +57,7 @@ const SignIn = () => {
               required
               name="email"
               type="email"
-              className="w-full p-2 text-xs md:text-md text-primary border rounded-md outline-none transition duration-150 ease-in-out mb-4"
+              className="w-full p-2 text-xs md:text-md border-b border-slate-700 outline-none bg-transparent mb-4"
               id="email"
               placeholder="Your email"
               onChange={handleChange}
@@ -69,7 +69,7 @@ const SignIn = () => {
               required
               name="password"
               type="password"
-              className="w-full p-2 text-xs md:text-md text-primary border rounded-md outline-none transition duration-150 ease-in-out mb-4"
+              className="w-full p-2 text-xs md:text-md border-b border-slate-700 outline-none bg-transparent mb-4"
               id="password"
               placeholder="Your password"
               onChange={handleChange}
@@ -78,7 +78,7 @@ const SignIn = () => {
           <div className="flex justify-center items-center mt-6">
             <button
               type="submit"
-              className="text-xs md:text-sm bg-gray-800 py-2 px-4 text-white rounded border focus:outline-none font-light"
+              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded focus:outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
             >
               Sign In
             </button>
@@ -88,7 +88,7 @@ const SignIn = () => {
           <div className="flex justify-center">
             <div>
               <button
-                className="text-xs md:text-sm bg-blue-500 py-2 px-4 text-white rounded border focus:outline-none focus:bg-gray-550 font-light"
+                className="md:text-sm bg-blue-500 py-2 px-4 text-slate-50 rounded focus:outline-none font-light hover:shadow-md hover:shadow-blue-500 hover:bg-blue-400 hover:text-white transition-all ease-in-out duration-200"
                 onClick={handleClick}
               >
                 Sign in with Google
@@ -98,7 +98,10 @@ const SignIn = () => {
         </div>
 
         <div className="">
-          <button onClick={handleClickForgotPassword} className="font-light">
+          <button
+            onClick={handleClickForgotPassword}
+            className="font-light hover:text-slate-500"
+          >
             Forgot password?
           </button>
         </div>

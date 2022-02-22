@@ -21,7 +21,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto mt-10 mb-4 bg-white rounded-lg border border-primaryBorder shadow-default py-8 px-10">
+    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
       <div className="text-center m-5">Reset my password</div>
       <form onSubmit={handleSubmit}>
         <div>
@@ -30,7 +30,7 @@ const ResetPassword = () => {
             required
             name="email"
             type="email"
-            className="w-full p-2 text-xs md:text-md text-primary border rounded-md outline-none transition duration-150 ease-in-out my-4"
+            className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
             id="email"
             placeholder="Your email"
             onChange={handleChange}
@@ -39,7 +39,7 @@ const ResetPassword = () => {
         <div className="flex justify-center items-center mt-6">
           <button
             type="submit"
-            className="text-xs md:text-sm bg-gray-800 py-2 px-4 text-white rounded border focus:outline-none font-light"
+            className="text-xs md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded focus:outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
           >
             Send a password reset email
           </button>

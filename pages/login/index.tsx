@@ -5,11 +5,11 @@ import SignUp from "../../components/sign-up.component";
 const Login = () => {
   return (
     <Layout title="Pitstop | Login">
-      <div className="grid grid-cols-2">
-        <div>
+      <div className="flex flex-col lg:flex-row h-full m-auto w-full justify items-center p-5 lg:divide-x divide-slate-700">
+        <div className="p-5 w-full h-full">
           <SignUp />
         </div>
-        <div>
+        <div className="p-5 w-full h-full">
           <SignIn />
         </div>
       </div>

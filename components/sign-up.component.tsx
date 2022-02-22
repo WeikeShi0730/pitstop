@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 // import { toast } from "react-toastify";
 import { signUpWithEmailAndPassword } from "../firebase/firebase.utils";
@@ -6,7 +6,7 @@ import { SignUpType } from "../interfaces/index";
 
 const SignUp = () => {
   const router = useRouter();
-  const [signUpInfo, setSignUpInfo] = React.useState<SignUpType>({
+  const [signUpInfo, setSignUpInfo] = useState<SignUpType>({
     displayName: "",
     email: "",
     password: "",
@@ -42,8 +42,8 @@ const SignUp = () => {
   };
 
   return (
-    <React.Fragment>
-      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto mt-10 mb-4 bg-white rounded-lg border border-primaryBorder shadow-default py-8 px-10">
+    <>
+      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
         <h1 className="text-base lg:text-lg font-light text-primary mt-4 mb-12 text-center">
           Don&apos;t have an account? Sign up 🔐
         </h1>
@@ -54,7 +54,7 @@ const SignUp = () => {
               required
               name="displayName"
               type="text"
-              className="text-xs md:text-md w-full p-2 text-primary border rounded-md outline-none transition duration-150 ease-in-out mb-4"
+              className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="displayName"
               placeholder="Your username"
               onChange={handleChange}
@@ -67,7 +67,7 @@ const SignUp = () => {
               required
               name="email"
               type="email"
-              className="text-xs md:text-md w-full p-2 text-primary border rounded-md outline-none transition duration-150 ease-in-out mb-4"
+              className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="email"
               placeholder="Your email"
               onChange={handleChange}
@@ -79,7 +79,7 @@ const SignUp = () => {
               required
               name="password"
               type="password"
-              className="text-xs md:text-md w-full p-2 text-primary border rounded-md outline-none transition duration-150 ease-in-out mb-4"
+              className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="password"
               placeholder="Your password"
               minLength={6}
@@ -89,14 +89,14 @@ const SignUp = () => {
           <div className="flex justify-center items-center mt-6">
             <button
               type="submit"
-              className="text-xs md:text-sm bg-gray-800 py-2 px-4 text-white rounded border focus:outline-none font-light"
+              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded focus:outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
             >
               Sign up
             </button>
           </div>
         </form>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
