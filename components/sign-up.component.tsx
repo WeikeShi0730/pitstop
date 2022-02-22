@@ -89,7 +89,7 @@ const SignUp = () => {
           <div className="flex justify-center items-center mt-6">
             <button
               type="submit"
-              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded focus:outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
+              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
             >
               Sign up
             </button>

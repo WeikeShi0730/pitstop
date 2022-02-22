@@ -51,7 +51,7 @@ const Product = ({ product }: Product) => {
           </div>
           <button
             onClick={handleClick}
-            className="bg-orange-theme text-slate-50 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-700"
+            className="bg-orange-theme text-slate-50 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
           >
             Add to cart
           </button>

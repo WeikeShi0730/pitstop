@@ -73,7 +73,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="rights flex justify-center items-center gap-4 mb-10">
-        <p>™️ 2022 Pitstop, All rights reserved</p>
+        <p>™ 2022 Pitstop, All rights reserved</p>
       </div>
     </div>
   );

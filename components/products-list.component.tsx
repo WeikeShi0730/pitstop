@@ -103,7 +103,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
           name.length > 0 &&
           dividedList.length > 0 ? (
             <p className="flex mx-5 gap-x-2 justify-self-start items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
-              Seach results for
+              Search results for
               <p className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
                 &quot;{name}&quot;
               </p>

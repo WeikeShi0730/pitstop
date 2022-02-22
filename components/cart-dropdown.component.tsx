@@ -15,9 +15,9 @@ const CartDropdown = ({ cartItems }: CartItems) => {
     ?.toFixed(2);
 
   return (
-    <>
+    <div className="shadow-md shadow-slate-500 rounded-lg">
       {/* h-fit-content */}
-      <div className="relative w-full max-h-96 overflow-auto disable-scrollbars">
+      <div className="relative w-full max-h-96 overflow-auto disable-scrollbars shadow-sm">
         {cartItems && cartItems.length > 0 ? (
           cartItems.map((cartItem) => {
             return (
@@ -30,18 +30,18 @@ const CartDropdown = ({ cartItems }: CartItems) => {
           </div>
         )}
       </div>
-      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300">
+      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300 shadow-inner">
         <div>Total: CAD</div>
         <div className="text-2xl">{total}</div>
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <Link href="/checkout">
-          <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg hover:bg-orange-500 hover:text-slate-50">
+          <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-50">
             Checkout
           </a>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

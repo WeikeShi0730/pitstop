@@ -48,17 +48,32 @@ const PageNumber = ({
     }
   }, [currentPage, numPages]);
 
+  const backToTop = () => {
+    window.scroll({
+      top: 500,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div>
       <Tab.Group
+        defaultIndex={1}
         selectedIndex={currentPage - 1}
-        onChange={(index) => setCurrentPage(index + 1)}
+        onChange={(index) => {
+          setCurrentPage(index + 1);
+          backToTop();
+        }}
       >
         <Tab.List className="flex w-fit max-w-full p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
           <button
             className="buttonPrev w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
             disabled={currentPage === 1 ? true : false}
-            onClick={() => setCurrentPage(currentPage - 1)}
+            onClick={() => {
+              setCurrentPage(currentPage - 1);
+              backToTop();
+            }}
           >
             &#60;
           </button>
@@ -66,7 +81,10 @@ const PageNumber = ({
           <button
             className="buttonNext w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
             disabled={currentPage === numPages || numPages === 0 ? true : false}
-            onClick={() => setCurrentPage(currentPage + 1)}
+            onClick={() => {
+              setCurrentPage(currentPage + 1);
+              backToTop();
+            }}
           >
             &#62;
           </button>

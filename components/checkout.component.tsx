@@ -37,7 +37,7 @@ const Checkout = ({ cartItems }: CartItems) => {
   return (
     <div className="">
       <div className="flex justify-center m-2">
-        <div className="flex w-2/3 m-5 justify-start text-2xl border-b border-slate-700">
+        <div className="flex w-2/3 m-5 justify-start text-2xl py-1 border-b border-slate-700">
           Your cart 🛒
         </div>
       </div>
@@ -56,7 +56,7 @@ const Checkout = ({ cartItems }: CartItems) => {
       )}
       {cartItems && cartItems.length > 0 ? (
         <div className="flex justify-center m-2">
-          <div className="flex w-2/3 m-5 justify-end items-end space-x-2 border-t-2 border-slate-700">
+          <div className="flex w-2/3 m-5 justify-end items-end space-x-2 py-1 border-t border-slate-700">
             <div className="text-xl">Total: CAD</div>
             <div className="text-3xl">{total}</div>
           </div>

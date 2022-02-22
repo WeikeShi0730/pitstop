@@ -11,7 +11,7 @@ interface ProductsType {
 
 const ProductsPage = ({ productsList }: ProductsType) => {
   const team = {
-    fullname: "Pitstop ™️",
+    fullname: "Pitstop ™",
     photos: ["/2021f1grid.jpeg"],
   };
   return (
