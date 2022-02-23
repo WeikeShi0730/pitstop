@@ -110,10 +110,14 @@ export const firestoreGetTeamsDoc = async (id?: string) => {
 };
 
 const createUserInFirestore = async (displayName: string, email: string) => {
-  await setDoc(doc(db, "users", auth.currentUser?.uid as string), {
-    user: { displayName: displayName, email: email },
-    cartItems: [],
-  });
+  try {
+    await setDoc(doc(db, "users", auth.currentUser?.uid as string), {
+      user: { displayName: displayName, email: email },
+      cartItems: [],
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
 const getUserInFirestore = async (uid: string) => {
