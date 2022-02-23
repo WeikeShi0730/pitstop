@@ -117,12 +117,16 @@ const createUserInFirestore = async (displayName: string, email: string) => {
 };
 
 const getUserInFirestore = async (uid: string) => {
-  const docRef = doc(db, "users", uid);
-  const docSnap = await getDoc(docRef);
-  if (docSnap.exists()) {
-    return true;
+  try {
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return true;
+    }
+    return false;
+  } catch (error) {
+    throw error;
   }
-  return false;
 };
 
 export const updateUserCartFirestore = async (
