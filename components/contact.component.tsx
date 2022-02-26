@@ -74,9 +74,10 @@ const Contact = () => {
           <textarea
             id="message"
             name="message"
+            rows={4}
             required
             onChange={handleChange}
-            className="w-full p-2 text-xs md:text-md border border-slate-700 outline-none bg-transparent mb-4 rounded-lg"
+            className="w-full h-auto p-2 text-xs md:text-md border border-slate-700 outline-none bg-transparent my-4 rounded-lg"
           />
         </div>
         <div className="flex justify-center items-center mt-4">
