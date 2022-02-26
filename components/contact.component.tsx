@@ -15,7 +15,7 @@ const Contact = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const result = await sendForm(
+      await sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
         process.env.NEXT_PUBLIC_TEMPLATE_ID!,
         form.current!,
