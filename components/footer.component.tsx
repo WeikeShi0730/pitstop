@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
+import {
+  SiAmericanexpress,
+  SiVisa,
+  SiMastercard,
+  SiStripe,
+} from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -56,11 +62,6 @@ const Footer = () => {
             Teams
           </a>
         </Link>
-        <Link href="/account">
-          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
-            Account
-          </a>
-        </Link>
         <Link href="/contact">
           <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
             Contact
@@ -71,6 +72,23 @@ const Footer = () => {
             About
           </a>
         </Link>
+      </div>
+      <div className="cards flex flex-col items-center justify-center">
+        <div className="m-1">Supported payment systems</div>
+        <div className="flex justify-start m-1 gap-2">
+          <div className="text-2xl">
+            <SiVisa />
+          </div>
+          <div className="text-2xl">
+            <SiMastercard />
+          </div>
+          <div className="text-2xl">
+            <SiAmericanexpress />
+          </div>
+          <div className="text-2xl">
+            <SiStripe />
+          </div>
+        </div>
       </div>
       <div className="rights flex justify-center items-center gap-4 mb-10">
         <p>™ 2022 Pitstop, All rights reserved</p>

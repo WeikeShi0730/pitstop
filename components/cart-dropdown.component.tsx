@@ -30,7 +30,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
           </div>
         )}
       </div>
-      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300 shadow-inner">
+      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300">
         <div>Total: CAD</div>
         <div className="text-2xl">{total}</div>
       </div>
