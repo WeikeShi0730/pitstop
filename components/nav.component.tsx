@@ -59,6 +59,11 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             </Link>
           </div>
           <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </div>
+          <div className={`mx-5 hidden lg:flex ${underlineStyle}`}>
             <SearchBar />
           </div>
           <div className={`mx-5 ml-auto flex ${underlineStyle}`}>
@@ -150,6 +155,11 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
                     <a>Sign In</a>
                   </Link>
                 )}
+              </div>
+              <div className="w-52 py-5 text-center mt-auto">
+                <Link href="/contact">
+                  <a>Contact</a>
+                </Link>
               </div>
             </div>
           </Transition>
