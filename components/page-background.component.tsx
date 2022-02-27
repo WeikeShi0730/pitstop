@@ -5,7 +5,7 @@ interface Team {
   team: TeamType;
 }
 
-const TeamBackground = ({ team }: Team) => {
+const PageBackground = ({ team }: Team) => {
   const { photos, fullname } = team;
   const photo = photos[Math.floor(Math.random() * photos.length)];
 
@@ -28,4 +28,4 @@ const TeamBackground = ({ team }: Team) => {
   );
 };
 
-export default TeamBackground;
+export default PageBackground;

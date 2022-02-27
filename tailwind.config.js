@@ -40,6 +40,9 @@ module.exports = {
           900: "#7c2d12",
         },
       },
+      boxShadow: {
+        underline: "0px 15px 9px -3px rgba(0,0,0,0.55)",
+      },
     },
   },
   plugins: [],

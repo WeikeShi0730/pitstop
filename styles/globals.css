@@ -62,3 +62,14 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@layer components {
+  .underline-primary {
+    @apply underline decoration-orange-theme decoration-1 underline-offset-2;
+  }
+
+  .hamburger {
+    @apply transform transition w-full h-px bg-current absolute;
+  }
+
+}

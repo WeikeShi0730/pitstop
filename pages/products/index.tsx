@@ -3,20 +3,20 @@ import ProductsList from "../../components/products-list.component";
 import { GetStaticProps } from "next";
 import { firestoreGetTeamsDoc } from "../../firebase/firebase.utils";
 import { ProductType, TeamType } from "../../interfaces";
-import TeamBackground from "../../components/team-background.component";
+import PageBackground from "../../components/page-background.component";
 
 interface ProductsType {
   productsList: ProductType[];
 }
 
 const ProductsPage = ({ productsList }: ProductsType) => {
-  const team = {
+  const info = {
     fullname: "Pitstop ™",
     photos: ["/2021f1grid.jpeg"],
   };
   return (
     <Layout title="Pitstop | Products">
-      <TeamBackground team={team} />
+      <PageBackground team={info} />
       <ProductsList productsList={productsList} />
     </Layout>
   );

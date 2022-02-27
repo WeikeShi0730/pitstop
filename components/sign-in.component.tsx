@@ -47,7 +47,7 @@ const SignIn = () => {
   return (
     <>
       <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
-        <div className="text-base lg:text-lg font-light text-primary mt-4 mb-12 text-center">
+        <div className="lg:text-xl font-light mt-4 mb-12 text-center">
           Alrady have an account? Sign in 🔐
         </div>
         <form onSubmit={handleSubmit}>

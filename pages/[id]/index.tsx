@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Layout from "../../components/layout.component";
-import TeamBackground from "../../components/team-background.component";
+import PageBackground from "../../components/page-background.component";
 import ProductsList from "../../components/products-list.component";
 import {
   firestoreGetTeamsDocs,
@@ -16,7 +16,7 @@ const TeamHomePage = ({ team }: Team) => {
   return (
     <Layout title={`Pitstop | ${team.name}`}>
       <div>
-        <TeamBackground team={team} />
+        <PageBackground team={team} />
       </div>
       <div>
         <ProductsList productsList={team.productsList as ProductType[]} />

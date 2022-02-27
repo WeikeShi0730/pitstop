@@ -53,22 +53,22 @@ const Footer = () => {
       </div>
       <div className="links flex justify-center gap-8">
         <Link href="/">
-          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+          <a className="hover:underline-primary hover:underline-offset-4">
             Home
           </a>
         </Link>
         <Link href="/teams">
-          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+          <a className="hover:underline-primary hover:underline-offset-4">
             Teams
           </a>
         </Link>
         <Link href="/contact">
-          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+          <a className="hover:underline-primary hover:underline-offset-4">
             Contact
           </a>
         </Link>
         <Link href="/about">
-          <a className="hover:underline decoration-orange-theme underline-offset-4 decoration-1">
+          <a className="hover:underline-primary hover:underline-offset-4">
             About
           </a>
         </Link>
