@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { imgLoader } from "../utils/image-loader";
 interface TeamOnTeamsPageType {
-  key: string;
   id: string;
   backgroundImg: string;
   name: string;

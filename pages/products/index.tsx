@@ -16,7 +16,7 @@ const ProductsPage = ({ productsList }: ProductsType) => {
   };
   return (
     <Layout title="Pitstop | Products">
-      <PageBackground team={info} />
+      <PageBackground info={info} />
       <ProductsList productsList={productsList} />
     </Layout>
   );

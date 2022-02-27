@@ -2,11 +2,11 @@ import Image from "next/image";
 import { TeamType } from "../interfaces/index";
 
 interface Team {
-  team: TeamType;
+  info: TeamType;
 }
 
-const PageBackground = ({ team }: Team) => {
-  const { photos, fullname } = team;
+const PageBackground = ({ info }: Team) => {
+  const { photos, fullname } = info;
   const photo = photos[Math.floor(Math.random() * photos.length)];
 
   return (

@@ -8,26 +8,16 @@ const TeamsBanners = ({ teams }: TeamsType) => {
   return (
     <div className="flex flex-col justify-center m-auto p-10 relative w-4/5">
       {/* <div className=""> */}
-      {teams.map(
-        ({
-          name,
-          id,
-          backgroundImg,
-        }: {
-          backgroundImg: string;
-          name: string;
-          id: string;
-        }) => {
-          return (
-            <TeamBanner
-              key={id}
-              id={id}
-              backgroundImg={backgroundImg}
-              name={name}
-            />
-          );
-        }
-      )}
+      {teams.map((team) => {
+        return (
+          <TeamBanner
+            key={team.id}
+            id={team.id!}
+            backgroundImg={team.backgroundImg!}
+            name={team.name!}
+          />
+        );
+      })}
     </div>
   );
 };

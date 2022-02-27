@@ -1,9 +1,10 @@
 import Layout from "../components/layout.component";
+import Home from "../components/home.component";
 
 const HomePage = () => {
   return (
     <Layout title="Pitstop | Home">
-      <div>Home Page</div>
+      <Home />
     </Layout>
   );
 };

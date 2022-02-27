@@ -16,7 +16,7 @@ const TeamHomePage = ({ team }: Team) => {
   return (
     <Layout title={`Pitstop | ${team.name}`}>
       <div>
-        <PageBackground team={team} />
+        <PageBackground info={team} />
       </div>
       <div>
         <ProductsList productsList={team.productsList as ProductType[]} />
