@@ -57,6 +57,7 @@ const About = () => {
           website is created using some of the most trending technologies that
           help with web development and UI/UX. Such as{" "}
           <a className="underline-primary font-normal">Next.js</a>,{" "}
+          <a className="underline-primary font-normal">React</a>,{" "}
           <a className="underline-primary font-normal">TailwindCSS</a>,{" "}
           <a className="underline-primary font-normal">Typescript</a>,{" "}
           <a className="underline-primary font-normal">Firebase</a>, and{" "}
