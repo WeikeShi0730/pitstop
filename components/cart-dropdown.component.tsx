@@ -15,7 +15,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
     ?.toFixed(2);
 
   return (
-    <div className="shadow-md shadow-slate-500 rounded-lg">
+    <div className="shadow-md shadow-slate-500 rounded-lg text-slate-700">
       {/* h-fit-content */}
       <div className="relative w-full max-h-96 overflow-auto disable-scrollbars shadow-sm">
         {cartItems && cartItems.length > 0 ? (
@@ -25,12 +25,12 @@ const CartDropdown = ({ cartItems }: CartItems) => {
             );
           })
         ) : (
-          <div className="h-full flex flex-col justify-center items-center text-black text-2xl m-5">
+          <div className="h-full flex flex-col justify-center items-center text-2xl m-5">
             Your cart is empty
           </div>
         )}
       </div>
-      <div className="flex items-end justify-end p-2 space-x-2 text-black bg-slate-300">
+      <div className="flex items-end justify-end p-2 space-x-2 bg-slate-300">
         <div>Total: CAD</div>
         <div className="text-2xl">{total}</div>
       </div>

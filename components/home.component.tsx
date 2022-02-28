@@ -12,7 +12,7 @@ const Home = ({ featuredProducts }: ProductsType) => {
   const info = { photos: ["/home/f12022.jpg"] };
   return (
     <>
-      <div className="">
+      <div className="shadow-lg">
         <div className="relative w-full h-screen antialiased">
           <Image
             priority
@@ -35,7 +35,7 @@ const Home = ({ featuredProducts }: ProductsType) => {
       <div className="m-10">
         <Carousel featuredProducts={featuredProducts} />
       </div>
-      <div className="">
+      <div className="my-10">
         <PageBackground info={info} />
       </div>
       <div className="flex justify-center items-center m-10">

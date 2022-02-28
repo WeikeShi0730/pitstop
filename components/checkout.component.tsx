@@ -35,7 +35,7 @@ const Checkout = ({ cartItems }: CartItems) => {
   };
 
   return (
-    <div className="">
+    <div className="text-slate-700">
       <div className="flex justify-center m-2">
         <div className="flex w-2/3 m-5 justify-start text-2xl py-1 border-b border-slate-700">
           Your cart 🛒

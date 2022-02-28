@@ -55,7 +55,7 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
 
   return (
     <div
-      className="flex items-center m-2 text-black transition-all duration-500 ease-in-out"
+      className="flex items-center m-2 text-slate-700 transition-all duration-500 ease-in-out"
       ref={ref}
     >
       <div className="image flex flex-col relative w-1/3 h-20">
