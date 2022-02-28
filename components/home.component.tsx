@@ -1,10 +1,15 @@
-
 import PageBackground from "./page-background.component";
 import Image from "next/image";
 import Link from "next/link";
-import Carousel from "./swiper.component";
+import Carousel from "./carousel.component";
+import { ProductType } from "../interfaces/index";
 
-const Home = () => {
+interface ProductsType {
+  featuredProducts: ProductType[];
+}
+
+const Home = ({ featuredProducts }: ProductsType) => {
+  const info = { photos: ["/home/f12022.jpg"] };
   return (
     <>
       <div className="">
@@ -27,10 +32,19 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <Carousel />
+      <div className="m-10">
+        <Carousel featuredProducts={featuredProducts} />
+      </div>
+      <div className="">
+        <PageBackground info={info} />
+      </div>
+      <div className="flex justify-center items-center m-10">
+        <p className="text-lg md:text-3xl text-center text-slate-700 italic">
+          2022 season products coming soon...
+        </p>
+      </div>
     </>
   );
 };
 
 export default Home;
-

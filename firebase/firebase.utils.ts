@@ -109,6 +109,23 @@ export const firestoreGetTeamsDoc = async (id?: string) => {
   }
 };
 
+export const firestoreGetFeaturedProducts = async () => {
+  try {
+    const docSnapshot = await getDocs(collection(db, "teams"));
+    let featuredProducts: ProductType[] = [];
+    docSnapshot.forEach((doc) => {
+      doc.data().productsList.map((product: ProductType) => {
+        if (product.featured === true) {
+          featuredProducts.push(product);
+        }
+      });
+    });
+    return featuredProducts as ProductType[];
+  } catch (error) {
+    throw error;
+  }
+};
+
 const createUserInFirestore = async (displayName: string, email: string) => {
   try {
     await setDoc(doc(db, "users", auth.currentUser?.uid as string), {

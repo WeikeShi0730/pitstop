@@ -7,6 +7,7 @@ export interface ProductType {
   imageUrl: string;
   name: string;
   price: number;
+  featured: boolean;
 }
 export interface TeamType {
   id?: string;

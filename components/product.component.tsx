@@ -29,7 +29,7 @@ const Product = ({ product }: Product) => {
   };
 
   return (
-    <div className="p-5 m-5 rounded-lg w-96 text-center text-black bg-opacity-80 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-2xl hover:shadow-slate-700">
+    <div className="p-5 m-5 rounded-lg w-96 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700">
       <div className="flex relative w-full h-56 justify-center items-center m-auto p-3">
         <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-500">
           <Image

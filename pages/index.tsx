@@ -1,13 +1,17 @@
 import Layout from "../components/layout.component";
 import Home from "../components/home.component";
 import { GetStaticProps } from "next";
-import { firestoreGetTeamsDoc } from "../firebase/firebase.utils";
+import { firestoreGetFeaturedProducts } from "../firebase/firebase.utils";
 import { ProductType, TeamType } from "../interfaces";
 
-const HomePage = () => {
+interface ProductsType {
+  featuredProducts: ProductType[];
+}
+
+const HomePage = ({ featuredProducts }: ProductsType) => {
   return (
     <Layout title="Pitstop | Home">
-      <Home />
+      <Home featuredProducts={featuredProducts} />
     </Layout>
   );
 };
@@ -16,10 +20,10 @@ export default HomePage;
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const productsList: ProductType[] | TeamType = await firestoreGetTeamsDoc();
-    // const featuredProducts = productsList
+    const featuredProducts: ProductType[] | TeamType =
+      await firestoreGetFeaturedProducts();
     return {
-      props: { productsList },
+      props: { featuredProducts },
     };
   } catch (error: any) {
     console.error(error.message);
