@@ -8,7 +8,7 @@ interface PageNumberType {
   currentPage: number;
 }
 
-const PageNumber = ({
+const Pagination = ({
   setCurrentPage,
   numPages,
   currentPage,
@@ -94,4 +94,4 @@ const PageNumber = ({
   );
 };
 
-export default PageNumber;
+export default Pagination;

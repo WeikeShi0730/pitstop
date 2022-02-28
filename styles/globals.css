@@ -72,4 +72,7 @@ input[type="number"] {
     @apply transform transition w-full h-px bg-current absolute;
   }
 
+  .homepage-button {
+    @apply bg-orange-theme text-slate-50 w-40 text-center p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600
+  }
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "./product.component";
 import { useRouter } from "next/router";
 import { ProductType } from "../interfaces";
-import PageNumber from "../components/page-number.component";
+import Pagination from "./pagination";
 import SortingBar from "./sorting-bar.component";
 import Fuse from "fuse.js";
 
@@ -138,7 +138,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
           )}
           {dividedList.length > 0 ? (
             <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1 lg:col-span-2 2xl:col-span-3">
-              <PageNumber
+              <Pagination
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
                 numPages={Math.ceil(filteredList.length / numProductsOnPage)}
