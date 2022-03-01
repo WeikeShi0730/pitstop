@@ -13,8 +13,8 @@ const Home = ({ featuredProducts }: ProductsType) => {
   const info = { photos: ["/home/f12022.jpg"] };
   return (
     <>
-      <div className="shadow-lg h-screen bg-slate-300">
-        <div className="relative w-full h-3/5 antialiased">
+      <div className="shadow-lg h-content bg-slate-300">
+        <div className="relative w-full h-4/6 lg:h-5/6 antialiased">
           <Image
             priority
             src="/pitstop-logos/homepage logo bg.jpg"
