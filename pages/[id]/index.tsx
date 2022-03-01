@@ -15,12 +15,8 @@ interface Team {
 const TeamHomePage = ({ team }: Team) => {
   return (
     <Layout title={`Pitstop | ${team.name}`}>
-      <div>
         <PageBackground info={team} />
-      </div>
-      <div>
         <ProductsList productsList={team.productsList as ProductType[]} />
-      </div>
     </Layout>
   );
 };
