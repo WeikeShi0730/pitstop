@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 import FeatureProduct from "./feature-product.component";
 import { ProductType } from "../interfaces/index";
 import "swiper/css";
@@ -39,8 +39,13 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
       </div>
       <Swiper
         slidesPerView={numSlides}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         navigation
+        autoplay={{
+          delay: 2500,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        }}
         loop={true}
       >
         {featuredProducts.map((featuredProduct) => {

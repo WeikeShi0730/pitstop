@@ -14,7 +14,7 @@ const Home = ({ featuredProducts }: ProductsType) => {
   return (
     <>
       <div className="shadow-lg h-content bg-slate-300">
-        <div className="relative w-full h-4/6 lg:h-5/6 antialiased">
+        <div className="relative w-full h-4/6 lg:h-5/6">
           <Image
             priority
             src="/pitstop-logos/homepage logo bg.jpg"
@@ -34,13 +34,13 @@ const Home = ({ featuredProducts }: ProductsType) => {
         </div>
         <DownArrow />
       </div>
-      <div className="m-10">
+      <div className="my-10">
         <Carousel featuredProducts={featuredProducts} />
       </div>
       <div className="my-10">
         <PageBackground info={info} />
       </div>
-      <div className="flex justify-center items-center m-10">
+      <div className="flex justify-center items-center mb-10">
         <p className="text-lg md:text-3xl text-center text-slate-700 italic">
           2022 season products coming soon...
         </p>

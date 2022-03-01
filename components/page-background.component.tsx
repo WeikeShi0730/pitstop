@@ -16,7 +16,7 @@ const PageBackground = ({ info }: Team) => {
             {fullname}
           </div>
         ) : null}
-        <div className="relative w-full h-96 antialiased">
+        <div className="relative w-full h-96 xl:h-100">
           <Image
             // priority
             src={photo}
