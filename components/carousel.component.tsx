@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import FeatureProduct from "./feature-product.component";
@@ -8,11 +9,29 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
 
-
 interface ProductsType {
   featuredProducts: ProductType[];
 }
 const Carousel = ({ featuredProducts }: ProductsType) => {
+  const [numSlides, setNumSlides] = useState<number>(1);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window) {
+        const numbSlides =
+          window.innerWidth < 1536
+            ? window.innerWidth < 1280
+              ? window.innerWidth < 1024
+                ? window.innerWidth < 768
+                  ? 1
+                  : 2
+                : 3
+              : 4
+            : 5;
+        setNumSlides(numbSlides);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+  });
   return (
     <div className="">
       <div className="flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
@@ -20,7 +39,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
       </div>
       <Swiper
         className="swiper-button-white"
-        slidesPerView={3}
+        slidesPerView={numSlides}
         modules={[Navigation, Pagination]}
         navigation={{}}
         pagination={{ clickable: true }}
