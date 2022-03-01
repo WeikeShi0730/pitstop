@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Carousel from "./carousel.component";
 import { ProductType } from "../interfaces/index";
+import { BiDownArrow } from "react-icons/bi";
 
 interface ProductsType {
   featuredProducts: ProductType[];
@@ -12,24 +13,27 @@ const Home = ({ featuredProducts }: ProductsType) => {
   const info = { photos: ["/home/f12022.jpg"] };
   return (
     <>
-      <div className="shadow-lg">
-        <div className="relative w-full h-screen bg-slate-300 antialiased">
+      <div className="shadow-lg h-screen bg-slate-300">
+        <div className="relative w-full h-3/5 antialiased">
           <Image
             priority
             src="/pitstop-logos/homepage logo bg.jpg"
-            className="object-contain"
+            className="object-contain scale-150 lg:scale-100"
             unoptimized
             alt="background image"
             layout="fill"
           />
         </div>
-        <div className="flex items-center justify-center gap-x-10 p-10 bg-slate-300">
+        <div className="flex flex-col lg:flex-row items-center justify-center p-5 gap-y-10 lg:gap-x-10">
           <Link href="/products">
             <a className="homepage-button">Shop all</a>
           </Link>
           <Link href="/teams">
             <a className="homepage-button">Shop by teams</a>
           </Link>
+        </div>
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-5 animate-pulse">
+          <BiDownArrow />
         </div>
       </div>
       <div className="m-10">
