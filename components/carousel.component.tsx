@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation } from "swiper";
 import FeatureProduct from "./feature-product.component";
 import { ProductType } from "../interfaces/index";
 import "swiper/css";
-import "swiper/css/bundle";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-creative";
 
 interface ProductsType {
   featuredProducts: ProductType[];
 }
 const Carousel = ({ featuredProducts }: ProductsType) => {
   const [numSlides, setNumSlides] = useState<number>(1);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   useEffect(() => {
     const handleResize = () => {
       if (window) {
@@ -31,6 +30,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
       }
     };
     window.addEventListener("resize", handleResize);
+    handleResize();
   });
   return (
     <div className="">
@@ -38,12 +38,9 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
         Featured products:
       </div>
       <Swiper
-        className="swiper-button-white"
         slidesPerView={numSlides}
         modules={[Navigation]}
-        navigation={{}}
-        pagination={{ clickable: true }}
-        // effect={"coverflow"}
+        navigation
         loop={true}
       >
         {featuredProducts.map((featuredProduct) => {
