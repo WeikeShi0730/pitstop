@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Carousel from "./carousel.component";
 import { ProductType } from "../interfaces/index";
-import { BiDownArrow } from "react-icons/bi";
+import DownArrow from "./down-arrow.component";
 
 interface ProductsType {
   featuredProducts: ProductType[];
@@ -32,9 +32,7 @@ const Home = ({ featuredProducts }: ProductsType) => {
             <a className="homepage-button">Shop by teams</a>
           </Link>
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-5 animate-pulse">
-          <BiDownArrow />
-        </div>
+        <DownArrow />
       </div>
       <div className="m-10">
         <Carousel featuredProducts={featuredProducts} />

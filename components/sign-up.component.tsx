@@ -44,7 +44,7 @@ const SignUp = () => {
   return (
     <>
       <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
-        <h1 className="lg:text-xl font-light text-primary mt-4 mb-12 text-center">
+        <h1 className="text-base lg:text-xl font-light mt-4 mb-12 text-center">
           Don&apos;t have an account? Sign up 🔐
         </h1>
         <form onSubmit={handleSignUpFormSubmit}>
