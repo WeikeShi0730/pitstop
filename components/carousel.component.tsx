@@ -40,7 +40,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
       <Swiper
         className="swiper-button-white"
         slidesPerView={numSlides}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation]}
         navigation={{}}
         pagination={{ clickable: true }}
         // effect={"coverflow"}

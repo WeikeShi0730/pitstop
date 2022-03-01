@@ -13,11 +13,11 @@ const Home = ({ featuredProducts }: ProductsType) => {
   return (
     <>
       <div className="shadow-lg">
-        <div className="relative w-full h-screen antialiased">
+        <div className="relative w-full h-screen bg-slate-300 antialiased">
           <Image
             priority
             src="/pitstop-logos/homepage logo bg.jpg"
-            className="object-cover"
+            className="object-contain"
             unoptimized
             alt="background image"
             layout="fill"
