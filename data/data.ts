@@ -26,6 +26,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: true,
+        teamId: "mercedes",
       },
       {
         id: uuidv4(),
@@ -34,6 +35,7 @@ export const teams: TeamType[] = [
         price: 2.48,
         sold: 0,
         featured: false,
+        teamId: "mercedes",
       },
       {
         id: uuidv4(),
@@ -42,6 +44,7 @@ export const teams: TeamType[] = [
         price: 2.58,
         sold: 0,
         featured: true,
+        teamId: "mercedes",
       },
       {
         id: uuidv4(),
@@ -50,6 +53,7 @@ export const teams: TeamType[] = [
         price: 2.78,
         sold: 0,
         featured: true,
+        teamId: "mercedes",
       },
       {
         id: uuidv4(),
@@ -58,6 +62,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "mercedes",
       },
       {
         id: uuidv4(),
@@ -66,6 +71,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: false,
+        teamId: "mercedes",
       },
     ],
   },
@@ -87,6 +93,7 @@ export const teams: TeamType[] = [
         price: 2.48,
         sold: 0,
         featured: true,
+        teamId: "redbull",
       },
       {
         id: uuidv4(),
@@ -95,6 +102,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: false,
+        teamId: "redbull",
       },
       {
         id: uuidv4(),
@@ -103,6 +111,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "redbull",
       },
       {
         id: uuidv4(),
@@ -111,6 +120,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: true,
+        teamId: "redbull",
       },
       {
         id: uuidv4(),
@@ -119,6 +129,7 @@ export const teams: TeamType[] = [
         price: 2.28,
         sold: 0,
         featured: true,
+        teamId: "redbull",
       },
       {
         id: uuidv4(),
@@ -127,6 +138,7 @@ export const teams: TeamType[] = [
         price: 2.08,
         sold: 0,
         featured: false,
+        teamId: "redbull",
       },
     ],
   },
@@ -148,6 +160,7 @@ export const teams: TeamType[] = [
         price: 2.58,
         sold: 0,
         featured: true,
+        teamId: "ferrari",
       },
       {
         id: uuidv4(),
@@ -156,6 +169,7 @@ export const teams: TeamType[] = [
         price: 1.78,
         sold: 0,
         featured: false,
+        teamId: "ferrari",
       },
       {
         id: uuidv4(),
@@ -164,6 +178,7 @@ export const teams: TeamType[] = [
         price: 1.68,
         sold: 0,
         featured: true,
+        teamId: "ferrari",
       },
       {
         id: uuidv4(),
@@ -172,6 +187,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "ferrari",
       },
       {
         id: uuidv4(),
@@ -180,6 +196,7 @@ export const teams: TeamType[] = [
         price: 2.08,
         sold: 0,
         featured: false,
+        teamId: "ferrari",
       },
       {
         id: uuidv4(),
@@ -188,6 +205,7 @@ export const teams: TeamType[] = [
         price: 2.58,
         sold: 0,
         featured: true,
+        teamId: "ferrari",
       },
     ],
   },
@@ -209,6 +227,7 @@ export const teams: TeamType[] = [
         price: 2.28,
         sold: 0,
         featured: false,
+        teamId: "mclaren",
       },
       {
         id: uuidv4(),
@@ -217,6 +236,7 @@ export const teams: TeamType[] = [
         price: 2.68,
         sold: 0,
         featured: true,
+        teamId: "mclaren",
       },
       {
         id: uuidv4(),
@@ -225,6 +245,7 @@ export const teams: TeamType[] = [
         price: 2.68,
         sold: 0,
         featured: true,
+        teamId: "mclaren",
       },
       {
         id: uuidv4(),
@@ -233,6 +254,7 @@ export const teams: TeamType[] = [
         price: 2.18,
         sold: 0,
         featured: false,
+        teamId: "mclaren",
       },
       {
         id: uuidv4(),
@@ -241,6 +263,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "mclaren",
       },
       {
         id: uuidv4(),
@@ -249,6 +272,7 @@ export const teams: TeamType[] = [
         price: 1.68,
         sold: 0,
         featured: false,
+        teamId: "mclaren",
       },
       {
         id: uuidv4(),
@@ -257,6 +281,7 @@ export const teams: TeamType[] = [
         price: 2.68,
         sold: 0,
         featured: true,
+        teamId: "mclaren",
       },
     ],
   },
@@ -278,6 +303,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "alpine",
       },
       {
         id: uuidv4(),
@@ -286,6 +312,7 @@ export const teams: TeamType[] = [
         price: 1.68,
         sold: 0,
         featured: false,
+        teamId: "alpine",
       },
       {
         id: uuidv4(),
@@ -294,6 +321,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "alpine",
       },
       {
         id: uuidv4(),
@@ -302,6 +330,7 @@ export const teams: TeamType[] = [
         price: 1.68,
         sold: 0,
         featured: false,
+        teamId: "alpine",
       },
       {
         id: uuidv4(),
@@ -310,6 +339,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: true,
+        teamId: "alpine",
       },
     ],
   },
@@ -331,6 +361,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: false,
+        teamId: "astonmartin",
       },
       {
         id: uuidv4(),
@@ -339,6 +370,7 @@ export const teams: TeamType[] = [
         price: 2.38,
         sold: 0,
         featured: true,
+        teamId: "astonmartin",
       },
       {
         id: uuidv4(),
@@ -348,6 +380,7 @@ export const teams: TeamType[] = [
         price: 2.28,
         sold: 0,
         featured: true,
+        teamId: "astonmartin",
       },
       {
         id: uuidv4(),
@@ -356,6 +389,7 @@ export const teams: TeamType[] = [
         price: 1.78,
         sold: 0,
         featured: false,
+        teamId: "astonmartin",
       },
       {
         id: uuidv4(),
@@ -364,6 +398,7 @@ export const teams: TeamType[] = [
         price: 2.08,
         sold: 0,
         featured: false,
+        teamId: "astonmartin",
       },
       {
         id: uuidv4(),
@@ -372,6 +407,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: false,
+        teamId: "astonmartin",
       },
     ],
   },
@@ -393,6 +429,7 @@ export const teams: TeamType[] = [
         price: 1.78,
         sold: 0,
         featured: false,
+        teamId: "alphatauri",
       },
       {
         id: uuidv4(),
@@ -401,6 +438,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "alphatauri",
       },
       {
         id: uuidv4(),
@@ -409,6 +447,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "alphatauri",
       },
       {
         id: uuidv4(),
@@ -417,6 +456,7 @@ export const teams: TeamType[] = [
         price: 2.28,
         sold: 0,
         featured: true,
+        teamId: "alphatauri",
       },
       {
         id: uuidv4(),
@@ -425,6 +465,7 @@ export const teams: TeamType[] = [
         price: 2.08,
         sold: 0,
         featured: true,
+        teamId: "alphatauri",
       },
     ],
   },
@@ -446,6 +487,7 @@ export const teams: TeamType[] = [
         price: 2.68,
         sold: 0,
         featured: true,
+        teamId: "alfaromeo",
       },
       {
         id: uuidv4(),
@@ -454,6 +496,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: true,
+        teamId: "alfaromeo",
       },
       {
         id: uuidv4(),
@@ -462,6 +505,7 @@ export const teams: TeamType[] = [
         price: 1.78,
         sold: 0,
         featured: false,
+        teamId: "alfaromeo",
       },
       {
         id: uuidv4(),
@@ -470,6 +514,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: false,
+        teamId: "alfaromeo",
       },
     ],
   },
@@ -491,6 +536,7 @@ export const teams: TeamType[] = [
         price: 1.78,
         sold: 0,
         featured: false,
+        teamId: "williams",
       },
       {
         id: uuidv4(),
@@ -499,6 +545,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "williams",
       },
       {
         id: uuidv4(),
@@ -507,6 +554,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "williams",
       },
       {
         id: uuidv4(),
@@ -515,6 +563,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: true,
+        teamId: "williams",
       },
       {
         id: uuidv4(),
@@ -523,6 +572,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "williams",
       },
     ],
   },
@@ -544,6 +594,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "haas",
       },
       {
         id: uuidv4(),
@@ -552,6 +603,7 @@ export const teams: TeamType[] = [
         price: 1.68,
         sold: 0,
         featured: false,
+        teamId: "haas",
       },
       {
         id: uuidv4(),
@@ -560,6 +612,7 @@ export const teams: TeamType[] = [
         price: 1.78,
         sold: 0,
         featured: false,
+        teamId: "haas",
       },
       {
         id: uuidv4(),
@@ -568,6 +621,7 @@ export const teams: TeamType[] = [
         price: 1.98,
         sold: 0,
         featured: false,
+        teamId: "haas",
       },
       {
         id: uuidv4(),
@@ -576,6 +630,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: false,
+        teamId: "haas",
       },
       {
         id: uuidv4(),
@@ -584,6 +639,7 @@ export const teams: TeamType[] = [
         price: 2.58,
         sold: 0,
         featured: true,
+        teamId: "haas",
       },
       {
         id: uuidv4(),
@@ -592,6 +648,7 @@ export const teams: TeamType[] = [
         price: 1.88,
         sold: 0,
         featured: true,
+        teamId: "haas",
       },
     ],
   },

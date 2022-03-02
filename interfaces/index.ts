@@ -9,6 +9,7 @@ export interface ProductType {
   price: number;
   featured: boolean;
   sold: number;
+  teamId: string
 }
 export interface TeamType {
   id?: string;
