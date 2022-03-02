@@ -37,7 +37,7 @@ import {
   SnapshotFnType,
   CurrentUserFnType,
 } from "../interfaces/index";
-import { getDisplayName } from "next/dist/shared/lib/utils";
+// import { getDisplayName } from "next/dist/shared/lib/utils";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -237,6 +237,29 @@ export const clearCartFirebase = async () => {
   } catch (error) {
     throw error;
   }
+};
+
+export const updateOrderHistory = async () => {};
+export const updateItemsSoldNum = async () => {
+  // try {
+  //   const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    
+  //   const userDocSnap = await getDoc(currentUserRef);
+  //   const allProducts = (await firestoreGetTeamsDoc()) as ProductType[];
+  //   if (userDocSnap.exists()) {
+  //     const currentUser = userDocSnap.data();
+  //     const cartItems: CartItemType[] = currentUser.cartItems;
+  //     for (var cartItem of cartItems) {
+  //       let foundProduct = allProducts.find(
+  //         (product) => product.id === cartItem.product.id
+  //       );
+  //       const productsRef = doc(db, "teams", cartItem.product.)
+  //       foundProduct?.sold += cartItem.count;
+  //     }
+  //   }
+  // } catch (error) {
+  //   throw error;
+  // }
 };
 
 export const subscribeToCurrentUserCartItems = (

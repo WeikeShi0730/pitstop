@@ -3,7 +3,11 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 import Layout from "../../components/layout.component";
-import { clearCartFirebase } from "../../firebase/firebase.utils";
+import {
+  clearCartFirebase,
+  updateOrderHistory,
+  updateItemsSoldNum,
+} from "../../firebase/firebase.utils";
 import CheckoutResult from "../../components/checkout-result.component";
 
 import { fetchGetJSON } from "../../utils/api-helpers";
@@ -26,7 +30,14 @@ const ResultPage: NextPage = () => {
     const clearCart = async () => {
       if (status === "succeeded") {
         try {
-          await clearCartFirebase();
+          await Promise.all([
+            updateOrderHistory,
+            updateItemsSoldNum,
+            clearCartFirebase,
+          ]);
+          // await clearCartFirebase();
+          // await updateOrderHistory();
+          // await updateItemsSoldNum();
         } catch (error) {
           console.error(error);
         }
@@ -34,17 +45,11 @@ const ResultPage: NextPage = () => {
     };
     clearCart();
   }, [status]);
-  const formattedContent: string = JSON.stringify(
-    data ?? "loading...",
-    null,
-    2
-  );
   if (error) return <div>failed to load</div>;
 
   return (
     <Layout title="Pitstop | Confirmation">
       <CheckoutResult data={data} />
-      {/* <pre>{formattedContent}</pre> */}
     </Layout>
   );
 };

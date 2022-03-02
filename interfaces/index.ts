@@ -8,6 +8,7 @@ export interface ProductType {
   name: string;
   price: number;
   featured: boolean;
+  sold: number;
 }
 export interface TeamType {
   id?: string;

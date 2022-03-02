@@ -11,8 +11,6 @@ interface ProductsType {
 }
 const Carousel = ({ featuredProducts }: ProductsType) => {
   const [numSlides, setNumSlides] = useState<number>(1);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
   useEffect(() => {
     const handleResize = () => {
       if (window) {
@@ -42,7 +40,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
         modules={[Navigation, Autoplay]}
         navigation
         autoplay={{
-          delay: 2500,
+          delay: 2000,
           pauseOnMouseEnter: true,
           disableOnInteraction: false,
         }}

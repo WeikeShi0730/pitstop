@@ -1,9 +1,9 @@
 import React from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-interface Status {
-  status: string;
-}
+// interface Status {
+//   status: string;
+// }
 
 const CheckoutResult = ({ data }: any) => {
   const view = data ? (
