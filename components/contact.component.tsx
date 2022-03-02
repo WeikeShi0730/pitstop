@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { sendForm } from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -21,11 +22,30 @@ const Contact = () => {
         form.current!,
         process.env.NEXT_PUBLIC_USER_ID!
       );
-      alert("Thanks for your email, we'll get back to you ASAP!");
+      toast.success("Thanks for your email, we'll get back to you ASAP!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error) {
       console.error(error);
-      alert(
-        "Sorry, it seems your message wasn't sent successfully, please try again!"
+      toast.error(
+        "Sorry, it seems your message wasn't sent successfully, please try again!",
+        {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
       );
     }
   };
