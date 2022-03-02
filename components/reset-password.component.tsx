@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { sendChangePasswordEmail } from "../firebase/firebase.utils";
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState<string>("");
@@ -14,8 +15,27 @@ const ResetPassword = () => {
     event.preventDefault();
     try {
       await sendChangePasswordEmail(email);
-      alert("Password reset email sent to: " + email);
+      toast.success("Password reset email sent to: " + email, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error: any) {
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       console.error(error.message);
     }
   };

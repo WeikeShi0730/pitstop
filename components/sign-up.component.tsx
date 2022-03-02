@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 // import { toast } from "react-toastify";
 import { signUpWithEmailAndPassword } from "../firebase/firebase.utils";
 import { SignUpType } from "../interfaces/index";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const router = useRouter();
@@ -27,16 +28,27 @@ const SignUp = () => {
     try {
       await signUpWithEmailAndPassword(signUpInfo);
       router.back();
-      //   toast.success("success ✅", {
-      //     position: toast.POSITION.TOP_CENTER,
-      //     theme: "dark",
-      //     autoClose: 2000,
-      //   });
+      toast.success("🥳 Signed up successfully!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error: any) {
-      //   toast.error("error creating the profile: " + error.message, {
-      //     position: toast.POSITION.TOP_CENTER,
-      //     theme: "dark",
-      //   });
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       console.error("Error creating the profile: ", error.message);
     }
   };
