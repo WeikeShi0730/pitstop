@@ -6,7 +6,7 @@ interface SortingBarType {
 
 const SortingBar = ({ handleChange }: SortingBarType) => {
   const tabStyle = (selected: boolean) => {
-    return `font-light w-full py-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
+    return `font-light w-full p-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
       selected
         ? "bg-orange-theme shadow text-slate-50"
         : "hover:bg-slate-50 text-slate-700"
@@ -15,7 +15,7 @@ const SortingBar = ({ handleChange }: SortingBarType) => {
   return (
     <div>
       <Tab.Group onChange={(index) => handleChange(index)}>
-        <Tab.List className="flex w-80 p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
+        <Tab.List className="flex w-[21rem] p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
           <Tab className={({ selected }) => tabStyle(selected)}>Popular</Tab>
           <Tab className={({ selected }) => tabStyle(selected)}>Price ⤴</Tab>
           <Tab className={({ selected }) => tabStyle(selected)}>Price ⤵</Tab>

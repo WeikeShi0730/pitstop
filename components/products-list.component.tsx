@@ -37,7 +37,10 @@ const ProductsList = ({ productsList }: ProductsList) => {
   const handleChange = (index: number) => {
     switch (index) {
       case 0: {
-        return productsList;
+        filteredList.sort(
+          (product1, product2) => product2.sold - product1.sold
+        );
+        break;
       }
       case 1: {
         filteredList.sort(
