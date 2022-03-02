@@ -9,7 +9,7 @@ const SignOut = () => {
     try {
       if (auth.currentUser) {
         await signOutGoogle();
-        router.back();
+        router.push("/");
         toast.info("Signed out successfully!", {
           position: "top-right",
           autoClose: 2500,
