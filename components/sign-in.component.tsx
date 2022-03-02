@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { SignInType } from "../interfaces";
 import { signInWithGoogle, signInWithEmail } from "../firebase/firebase.utils";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
   const router = useRouter();
@@ -14,7 +15,27 @@ const SignIn = () => {
     try {
       await signInWithGoogle();
       router.back();
+      toast.success("🥳 Signed in successfully!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error: any) {
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       console.error("error signing in with google: ", error.message);
     }
   };
@@ -23,11 +44,27 @@ const SignIn = () => {
     try {
       await signInWithEmail(signInInfo);
       router.back();
+      toast.success("🥳 Signed in successfully!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error: any) {
-      //   toast.error("error signing in: " + error.message, {
-      //     position: toast.POSITION.TOP_CENTER,
-      //     theme: "dark",
-      //   });
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       console.error("error signing in with email: ", error.message);
     }
   };

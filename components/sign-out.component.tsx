@@ -1,14 +1,37 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { auth, signOutGoogle } from "../firebase/firebase.utils";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const SignOut = () => {
+  const router = useRouter();
   const clearCurrentUser = async () => {
     try {
       if (auth.currentUser) {
         await signOutGoogle();
+        router.push("/");
+        toast.info("Signed out successfully!", {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     } catch (error: any) {
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       console.error("error clear current user", error.message);
     }
   };
@@ -27,23 +50,6 @@ const SignOut = () => {
   //       //     theme: "dark",
   //       //   });
   //       console.error("error deleting account", error.message);
-  //     }
-  //   };
-
-  //   const handleDeleteRecord = async () => {
-  //     try {
-  //       await deleteUserRecord();
-  //       //   toast.success("user record deleted successfully", {
-  //       //     position: toast.POSITION.TOP_CENTER,
-  //       //     theme: "dark",
-  //       //     autoClose: 3000,
-  //       //   });
-  //     } catch (error) {
-  //       //   toast.error("error deleting record: " + error.message, {
-  //       //     position: toast.POSITION.TOP_CENTER,
-  //       //     theme: "dark",
-  //       //   });
-  //       console.error("error deleting record", error.message);
   //     }
   //   };
 

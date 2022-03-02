@@ -44,7 +44,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
         enterFrom="opacity-0 scale-90 translate-y-10"
         enterTo="opacity-100 scale-100 translate-y-0"
         leave="transition-all ease-in-out duration-200"
-        leaveFrom="opacity-100 scale-100 translate-y-0" 
+        leaveFrom="opacity-100 scale-100 translate-y-0"
         leaveTo="opacity-0 scale-90 translate-y-10"
       >
         <div
