@@ -245,24 +245,36 @@ export const clearCartFirebase = async () => {
 
 export const updateOrderHistory = async () => {};
 export const updateItemsSoldNum = async () => {
-  // try {
-  //   const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
-  //   const userDocSnap = await getDoc(currentUserRef);
-  //   const allProducts = (await firestoreGetTeamsDoc()) as ProductType[];
-  //   if (userDocSnap.exists()) {
-  //     const currentUser = userDocSnap.data();
-  //     const cartItems: CartItemType[] = currentUser.cartItems;
-  //     for (var cartItem of cartItems) {
-  //       let foundProduct = allProducts.find(
-  //         (product) => product.id === cartItem.product.id
-  //       );
-  //       const productsRef = doc(db, "teams", cartItem.product.)
-  //       foundProduct?.sold += cartItem.count;
-  //     }
-  //   }
-  // } catch (error) {
-  //   throw error;
-  // }
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const userDocSnap = await getDoc(currentUserRef);
+    if (userDocSnap.exists()) {
+      const currentUser = userDocSnap.data();
+      const cartItems: CartItemType[] = currentUser.cartItems;
+      for (var cartItem of cartItems) {
+        const teamRef = doc(db, "teams", cartItem.product.teamId);
+        const teamDocSnap = await getDoc(teamRef);
+        if (teamDocSnap.exists()) {
+          const teamDoc = teamDocSnap.data() as TeamType;
+          const { productsList } = teamDoc as TeamType;
+          let foundProduct = productsList?.find(
+            (product) => product.id === cartItem.product.id
+          );
+          productsList![productsList!.indexOf(foundProduct!)].sold +=
+            cartItem.count;
+          await updateDoc(teamRef, {
+            productsList,
+          });
+        } else {
+          throw Error("No team doc found");
+        }
+      }
+    } else {
+      throw Error("No user doc found");
+    }
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const subscribeToCurrentUserCartItems = (

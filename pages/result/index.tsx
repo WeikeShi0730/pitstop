@@ -31,13 +31,11 @@ const ResultPage: NextPage = () => {
       if (status === "succeeded") {
         try {
           await Promise.all([
-            updateOrderHistory,
-            updateItemsSoldNum,
-            clearCartFirebase,
+            updateOrderHistory(),
+            updateItemsSoldNum(),
+            clearCartFirebase(),
           ]);
           // await clearCartFirebase();
-          // await updateOrderHistory();
-          // await updateItemsSoldNum();
         } catch (error) {
           console.error(error);
         }
