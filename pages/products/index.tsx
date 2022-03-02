@@ -1,7 +1,7 @@
 import Layout from "../../components/layout.component";
 import ProductsList from "../../components/products-list.component";
 import { GetStaticProps } from "next";
-import { firestoreGetTeamsDoc } from "../../firebase/firebase.utils";
+import { firestoreGetAllProducts } from "../../firebase/firebase.utils";
 import { ProductType, TeamType } from "../../interfaces";
 import PageBackground from "../../components/page-background.component";
 
@@ -26,7 +26,7 @@ export default ProductsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const productsList: ProductType[] | TeamType = await firestoreGetTeamsDoc();
+    const productsList: ProductType[] | TeamType = await firestoreGetAllProducts();
     return {
       props: { productsList },
     };

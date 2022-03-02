@@ -84,26 +84,30 @@ export const firestoreGetTeamsDocs = async () => {
   }
 };
 
-export const firestoreGetTeamsDoc = async (id?: string) => {
+export const firestoreGetTeamsDoc = async (id: string) => {
   try {
-    if (id !== undefined && id !== null && id !== "") {
-      const docRef = doc(db, "teams", id);
-      const docSnapshot = await getDoc(docRef);
-      if (docSnapshot.exists()) {
-        return docSnapshot.data() as TeamType;
-      } else {
-        throw Error("No doc found");
-      }
+    const docRef = doc(db, "teams", id);
+    const docSnapshot = await getDoc(docRef);
+    if (docSnapshot.exists()) {
+      return docSnapshot.data() as TeamType;
     } else {
-      const docSnapshot = await getDocs(collection(db, "teams"));
-      let allProducts: ProductType[] = [];
-      docSnapshot.forEach((doc) => {
-        doc.data().productsList.map((product: ProductType) => {
-          allProducts.push(product);
-        });
-      });
-      return allProducts as ProductType[];
+      throw Error("No doc found");
     }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const firestoreGetAllProducts = async () => {
+  try {
+    const docsSnap = await getDocs(collection(db, "teams"));
+    let allProducts: ProductType[] = [];
+    docsSnap.forEach((doc) => {
+      doc.data().productsList.map((product: ProductType) => {
+        allProducts.push(product);
+      });
+    });
+    return allProducts as ProductType[];
   } catch (error) {
     throw error;
   }
@@ -243,7 +247,6 @@ export const updateOrderHistory = async () => {};
 export const updateItemsSoldNum = async () => {
   // try {
   //   const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
-    
   //   const userDocSnap = await getDoc(currentUserRef);
   //   const allProducts = (await firestoreGetTeamsDoc()) as ProductType[];
   //   if (userDocSnap.exists()) {
