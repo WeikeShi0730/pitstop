@@ -14,7 +14,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
   useEffect(() => {
     const handleResize = () => {
       if (window) {
-        const numbSlides =
+        const numSlides =
           window.innerWidth < 1536
             ? window.innerWidth < 1280
               ? window.innerWidth < 1024
@@ -24,7 +24,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
                 : 3
               : 4
             : 5;
-        setNumSlides(numbSlides);
+        setNumSlides(numSlides);
       }
     };
     window.addEventListener("resize", handleResize);

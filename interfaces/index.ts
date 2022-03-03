@@ -15,8 +15,8 @@ export interface TeamType {
   id?: string;
   name?: string;
   fullname?: string;
-  photos: string[];
-  backgroundImg?: string;
+  teamBackgrounds: string[];
+  teamBanner?: string;
   productsList?: ProductType[];
 }
 export interface SignInType {

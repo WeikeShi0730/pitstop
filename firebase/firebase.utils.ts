@@ -69,7 +69,7 @@ const uploadData = async () => {
     // console.error("Error adding document: ", e);
   }
 };
-// uploadData();
+uploadData();
 
 //** Get data */
 // Optimize with Graphql!!!!!

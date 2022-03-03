@@ -6,8 +6,8 @@ interface Team {
 }
 
 const PageBackground = ({ info }: Team) => {
-  const { photos, fullname } = info;
-  const photo = photos[Math.floor(Math.random() * photos.length)];
+  const { teamBackgrounds, fullname } = info;
+  const teamBackground = teamBackgrounds[Math.floor(Math.random() * teamBackgrounds.length)];
 
   return (
       <div className="relative bg-slate-50 flex p-10 shadow-2xl">
@@ -19,7 +19,7 @@ const PageBackground = ({ info }: Team) => {
         <div className="relative w-full h-96 2xl:h-100">
           <Image
             // priority
-            src={photo}
+            src={teamBackground}
             className="object-cover rounded-lg"
             unoptimized
             alt="background image"

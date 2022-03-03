@@ -10,7 +10,7 @@ interface ProductsType {
 }
 
 const Home = ({ featuredProducts }: ProductsType) => {
-  const info = { photos: ["/home/f12022.jpg"] };
+  const info = { teamBackgrounds: ["/home/f12022.jpg"] };
   return (
     <>
       <div className="shadow-lg h-content bg-slate-300">
