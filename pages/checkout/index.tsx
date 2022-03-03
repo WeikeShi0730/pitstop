@@ -10,9 +10,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-
-// export async function getServerSideProps(context) {
-//   return {
-//     props: {},
-//   };
-// }
