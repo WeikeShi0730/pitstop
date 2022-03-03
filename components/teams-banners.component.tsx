@@ -13,7 +13,7 @@ const TeamsBanners = ({ teams }: TeamsType) => {
           <TeamBanner
             key={team.id}
             id={team.id!}
-            backgroundImg={team.backgroundImg!}
+            backgroundImg={team.teamBanner!}
             name={team.name!}
           />
         );

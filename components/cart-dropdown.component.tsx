@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { CartItemType } from "../interfaces";
 import CartDropdownItem from "./cart-dropdown-item.component";
@@ -6,7 +5,6 @@ interface CartItems {
   cartItems: CartItemType[] | undefined | null;
 }
 const CartDropdown = ({ cartItems }: CartItems) => {
-  const [subtotal, setSubtotal] = useState<string>("0.00");
 
   const total = cartItems
     ?.reduce((acc: number, currentValue) => {
