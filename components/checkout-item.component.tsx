@@ -107,7 +107,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   }, [count]);
 
   return (
-    <div className="flex justify-center w-2/3 mx-5 text-slate-700">
+    <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700">
       <div
         ref={ref}
         className="flex w-full bg-opacity-80 backdrop-blur-sm bg-slate-400 rounded-lg transition-all duration-500 ease-in-out"
@@ -123,14 +123,15 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
             />
           </div>
         </div>
-        <div className="text flex flex-col justify-evenly mx-4 px-2 w-2/3">
+        <div className="text flex flex-col justify-evenly mx-4 w-2/3">
           <div className="title flex justify-start">
             <div className="name text-2xl">{name}</div>
           </div>
-          <div className="details flex items-center justify-between">
-            <div className="unt flex items-end">
-              <div className="">Unit price: CAD</div>
-              <div className="text-xl">{price}</div>
+          <div className="details flex flex-col md:flex-row items-center justify-between">
+            <div className="unt flex items-end justify-start">
+              <div>CAD</div>
+              <div className="text-xl ml-1">{price}</div>
+              <div className="">/ea</div>
             </div>
             <div className="qty flex items-center">
               <div className="">Qty:</div>
@@ -157,11 +158,11 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                   ⊕
                 </button>
               </div>
-            </div>
-            <div className="delete text-2xl">
-              <button onClick={handleClick} name="DELETE">
-                🅧
-              </button>
+              <div className="delete text-2xl">
+                <button onClick={handleClick} name="DELETE">
+                  🅧
+                </button>
+              </div>
             </div>
           </div>
           <div className="subtotal flex w-full justify-end items-end space-x-2">

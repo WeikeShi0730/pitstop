@@ -24,10 +24,10 @@ const Layout = ({ children, title = "" }: Props) => {
         <Nav currentUser={null} cartItems={null} />
       </header>
       <motion.div
-        initial={{ opacity: 0, x: -100, y: 0 }}
+        initial={{ opacity: 0.5, x: -100, y: 0 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         exit={{ opacity: 0, x: 0, y: -100 }}
-        transition={{ type: "linear", duration: 0.5 }}
+        transition={{ type: "linear", duration: 0.25 }}
         // className="flex flex-col min-h-screen justify-between"
         className=""
       >
