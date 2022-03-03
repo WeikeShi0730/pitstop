@@ -35,7 +35,7 @@ const Checkout = ({ cartItems }: CartItems) => {
   };
 
   return (
-    <div className="text-slate-700 h-content w-full flex flex-col lg:flex-row lg:justify-center">
+    <div className="text-slate-700 min-h-content my-10 w-full flex flex-col lg:flex-row lg:justify-center">
       <div className="w-full lg:w-3/4">
         <div className="flex justify-center m-2">
           <div className="flex w-full sm:w-2/3 m-5 justify-start text-2xl py-1 border-b border-slate-700">

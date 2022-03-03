@@ -99,7 +99,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
 
   return (
     <div className="w-full flex justify-center items-center my-10 lg:my-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8 justify-items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center">
         {name !== undefined &&
         name !== null &&
         name.length > 0 &&
