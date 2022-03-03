@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import NoScrollLink from "./no-scroll-link.component";
 
 const About = () => {
   const componentStyle =
@@ -29,9 +29,9 @@ const About = () => {
             to showcase your love towards F1™. Enjoy!
           </p>
           <p className="underline-primary font-normal text-lg md:text-xl text-right">
-            <Link href="/">
+            <NoScrollLink href="/">
               <a>Go to shop →</a>
-            </Link>
+            </NoScrollLink>
           </p>
         </div>
       </div>

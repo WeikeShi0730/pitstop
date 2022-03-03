@@ -1,11 +1,10 @@
-import Link from "next/link";
 import { CartItemType } from "../interfaces";
 import CartDropdownItem from "./cart-dropdown-item.component";
+import NoScrollLink from "./no-scroll-link.component";
 interface CartItems {
   cartItems: CartItemType[] | undefined | null;
 }
 const CartDropdown = ({ cartItems }: CartItems) => {
-
   const total = cartItems
     ?.reduce((acc: number, currentValue) => {
       return acc + currentValue.count * currentValue.product.price;
@@ -33,11 +32,11 @@ const CartDropdown = ({ cartItems }: CartItems) => {
         <div className="text-2xl">{total}</div>
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
-        <Link href="/checkout">
+        <NoScrollLink href="/checkout">
           <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-50">
             Checkout
           </a>
-        </Link>
+        </NoScrollLink>
       </div>
     </div>
   );

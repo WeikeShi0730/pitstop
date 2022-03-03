@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NoScrollLink from "./no-scroll-link.component";
 import { useRouter } from "next/router";
 import { auth, signOutGoogle } from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
@@ -55,14 +55,14 @@ const SignOut = () => {
 
   return (
     <div className="grid grid-rows-5 grid-flow-col gap-4 justify-items-center mt-10">
-      <Link href="/">
+      <NoScrollLink href="/">
         <a
           onClick={clearCurrentUser}
           className="text-xs md:text-sm lg:text-base py-2 px-4 text-red-500 rounded border border-red-500 hover:shadow-md hover:shadow-red-600 hover:text-slate-50 hover:bg-red-500 font-light"
         >
           Sign out
         </a>
-      </Link>
+      </NoScrollLink>
       <div />
       <div />
     </div>

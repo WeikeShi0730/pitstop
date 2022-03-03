@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import NoScrollLink from "./no-scroll-link.component";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import {
   SiAmericanexpress,
@@ -52,26 +52,26 @@ const Footer = () => {
         </div>
       </div>
       <div className="links flex justify-center gap-8">
-        <Link href="/">
+        <NoScrollLink href="/">
           <a className="hover:underline-primary hover:underline-offset-4">
             Home
           </a>
-        </Link>
-        <Link href="/teams">
+        </NoScrollLink>
+        <NoScrollLink href="/teams">
           <a className="hover:underline-primary hover:underline-offset-4">
             Teams
           </a>
-        </Link>
-        <Link href="/contact">
+        </NoScrollLink>
+        <NoScrollLink href="/contact">
           <a className="hover:underline-primary hover:underline-offset-4">
             Contact
           </a>
-        </Link>
-        <Link href="/about">
+        </NoScrollLink>
+        <NoScrollLink href="/about">
           <a className="hover:underline-primary hover:underline-offset-4">
             About
           </a>
-        </Link>
+        </NoScrollLink>
       </div>
       <div className="cards flex flex-col items-center justify-center">
         <div className="m-1">Supported payment systems</div>

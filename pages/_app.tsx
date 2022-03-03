@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AnimatePresence
         exitBeforeEnter
         initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
+        onExitComplete={() =>
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+        }
       >
         <Component {...pageProps} key={router.pathname} />
         <ToastContainer />

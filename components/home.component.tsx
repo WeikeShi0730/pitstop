@@ -1,6 +1,6 @@
+import NoScrollLink from "./no-scroll-link.component";
 import PageBackground from "./page-background.component";
 import Image from "next/image";
-import Link from "next/link";
 import Carousel from "./carousel.component";
 import { ProductType } from "../interfaces/index";
 import DownArrow from "./down-arrow.component";
@@ -25,12 +25,12 @@ const Home = ({ featuredProducts }: ProductsType) => {
           />
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-center p-5 gap-y-10 lg:gap-x-10">
-          <Link href="/products">
+          <NoScrollLink href="/products">
             <a className="homepage-button">Shop all</a>
-          </Link>
-          <Link href="/teams">
+          </NoScrollLink>
+          <NoScrollLink href="/teams">
             <a className="homepage-button">Shop by teams</a>
-          </Link>
+          </NoScrollLink>
         </div>
         <DownArrow />
       </div>

@@ -1,6 +1,6 @@
+import NoScrollLink from "./no-scroll-link.component";
 import { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
-import Link from "next/link";
 import Image from "next/image";
 import CartIcon from "./cart-icon.component";
 import SearchBar from "./search-bar.component";
@@ -26,7 +26,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
   return (
       <nav>
         <div className="bg-slate-700 text-slate-200 flex items-center p-2 h-20">
-          <Link href="/">
+          <NoScrollLink href="/">
             <a>
               <div className="relative w-40 h-16 mx-5">
                 <Image
@@ -38,26 +38,26 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
                 />
               </div>
             </a>
-          </Link>
+          </NoScrollLink>
           <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
-            <Link href="/">
+            <NoScrollLink href="/">
               <a>Home</a>
-            </Link>
+            </NoScrollLink>
           </div>
           <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
-            <Link href="/products">
+            <NoScrollLink href="/products">
               <a>Products</a>
-            </Link>
+            </NoScrollLink>
           </div>
           <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
-            <Link href="/teams">
+            <NoScrollLink href="/teams">
               <a>Teams</a>
-            </Link>
+            </NoScrollLink>
           </div>
           <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
-            <Link href="/contact">
+            <NoScrollLink href="/contact">
               <a>Contact</a>
-            </Link>
+            </NoScrollLink>
           </div>
           <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
             <SearchBar />
@@ -67,13 +67,13 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
           </div>
           <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
             {currentUser ? (
-              <Link href={`/account/${currentUser?.uid as string}`}>
+              <NoScrollLink href={`/account/${currentUser?.uid as string}`}>
                 <a>{currentUser.displayName}</a>
-              </Link>
+              </NoScrollLink>
             ) : (
-              <Link href="/login">
+              <NoScrollLink href="/login">
                 <a>Sign In</a>
-              </Link>
+              </NoScrollLink>
             )}
           </div>
           <div className="flex items-center justify-between lg:hidden mx-5">
@@ -127,35 +127,35 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
                 <SearchBar />
               </div>
               <div className="w-52 py-5 text-center">
-                <Link href="/">
+                <NoScrollLink href="/">
                   <a>Home</a>
-                </Link>
+                </NoScrollLink>
               </div>
               <div className="w-52 py-5 text-center">
-                <Link href="/products">
+                <NoScrollLink href="/products">
                   <a>Products</a>
-                </Link>
+                </NoScrollLink>
               </div>
               <div className="w-52 py-5 text-center">
-                <Link href="/teams">
+                <NoScrollLink href="/teams">
                   <a>Teams</a>
-                </Link>
+                </NoScrollLink>
               </div>
               <div className="w-52 py-5 text-center">
                 {currentUser ? (
-                  <Link href={`/account/${currentUser?.uid as string}`}>
+                  <NoScrollLink href={`/account/${currentUser?.uid as string}`}>
                     <a>My account</a>
-                  </Link>
+                  </NoScrollLink>
                 ) : (
-                  <Link href="/login">
+                  <NoScrollLink href="/login">
                     <a>Sign In</a>
-                  </Link>
+                  </NoScrollLink>
                 )}
               </div>
               <div className="w-52 py-5 text-center mt-auto">
-                <Link href="/contact">
+                <NoScrollLink href="/contact">
                   <a>Contact</a>
-                </Link>
+                </NoScrollLink>
               </div>
             </div>
           </Transition>
