@@ -1,12 +1,14 @@
 import React from "react";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import Loading from "./loading.component";
 
 const CheckoutResult = ({ data }: any) => {
   const view = data ? (
     data?.payment_intent?.status === "succeeded" ? (
       <>
         <div className="text-4xl">🥳</div>
-        <div className="text leading-8 text-center">Your order has been confirmed!</div>
+        <div className="text leading-8 text-center">
+          Your order has been confirmed!
+        </div>
       </>
     ) : (
       <>
@@ -17,9 +19,7 @@ const CheckoutResult = ({ data }: any) => {
       </>
     )
   ) : (
-    <div className="animate-spin text-4xl">
-      <AiOutlineLoading3Quarters />
-    </div>
+    <Loading />
   );
 
   return (
