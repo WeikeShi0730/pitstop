@@ -14,6 +14,9 @@ module.exports = {
       full: "9999px",
       large: "1rem",
     },
+    minHeight: {
+      content: "calc(100vh - 5rem)",
+    },
     extend: {
       height: {
         76: "18rem",

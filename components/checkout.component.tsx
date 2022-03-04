@@ -35,8 +35,8 @@ const Checkout = ({ cartItems }: CartItems) => {
   };
 
   return (
-    <div className="text-slate-700 min-h-content my-10 w-full flex flex-col lg:flex-row lg:justify-center">
-      <div className="w-full lg:w-3/4">
+    <div className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row lg:justify-center">
+      <div className="relative w-full lg:w-3/4 my-10">
         <div className="flex justify-center m-2">
           <div className="flex w-full sm:w-2/3 m-5 justify-start text-2xl py-1 border-b border-slate-700">
             Your cart 🛒
@@ -67,8 +67,8 @@ const Checkout = ({ cartItems }: CartItems) => {
           </div>
         )}
       </div>
-      <div className="w-full lg:w-1/4 flex justify-center lg:items-center">
-        <div className="relative lg:sticky lg:top-24 ">
+      <div className="w-full lg:w-1/4 flex mb-10 justify-center lg:items-start">
+        <div className="relative lg:sticky lg:top-24">
           <form onSubmit={handleSubmit} method="POST">
             <button
               role="link"
