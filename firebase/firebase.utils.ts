@@ -168,6 +168,7 @@ export const updateUserCartFirestore = async (
       const cartItem = cartItems.filter(
         (cartItem) => cartItem.product.id === product.id
       );
+      console.log(cartItem);
       switch (action) {
         case "ADD": {
           if (cartItem.length === 0) {
@@ -182,6 +183,7 @@ export const updateUserCartFirestore = async (
         }
         case "REMOVE": {
           if (cartItem.length === 0) {
+            break;
           } else if (cartItem[0].count === 1) {
             cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
           } else if (cartItem[0].count > 1) {
@@ -205,7 +207,7 @@ export const updateUserCartFirestore = async (
 
         case "DELETE": {
           if (cartItem.length === 0) {
-            throw Error("No items found in your cart.");
+            break;
           } else {
             cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
           }
