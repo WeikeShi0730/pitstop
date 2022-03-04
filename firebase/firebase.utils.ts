@@ -168,7 +168,6 @@ export const updateUserCartFirestore = async (
       const cartItem = cartItems.filter(
         (cartItem) => cartItem.product.id === product.id
       );
-      console.log(cartItem);
       switch (action) {
         case "ADD": {
           if (cartItem.length === 0) {
