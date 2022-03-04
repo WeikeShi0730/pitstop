@@ -58,14 +58,14 @@ const Checkout = ({ cartItems }: CartItems) => {
             Your cart is empty!
           </div>
         )}
-        {cartItems && cartItems.length > 0 ? (
+        {cartItems && cartItems.length > 0 && (
           <div className="flex justify-center m-2">
             <div className="flex w-full sm:w-2/3 m-5 justify-end items-end space-x-2 py-1 border-t border-slate-700">
               <div className="text-xl">Total: CAD</div>
               <div className="text-3xl">{total}</div>
             </div>
           </div>
-        ) : null}
+        )}
       </div>
       <div className="w-full lg:w-1/4 flex justify-center lg:items-center">
         <div className="relative lg:sticky lg:top-24 ">

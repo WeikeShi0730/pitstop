@@ -19,9 +19,8 @@ const ResultPage: NextPage = () => {
   // Fetch CheckoutSession from static page via
   // https://nextjs.org/docs/basic-features/data-fetching#static-generation
   const { data, error } = useSWR(
-    router.query.session_id
-      ? `/api/checkout-session/${router.query.session_id}`
-      : null,
+    router.query.session_id &&
+      `/api/checkout-session/${router.query.session_id}`,
     fetchGetJSON
   );
   const status = data?.payment_intent?.status;

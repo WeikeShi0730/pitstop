@@ -29,6 +29,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
       name !== undefined && name !== null && name.length > 0
         ? fuse.search(name as string).map((each) => each.item)
         : productsList;
+    // console.log(filteredList);
     setFilteredList(filteredList);
     setSortedList(filteredList);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -111,16 +112,18 @@ const ProductsList = ({ productsList }: ProductsList) => {
             </p>
             :
           </p>
-        ) : dividedList.length > 0 ? (
-          <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
-            All products:
-          </p>
-        ) : null}
-        {dividedList.length > 0 ? (
+        ) : (
+          dividedList.length > 0 && (
+            <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+              All products:
+            </p>
+          )
+        )}
+        {dividedList.length > 0 && (
           <div className="flex gap-x-2 justify-self-end items-center col-span-1 lg:col-span-2 2xl:col-span-3">
             <SortingBar handleChange={handleChange} />
           </div>
-        ) : null}
+        )}
         {dividedList.length > 0 ? (
           dividedList.map((product: ProductType, index: number) => {
             return (
@@ -138,7 +141,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
             .
           </p>
         )}
-        {dividedList.length > 0 ? (
+        {dividedList.length > 0 && (
           <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1 lg:col-span-2 2xl:col-span-3">
             <Pagination
               setCurrentPage={setCurrentPage}
@@ -146,7 +149,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
               numPages={Math.ceil(filteredList.length / numProductsOnPage)}
             />
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );

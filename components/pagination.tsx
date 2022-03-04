@@ -69,7 +69,7 @@ const Pagination = ({
         <Tab.List className="flex w-fit max-w-full p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
           <button
             className="buttonPrev w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
-            disabled={currentPage === 1 ? true : false}
+            disabled={currentPage === 1}
             onClick={() => {
               setCurrentPage(currentPage - 1);
               backToTop();
@@ -80,7 +80,7 @@ const Pagination = ({
           {pageList}
           <button
             className="buttonNext w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
-            disabled={currentPage === numPages || numPages === 0 ? true : false}
+            disabled={currentPage === numPages || numPages === 0}
             onClick={() => {
               setCurrentPage(currentPage + 1);
               backToTop();
