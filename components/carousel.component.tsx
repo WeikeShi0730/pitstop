@@ -33,14 +33,14 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
   return (
     <div className="">
       <div className="flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
-        Featured products:
+        Featured stickers:
       </div>
       <Swiper
         slidesPerView={numSlides}
         modules={[Navigation, Autoplay]}
         navigation
         autoplay={{
-          delay: 2000,
+          delay: 1500,
           pauseOnMouseEnter: true,
           disableOnInteraction: false,
         }}
