@@ -7,7 +7,6 @@ interface TeamsType {
 const TeamsBanners = ({ teams }: TeamsType) => {
   return (
     <div className="flex flex-col justify-center m-auto my-10 relative w-3/5">
-      {/* <div className=""> */}
       {teams.map((team) => {
         return (
           <TeamBanner

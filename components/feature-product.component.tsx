@@ -11,7 +11,6 @@ const FeatureProduct = ({ featuredProduct }: ProductsType) => {
   const handleClick = async () => {
     try {
       await updateUserCartFirestore(featuredProduct, "ADD");
-      // notificaiton !!!!!!!!!!!!!!!!!!!
     } catch (error: any) {
       console.error(error.message);
     }

@@ -1,4 +1,3 @@
-import { ProductType } from "../interfaces";
 import { Tab } from "@headlessui/react";
 import { useEffect } from "react";
 
