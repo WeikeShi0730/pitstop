@@ -107,9 +107,9 @@ const ProductsList = ({ productsList }: ProductsList) => {
         dividedList.length > 0 ? (
           <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
             Search results for
-            <p className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
+            <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
               &quot;{name}&quot;
-            </p>
+            </span>
             :
           </p>
         ) : (
@@ -135,9 +135,9 @@ const ProductsList = ({ productsList }: ProductsList) => {
         ) : (
           <p className="flex p-5 gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
             Couldn&apos;t find products related to
-            <p className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
+            <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
               &quot;{name}&quot;
-            </p>
+            </span>
             .
           </p>
         )}
