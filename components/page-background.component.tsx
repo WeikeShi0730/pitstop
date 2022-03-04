@@ -12,12 +12,12 @@ const PageBackground = ({ info }: Team) => {
 
   return (
     <div className="relative bg-slate-50 flex p-10 shadow-2xl">
-      {fullname && (
+      {/* {fullname && (
         <div className="text-center text-3xl text-slate-50 bg-slate-700 p-5 rounded-lg backdrop-blur-md bg-opacity-30 absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 shadow-inner hover:text-slate-200 hover:bg-slate-500 hover:backdrop-blur-md hover:bg-opacity-30 hover:shadow-lg">
-          {fullname}
+        {fullname}
         </div>
-      )}
-      <div className="relative w-full h-96 2xl:h-100">
+      )} */}
+      <div className="flex relative w-full h-96 2xl:h-100">
         <Image
           // priority
           src={teamBackground}
@@ -26,6 +26,13 @@ const PageBackground = ({ info }: Team) => {
           alt="background image"
           layout="fill"
         />
+        <div className="w-full h-96 flex justify-center md:justify-end z-10">
+          <div className="md:w-1/2 h-full flex justify-center md:justify-end items-center md:bg-gradient-to-l from-slate-50 via-slate-50">
+            <div className="w-1/2 flex justify-center text-center md:text-right text-3xl text-slate-50 md:text-slate-700 bg-slate-700 p-5 md:p-0 rounded-lg backdrop-blur-md bg-opacity-30 md:bg-transparent hover:text-slate-100 hover:bg-slate-500 hover:backdrop-blur-md hover:bg-opacity-30 hover:shadow-lg md:hover:text-slate-500 md:hover:bg-transparent md:hover:shadow-none ">
+              {fullname}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
