@@ -25,20 +25,23 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className="font-light">
-      {loading ? (
-        <Loading />
-      ) : (
-        <AnimatePresence
-          exitBeforeEnter
-          initial={false}
-          onExitComplete={() =>
-            window.scrollTo({ top: 0, left: 0, behavior: "auto" })
-          }
-        >
-          <Component {...pageProps} key={router.pathname} />
-          <ToastContainer />
-        </AnimatePresence>
+      {loading && (
+        <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full h-full">
+          <div className="flex items-center justify-center backdrop-blur-md w-full h-full">
+            <Loading />
+          </div>
+        </div>
       )}
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() =>
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+        }
+      >
+        <Component {...pageProps} key={router.pathname} />
+        <ToastContainer />
+      </AnimatePresence>
     </div>
   );
 }
