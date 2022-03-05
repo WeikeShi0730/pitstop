@@ -31,7 +31,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
     handleResize();
   });
   return (
-    <div className="">
+    <>
       <div className="flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
         Featured stickers:
       </div>
@@ -54,7 +54,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
           );
         })}
       </Swiper>
-    </div>
+    </>
   );
 };
 

@@ -34,7 +34,7 @@ const SignUp = () => {
       toast.success("🥳 Signed up successfully!", {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -46,7 +46,7 @@ const SignUp = () => {
       toast.error(error.message, {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,

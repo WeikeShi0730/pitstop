@@ -109,6 +109,14 @@ const Checkout = ({ cartItems }: CartItems) => {
                 </div>
               </button>
             </form>
+            {cartItems && cartItems.length > 0 && (
+              <div className="flex justify-center m-2">
+                <div className="flex w-full sm:w-2/3 m-5 justify-end items-end space-x-2 py-1 border-t border-slate-700">
+                  <div className="text-xl">Total: CAD</div>
+                  <div className="text-3xl">{total}</div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

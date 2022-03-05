@@ -20,13 +20,23 @@ const ResetPassword = () => {
       setLoading(true);
       await sendChangePasswordEmail(email);
       setLoading(false);
+      toast.success("Password reset email sent", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       setResult(true);
     } catch (error: any) {
       setLoading(false);
       toast.error(error.message, {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,

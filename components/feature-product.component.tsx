@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ProductType } from "../interfaces/index";
 import { imgLoader } from "../utils/image-loader";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
+import { toast } from "react-toastify";
 import Loading from "./loading.component";
 
 interface ProductsType {
@@ -17,15 +18,35 @@ const FeatureProduct = ({ featuredProduct }: ProductsType) => {
       setLoading(true);
       await updateUserCartFirestore(featuredProduct, "ADD");
       setLoading(false);
+      toast.success("Item has been added to your cart", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error: any) {
       setLoading(false);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       console.error(error.message);
     }
   };
 
   return (
     <>
-      {loading && <Loading />}
+      {/* {!loading && <Loading />} */}
       <div className="flex justify-center items-center py-3">
         <div className="p-3 m-5 w-72 h-full rounded-lg text-center text-slate-700 bg-opacity-30 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700">
           <div className="flex relative w-full h-48 justify-center items-center m-auto p-3">

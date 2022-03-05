@@ -32,7 +32,7 @@ const Contact = () => {
       toast.success("Thanks for your email, we'll get back to you ASAP!", {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -46,7 +46,7 @@ const Contact = () => {
         {
           position: "top-center",
           autoClose: 1000,
-          hideProgressBar: false,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,

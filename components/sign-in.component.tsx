@@ -22,7 +22,7 @@ const SignIn = () => {
       toast.success("🥳 Signed in successfully!", {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -34,7 +34,7 @@ const SignIn = () => {
       toast.error(error.message, {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -54,7 +54,7 @@ const SignIn = () => {
       toast.success("🥳 Signed in successfully!", {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -66,7 +66,7 @@ const SignIn = () => {
       toast.error(error.message, {
         position: "top-center",
         autoClose: 1000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
