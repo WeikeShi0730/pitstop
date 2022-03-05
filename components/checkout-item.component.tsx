@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
-import { updateUserCartFirestore } from "../firebase/firebase.utils";
+import useCartItemChange from "../utils/use-cart-item-change";
 import Loading from "./loading.component";
-
 
 interface CartItem {
   cartItem: CartItemType;
@@ -15,62 +14,25 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
-  const [loading, setLoading] = useState<boolean>(false);
   const [displayValue, setDisplayValue] = useState<number | string>(count);
   const ref = useRef<HTMLDivElement>(null);
-
-  const close = () => {
-    const component = ref.current as HTMLDivElement;
-    component.classList.add("opacity-0");
-  };
+  const [loading, handler] = useCartItemChange();
 
   const subtotal = ((displayValue as number) * price).toFixed(2);
 
-  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name } = event.currentTarget;
     try {
-      switch (name) {
-        case "ADD": {
-          setLoading(true);
-          await updateUserCartFirestore(cartItem.product, "ADD");
-          setLoading(false);
-          break;
-        }
-        case "REMOVE": {
-          if (cartItem.count === 1) {
-            close();
-            setTimeout(async () => {
-              setLoading(true);
-              await updateUserCartFirestore(cartItem.product, "REMOVE");
-              setLoading(false);
-            }, 500);
-            break;
-          }
-          setLoading(true);
-          await updateUserCartFirestore(cartItem.product, "REMOVE");
-          setLoading(false);
-          break;
-        }
-        case "DELETE": {
-          close();
-          setTimeout(async () => {
-            setLoading(true);
-            await updateUserCartFirestore(cartItem.product, "DELETE");
-            setLoading(false);
-          }, 500);
-          break;
-        }
-      }
+      handler(cartItem, name, ref);
     } catch (error: any) {
-      setLoading(false);
       console.error(error.message);
     }
   };
 
   const handleChange = async (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    const { value, max, min } = event.currentTarget;
+    const { name, value, max, min } = event.currentTarget;
     const intValue = parseInt(value);
     const intMax = parseInt(max);
     const intMin = parseInt(min);
@@ -79,38 +41,24 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     } else {
       let setValue = intValue <= intMax ? intValue : intMax;
       setValue = setValue >= intMin ? setValue : intMin;
-      submitCount(setValue);
+      handler(cartItem, name, ref, setValue);
     }
   };
 
   const handleOnBlur = async (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    const { value, min } = event.currentTarget;
+    const { name, value, min } = event.currentTarget;
     const intMin = parseInt(min);
     const intValue = parseInt(value);
     if (isNaN(intValue)) {
       setDisplayValue(intMin);
-      submitCount(intMin);
-    }
-  };
-
-  const submitCount = async (setValue: number) => {
-    try {
-      setLoading(true);
-      await updateUserCartFirestore(
-        cartItem.product,
-        "SET",
-        setValue as number
-      );
-      setLoading(false);
-    } catch (error: any) {
-      setLoading(false);
-      console.error(error.message);
+      handler(cartItem, name, ref, intMin);
     }
   };
 
   useEffect(() => {
     setDisplayValue(() => count);
+    return () => setDisplayValue("");
   }, [count]);
 
   return (
@@ -154,6 +102,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                     <input
                       className="w-10 bg-transparent text-center underline underline-offset-2 decoration-1 outline-none"
                       type="number"
+                      name="SET"
                       value={displayValue}
                       onChange={handleChange}
                       onBlur={handleOnBlur}

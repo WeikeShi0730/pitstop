@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
-import { updateUserCartFirestore } from "../firebase/firebase.utils";
+import useCartItemChange from "../utils/use-cart-item-change";
 import Loading from "./loading.component";
 
 interface CartItem {
@@ -13,53 +13,15 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
-  const [loading, setLoading] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
-
-  const close = () => {
-    const component = ref.current as HTMLDivElement;
-    component.classList.add("opacity-0");
-  };
+  const [loading, handler] = useCartItemChange();
 
   const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const { name } = event.currentTarget;
     try {
-      switch (name) {
-        case "ADD": {
-          setLoading(true);
-          await updateUserCartFirestore(cartItem.product, "ADD");
-          setLoading(false);
-          break;
-        }
-        case "REMOVE": {
-          if (cartItem.count === 1) {
-            close();
-            setTimeout(async () => {
-              setLoading(true);
-              await updateUserCartFirestore(cartItem.product, "REMOVE");
-              setLoading(false);
-            }, 500);
-            break;
-          }
-          setLoading(true);
-          await updateUserCartFirestore(cartItem.product, "REMOVE");
-          setLoading(false);
-          break;
-        }
-        case "DELETE": {
-          close();
-
-          setTimeout(async () => {
-            setLoading(true);
-            await updateUserCartFirestore(cartItem.product, "DELETE");
-            setLoading(false);
-          }, 500);
-          break;
-        }
-      }
+      handler(cartItem, name, ref);
     } catch (error: any) {
-      setLoading(false);
       console.error(error.message);
     }
   };
