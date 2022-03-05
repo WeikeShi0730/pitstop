@@ -102,7 +102,7 @@ const Checkout = ({ cartItems }: CartItems) => {
                   role="link"
                   id="submit"
                   type="submit"
-                  className="flex justify-center items-center w-48 m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500"
+                  className="flex justify-center items-center w-48 my-2 mx-1 lg:m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500"
                 >
                   <div className="m-1">Checkout with</div>
                   <div className="m-1 ">
@@ -112,7 +112,7 @@ const Checkout = ({ cartItems }: CartItems) => {
               </form>
               {cartItems && cartItems.length > 0 && (
                 <div className="lg:flex">
-                  <div className="flex w-48 m-5 justify-end items-end space-x-2 py-1 lg:border-t border-slate-700">
+                  <div className="flex w-full lg:w-48 justify-center lg:justify-end items-end my-2 mx-1 lg:m-5 space-x-2 py-1 lg:border-t border-slate-700">
                     <div className="text-lg">Total: CAD</div>
                     <div className="text-2xl">{total}</div>
                   </div>

@@ -23,10 +23,10 @@ const BackToTop = () => {
   };
 
   return (
-    <div className="fixed bottom-10 right-10 z-50 text-4xl bg-slate-300 bg-opacity-80 backdrop-blur-md rounded-lg">
+    <div className="fixed bottom-20 right-2 lg:bottom-10 lg:right-10 text-lg z-50 bg-slate-300 bg-opacity-80 backdrop-blur-md rounded-lg">
       <button onClick={handleClick}>
         <div
-          className={`flex justify-center items-center relative w-10 h-10  ${
+          className={`flex justify-center items-center relative w-8 h-8  ${
             scrollPosition || "hidden"
           }`}
         >
