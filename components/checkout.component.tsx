@@ -113,8 +113,8 @@ const Checkout = ({ cartItems }: CartItems) => {
               {cartItems && cartItems.length > 0 && (
                 <div className="lg:flex">
                   <div className="flex w-full lg:w-48 justify-center lg:justify-end items-end my-2 mx-1 lg:m-5 space-x-2 py-1 lg:border-t border-slate-700">
-                    <div className="text-lg">Total: CAD</div>
-                    <div className="text-2xl">{total}</div>
+                    <div className="lg:text-lg">Total: CAD</div>
+                    <div className="text-lg lg:text-2xl">{total}</div>
                   </div>
                 </div>
               )}
