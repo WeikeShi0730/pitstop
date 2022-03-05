@@ -21,9 +21,9 @@ const Product = ({ product }: Product) => {
       await updateUserCartFirestore(product, "ADD");
       setLoading(false);
       toast.success("Item has been added to your cart", {
-        position: "top-right",
-        autoClose: 2500,
-        hideProgressBar: false,
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
@@ -33,8 +33,8 @@ const Product = ({ product }: Product) => {
     } catch (error: any) {
       setLoading(false);
       toast.error(error.message, {
-        position: "top-right",
-        autoClose: 2500,
+        position: "top-center",
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

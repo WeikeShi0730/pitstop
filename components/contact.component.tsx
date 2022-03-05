@@ -30,8 +30,8 @@ const Contact = () => {
       router.back();
       setLoading(false);
       toast.success("Thanks for your email, we'll get back to you ASAP!", {
-        position: "top-right",
-        autoClose: 2500,
+        position: "top-center",
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -44,8 +44,8 @@ const Contact = () => {
       toast.error(
         "Sorry, it seems your message wasn't sent successfully, please try again!",
         {
-          position: "top-right",
-          autoClose: 2500,
+          position: "top-center",
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

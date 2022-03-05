@@ -6,6 +6,7 @@ import { CartItemType } from "../interfaces/index";
 import { FaCcStripe } from "react-icons/Fa";
 import withSubscribtion from "./hoc.component";
 import Loading from "./loading.component";
+import NoScrollLink from "./no-scroll-link.component";
 
 interface CartItems {
   cartItems: CartItemType[] | null;
@@ -73,9 +74,16 @@ const Checkout = ({ cartItems }: CartItems) => {
               );
             })
           ) : (
-            <div className="flex justify-center items-center text-xl">
-              Your cart is empty!
-            </div>
+            <>
+              <div className="flex justify-center items-center text-xl">
+                Your cart is empty!
+              </div>
+              <div className="flex justify-center items-center m-5 underline-primary font-normal text-lg md:text-xl">
+                <NoScrollLink href="/products">
+                  <a>Go to shop →</a>
+                </NoScrollLink>
+              </div>
+            </>
           )}
           {cartItems && cartItems.length > 0 && (
             <div className="flex justify-center m-2">

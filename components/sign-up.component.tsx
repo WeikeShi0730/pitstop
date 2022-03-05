@@ -32,8 +32,8 @@ const SignUp = () => {
       router.back();
       setLoading(false);
       toast.success("🥳 Signed up successfully!", {
-        position: "top-right",
-        autoClose: 2500,
+        position: "top-center",
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -44,8 +44,8 @@ const SignUp = () => {
     } catch (error: any) {
       setLoading(false);
       toast.error(error.message, {
-        position: "top-right",
-        autoClose: 2500,
+        position: "top-center",
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

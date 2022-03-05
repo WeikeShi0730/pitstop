@@ -24,8 +24,8 @@ const ResetPassword = () => {
     } catch (error: any) {
       setLoading(false);
       toast.error(error.message, {
-        position: "top-right",
-        autoClose: 2500,
+        position: "top-center",
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -39,7 +39,7 @@ const ResetPassword = () => {
 
   return (
     <>
-    {loading && <Loading />}
+      {loading && <Loading />}
       {result ? (
         <div className="flex justify-center items-center h-content">
           <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
