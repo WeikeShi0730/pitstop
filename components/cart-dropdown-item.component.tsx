@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
-import useCartItemChange from "../utils/use-cart-item-change";
+import useCartItemChange from "../utils/use-cart-item-action";
 import Loading from "./loading.component";
 
 interface CartItem {
