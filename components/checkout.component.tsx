@@ -94,29 +94,31 @@ const Checkout = ({ cartItems }: CartItems) => {
             </div>
           )}
         </div>
-        <div className="w-full lg:w-1/4 flex mb-10 justify-center lg:items-start">
-          <div className="relative lg:sticky lg:top-24">
-            <form onSubmit={handleSubmit} method="POST">
-              <button
-                role="link"
-                id="submit"
-                type="submit"
-                className="flex justify-center items-center w-48 m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500"
-              >
-                <div className="m-1">Checkout with</div>
-                <div className="m-1 ">
-                  <FaCcStripe size={50} />
+        <div className="w-full lg:w-1/4 flex mb-10 justify-center lg:items-start ">
+          <div className="fixed bottom-0 z-40 w-full bg-slate-50 bg-opacity-50 backdrop-blur-md lg:bg-transparent lg:sticky lg:top-24">
+            <div className="flex flex-row lg:flex-col items-center justify-center">
+              <form onSubmit={handleSubmit} method="POST">
+                <button
+                  role="link"
+                  id="submit"
+                  type="submit"
+                  className="flex justify-center items-center w-48 m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500"
+                >
+                  <div className="m-1">Checkout with</div>
+                  <div className="m-1 ">
+                    <FaCcStripe size={50} />
+                  </div>
+                </button>
+              </form>
+              {cartItems && cartItems.length > 0 && (
+                <div className="lg:flex">
+                  <div className="flex w-48 m-5 justify-end items-end space-x-2 py-1 lg:border-t border-slate-700">
+                    <div className="text-lg">Total: CAD</div>
+                    <div className="text-2xl">{total}</div>
+                  </div>
                 </div>
-              </button>
-            </form>
-            {cartItems && cartItems.length > 0 && (
-              <div className="flex justify-center m-2">
-                <div className="flex w-full sm:w-2/3 m-5 justify-end items-end space-x-2 py-1 border-t border-slate-700">
-                  <div className="text-xl">Total: CAD</div>
-                  <div className="text-3xl">{total}</div>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
