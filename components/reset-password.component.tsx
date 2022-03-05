@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { sendChangePasswordEmail } from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
+import Loading from "./loading.component";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState<string>("");
   const [result, setResult] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -15,9 +17,12 @@ const ResetPassword = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      setLoading(true);
       await sendChangePasswordEmail(email);
+      setLoading(false);
       setResult(true);
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 2500,
@@ -34,13 +39,15 @@ const ResetPassword = () => {
 
   return (
     <>
+    {loading && <Loading />}
       {result ? (
         <div className="flex justify-center items-center h-content">
           <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
             <div className="text-4xl">🔐</div>
             <div className="text leading-8 text-center">
-              Password reset email has been sent to <span className="italic text-lg">{email}</span>, use the link found
-              in the email to reset.
+              Password reset email has been sent to{" "}
+              <span className="italic text-lg">{email}</span>, use the link
+              found in the email to reset.
             </div>
           </div>
         </div>

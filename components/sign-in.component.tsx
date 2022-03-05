@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { SignInType } from "../interfaces";
 import { signInWithGoogle, signInWithEmail } from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
+import Loading from "./loading.component";
 
 const SignIn = () => {
   const router = useRouter();
@@ -10,11 +11,14 @@ const SignIn = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleClick = async () => {
     try {
+      setLoading(true);
       await signInWithGoogle();
       router.back();
+      setLoading(false);
       toast.success("🥳 Signed in successfully!", {
         position: "top-right",
         autoClose: 2500,
@@ -26,6 +30,7 @@ const SignIn = () => {
         theme: "colored",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 2500,
@@ -42,8 +47,10 @@ const SignIn = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      setLoading(true);
       await signInWithEmail(signInInfo);
       router.back();
+      setLoading(false);
       toast.success("🥳 Signed in successfully!", {
         position: "top-right",
         autoClose: 2500,
@@ -55,6 +62,7 @@ const SignIn = () => {
         theme: "colored",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 2500,
@@ -83,6 +91,7 @@ const SignIn = () => {
 
   return (
     <>
+      {loading && <Loading />}
       <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
         <div className="text-base lg:text-xl font-light mt-4 mb-12 text-center">
           Alrady have an account? Sign in 🔐

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-// import { toast } from "react-toastify";
 import { signUpWithEmailAndPassword } from "../firebase/firebase.utils";
 import { SignUpType } from "../interfaces/index";
 import { toast } from "react-toastify";
+import Loading from "./loading.component";
 
 const SignUp = () => {
   const router = useRouter();
@@ -12,6 +12,7 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const { value, name } = event.currentTarget;
@@ -26,8 +27,10 @@ const SignUp = () => {
   ) => {
     event.preventDefault();
     try {
+      setLoading(true);
       await signUpWithEmailAndPassword(signUpInfo);
       router.back();
+      setLoading(false);
       toast.success("🥳 Signed up successfully!", {
         position: "top-right",
         autoClose: 2500,
@@ -39,6 +42,7 @@ const SignUp = () => {
         theme: "colored",
       });
     } catch (error: any) {
+      setLoading(false);
       toast.error(error.message, {
         position: "top-right",
         autoClose: 2500,
@@ -55,6 +59,7 @@ const SignUp = () => {
 
   return (
     <>
+      {loading && <Loading />}
       <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
         <h1 className="text-base lg:text-xl font-light mt-4 mb-12 text-center">
           Don&apos;t have an account? Sign up 🔐

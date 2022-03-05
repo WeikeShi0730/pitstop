@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
+import Loading from "./loading.component";
 
 interface CartItem {
   cartItem: CartItemType;
@@ -12,6 +13,7 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
     product: { imageUrl, name, price },
   } = cartItem as CartItemType;
 
+  const [loading, setLoading] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const close = () => {
@@ -25,74 +27,86 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
     try {
       switch (name) {
         case "ADD": {
+          setLoading(true);
           await updateUserCartFirestore(cartItem.product, "ADD");
+          setLoading(false);
           break;
         }
         case "REMOVE": {
           if (cartItem.count === 1) {
             close();
             setTimeout(async () => {
+              setLoading(true);
               await updateUserCartFirestore(cartItem.product, "REMOVE");
+              setLoading(false);
             }, 500);
             break;
           }
+          setLoading(true);
           await updateUserCartFirestore(cartItem.product, "REMOVE");
+          setLoading(false);
           break;
         }
         case "DELETE": {
           close();
 
           setTimeout(async () => {
+            setLoading(true);
             await updateUserCartFirestore(cartItem.product, "DELETE");
+            setLoading(false);
           }, 500);
           break;
         }
       }
     } catch (error: any) {
+      setLoading(false);
       console.error(error.message);
     }
   };
 
   return (
-    <div
-      className="flex items-center m-2 text-slate-700 transition-all duration-500 ease-in-out"
-      ref={ref}
-    >
-      <div className="image flex flex-col relative w-1/3 h-20">
-        <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
-          <Image
-            src={imageUrl}
-            className="object-contain"
-            unoptimized
-            alt={`${name} image`}
-            layout="fill"
-          />
-        </div>
-      </div>
-      <div className="text ml-2 w-2/3">
-        <div className="name">{name}</div>
-        <div className="qty flex">
-          <div className="">Qty:</div>
-          <div className="mx-2">
-            <button onClick={handleClick} name="REMOVE">
-              ⊖
-            </button>
-          </div>
-          <div className="px-1 w-6 flex justify-center">{count}</div>
-          <div className="mx-2">
-            <button onClick={handleClick} name="ADD">
-              ⊕
-            </button>
+    <>
+      {loading && <Loading />}
+      <div
+        className="flex items-center m-2 text-slate-700 transition-all duration-500 ease-in-out"
+        ref={ref}
+      >
+        <div className="image flex flex-col relative w-1/3 h-20">
+          <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
+            <Image
+              src={imageUrl}
+              className="object-contain"
+              unoptimized
+              alt={`${name} image`}
+              layout="fill"
+            />
           </div>
         </div>
-        <div className="Unt">Price: {price}</div>
+        <div className="text ml-2 w-2/3">
+          <div className="name">{name}</div>
+          <div className="qty flex">
+            <div className="">Qty:</div>
+            <div className="mx-2">
+              <button onClick={handleClick} name="REMOVE">
+                ⊖
+              </button>
+            </div>
+            <div className="px-1 w-6 flex justify-center">{count}</div>
+            <div className="mx-2">
+              <button onClick={handleClick} name="ADD">
+                ⊕
+              </button>
+            </div>
+          </div>
+          <div className="Unt">Price: {price}</div>
+        </div>
+        <div className="delete flex right-4 absolute">
+          <button onClick={handleClick} name="DELETE">
+            🅧
+          </button>
+        </div>
       </div>
-      <div className="delete flex right-4 absolute">
-        <button onClick={handleClick} name="DELETE">
-          🅧
-        </button>
-      </div>
-    </div>
+    </>
   );
 };
 
