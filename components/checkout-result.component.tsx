@@ -11,6 +11,7 @@ import Loading from "./loading.component";
 
 const CheckoutResult = () => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [status, setStatus] = useState<any>(false);
   const router = useRouter();
   // Fetch CheckoutSession from static page via
   // https://nextjs.org/docs/basic-features/data-fetching#static-generation
@@ -19,7 +20,15 @@ const CheckoutResult = () => {
       `/api/checkout-session/${router.query.session_id}`,
     fetchGetJSON
   );
-  const status = data?.payment_intent?.status;
+
+  useEffect(() => {
+    if (data) {
+      // setLoading(false);
+      setStatus(data?.payment_intent?.status);
+    } else {
+      // setLoading(true);
+    }
+  }, [data]);
 
   useEffect(() => {
     const clearCart = async () => {
@@ -41,31 +50,25 @@ const CheckoutResult = () => {
     clearCart();
   }, [status]);
 
-  const view =
-    data &&
-    (data?.payment_intent?.status !== "succeeded" || error ? (
-      <>
-        <div className="text-4xl">😭</div>
-        <div className="text leading-8 text-center">
-          Your order didn&apos;t go through, please try again!
-        </div>
-      </>
-    ) : (
-      <>
-        <div className="text-4xl">🥳</div>
-        <div className="text leading-8 text-center">
-          Your order has been confirmed!
-        </div>
-      </>
-    ));
-
   return (
     <>
-      {(loading || !data) && <Loading />}
+      {loading && <Loading />}
       <div className="flex justify-center items-center h-content">
-        <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
-          {view}
-        </div>
+        {data && (data?.payment_intent?.status !== "succeeded" || error) ? (
+          <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
+            <div className="text-4xl">😭</div>
+            <div className="text leading-8 text-center">
+              Your order didn&apos;t go through, please try again!
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
+            <div className="text-4xl">🥳</div>
+            <div className="text leading-8 text-center">
+              Your order has been confirmed!
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

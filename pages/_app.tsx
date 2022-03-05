@@ -24,19 +24,20 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router]);
 
   return (
-    <div className="font-light">
+    <>
       {loading && <Loading />}
-      <AnimatePresence
-        exitBeforeEnter
-        initial={false}
-        onExitComplete={() =>
-          window.scrollTo({ top: 0, left: 0, behavior: "auto" })
-        }
-      >
-        <Component {...pageProps} key={router.pathname} />
-        <ToastContainer />
-      </AnimatePresence>
-    </div>
+      <div className="font-light">
+        <AnimatePresence
+          exitBeforeEnter
+          onExitComplete={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+          }
+        >
+          <Component {...pageProps} key={router.pathname} />
+          <ToastContainer />
+        </AnimatePresence>
+      </div>
+    </>
   );
 }
 
