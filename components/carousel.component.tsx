@@ -49,8 +49,10 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
         {featuredProducts.map((featuredProduct) => {
           return (
             <SwiperSlide key={featuredProduct.id}>
-              <div className="p-3 m-5 rounded-lg w-72 text-center text-slate-700 bg-opacity-30 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700">
-                <Product product={featuredProduct} />
+              <div className="flex items-center justify-center">
+                <div className="p-3 m-5 rounded-lg w-72 text-center text-slate-700 bg-opacity-30 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700">
+                  <Product product={featuredProduct} wishlistItems={[]} />
+                </div>
               </div>
             </SwiperSlide>
           );

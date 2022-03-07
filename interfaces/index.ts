@@ -42,14 +42,14 @@ export interface CartItemType {
   count: number;
 }
 
-export interface WishlistItemType {
-  product: ProductType;
-}
-export interface OrderHistoryItemType {
-  product: ProductType;
-  count: number;
-  date: any;
-}
+// export interface WishlistItemType {
+//   product: ProductType;
+// }
+// export interface OrderHistoryItemType {
+//   product: ProductType;
+//   count: number;
+//   date: any;
+// }
 
 export interface SnapshotFnType {
   snapshotfn: (snapshot: DocumentSnapshot) => void;

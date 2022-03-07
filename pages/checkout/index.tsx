@@ -4,7 +4,7 @@ import Checkout from "../../components/checkout.component";
 const CheckoutPage = () => {
   return (
     <Layout title="Pitstop | Checkout">
-      <Checkout cartItems={null} />
+      <Checkout cartItems={[]} />
     </Layout>
   );
 };
