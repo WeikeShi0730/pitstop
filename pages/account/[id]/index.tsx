@@ -1,10 +1,10 @@
 import Layout from "../../../components/layout.component";
-import SignOut from "../../../components/sign-out.component";
+import Account from "../../../components/account.component";
 
 const AccountPage = () => {
   return (
     <Layout title="Pitstop | Account">
-      <SignOut />
+      <Account />
     </Layout>
   );
 };
