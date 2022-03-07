@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import {
-  subscribeToCurrentUserCartItems,
+  subscribeToCurrentUserData,
   subscribeToAuthState,
   auth,
 } from "../firebase/firebase.utils";
@@ -8,6 +8,7 @@ import {
   CurrentUserType,
   CartItemType,
   SnapshotType,
+  ProductType,
 } from "../interfaces/index";
 
 const withSubscribtion = <P extends object>(
@@ -18,6 +19,8 @@ const withSubscribtion = <P extends object>(
     const [currentUser, setCurrentUser] = useState<
       CurrentUserType["currentUser"]
     >(auth.currentUser as CurrentUserType["currentUser"]);
+    const [wishlistItems, setWishlistItems] = useState<ProductType[]>();
+    const [orderHistoryItems, setOrderHistoryItems] = useState();
 
     useEffect(() => {
       const unsubscribe = subscribeToAuthState(
@@ -30,11 +33,13 @@ const withSubscribtion = <P extends object>(
 
     useEffect(() => {
       const unsubscribe = currentUser
-        ? subscribeToCurrentUserCartItems(
+        ? subscribeToCurrentUserData(
             currentUser?.uid as string,
             (snapshot: SnapshotType["snapshot"]) => {
               const cartItems = snapshot.data()?.cartItems;
               setCartItems(cartItems);
+              const wishlistItems = snapshot.data()?.wishlistItems;
+              setWishlistItems(wishlistItems);
             }
           )
         : () => {};
@@ -46,6 +51,8 @@ const withSubscribtion = <P extends object>(
         {...(props as P)}
         currentUser={currentUser}
         cartItems={cartItems}
+        wishlistItems={wishlistItems}
+        orderHistoryItems={orderHistoryItems}
       />
     );
   };

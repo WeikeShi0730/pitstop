@@ -230,6 +230,41 @@ export const updateUserCartFirestore = async (
   }
 };
 
+export const updateWishlist = async (product: ProductType, action: string) => {
+  const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+  const docSnap = await getDoc(currentUserRef);
+  if (docSnap.exists()) {
+    const currentUser = docSnap.data();
+    let wishlistItems: ProductType[] = currentUser.wishlistItems;
+    const wishlistItem = wishlistItems.filter((item) => item.id === product.id);
+    switch (action) {
+      case "ADD":
+        if (
+          wishlistItem === undefined ||
+          wishlistItem === null ||
+          wishlistItem.length === 0
+        ) {
+          wishlistItems.push(product);
+        } else {
+          throw Error("Something went wrong!");
+        }
+        break;
+      case "REMOVE":
+        if (
+          wishlistItem !== undefined &&
+          wishlistItem !== null &&
+          wishlistItem.length > 0
+        ) {
+          wishlistItems.splice(wishlistItems.indexOf(wishlistItem[0]), 1);
+        } else {
+          throw Error("Something went wrong!");
+        }
+        break;
+    }
+    
+  }
+};
+
 export const clearCartFirebase = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
@@ -280,13 +315,21 @@ export const updateItemsSoldNum = async () => {
   }
 };
 
-export const subscribeToCurrentUserCartItems = (
+export const subscribeToCurrentUserData = (
   uid: string,
   snapshot: SnapshotFnType["snapshotfn"]
 ) => {
   const currentUserRef = doc(db, "users", uid);
   return onSnapshot(currentUserRef, snapshot);
 };
+
+// export const subscribeToCurrentUserWishlistItems = (
+//   uid: string,
+//   snapshot: SnapshotFnType["snapshotfn"]
+// ) => {
+//   const currentUserRef = doc(db, "users", uid);
+//   return onSnapshot(currentUserRef, snapshot);
+// };
 
 //** Auth *****************************/
 export const signInWithGoogle = async () => {

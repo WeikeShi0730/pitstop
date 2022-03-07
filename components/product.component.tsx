@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProductType } from "../interfaces";
 import Image from "next/image";
+import withSubscribtion from "./hoc.component";
 import { imgLoader } from "../utils/image-loader";
 import { updateUserCartFirestore } from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
@@ -8,12 +9,23 @@ import Loading from "./loading.component";
 
 interface Product {
   product: ProductType;
-  // index: number;
+  wishlistItems: ProductType[];
 }
 
-const Product = ({ product }: Product) => {
+const Product = ({ product, wishlistItems }: Product) => {
   const { name, imageUrl, price } = product;
   const [loading, setLoading] = useState<boolean>(false);
+  const [heart, setHeart] = useState<boolean>(false);
+
+  useEffect(() => {
+    const contain =
+      wishlistItems !== undefined &&
+      wishlistItems !== null &&
+      wishlistItems.some((wishlistItem) => wishlistItem.id === product.id);
+    if (contain) {
+      setHeart(() => true);
+    }
+  }, [wishlistItems, product]);
 
   const handleClick = async () => {
     try {
@@ -63,7 +75,7 @@ const Product = ({ product }: Product) => {
       </div>
       <div className="flex flex-col justify-center relative m-3 py-2 border-y-2 border-slate-50">
         <div className="text-xl my-1 text-left h-12">{name}</div>
-        <div className="text my-1 text-left text-2xl">♡ ♥</div>
+        <div className="text my-1 text-left text-2xl">{heart ? "♥" : "♡"} </div>
         <div className="flex items-center justify-between my-1 gap-3">
           <div className="flex items-end gap-1">
             <div className="">CAD</div>
@@ -82,4 +94,4 @@ const Product = ({ product }: Product) => {
   );
 };
 
-export default Product;
+export default withSubscribtion(Product);
