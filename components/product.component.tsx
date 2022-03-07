@@ -27,6 +27,8 @@ const Product = ({ product, wishlistItems }: Product) => {
       wishlistItems.some((wishlistItem) => wishlistItem.id === product.id);
     if (contain) {
       setHeart(() => true);
+    } else {
+      setHeart(() => false);
     }
   }, [wishlistItems, product]);
 
