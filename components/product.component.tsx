@@ -3,7 +3,10 @@ import { ProductType } from "../interfaces";
 import Image from "next/image";
 import withSubscribtion from "./hoc.component";
 import { imgLoader } from "../utils/image-loader";
-import { updateUserCartFirestore } from "../firebase/firebase.utils";
+import {
+  updateUserCartFirestore,
+  updateWishlist,
+} from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
 import Loading from "./loading.component";
 
@@ -27,12 +30,58 @@ const Product = ({ product, wishlistItems }: Product) => {
     }
   }, [wishlistItems, product]);
 
+  const handleClickHeart = async () => {
+    try {
+      setLoading(true);
+      if (heart) {
+        await updateWishlist(product, "REMOVE");
+        setLoading(false);
+        toast.info("Item removed from your wishlist", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else {
+        await updateWishlist(product, "ADD");
+        setLoading(false);
+        toast.success("Item added to your wishlist", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
+    } catch (error: any) {
+      setLoading(false);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      console.error(error.message);
+    }
+  };
+
   const handleClick = async () => {
     try {
       setLoading(true);
       await updateUserCartFirestore(product, "ADD");
       setLoading(false);
-      toast.success("Item has been added to your cart", {
+      toast.success("Item added to your shopping cart", {
         position: "top-center",
         autoClose: 1000,
         hideProgressBar: true,
@@ -75,7 +124,9 @@ const Product = ({ product, wishlistItems }: Product) => {
       </div>
       <div className="flex flex-col justify-center relative m-3 py-2 border-y-2 border-slate-50">
         <div className="text-xl my-1 text-left h-12">{name}</div>
-        <div className="text my-1 text-left text-2xl">{heart ? "♥" : "♡"} </div>
+        <div className="text my-1 text-left text-2xl">
+          <button onClick={handleClickHeart}>{heart ? "♥" : "♡"}</button>
+        </div>
         <div className="flex items-center justify-between my-1 gap-3">
           <div className="flex items-end gap-1">
             <div className="">CAD</div>

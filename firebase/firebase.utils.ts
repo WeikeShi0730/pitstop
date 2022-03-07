@@ -231,37 +231,47 @@ export const updateUserCartFirestore = async (
 };
 
 export const updateWishlist = async (product: ProductType, action: string) => {
-  const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
-  const docSnap = await getDoc(currentUserRef);
-  if (docSnap.exists()) {
-    const currentUser = docSnap.data();
-    let wishlistItems: ProductType[] = currentUser.wishlistItems;
-    const wishlistItem = wishlistItems.filter((item) => item.id === product.id);
-    switch (action) {
-      case "ADD":
-        if (
-          wishlistItem === undefined ||
-          wishlistItem === null ||
-          wishlistItem.length === 0
-        ) {
-          wishlistItems.push(product);
-        } else {
-          throw Error("Something went wrong!");
-        }
-        break;
-      case "REMOVE":
-        if (
-          wishlistItem !== undefined &&
-          wishlistItem !== null &&
-          wishlistItem.length > 0
-        ) {
-          wishlistItems.splice(wishlistItems.indexOf(wishlistItem[0]), 1);
-        } else {
-          throw Error("Something went wrong!");
-        }
-        break;
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const docSnap = await getDoc(currentUserRef);
+    if (docSnap.exists()) {
+      const currentUser = docSnap.data();
+      let wishlistItems: ProductType[] = currentUser.wishlistItems;
+      const wishlistItem = wishlistItems.filter(
+        (item) => item.id === product.id
+      );
+      switch (action) {
+        case "ADD":
+          if (
+            wishlistItem === undefined ||
+            wishlistItem === null ||
+            wishlistItem.length === 0
+          ) {
+            wishlistItems.push(product);
+          } else {
+            throw Error("Something went wrong!");
+          }
+          break;
+        case "REMOVE":
+          if (
+            wishlistItem !== undefined &&
+            wishlistItem !== null &&
+            wishlistItem.length > 0
+          ) {
+            wishlistItems.splice(wishlistItems.indexOf(wishlistItem[0]), 1);
+          } else {
+            throw Error("Something went wrong!");
+          }
+          break;
+      }
+      await updateDoc(currentUserRef, {
+        wishlistItems: wishlistItems,
+      });
+    } else {
+      throw Error("No doc found");
     }
-    
+  } catch (error) {
+    throw error;
   }
 };
 
