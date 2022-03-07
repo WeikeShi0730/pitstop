@@ -48,7 +48,7 @@ const SignOut = () => {
       <NoScrollLink href="/">
         <a
           onClick={clearCurrentUser}
-          className="font-light w-full"
+          className="font-light w-full text-left"
         >
           Sign out
         </a>
