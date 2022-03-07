@@ -135,6 +135,8 @@ const createUserInFirestore = async (displayName: string, email: string) => {
     await setDoc(doc(db, "users", auth.currentUser?.uid as string), {
       user: { displayName: displayName, email: email },
       cartItems: [],
+      wishlistItems: [],
+      orderHistoryItems: [],
     });
   } catch (error) {
     throw error;

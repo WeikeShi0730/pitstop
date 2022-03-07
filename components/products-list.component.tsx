@@ -128,7 +128,10 @@ const ProductsList = ({ productsList }: ProductsList) => {
           dividedList.map((product: ProductType, index: number) => {
             return (
               <div key={index}>
-                <Product product={product} index={index} />
+                {/* <Product product={product} index={index} /> */}
+                <div className="p-5 rounded-lg w-96 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700">
+                  <Product product={product} />
+                </div>
               </div>
             );
           })

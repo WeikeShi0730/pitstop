@@ -9,7 +9,7 @@ export interface ProductType {
   price: number;
   featured: boolean;
   sold: number;
-  teamId: string
+  teamId: string;
 }
 export interface TeamType {
   id?: string;
@@ -37,13 +37,18 @@ export interface CurrentUserFnType {
   currentUser: (user: User | null) => void;
 }
 
-// export interface CurrentUserType {
-//   currentUser: any;
-// }
-
 export interface CartItemType {
   product: ProductType;
   count: number;
+}
+
+export interface WishlistItemType {
+  product: ProductType;
+}
+export interface OrderHistoryItemType {
+  product: ProductType;
+  count: number;
+  date: any;
 }
 
 export interface SnapshotFnType {
