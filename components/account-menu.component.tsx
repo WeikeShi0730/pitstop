@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import SignOut from "./sign-out.component";
 
-const AccountMenu = () => {
-  const [currentSelection, setCurrentSelection] = useState(0);
-
+const AccountMenu = ({ currentSelection, setCurrentSelection }: any) => {
   const tabStyle = (selected: boolean) => {
     return `font-light h-14 m-1 flex items-center justify-start px-5 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent ${
       selected ? "bg-orange-theme shadow text-slate-50" : "hover:bg-slate-50"

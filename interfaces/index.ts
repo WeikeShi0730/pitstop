@@ -43,7 +43,7 @@ export interface CartItemType {
 }
 
 // export interface WishlistItemType {
-//   product: ProductType;
+//   wishlistItem: ProductType;
 // }
 // export interface OrderHistoryItemType {
 //   product: ProductType;
