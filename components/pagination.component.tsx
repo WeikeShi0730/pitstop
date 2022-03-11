@@ -5,12 +5,14 @@ interface PageNumberType {
   setCurrentPage: (currentPage: number) => void;
   numPages: number;
   currentPage: number;
+  scroll?: number
 }
 
 const Pagination = ({
   setCurrentPage,
   numPages,
   currentPage,
+  scroll,
 }: PageNumberType) => {
   let pageList = [];
 
@@ -49,7 +51,7 @@ const Pagination = ({
 
   const backToTop = () => {
     window.scroll({
-      top: 500,
+      top: scroll,
       left: 0,
       behavior: "smooth",
     });

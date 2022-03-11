@@ -61,7 +61,7 @@ const Checkout = ({ cartItems }: CartItems) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-center">
+      <div className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-start">
         <div className="relative w-full lg:w-3/4 my-10">
           <div className="flex justify-center m-2">
             <div className="flex w-full sm:w-2/3 m-5 justify-start text-2xl py-1 border-b border-slate-700">

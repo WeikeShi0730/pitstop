@@ -14,27 +14,29 @@ const AccountMenu = ({ currentSelection, setCurrentSelection }: any) => {
   };
 
   return (
-    <div className="w-72 m-5">
-      <Tab.Group
-        defaultIndex={1}
-        selectedIndex={currentSelection - 1}
-        onChange={(index) => {
-          setCurrentSelection(index + 1);
-        }}
-      >
-        <Tab.List className="flex flex-col bg-slate-300 rounded-lg shadow">
-          <Tab className={({ selected }) => tabStyle(selected)}>
-            Account overview
-          </Tab>
-          <Tab className={({ selected }) => tabStyle(selected)}>Wishlist</Tab>
-          <Tab className={({ selected }) => tabStyle(selected)}>
-            Order history
-          </Tab>
-          <Tab className={({ selected }) => signoutStyle(selected)}>
-            <SignOut />
-          </Tab>
-        </Tab.List>
-      </Tab.Group>
+    <div className="w-full flex items-start justify-center lg:min-h-content">
+      <div className="mx-2 mt-10 w-72">
+        <Tab.Group
+          defaultIndex={1}
+          selectedIndex={currentSelection - 1}
+          onChange={(index) => {
+            setCurrentSelection(index + 1);
+          }}
+        >
+          <Tab.List className="flex flex-col bg-slate-300 rounded-lg shadow">
+            <Tab className={({ selected }) => tabStyle(selected)}>
+              Account overview
+            </Tab>
+            <Tab className={({ selected }) => tabStyle(selected)}>Wishlist</Tab>
+            <Tab className={({ selected }) => tabStyle(selected)}>
+              Order history
+            </Tab>
+            <Tab className={({ selected }) => signoutStyle(selected)}>
+              <SignOut />
+            </Tab>
+          </Tab.List>
+        </Tab.Group>
+      </div>
     </div>
   );
 };

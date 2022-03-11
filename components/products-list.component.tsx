@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "./product.component";
 import { useRouter } from "next/router";
 import { ProductType } from "../interfaces";
-import Pagination from "./pagination";
+import Pagination from "./pagination.component";
 import SortingBar from "./sorting-bar.component";
 import Fuse from "fuse.js";
 
@@ -150,6 +150,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
               numPages={Math.ceil(filteredList.length / numProductsOnPage)}
+              scroll={500}
             />
           </div>
         )}

@@ -34,7 +34,6 @@ const Product = ({ product, wishlistItems }: Product) => {
   }, [wishlistItems, product]);
 
   const handleClickHeart = async () => {
-    // setHeart(() => !heart);
     try {
       setLoading(true);
       if (heart) {
