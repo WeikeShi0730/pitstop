@@ -1,7 +1,17 @@
 import { Tab } from "@headlessui/react";
 import SignOut from "./sign-out.component";
 
-const AccountMenu = ({ currentSelection, setCurrentSelection }: any) => {
+interface AccountMenuType {
+  currentSelection: number;
+  setCurrentSelection: (value: number) => void;
+  numWishlistItems: number;
+}
+
+const AccountMenu = ({
+  currentSelection,
+  setCurrentSelection,
+  numWishlistItems,
+}: AccountMenuType) => {
   const tabStyle = (selected: boolean) => {
     return `font-light h-14 m-1 flex items-center justify-start px-5 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent ${
       selected ? "bg-orange-theme shadow text-slate-50" : "hover:bg-slate-50"
@@ -14,8 +24,8 @@ const AccountMenu = ({ currentSelection, setCurrentSelection }: any) => {
   };
 
   return (
-    <div className="w-full flex items-start justify-center lg:min-h-content">
-      <div className="mx-2 mt-10 w-72">
+    <div className="w-full flex items-start justify-center md:min-h-content">
+      <div className="mx-5 mt-10 w-72">
         <Tab.Group
           defaultIndex={1}
           selectedIndex={currentSelection - 1}
@@ -27,7 +37,13 @@ const AccountMenu = ({ currentSelection, setCurrentSelection }: any) => {
             <Tab className={({ selected }) => tabStyle(selected)}>
               Account overview
             </Tab>
-            <Tab className={({ selected }) => tabStyle(selected)}>Wishlist</Tab>
+            <Tab className={({ selected }) => tabStyle(selected)}>
+              Wishlist (
+              <span className="underline underline-offset-1">
+                {numWishlistItems}
+              </span>
+              )
+            </Tab>
             <Tab className={({ selected }) => tabStyle(selected)}>
               Order history
             </Tab>

@@ -21,7 +21,7 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
     setDevidedList(() => dividedList);
   }, [currentPage, wishlistItems]);
   return (
-    <div className="min-h-content flex justify-center">
+    <div className="md:min-h-content flex justify-center">
       <div className="grid h-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10">
         {wishlistItems !== undefined &&
         wishlistItems !== null &&
@@ -40,7 +40,7 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
             ))}
           </>
         ) : (
-          <p className="flex justify-center items-center h-full p-5 gap-x-2 text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
+          <p className="flex justify-center items-center h-full px-5 gap-x-2 text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
             Your wishlist is empty!
           </p>
         )}

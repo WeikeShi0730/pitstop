@@ -100,7 +100,7 @@ const Checkout = ({ cartItems }: CartItems) => {
             </div>
           )}
         </div>
-        <div className="w-full lg:w-1/4 flex lg:my-10 justify-center lg:items-start ">
+        <div className="w-full lg:w-1/4 flex lg:my-10 justify-center lg:items-start">
           <div className="fixed bottom-0 z-40 w-full bg-slate-50 bg-opacity-50 backdrop-blur-md lg:bg-transparent lg:sticky lg:top-32">
             <div className="flex flex-row lg:flex-col items-center justify-evenly">
               {cartItems && cartItems.length > 0 && (
