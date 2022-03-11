@@ -23,7 +23,7 @@ const BackToTop = () => {
   };
 
   return (
-    <div className="fixed bottom-20 right-2 lg:bottom-10 lg:right-10 text-lg z-50 bg-slate-900 text-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg">
+    <div className="fixed bottom-20 right-2 lg:bottom-10 lg:right-10 text-lg z-50 bg-slate-800 text-slate-50 bg-opacity-60 backdrop-blur-md rounded-lg hover:bg-opacity-80">
       <button onClick={handleClick}>
         <div
           className={`flex justify-center items-center relative w-8 h-8  ${

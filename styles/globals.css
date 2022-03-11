@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  background-image: url("/background.png");
-  background-size: contain;
+  background-image: url("/background.jpeg");
+  background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: top center;
