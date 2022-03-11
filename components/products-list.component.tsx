@@ -16,6 +16,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
   const [filteredList, setFilteredList] = useState(productsList);
   const [sortedList, setSortedList] = useState(filteredList);
   const [dividedList, setDevidedList] = useState(sortedList);
+  const [scrollTop, setScrollTop] = useState(500);
   const router = useRouter();
 
   const options = {
@@ -29,7 +30,6 @@ const ProductsList = ({ productsList }: ProductsList) => {
       name !== undefined && name !== null && name.length > 0
         ? fuse.search(name as string).map((each) => each.item)
         : productsList;
-    // console.log(filteredList);
     setFilteredList(filteredList);
     setSortedList(filteredList);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -98,6 +98,19 @@ const ProductsList = ({ productsList }: ProductsList) => {
     setDevidedList(() => dividedList);
   }, [currentPage, filteredList, sortedList]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window) {
+        const scrollTop = window.innerWidth < 1536 ? 504 : 760;
+        setScrollTop(scrollTop);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
   return (
     <div className="w-full flex justify-center items-center my-10 lg:my-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center">
@@ -150,7 +163,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
               numPages={Math.ceil(filteredList.length / numProductsOnPage)}
-              scroll={500}
+              scroll={scrollTop}
             />
           </div>
         )}
