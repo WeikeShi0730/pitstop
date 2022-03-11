@@ -5,7 +5,7 @@ interface PageNumberType {
   setCurrentPage: (currentPage: number) => void;
   numPages: number;
   currentPage: number;
-  scroll?: number
+  scroll?: number;
 }
 
 const Pagination = ({

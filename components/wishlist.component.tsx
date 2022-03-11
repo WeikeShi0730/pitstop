@@ -11,13 +11,14 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
   const numProductsOnPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const [dividedList, setDevidedList] = useState(wishlistItems);
-
   useEffect(() => {
     const dividedList = wishlistItems.slice(
       (currentPage - 1) * numProductsOnPage,
       currentPage * numProductsOnPage
     );
-    console.log(Math.ceil(dividedList.length / numProductsOnPage));
+    if (dividedList.length === 0 && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
     setDevidedList(() => dividedList);
   }, [currentPage, wishlistItems]);
   return (
