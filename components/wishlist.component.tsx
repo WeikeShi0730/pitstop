@@ -28,7 +28,7 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
         wishlistItems !== null &&
         wishlistItems.length > 0 ? (
           <>
-            <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+            <p className="flex gap-x-2 justify-self-start text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
               My wishlist
             </p>
             {dividedList.map((wishlistItem) => (

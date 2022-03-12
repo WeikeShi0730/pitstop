@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AccountMenu from "./account-menu.component";
 import Wishlist from "./wishlist.component";
+import OrderHistory from "./order-history.component";
 import withSubscribtion from "./hoc.component";
 
 const Account = ({ wishlistItems }: any) => {
@@ -9,11 +10,11 @@ const Account = ({ wishlistItems }: any) => {
   const page = () => {
     switch (currentSelection) {
       case 1:
-        break;
+        return;
       case 2:
         return <Wishlist wishlistItems={wishlistItems} />;
       case 3:
-        break;
+        return <OrderHistory />;
       default:
         break;
     }
@@ -32,7 +33,6 @@ const Account = ({ wishlistItems }: any) => {
           </div>
         </div>
         <div className="col-span-1 md:col-span-3">{page()}</div>
-        {/* <div className="md:col-span-1"></div> */}
       </div>
     </div>
   );
