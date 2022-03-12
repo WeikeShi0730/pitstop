@@ -38,7 +38,7 @@ const About = () => {
         </div>
         <div className={`${componentStyle} flex-col md:flex-row-reverse`}>
           <div>
-            <div className="relative w-48 h-48 md:w-56 md:h-82 my-5 md:-my-28">
+            <div className="relative w-48 h-48 md:w-56 md:h-82 my-5 md:-my-28 rounded-lg shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
               <Image
                 src="/about/me.jpg"
                 className="object-cover rounded-lg"
