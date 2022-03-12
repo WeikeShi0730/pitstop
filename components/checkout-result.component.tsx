@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  clearCartFirebase,
-  updateOrderHistory,
-  updateItemsSoldNum,
-} from "../firebase/firebase.utils";
+import { handleCheckoutSuccess } from "../firebase/firebase.utils";
 import { useRouter } from "next/router";
 import { fetchGetJSON } from "../utils/api-helpers";
 import useSWR from "swr";
@@ -35,11 +31,7 @@ const CheckoutResult = () => {
       if (status === "succeeded") {
         try {
           setLoading(true);
-          await Promise.all([
-            updateOrderHistory(),
-            updateItemsSoldNum(),
-            clearCartFirebase(),
-          ]);
+          await handleCheckoutSuccess();
           setLoading(false);
         } catch (error) {
           setLoading(false);

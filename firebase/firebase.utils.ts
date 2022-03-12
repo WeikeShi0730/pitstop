@@ -275,6 +275,24 @@ export const updateWishlist = async (product: ProductType, action: string) => {
   }
 };
 
+export const handleCheckoutSuccess = async () => {
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const docSnap = await getDoc(currentUserRef);
+    if (docSnap.exists()) {
+      await Promise.all([
+        updateOrderHistory(),
+        updateItemsSoldNum(),
+        clearCartFirebase(),
+      ]);
+    } else {
+      throw Error("No doc found");
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const clearCartFirebase = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
@@ -291,7 +309,29 @@ export const clearCartFirebase = async () => {
   }
 };
 
-export const updateOrderHistory = async () => {};
+export const updateOrderHistory = async () => {
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const docSnap = await getDoc(currentUserRef);
+    if (docSnap.exists()) {
+      let orderHistory = docSnap.data().orderHistoryItems;
+      const items = docSnap.data().cartItems;
+      if (items && items.length > 0) {
+        orderHistory.push({
+          timeStamp: Date.now(),
+          items: items,
+        });
+        await updateDoc(currentUserRef, {
+          orderHistoryItems: orderHistory,
+        });
+      }
+    } else {
+      throw Error("No doc found");
+    }
+  } catch (error) {
+    throw error;
+  }
+};
 export const updateItemsSoldNum = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
