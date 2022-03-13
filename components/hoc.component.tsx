@@ -52,7 +52,7 @@ const withSubscribtion = <P extends object>(
         currentUser={currentUser}
         cartItems={cartItems}
         wishlistItems={wishlistItems}
-        orderHistoryItems={orderHistoryItems}
+        // orderHistoryItems={orderHistoryItems}
       />
     );
   };

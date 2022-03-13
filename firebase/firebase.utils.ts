@@ -275,6 +275,20 @@ export const updateWishlist = async (product: ProductType, action: string) => {
   }
 };
 
+export const getOrderHistoryItems = async () => {
+  try {
+    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
+    const docSnap = await getDoc(currentUserRef);
+    if (docSnap.exists()) {
+      return docSnap.data().orderHistoryItems;
+    } else {
+      throw Error("No doc found");
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const handleCheckoutSuccess = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
@@ -293,7 +307,7 @@ export const handleCheckoutSuccess = async () => {
   }
 };
 
-export const clearCartFirebase = async () => {
+const clearCartFirebase = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const docSnap = await getDoc(currentUserRef);
@@ -309,7 +323,7 @@ export const clearCartFirebase = async () => {
   }
 };
 
-export const updateOrderHistory = async () => {
+const updateOrderHistory = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const docSnap = await getDoc(currentUserRef);
@@ -332,7 +346,8 @@ export const updateOrderHistory = async () => {
     throw error;
   }
 };
-export const updateItemsSoldNum = async () => {
+
+const updateItemsSoldNum = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const userDocSnap = await getDoc(currentUserRef);
