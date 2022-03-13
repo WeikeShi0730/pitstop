@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
+import { OrderHistoryItemType } from "../interfaces/index";
 import { getOrderHistoryItems } from "../firebase/firebase.utils";
 import Loading from "./loading.component";
 import { toast } from "react-toastify";
 
 const OrderHistory = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [orderHistoryItems, setOrderHistoryItems] = useState<any>();
+  const [orderHistoryItems, setOrderHistoryItems] = useState<
+    OrderHistoryItemType[]
+  >([]);
 
   useEffect(() => {
     const getData = async () => {
       try {
         setLoading(true);
         const orderHistoryItems = await getOrderHistoryItems();
-        console.log(orderHistoryItems)
+        console.log(orderHistoryItems);
         setLoading(false);
         setOrderHistoryItems(orderHistoryItems);
       } catch (error) {
@@ -34,7 +37,7 @@ const OrderHistory = () => {
       }
     };
     getData();
-    return () => setOrderHistoryItems(null);
+    return () => setOrderHistoryItems([]);
   }, []);
 
   return (

@@ -45,11 +45,10 @@ export interface CartItemType {
 // export interface WishlistItemType {
 //   wishlistItem: ProductType;
 // }
-// export interface OrderHistoryItemType {
-//   product: ProductType;
-//   count: number;
-//   date: any;
-// }
+export interface OrderHistoryItemType {
+  items: CartItemType[];
+  timeStamp: number;
+}
 
 export interface SnapshotFnType {
   snapshotfn: (snapshot: DocumentSnapshot) => void;
