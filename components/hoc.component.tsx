@@ -20,7 +20,6 @@ const withSubscribtion = <P extends object>(
       CurrentUserType["currentUser"]
     >(auth.currentUser as CurrentUserType["currentUser"]);
     const [wishlistItems, setWishlistItems] = useState<ProductType[]>();
-    const [orderHistoryItems, setOrderHistoryItems] = useState();
 
     useEffect(() => {
       const unsubscribe = subscribeToAuthState(
@@ -52,7 +51,6 @@ const withSubscribtion = <P extends object>(
         currentUser={currentUser}
         cartItems={cartItems}
         wishlistItems={wishlistItems}
-        // orderHistoryItems={orderHistoryItems}
       />
     );
   };

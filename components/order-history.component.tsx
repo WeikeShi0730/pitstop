@@ -15,7 +15,6 @@ const OrderHistory = () => {
       try {
         setLoading(true);
         const orderHistoryItems = await getOrderHistoryItems();
-        console.log(orderHistoryItems);
         setLoading(false);
         setOrderHistoryItems(orderHistoryItems);
       } catch (error) {
