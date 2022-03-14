@@ -15,34 +15,46 @@ const withSubscribtion = <P extends object>(
   Component: React.FunctionComponent<P>
 ) => {
   const useComponent = (props: P) => {
-    const [cartItems, setCartItems] = useState<CartItemType[]>();
+    const [cartItems, setCartItems] = useState<CartItemType[]>([]);
     const [currentUser, setCurrentUser] = useState<
       CurrentUserType["currentUser"]
     >(auth.currentUser as CurrentUserType["currentUser"]);
-    const [wishlistItems, setWishlistItems] = useState<ProductType[]>();
+    const [wishlistItems, setWishlistItems] = useState<ProductType[]>([]);
 
     useEffect(() => {
-      const unsubscribe = subscribeToAuthState(
-        (user: CurrentUserType["currentUser"]) => {
+      let isSubscribed = true;
+
+      subscribeToAuthState((user: CurrentUserType["currentUser"]) => {
+        if (isSubscribed) {
           setCurrentUser(user);
         }
-      );
-      return () => unsubscribe();
-    });
+      });
+
+      // cancel subscription to useEffect
+      return () => {
+        isSubscribed = false;
+      };
+    }, []);
 
     useEffect(() => {
-      const unsubscribe = currentUser
+      let isSubscribed = true;
+      currentUser
         ? subscribeToCurrentUserData(
             currentUser?.uid as string,
             (snapshot: SnapshotType["snapshot"]) => {
-              const cartItems = snapshot.data()?.cartItems;
-              setCartItems(cartItems);
-              const wishlistItems = snapshot.data()?.wishlistItems;
-              setWishlistItems(wishlistItems);
+              if (isSubscribed) {
+                const cartItems = snapshot.data()?.cartItems;
+                setCartItems(cartItems);
+                const wishlistItems = snapshot.data()?.wishlistItems;
+                setWishlistItems(wishlistItems);
+              }
             }
           )
         : () => {};
-      return () => unsubscribe();
+      // cancel subscription to useEffect
+      return () => {
+        isSubscribed = false;
+      };
     }, [currentUser]);
 
     return (
