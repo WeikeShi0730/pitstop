@@ -37,7 +37,7 @@ import {
   SnapshotFnType,
   CurrentUserFnType,
 } from "../interfaces/index";
-// import { getDisplayName } from "next/dist/shared/lib/utils";
+import moment from "moment";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -332,7 +332,7 @@ const updateOrderHistory = async () => {
       const items = docSnap.data().cartItems;
       if (items && items.length > 0) {
         orderHistory.push({
-          timeStamp: Date.now(),
+          timeStamp: moment().format("LL"),
           items: items,
         });
         await updateDoc(currentUserRef, {

@@ -47,7 +47,7 @@ export interface CartItemType {
 // }
 export interface OrderHistoryItemType {
   items: CartItemType[];
-  timeStamp: number;
+  timeStamp: string;
 }
 
 export interface SnapshotFnType {

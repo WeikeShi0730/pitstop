@@ -19,7 +19,11 @@ const OrderHistory = () => {
       try {
         setLoading(true);
         const orderHistoryItems = await getOrderHistoryItems();
-        console.log(orderHistoryItems)
+        console.log(orderHistoryItems);
+        orderHistoryItems.forEach((orderHistoryItem: OrderHistoryItemType) => {
+          console.log(orderHistoryItem.timeStamp);
+          
+        });
         setLoading(false);
         setOrderHistoryItems(orderHistoryItems);
       } catch (error) {
