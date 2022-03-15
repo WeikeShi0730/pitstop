@@ -11,7 +11,11 @@ interface OrderHistoryItem {
 
 const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
   const { timeStamp, items } = orderHistoryItem;
-  let total = 0;
+  const total = items
+    .reduce((acc: number, current) => {
+      return acc + current.count * current.product.price;
+    }, 0)
+    .toFixed(2);
   return (
     <Disclosure>
       {({ open }) => (
@@ -37,8 +41,8 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                   product: { name, imageUrl, price },
                 } = item;
                 const subtotal = (count * price).toFixed(2);
-                total += Number(subtotal);
-                console.log(total)
+                // total += count * price;
+                // console.log(total)
                 return (
                   <div
                     key={index}
@@ -81,7 +85,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                 );
               })}
               <div className="flex w-full justify-end items-end m-2 text-xl">
-                Total: {total.toFixed(2)}
+                Total: {total}
               </div>
             </Disclosure.Panel>
           </Transition>
