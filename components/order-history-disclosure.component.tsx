@@ -20,7 +20,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-left text-slate-700 bg-slate-400 rounded-lg bg-opacity-50 backdrop-blur-sm hover:bg-slate-400">
+          <Disclosure.Button className="flex justify-between items-center w-full px-4 py-2 text-left text-slate-700 bg-slate-400 rounded-lg bg-opacity-50 backdrop-blur-sm hover:bg-slate-400">
             <span>{timeStamp}</span>
             <RiArrowUpSLine
               className={`${open ? "transform rotate-180" : ""} w-5 h-5`}
@@ -34,15 +34,16 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-90"
           >
-            <Disclosure.Panel className="w-full flex flex-col items-center justify-center my-2">
+            <Disclosure.Panel
+              static
+              className="w-full flex flex-col items-center justify-center my-2"
+            >
               {items.map((item, index) => {
                 const {
                   count,
                   product: { name, imageUrl, price },
                 } = item;
                 const subtotal = (count * price).toFixed(2);
-                // total += count * price;
-                // console.log(total)
                 return (
                   <div
                     key={index}
