@@ -19,11 +19,11 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
     if (dividedList.length === 0 && currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-    setDevidedList(() => dividedList);
+    setDevidedList(dividedList);
   }, [currentPage, wishlistItems]);
   return (
     <div className="md:min-h-content flex justify-center">
-      <div className="grid h-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10">
+      <div className="grid w-full h-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10">
         {wishlistItems !== undefined &&
         wishlistItems !== null &&
         wishlistItems.length > 0 ? (
@@ -34,7 +34,7 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
             {dividedList.map((wishlistItem) => (
               <div
                 key={wishlistItem.id}
-                className="p-5 rounded-lg w-80 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
+                className="p-5 rounded-lg w-full text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
               >
                 <Product product={wishlistItem} wishlistItems={wishlistItems} />
               </div>

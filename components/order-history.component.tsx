@@ -16,6 +16,14 @@ const OrderHistory = () => {
   const [dividedList, setDevidedList] = useState(orderHistoryItems);
 
   useEffect(() => {
+    const dividedList = orderHistoryItems.slice(
+      (currentPage - 1) * numProductsOnPage,
+      currentPage * numProductsOnPage
+    );
+    setDevidedList(dividedList);
+  }, [currentPage, orderHistoryItems]);
+
+  useEffect(() => {
     const getData = async () => {
       try {
         setLoading(true);
@@ -47,36 +55,33 @@ const OrderHistory = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className="md:min-h-content flex justify-center">
-        <div className="grid h-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10">
+      <div className="md:min-h-content flex w-full justify-center">
+        <div className="grid h-full w-full grid-cols-1 gap-10 justify-items-center m-10">
           {orderHistoryItems !== undefined &&
           orderHistoryItems !== null &&
           orderHistoryItems.length > 0 ? (
             <>
-              <p className="flex gap-x-2 justify-self-start text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+              <p className="flex justify-self-start text-slate-700 text-xl col-span-1 py-1 border-b border-slate-700">
                 My order history
               </p>
-              {orderHistoryItems.map((orderHistoryItem, index) => (
+              {dividedList.map((orderHistoryItem, index) => (
                 <div
                   key={index}
-                  className="p-5 rounded-lg w-80 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
+                  // className="p-5 rounded-lg w-80 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
+                  className="w-full"
                 >
-                  {/* <Product
-                    product={wishlistItem}
-                    wishlistItems={orderHistoryItems}
-                  /> */}
                   <OrderHistoryDisclosure orderHistoryItem={orderHistoryItem} />
                 </div>
               ))}
             </>
           ) : (
-            <p className="flex justify-center items-center h-full px-5 gap-x-2 text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
+            <p className="flex justify-center items-center h-full px-5 gap-x-2 text-xl col-span-1">
               Your order history is empty!
             </p>
           )}
 
           {dividedList.length > 0 && (
-            <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1 lg:col-span-2 2xl:col-span-3">
+            <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1">
               <Pagination
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}

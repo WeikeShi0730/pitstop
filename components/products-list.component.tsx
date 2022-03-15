@@ -95,7 +95,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
       (currentPage - 1) * numProductsOnPage,
       currentPage * numProductsOnPage
     );
-    setDevidedList(() => dividedList);
+    setDevidedList(dividedList);
   }, [currentPage, filteredList, sortedList]);
 
   useEffect(() => {

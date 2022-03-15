@@ -281,7 +281,7 @@ export const getOrderHistoryItems = async () => {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const docSnap = await getDoc(currentUserRef);
     if (docSnap.exists()) {
-      return docSnap.data().orderHistoryItems;
+      return docSnap.data().orderHistoryItems.reverse();
     } else {
       throw Error("No doc found");
     }
