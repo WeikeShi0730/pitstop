@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { OrderHistoryItemType } from "../interfaces/index";
 import { getOrderHistoryItems } from "../firebase/firebase.utils";
+import OrderHistoryDisclosure from "./order-history-disclosure.component";
 import Loading from "./loading.component";
 import { toast } from "react-toastify";
 import Pagination from "./pagination.component";
@@ -19,11 +20,6 @@ const OrderHistory = () => {
       try {
         setLoading(true);
         const orderHistoryItems = await getOrderHistoryItems();
-        console.log(orderHistoryItems);
-        orderHistoryItems.forEach((orderHistoryItem: OrderHistoryItemType) => {
-          console.log(orderHistoryItem.timeStamp);
-          
-        });
         setLoading(false);
         setOrderHistoryItems(orderHistoryItems);
       } catch (error) {
@@ -60,7 +56,7 @@ const OrderHistory = () => {
               <p className="flex gap-x-2 justify-self-start text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
                 My order history
               </p>
-              {dividedList.map((orderHistoryItem, index) => (
+              {orderHistoryItems.map((orderHistoryItem, index) => (
                 <div
                   key={index}
                   className="p-5 rounded-lg w-80 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
@@ -69,6 +65,7 @@ const OrderHistory = () => {
                     product={wishlistItem}
                     wishlistItems={orderHistoryItems}
                   /> */}
+                  <OrderHistoryDisclosure orderHistoryItem={orderHistoryItem} />
                 </div>
               ))}
             </>

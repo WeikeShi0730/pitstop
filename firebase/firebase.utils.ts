@@ -1,3 +1,4 @@
+import { OrderHistoryItemType } from "./../interfaces/index";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -331,10 +332,23 @@ const updateOrderHistory = async () => {
       let orderHistory = docSnap.data().orderHistoryItems;
       const items = docSnap.data().cartItems;
       if (items && items.length > 0) {
-        orderHistory.push({
-          timeStamp: moment().format("LL"),
-          items: items,
-        });
+        const currentTimeStamp = moment().format("LL");
+        const found = orderHistory.find(
+          (eachOrderHistory: OrderHistoryItemType, index: number) => {
+            if (eachOrderHistory.timeStamp === currentTimeStamp) {
+              orderHistory[index].items =
+                orderHistory[index].items.concat(items);
+              return true;
+            }
+          }
+        );
+        if (!found) {
+          console.log("Not found");
+          orderHistory.push({
+            timeStamp: currentTimeStamp,
+            items: items,
+          });
+        }
         await updateDoc(currentUserRef, {
           orderHistoryItems: orderHistory,
         });
