@@ -67,8 +67,8 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                         <div className="title flex justify-start">
                           <div className="name text-lg">{name}</div>
                         </div>
-                        <div className="details flex items-center justify-between">
-                          <div className="unt flex items-end justify-start">
+                        <div className="details flex items-center justify-between text-slate-500">
+                          <div className="unt flex items-center justify-start">
                             <div>CAD</div>
                             <div className="text-lg ml-1">{price}</div>
                             <div className="">/ea</div>
@@ -77,7 +77,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                             <div className="">Qty: {count}</div>
                           </div>
                         </div>
-                        <div className="subtotal flex w-full justify-end items-end space-x-2">
+                        <div className="subtotal flex w-full justify-end items-end space-x-2 text-slate-600">
                           <div className="">Subtotal: CAD</div>
                           <div className="text-lg">{subtotal}</div>
                         </div>
