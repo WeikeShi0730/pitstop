@@ -112,8 +112,8 @@ const ProductsList = ({ productsList }: ProductsList) => {
   });
 
   return (
-    <div className="w-full flex justify-center items-center my-10 lg:my-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center">
+    <div className="flex flex-col h-full w-full justify-start items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10 lg:my-16">
         {name !== undefined &&
         name !== null &&
         name.length > 0 &&
@@ -157,17 +157,17 @@ const ProductsList = ({ productsList }: ProductsList) => {
             .
           </p>
         )}
-        {dividedList.length > 0 && (
-          <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1 lg:col-span-2 2xl:col-span-3">
-            <Pagination
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-              numPages={Math.ceil(filteredList.length / numProductsOnPage)}
-              scroll={scrollTop}
-            />
-          </div>
-        )}
       </div>
+      {dividedList.length > 0 && (
+        <div className="flex justify-center m-5 mt-auto">
+          <Pagination
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            numPages={Math.ceil(filteredList.length / numProductsOnPage)}
+            scroll={scrollTop}
+          />
+        </div>
+      )}
     </div>
   );
 };

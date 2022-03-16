@@ -55,8 +55,8 @@ const OrderHistory = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className="md:min-h-content flex w-full justify-center">
-        <div className="grid h-full w-full grid-cols-1 gap-10 justify-items-center m-10">
+      <div className="flex flex-col h-full w-full justify-start">
+        <div className="grid grid-cols-1 gap-10 justify-items-center m-10">
           {orderHistoryItems !== undefined &&
           orderHistoryItems !== null &&
           orderHistoryItems.length > 0 ? (
@@ -79,20 +79,17 @@ const OrderHistory = () => {
               Your order history is empty!
             </p>
           )}
-
-          {dividedList.length > 0 && (
-            <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1">
-              <Pagination
-                setCurrentPage={setCurrentPage}
-                currentPage={currentPage}
-                numPages={Math.ceil(
-                  orderHistoryItems.length / numProductsOnPage
-                )}
-                scroll={0}
-              />
-            </div>
-          )}
         </div>
+        {dividedList.length > 0 && (
+          <div className="flex justify-center m-5 mt-auto">
+            <Pagination
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+              numPages={Math.ceil(orderHistoryItems.length / numProductsOnPage)}
+              scroll={0}
+            />
+          </div>
+        )}
       </div>
     </>
   );

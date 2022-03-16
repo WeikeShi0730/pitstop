@@ -22,8 +22,8 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
     setDevidedList(dividedList);
   }, [currentPage, wishlistItems]);
   return (
-    <div className="md:min-h-content flex justify-center">
-      <div className="grid w-full h-full grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10">
+    <div className="flex flex-col h-full w-full justify-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10">
         {wishlistItems !== undefined &&
         wishlistItems !== null &&
         wishlistItems.length > 0 ? (
@@ -45,18 +45,17 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
             Your wishlist is empty!
           </p>
         )}
-
-        {dividedList.length > 0 && (
-          <div className="flex m-5 gap-x-2 justify-self-center items-center col-span-1 lg:col-span-2 2xl:col-span-3">
-            <Pagination
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-              numPages={Math.ceil(wishlistItems.length / numProductsOnPage)}
-              scroll={0}
-            />
-          </div>
-        )}
       </div>
+      {dividedList.length > 0 && (
+        <div className="flex justify-center m-5 mt-auto">
+          <Pagination
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            numPages={Math.ceil(wishlistItems.length / numProductsOnPage)}
+            scroll={0}
+          />
+        </div>
+      )}
     </div>
   );
 };

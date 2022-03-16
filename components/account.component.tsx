@@ -22,8 +22,8 @@ const Account = ({ wishlistItems }: any) => {
 
   return (
     <div className="text-slate-700 min-h-content w-full">
-      <div className="h-full w-full grid grid-cols-1 md:grid-cols-4">
-        <div className="col-span-1 w-full h-full">
+      <div className="w-full grid grid-cols-1 md:grid-cols-4">
+        <div className="col-span-1 w-full">
           <div className="lg:sticky lg:top-20">
             <AccountMenu
               currentSelection={currentSelection}
@@ -32,7 +32,7 @@ const Account = ({ wishlistItems }: any) => {
             />
           </div>
         </div>
-        <div className="col-span-1 md:col-span-3">{page()}</div>
+        <div className="w-full col-span-1 md:col-span-3">{page()}</div>
       </div>
     </div>
   );
