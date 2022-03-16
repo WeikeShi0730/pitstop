@@ -67,7 +67,6 @@ const OrderHistory = () => {
               {dividedList.map((orderHistoryItem, index) => (
                 <div
                   key={index}
-                  // className="p-5 rounded-lg w-80 text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
                   className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
                 >
                   <OrderHistoryDisclosure orderHistoryItem={orderHistoryItem} />
@@ -81,7 +80,7 @@ const OrderHistory = () => {
           )}
         </div>
         {dividedList.length > 0 && (
-          <div className="flex justify-center m-5 mt-auto">
+          <div className=" m-5 mt-auto">
             <Pagination
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
