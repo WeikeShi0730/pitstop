@@ -21,19 +21,17 @@ const Account = ({ wishlistItems }: any) => {
   };
 
   return (
-    <div className="text-slate-700 min-h-content w-full">
-      <div className="w-full grid grid-cols-1 md:grid-cols-4">
-        <div className="col-span-1 w-full">
-          <div className="lg:sticky lg:top-20">
-            <AccountMenu
-              currentSelection={currentSelection}
-              setCurrentSelection={setCurrentSelection}
-              numWishlistItems={wishlistItems ? wishlistItems.length : 0}
-            />
-          </div>
+    <div className="text-slate-700 w-full min-h-content flex flex-col md:grid md:grid-cols-4">
+      <div className="md:col-span-1 w-full">
+        <div className="lg:sticky lg:top-20">
+          <AccountMenu
+            currentSelection={currentSelection}
+            setCurrentSelection={setCurrentSelection}
+            numWishlistItems={wishlistItems ? wishlistItems.length : 0}
+          />
         </div>
-        <div className="w-full col-span-1 md:col-span-3">{page()}</div>
       </div>
+      <div className="w-full flex flex-auto md:col-span-3">{page()}</div>
     </div>
   );
 };

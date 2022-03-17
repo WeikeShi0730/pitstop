@@ -55,7 +55,7 @@ const OrderHistory = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className="flex flex-col h-full w-full justify-start">
+      <div className="flex flex-col w-full">
         <div className="grid grid-cols-1 gap-10 justify-items-center m-10">
           {orderHistoryItems !== undefined &&
           orderHistoryItems !== null &&
@@ -80,7 +80,7 @@ const OrderHistory = () => {
           )}
         </div>
         {dividedList.length > 0 && (
-          <div className=" m-5 mt-auto">
+          <div className="flex justify-center m-5 mt-auto">
             <Pagination
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
