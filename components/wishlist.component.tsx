@@ -34,7 +34,7 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
             {dividedList.map((wishlistItem) => (
               <div
                 key={wishlistItem.id}
-                className="p-5 rounded-lg w-full text-center text-slate-700 bg-opacity-50 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
               >
                 <Product product={wishlistItem} wishlistItems={wishlistItems} />
               </div>

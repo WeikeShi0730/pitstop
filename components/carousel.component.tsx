@@ -34,7 +34,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
   });
   return (
     <>
-      <div className="flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+      <div className="w-full flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
         Featured stickers:
       </div>
       <Swiper
@@ -52,7 +52,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
           return (
             <SwiperSlide key={featuredProduct.id}>
               <div className="flex items-center justify-center">
-                <div className="p-3 m-5 rounded-lg w-72 text-center text-slate-700 bg-opacity-30 backdrop-blur-sm bg-slate-400 transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-slate-700">
+                <div className="m-3 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
                   <Product product={featuredProduct} wishlistItems={[]} />
                 </div>
               </div>
