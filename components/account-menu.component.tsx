@@ -24,8 +24,8 @@ const AccountMenu = ({
   };
 
   return (
-    <div className="flex items-start justify-center md:min-h-content">
-      <div className="mx-5 mt-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+    <div className="flex items-start justify-center h-full md:min-h-content">
+      <div className="mx-5 my-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg sticky top-32">
         <Tab.Group
           defaultIndex={1}
           selectedIndex={currentSelection - 1}

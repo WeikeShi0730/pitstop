@@ -80,7 +80,7 @@ const OrderHistory = () => {
           )}
         </div>
         {dividedList.length > 0 && (
-          <div className="flex justify-center m-5 mt-auto">
+          <div className="flex justify-center m-10 mt-auto">
             <Pagination
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
