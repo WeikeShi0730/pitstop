@@ -54,7 +54,7 @@ const AccountOverview = ({
   }, [orderHistoryItems]);
 
   return (
-    <div className="m-10 flex flex-col w-full">
+    <div className="m-10 flex flex-col w-full gap-y-5">
       <div className="w-fit flex justify-start text-slate-700 text-xl py-1 border-b border-slate-700">
         Overview
       </div>
