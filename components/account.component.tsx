@@ -1,21 +1,42 @@
 import { useState } from "react";
+import {
+  CurrentUserType,
+  OrderHistoryItemType,
+  ProductType,
+} from "../interfaces/index";
 import AccountMenu from "./account-menu.component";
 import AccountOverview from "./account-overview.component";
 import Wishlist from "./wishlist.component";
 import OrderHistory from "./order-history.component";
 import withSubscribtion from "./hoc.component";
 
-const Account = ({ wishlistItems, currentUser }: any) => {
+interface AccountPageType {
+  wishlistItems: ProductType[];
+  currentUser: CurrentUserType["currentUser"];
+  orderHistoryItems: OrderHistoryItemType[];
+}
+
+const Account = ({
+  wishlistItems,
+  currentUser,
+  orderHistoryItems,
+}: AccountPageType) => {
   const [currentSelection, setCurrentSelection] = useState(1);
 
   const page = () => {
     switch (currentSelection) {
       case 1:
-        return <AccountOverview currentUser={currentUser}/>;
+        return (
+          <AccountOverview
+            currentUser={currentUser}
+            orderHistoryItems={orderHistoryItems}
+            setCurrentSelection={setCurrentSelection}
+          />
+        );
       case 2:
         return <Wishlist wishlistItems={wishlistItems} />;
       case 3:
-        return <OrderHistory />;
+        return <OrderHistory orderHistoryItems={orderHistoryItems} />;
       default:
         break;
     }

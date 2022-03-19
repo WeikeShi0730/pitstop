@@ -276,20 +276,6 @@ export const updateWishlist = async (product: ProductType, action: string) => {
   }
 };
 
-export const getOrderHistoryItems = async () => {
-  try {
-    const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
-    const docSnap = await getDoc(currentUserRef);
-    if (docSnap.exists()) {
-      return docSnap.data().orderHistoryItems.reverse();
-    } else {
-      throw Error("No doc found");
-    }
-  } catch (error) {
-    throw error;
-  }
-};
-
 export const handleCheckoutSuccess = async () => {
   try {
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);

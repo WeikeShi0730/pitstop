@@ -4,7 +4,7 @@ import Account from "../../../components/account.component";
 const AccountPage = () => {
   return (
     <Layout title="Pitstop | Account">
-      <Account />
+      <Account wishlistItems={[]} currentUser={null} orderHistoryItems={[]} />
     </Layout>
   );
 };

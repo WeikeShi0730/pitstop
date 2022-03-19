@@ -9,6 +9,7 @@ import {
   CartItemType,
   SnapshotType,
   ProductType,
+  OrderHistoryItemType,
 } from "../interfaces/index";
 
 const withSubscribtion = <P extends object>(
@@ -20,6 +21,9 @@ const withSubscribtion = <P extends object>(
       CurrentUserType["currentUser"]
     >(auth.currentUser as CurrentUserType["currentUser"]);
     const [wishlistItems, setWishlistItems] = useState<ProductType[]>([]);
+    const [orderHistoryItems, setOrderHistoryItems] = useState<
+      OrderHistoryItemType[]
+    >([]);
 
     useEffect(() => {
       let isSubscribed = true;
@@ -47,6 +51,8 @@ const withSubscribtion = <P extends object>(
                 setCartItems(cartItems);
                 const wishlistItems = snapshot.data()?.wishlistItems;
                 setWishlistItems(wishlistItems);
+                const orderHistoryItems = snapshot.data()?.orderHistoryItems.reverse();
+                setOrderHistoryItems(orderHistoryItems);
               }
             }
           )
@@ -63,6 +69,7 @@ const withSubscribtion = <P extends object>(
         currentUser={currentUser}
         cartItems={cartItems}
         wishlistItems={wishlistItems}
+        orderHistoryItems={orderHistoryItems}
       />
     );
   };

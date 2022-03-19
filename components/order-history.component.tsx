@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { OrderHistoryItemType } from "../interfaces/index";
-import { getOrderHistoryItems } from "../firebase/firebase.utils";
 import OrderHistoryDisclosure from "./order-history-disclosure.component";
-import Loading from "./loading.component";
-import { toast } from "react-toastify";
 import Pagination from "./pagination.component";
 
-const OrderHistory = () => {
+interface OrderHistoryItems {
+  orderHistoryItems: OrderHistoryItemType[];
+}
+
+const OrderHistory = ({ orderHistoryItems }: OrderHistoryItems) => {
   const numProductsOnPage = 6;
-  const [loading, setLoading] = useState<boolean>(false);
-  const [orderHistoryItems, setOrderHistoryItems] = useState<
-    OrderHistoryItemType[]
-  >([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [dividedList, setDevidedList] = useState(orderHistoryItems);
 
@@ -23,38 +20,8 @@ const OrderHistory = () => {
     setDevidedList(dividedList);
   }, [currentPage, orderHistoryItems]);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        setLoading(true);
-        const orderHistoryItems = await getOrderHistoryItems();
-        setLoading(false);
-        setOrderHistoryItems(orderHistoryItems);
-      } catch (error) {
-        setLoading(false);
-        toast.error(
-          "Sorry, order history data cannot be retrived at this time.",
-          {
-            position: "top-center",
-            autoClose: 1000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          }
-        );
-        console.error(error);
-      }
-    };
-    getData();
-    return () => setOrderHistoryItems([]);
-  }, []);
-
   return (
     <>
-      {loading && <Loading />}
       <div className="flex flex-col w-full">
         <div className="grid grid-cols-1 gap-10 justify-items-center m-10">
           {orderHistoryItems !== undefined &&

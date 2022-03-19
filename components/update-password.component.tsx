@@ -44,17 +44,15 @@ const UpdatePassword = ({ currentUser }: CurrentUserType) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
-        <div className="flex flex-col items-center">
-          <div className="text-center m-3">Update my password?</div>
-          <button
-            onClick={handleClick}
-            className="bg-slate-700 m-3 py-2 px-4 text-slate-100 rounded border focus:outline-none font-light"
-          >
-            Send a password update email
-          </button>
-        </div>
+      <div className="text-center self-start m-3 text-lg">
+        Update my password?
       </div>
+      <button
+        onClick={handleClick}
+        className="m-3 bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
+      >
+        Send a password update email
+      </button>
     </>
   );
 };
