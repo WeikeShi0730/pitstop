@@ -13,12 +13,12 @@ const AccountMenu = ({
   numWishlistItems,
 }: AccountMenuType) => {
   const tabStyle = (selected: boolean) => {
-    return `font-light h-14 m-1 flex items-center justify-start text-left px-2 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent ${
+    return `font-light h-14 m-1 flex items-center justify-start text-left px-2 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent transition-all ease-in-out duration-200 ${
       selected ? "bg-orange-theme shadow text-slate-100" : "hover:bg-slate-100"
     }`;
   };
   const signoutStyle = (selected: boolean) => {
-    return `font-light h-14 m-1 flex items-center justify-start text-left px-2 text-red-500 rounded-lg focus:outline-none border-2 border-transparent ${
+    return `font-light h-14 m-1 flex items-center justify-start text-left px-2 text-red-500 rounded-lg focus:outline-none border-2 border-transparent transition-all ease-in-out duration-200 ${
       selected ? "bg-red-500 shadow text-slate-100" : "hover:border-red-400"
     }`;
   };

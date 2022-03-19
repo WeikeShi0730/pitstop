@@ -33,7 +33,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <NoScrollLink href="/checkout">
-          <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-100">
+          <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-100 transition-all ease-in-out duration-200">
             Checkout
           </a>
         </NoScrollLink>

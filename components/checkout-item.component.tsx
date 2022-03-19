@@ -67,7 +67,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
       <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700">
         <div
           ref={ref}
-          className="flex w-full bg-opacity-30 bg-slate-100 rounded-lg transition-all duration-500 ease-in-out shadow-md hover:shadow-slate-500"
+          className="flex w-full bg-opacity-30 bg-slate-100 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500"
         >
           <div className="image flex flex-col relative w-1/3 h-48">
             <div className="relative w-full h-full bg-[#F8F8F8] rounded-l-lg">

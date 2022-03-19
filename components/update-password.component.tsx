@@ -44,7 +44,7 @@ const UpdatePassword = ({ currentUser }: CurrentUserType) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-100 bg-opacity-30 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
+      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
         <div className="flex flex-col items-center">
           <div className="text-center m-3">Update my password?</div>
           <button

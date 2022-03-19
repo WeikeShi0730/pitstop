@@ -116,7 +116,7 @@ const Checkout = ({ cartItems }: CartItems) => {
                   role="link"
                   id="submit"
                   type="submit"
-                  className="flex justify-center items-center w-48 xl:w-60 2xl:w-72 my-2 mx-1 lg:m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-100 hover:bg-indigo-500"
+                  className="flex justify-center items-center w-48 xl:w-60 2xl:w-72 my-2 mx-1 lg:m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-100 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700 transition-all duration-200 ease-in-out"
                 >
                   <div className="m-1">Checkout with</div>
                   <div className="m-1 ">

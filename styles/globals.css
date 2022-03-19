@@ -60,7 +60,7 @@ input[type="number"] {
 
 @layer components {
   .underline-primary {
-    @apply underline decoration-orange-theme decoration-1 underline-offset-2 hover:bg-opacity-40;
+    @apply underline decoration-orange-theme decoration-1 underline-offset-2;
   }
 
   .hamburger {

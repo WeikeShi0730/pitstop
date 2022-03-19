@@ -20,7 +20,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="font-light flex justify-between items-center w-full px-4 py-2 text-left text-slate-700 bg-slate-400 rounded-lg bg-opacity-50 backdrop-blur-sm hover:bg-slate-400">
+          <Disclosure.Button className="font-light flex justify-between items-center w-full px-4 py-2 text-left text-slate-700 bg-slate-400 rounded-lg bg-opacity-50 backdrop-blur-sm hover:bg-slate-400 transition-all ease-in-out duration-200">
             <span>{timeStamp}</span>
             <RiArrowUpSLine
               className={`${open ? "transform rotate-180" : ""} w-5 h-5`}
