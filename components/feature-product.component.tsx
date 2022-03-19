@@ -69,7 +69,7 @@ const FeatureProduct = ({ featuredProduct }: ProductsType) => {
               </div>
               <button
                 onClick={handleClick}
-                className="bg-orange-theme text-slate-50 w-fit p-2 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
+                className="bg-orange-theme text-slate-100 w-fit p-2 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
               >
                 Add to cart
               </button>

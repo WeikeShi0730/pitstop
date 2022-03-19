@@ -27,8 +27,8 @@ const Pagination = ({
   const tabStyle = (selected: boolean) => {
     return `font-light w-8 py-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
       selected
-        ? "bg-orange-theme shadow text-slate-50"
-        : "hover:bg-slate-50 text-slate-700"
+        ? "bg-orange-theme shadow text-slate-100"
+        : "hover:bg-slate-100 text-slate-700"
     }`;
   };
 
@@ -69,7 +69,7 @@ const Pagination = ({
       >
         <Tab.List className="flex w-fit max-w-full p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
           <button
-            className="buttonPrev w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
+            className="buttonPrev w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-100"
             disabled={currentPage === 1}
             onClick={() => {
               setCurrentPage(currentPage - 1);
@@ -80,7 +80,7 @@ const Pagination = ({
           </button>
           {pageList}
           <button
-            className="buttonNext w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-50"
+            className="buttonNext w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-100"
             disabled={currentPage === numPages || numPages === 0}
             onClick={() => {
               setCurrentPage(currentPage + 1);

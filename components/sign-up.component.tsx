@@ -60,7 +60,7 @@ const SignUp = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
+      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
         <h1 className="text-base lg:text-xl font-light mt-4 mb-12 text-center">
           Don&apos;t have an account? Sign up 🔐
         </h1>
@@ -106,7 +106,7 @@ const SignUp = () => {
           <div className="flex justify-center items-center mt-6">
             <button
               type="submit"
-              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
+              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
             >
               Sign up
             </button>

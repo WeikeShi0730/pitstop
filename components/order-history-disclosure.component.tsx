@@ -50,7 +50,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                     key={index}
                     className="flex justify-center w-full my-2 text-slate-700"
                   >
-                    <div className="flex w-full bg-opacity-50 backdrop-blur-md bg-slate-300 rounded-lg transition-all duration-500 ease-in-out shadow-md hover:shadow-lg hover:shadow-slate-400">
+                    <div className="flex w-full bg-opacity-30 bg-slate-100 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500">
                       <div className="image flex flex-col relative w-1/3 h-28">
                         <div className="relative h-full bg-[#F8F8F8] rounded-l-lg">
                           <Image

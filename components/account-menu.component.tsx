@@ -14,7 +14,7 @@ const AccountMenu = ({
 }: AccountMenuType) => {
   const tabStyle = (selected: boolean) => {
     return `font-light h-14 m-1 flex items-center justify-start text-left px-2 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent ${
-      selected ? "bg-orange-theme shadow text-slate-50" : "hover:bg-slate-50"
+      selected ? "bg-orange-theme shadow text-slate-100" : "hover:bg-slate-100"
     }`;
   };
   const signoutStyle = (selected: boolean) => {

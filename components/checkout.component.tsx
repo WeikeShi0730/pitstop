@@ -101,7 +101,7 @@ const Checkout = ({ cartItems }: CartItems) => {
           )}
         </div>
         <div className="w-full lg:w-1/4 flex lg:my-10 justify-center lg:items-start">
-          <div className="fixed bottom-0 z-40 w-full bg-slate-50 bg-opacity-50 backdrop-blur-md lg:bg-transparent lg:sticky lg:top-32">
+          <div className="fixed bottom-0 z-40 w-full bg-slate-100 bg-opacity-30 backdrop-blur-md lg:bg-transparent lg:sticky lg:top-32">
             <div className="flex flex-row lg:flex-col items-center justify-evenly">
               {cartItems && cartItems.length > 0 && (
                 <div className="lg:flex">
@@ -116,7 +116,7 @@ const Checkout = ({ cartItems }: CartItems) => {
                   role="link"
                   id="submit"
                   type="submit"
-                  className="flex justify-center items-center w-48 xl:w-60 2xl:w-72 my-2 mx-1 lg:m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-50 hover:bg-indigo-500"
+                  className="flex justify-center items-center w-48 xl:w-60 2xl:w-72 my-2 mx-1 lg:m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-100 hover:bg-indigo-500"
                 >
                   <div className="m-1">Checkout with</div>
                   <div className="m-1 ">

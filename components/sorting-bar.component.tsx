@@ -8,8 +8,8 @@ const SortingBar = ({ handleChange }: SortingBarType) => {
   const tabStyle = (selected: boolean) => {
     return `font-light w-full p-1 leading-5 text-slate-700 rounded-lg focus:outline-none ${
       selected
-        ? "bg-orange-theme shadow text-slate-50"
-        : "hover:bg-slate-50 text-slate-700"
+        ? "bg-orange-theme shadow text-slate-100"
+        : "hover:bg-slate-100 text-slate-700"
     }`;
   };
   return (

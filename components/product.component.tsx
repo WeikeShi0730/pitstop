@@ -113,7 +113,7 @@ const Product = ({ product, wishlistItems }: Product) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="p-5 rounded-lg text-slate-700 bg-opacity-20 bg-slate-100 transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500">
+      <div className="p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500">
         <div className="flex relative w-full h-56 justify-center items-center m-auto p-3">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transition-all duration-200 ease-in-out hover:shadow-slate-500">
             <Image
@@ -138,7 +138,7 @@ const Product = ({ product, wishlistItems }: Product) => {
             </div>
             <button
               onClick={handleClick}
-              className="bg-orange-theme text-slate-50 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
+              className="bg-orange-theme text-slate-100 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
             >
               Add to cart
             </button>

@@ -52,7 +52,7 @@ const ResetPassword = () => {
       {loading && <Loading />}
       {result ? (
         <div className="flex justify-center items-center h-content">
-          <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-80 backdrop-blur-md bg-slate-50 shadow-2xl">
+          <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 shadow-2xl hover:shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
             <div className="text-4xl">🔐</div>
             <div className="text leading-8 text-center">
               Password reset email has been sent to{" "}
@@ -62,7 +62,7 @@ const ResetPassword = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-50 bg-opacity-50 backdrop-blur-md rounded-lg py-8 px-10 shadow-md hover:shadow-lg hover:shoadw-slate-700 transition-all ease-in-out duration-200">
+        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-2xl hover:shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
           <div className="text-center m-5">Reset my password</div>
           <form onSubmit={handleSubmit}>
             <div>
@@ -80,7 +80,7 @@ const ResetPassword = () => {
             <div className="flex justify-center items-center mt-6">
               <button
                 type="submit"
-                className="text-xs md:text-sm bg-slate-700 py-2 px-4 text-slate-50 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
+                className="text-xs md:text-sm bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
               >
                 Send a password reset email
               </button>
