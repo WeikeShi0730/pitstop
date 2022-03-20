@@ -146,7 +146,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
               return (
                 <div
                   key={index}
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+                  className="w-96"
                 >
                   <Product
                     product={product}

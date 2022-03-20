@@ -37,7 +37,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="w-full flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+      <div className="flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
         Featured stickers
       </div>
       <div className="w-full">
@@ -56,7 +56,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
             return (
               <SwiperSlide key={featuredProduct.id}>
                 <div className="flex items-center justify-center">
-                  <div className="m-3 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                  <div className="m-3 w-80">
                     <Product
                       product={featuredProduct}
                       wishlistItems={[]}

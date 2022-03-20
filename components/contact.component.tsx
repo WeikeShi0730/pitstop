@@ -82,7 +82,7 @@ const Contact = () => {
                 autoComplete="off"
                 required
                 onChange={handleChange}
-                className="w-full p-2 text-xs md:text-md border-b border-slate-700 outline-none bg-transparent mb-4"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               />
             </div>
             <div className="relative mb-4 sm:w-2/3 w-full m-auto">
@@ -95,7 +95,7 @@ const Contact = () => {
                 name="user_email"
                 required
                 onChange={handleChange}
-                className="w-full p-2 text-xs md:text-md border-b border-slate-700 outline-none bg-transparent mb-4"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               />
             </div>
             <div className="relative mb-4 sm:w-2/3 w-full m-auto">
@@ -108,7 +108,7 @@ const Contact = () => {
                 rows={4}
                 required
                 onChange={handleChange}
-                className="w-full h-auto p-2 text-xs md:text-md border border-slate-700 outline-none bg-transparent my-4 rounded-lg"
+                className="w-full h-auto p-2 border border-slate-700 outline-none bg-transparent my-4 rounded-lg"
               />
             </div>
             <div className="flex justify-center items-center mt-4">
