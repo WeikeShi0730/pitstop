@@ -3,7 +3,7 @@ import CheckoutItem from "./checkout-item.component";
 import getStripe from "../utils/get-stripejs";
 import { fetchPostJSON } from "../utils/api-helpers";
 import { CartItemType } from "../interfaces/index";
-import { FaCcStripe } from "react-icons/Fa";
+import { FaCcStripe } from "react-icons/fa";
 import withSubscribtion from "./hoc.component";
 import Loading from "./loading.component";
 import NoScrollLink from "./no-scroll-link.component";
