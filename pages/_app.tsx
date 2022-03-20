@@ -34,8 +34,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         >
           <Component {...pageProps} key={router.pathname} />
-          <ToastContainer />
         </AnimatePresence>
+        <ToastContainer />
       </div>
     </>
   );

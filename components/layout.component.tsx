@@ -28,8 +28,6 @@ const Layout = ({ children, title = "" }: Props) => {
         animate={{ opacity: 1, x: 0, y: 0 }}
         exit={{ opacity: 0, x: 0, y: -100 }}
         transition={{ type: "linear", duration: 0.25 }}
-        // className="flex flex-col min-h-screen justify-between"
-        className=""
       >
         {children}
       </motion.div>

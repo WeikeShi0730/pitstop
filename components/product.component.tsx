@@ -145,7 +145,6 @@ const Product = ({ product, wishlistItems }: Product) => {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 };
