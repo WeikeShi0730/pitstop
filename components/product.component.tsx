@@ -119,7 +119,7 @@ const Product = ({ product, wishlistItems }: Product) => {
             <Image
               src={imageUrl}
               className="object-contain"
-              loader={imgLoader}
+              // loader={imgLoader}
               unoptimized
               alt={`${name} image`}
               layout="fill"

@@ -57,7 +57,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                             src={imageUrl}
                             className="object-contain"
                             unoptimized
-                            loader={imgLoader}
+                            // loader={imgLoader}
                             alt={`${name} image`}
                             layout="fill"
                           />

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TeamType } from "../interfaces/index";
+import { imgLoader } from "../utils/image-loader";
 
 interface Team {
   info: TeamType;
@@ -16,6 +17,7 @@ const PageBackground = ({ info }: Team) => {
         <Image
           // priority
           src={teamBackground}
+          loader={imgLoader}
           className="object-cover rounded-lg"
           unoptimized
           alt="background image"

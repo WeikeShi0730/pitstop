@@ -163,6 +163,9 @@ export const updateUserCartFirestore = async (
   count?: number
 ) => {
   try {
+    if (!auth.currentUser) {
+      throw Error("Please login first.");
+    }
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const docSnap = await getDoc(currentUserRef);
     if (docSnap.exists()) {
@@ -233,6 +236,9 @@ export const updateUserCartFirestore = async (
 
 export const updateWishlist = async (product: ProductType, action: string) => {
   try {
+    if (!auth.currentUser) {
+      throw Error("Please login first.");
+    }
     const currentUserRef = doc(db, "users", auth.currentUser?.uid as string);
     const docSnap = await getDoc(currentUserRef);
     if (docSnap.exists()) {
