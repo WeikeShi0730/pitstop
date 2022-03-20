@@ -94,7 +94,7 @@ const AccountOverview = ({
               <div className="px-4">
                 Total:{" "}
                 <span className="text-lg font-normal">
-                  CAD {latestOrderHistory && latestOrderHistory.total}
+                  CAD {latestOrderHistory && latestOrderHistory.total.toFixed(2)}
                 </span>
               </div>
             </div>
