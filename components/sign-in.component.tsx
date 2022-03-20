@@ -146,7 +146,7 @@ const SignIn = () => {
         <div className="">
           <button
             onClick={handleClickForgotPassword}
-            className="font-light hover:text-slate-500"
+            className="mt-4 font-light hover:text-slate-500"
           >
             Forgot password?
           </button>

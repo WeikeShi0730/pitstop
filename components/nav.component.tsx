@@ -122,25 +122,25 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             ref={ref}
             className="h-full flex flex-col items-end overflow-hidden divide-y divide-slate-400 bg-slate-200 text-slate-700"
           >
-            <div className="w-52 py-5 text-center">
+            <div className="w-52 py-5 text-center hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
               <SearchBar />
             </div>
-            <div className="w-52 py-5 text-center">
+            <div className="w-52 py-5 text-center hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
               <NoScrollLink href="/">
                 <a>Home</a>
               </NoScrollLink>
             </div>
-            <div className="w-52 py-5 text-center">
+            <div className="w-52 py-5 text-center hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
               <NoScrollLink href="/products">
                 <a>Products</a>
               </NoScrollLink>
             </div>
-            <div className="w-52 py-5 text-center">
+            <div className="w-52 py-5 text-center hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
               <NoScrollLink href="/teams">
                 <a>Teams</a>
               </NoScrollLink>
             </div>
-            <div className="w-52 py-5 text-center">
+            <div className="w-52 py-5 text-center hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
               {currentUser ? (
                 <NoScrollLink href={`/account/${currentUser?.uid as string}`}>
                   <a>My account</a>
@@ -151,7 +151,12 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
                 </NoScrollLink>
               )}
             </div>
-            <div className="w-52 py-5 text-center mt-auto">
+            <div className="w-52 py-5 text-center mt-auto hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
+              <NoScrollLink href="/about">
+                <a>About</a>
+              </NoScrollLink>
+            </div>
+            <div className="w-52 py-5 text-center hover:shadow-md hover:bg-slate-300 transition-all ease-in-out duration-200">
               <NoScrollLink href="/contact">
                 <a>Contact</a>
               </NoScrollLink>
