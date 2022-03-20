@@ -16,8 +16,10 @@ const ProductsPage = ({ productsList }: ProductsType) => {
   };
   return (
     <Layout title="Pitstop | Products">
-      <PageBackground info={info} />
-      <ProductsList productsList={productsList} />
+      <div className="min-h-content">
+        <PageBackground info={info} />
+        <ProductsList productsList={productsList} />
+      </div>
     </Layout>
   );
 };
@@ -26,7 +28,8 @@ export default ProductsPage;
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const productsList: ProductType[] | TeamType = await firestoreGetAllProducts();
+    const productsList: ProductType[] | TeamType =
+      await firestoreGetAllProducts();
     return {
       props: { productsList },
     };
