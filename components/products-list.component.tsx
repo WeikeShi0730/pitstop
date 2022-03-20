@@ -5,6 +5,7 @@ import { ProductType } from "../interfaces";
 import Pagination from "./pagination.component";
 import SortingBar from "./sorting-bar.component";
 import Fuse from "fuse.js";
+import Loading from "./loading.component";
 
 interface ProductsList {
   productsList: ProductType[];
@@ -17,6 +18,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
   const [sortedList, setSortedList] = useState(filteredList);
   const [dividedList, setDevidedList] = useState(sortedList);
   const [scrollTop, setScrollTop] = useState(500);
+  const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
   const options = {
@@ -112,63 +114,70 @@ const ProductsList = ({ productsList }: ProductsList) => {
   });
 
   return (
-    <div className="flex flex-col h-full w-full justify-start items-center">
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10 lg:my-16">
-        {name !== undefined &&
-        name !== null &&
-        name.length > 0 &&
-        dividedList.length > 0 ? (
-          <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
-            Search results for
-            <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
-              &quot;{name}&quot;
-            </span>
-            :
-          </p>
-        ) : (
-          dividedList.length > 0 && (
+    <>
+      {loading && <Loading />}
+      <div className="flex flex-col h-full w-full justify-start items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10 lg:my-16">
+          {name !== undefined &&
+          name !== null &&
+          name.length > 0 &&
+          dividedList.length > 0 ? (
             <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
-              All products:
+              Search results for
+              <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
+                &quot;{name}&quot;
+              </span>
+              :
             </p>
-          )
-        )}
+          ) : (
+            dividedList.length > 0 && (
+              <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+                All products:
+              </p>
+            )
+          )}
+          {dividedList.length > 0 && (
+            <div className="flex gap-x-2 justify-self-end items-center col-span-1 lg:col-span-2 2xl:col-span-3">
+              <SortingBar handleChange={handleChange} />
+            </div>
+          )}
+          {dividedList.length > 0 ? (
+            dividedList.map((product: ProductType, index: number) => {
+              return (
+                <div
+                  key={index}
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+                >
+                  <Product
+                    product={product}
+                    wishlistItems={[]}
+                    setLoading={setLoading}
+                  />
+                </div>
+              );
+            })
+          ) : (
+            <p className="flex p-5 gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
+              Couldn&apos;t find products related to
+              <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
+                &quot;{name}&quot;
+              </span>
+              .
+            </p>
+          )}
+        </div>
         {dividedList.length > 0 && (
-          <div className="flex gap-x-2 justify-self-end items-center col-span-1 lg:col-span-2 2xl:col-span-3">
-            <SortingBar handleChange={handleChange} />
+          <div className="flex justify-center m-5 mt-auto">
+            <Pagination
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+              numPages={Math.ceil(filteredList.length / numProductsOnPage)}
+              scroll={scrollTop}
+            />
           </div>
         )}
-        {dividedList.length > 0 ? (
-          dividedList.map((product: ProductType, index: number) => {
-            return (
-              <div
-                key={index}
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
-              >
-                <Product product={product} wishlistItems={[]} />
-              </div>
-            );
-          })
-        ) : (
-          <p className="flex p-5 gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
-            Couldn&apos;t find products related to
-            <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
-              &quot;{name}&quot;
-            </span>
-            .
-          </p>
-        )}
       </div>
-      {dividedList.length > 0 && (
-        <div className="flex justify-center m-5 mt-auto">
-          <Pagination
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-            numPages={Math.ceil(filteredList.length / numProductsOnPage)}
-            scroll={scrollTop}
-          />
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

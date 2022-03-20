@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 import Product from "./product.component";
 import { ProductType } from "../interfaces/index";
+import Loading from "./loading.component";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -11,6 +12,7 @@ interface ProductsType {
 }
 const Carousel = ({ featuredProducts }: ProductsType) => {
   const [numSlides, setNumSlides] = useState<number>(1);
+  const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     const handleResize = () => {
       if (window) {
@@ -34,32 +36,39 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
   });
   return (
     <>
+      {loading && <Loading />}
       <div className="w-full flex m-3 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
-        Featured stickers:
+        Featured stickers
       </div>
-      <Swiper
-        slidesPerView={numSlides}
-        modules={[Navigation, Autoplay]}
-        navigation
-        autoplay={{
-          delay: 1500,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-      >
-        {featuredProducts.map((featuredProduct) => {
-          return (
-            <SwiperSlide key={featuredProduct.id}>
-              <div className="flex items-center justify-center">
-                <div className="m-3 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-                  <Product product={featuredProduct} wishlistItems={[]} />
+      <div className="w-full">
+        <Swiper
+          slidesPerView={numSlides}
+          modules={[Navigation, Autoplay]}
+          navigation
+          autoplay={{
+            delay: 1500,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+        >
+          {featuredProducts.map((featuredProduct) => {
+            return (
+              <SwiperSlide key={featuredProduct.id}>
+                <div className="flex items-center justify-center">
+                  <div className="m-3 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                    <Product
+                      product={featuredProduct}
+                      wishlistItems={[]}
+                      setLoading={setLoading}
+                    />
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </>
   );
 };

@@ -13,11 +13,11 @@ import Loading from "./loading.component";
 interface Product {
   product: ProductType;
   wishlistItems: ProductType[];
+  setLoading: (loading: boolean) => void;
 }
 
-const Product = ({ product, wishlistItems }: Product) => {
+const Product = ({ product, wishlistItems, setLoading }: Product) => {
   const { name, imageUrl, price } = product;
-  const [loading, setLoading] = useState<boolean>(false);
   const [heart, setHeart] = useState<boolean>(false);
 
   useEffect(() => {
@@ -112,11 +112,11 @@ const Product = ({ product, wishlistItems }: Product) => {
 
   return (
     <>
-      {loading && <Loading />}
       <div className="p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500">
         <div className="flex relative w-full h-56 justify-center items-center m-auto p-3">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transition-all duration-200 ease-in-out hover:shadow-slate-500">
             <Image
+              priority
               src={imageUrl}
               className="object-contain"
               // loader={imgLoader}

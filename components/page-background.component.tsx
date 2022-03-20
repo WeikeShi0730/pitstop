@@ -15,7 +15,7 @@ const PageBackground = ({ info }: Team) => {
     <div className="relative bg-slate-100 flex p-10 shadow-2xl hover:shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
       <div className="flex relative w-full h-96 2xl:h-100">
         <Image
-          // priority
+          priority
           src={teamBackground}
           loader={imgLoader}
           className="object-cover rounded-lg"
