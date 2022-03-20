@@ -26,7 +26,7 @@ export default TeamHomePage;
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const teams: TeamType[] = await firestoreGetTeamsDocs();
-    const ids = teams.map((team) => team.name);
+    const ids = teams.map((team) => team.id);
     const paths = ids.map((id) => ({ params: { id: id } }));
     return {
       paths,
