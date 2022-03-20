@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NoScrollLink from "./no-scroll-link.component";
 import { useRouter } from "next/router";
 import { auth, signOutGoogle } from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
@@ -45,14 +44,9 @@ const SignOut = () => {
   return (
     <>
       {loading && <Loading />}
-      <NoScrollLink href="/">
-        <a
-          onClick={clearCurrentUser}
-          className="font-light w-full text-left"
-        >
-          Sign out
-        </a>
-      </NoScrollLink>
+      <a onClick={clearCurrentUser} className="font-light w-full text-left">
+        Sign out
+      </a>
     </>
   );
 };

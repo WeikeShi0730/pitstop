@@ -19,7 +19,6 @@ const AccountOverview = ({
     useState<{ total: number; timeStamp: string }>();
   useEffect(() => {
     if (orderHistoryItems !== undefined && orderHistoryItems.length > 0) {
-      console.log(orderHistoryItems);
       const latestOrder = orderHistoryItems[0];
       const total = latestOrder.items.reduce((acc, currentProduct) => {
         return acc + currentProduct.count * currentProduct.product.price;
