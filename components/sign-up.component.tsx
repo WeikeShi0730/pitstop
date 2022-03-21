@@ -71,7 +71,7 @@ const SignUp = () => {
               required
               name="displayName"
               type="text"
-              className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="displayName"
               placeholder="Your username"
               onChange={handleChange}
@@ -84,7 +84,7 @@ const SignUp = () => {
               required
               name="email"
               type="email"
-              className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="email"
               placeholder="Your email"
               onChange={handleChange}
@@ -96,7 +96,7 @@ const SignUp = () => {
               required
               name="password"
               type="password"
-              className="text-xs md:text-md w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="password"
               placeholder="Your password"
               minLength={6}

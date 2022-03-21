@@ -29,9 +29,11 @@ const About = () => {
               teams, drivers, and team principles. Our products give you a
               chance to showcase your love towards F1™. Enjoy!
             </p>
-            <p className="underline-primary font-normal text-lg md:text-xl text-right">
+            <p className="flex justify-end">
               <NoScrollLink href="/">
-                <a>Go to shop →</a>
+                <a className="underline-primary font-normal text-lg md:text-xl">
+                  Go to shop →
+                </a>
               </NoScrollLink>
             </p>
           </div>

@@ -103,7 +103,7 @@ const SignIn = () => {
               required
               name="email"
               type="email"
-              className="w-full p-2 text-xs md:text-md border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="email"
               placeholder="Your email"
               onChange={handleChange}
@@ -115,7 +115,7 @@ const SignIn = () => {
               required
               name="password"
               type="password"
-              className="w-full p-2 text-xs md:text-md border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="password"
               placeholder="Your password"
               onChange={handleChange}

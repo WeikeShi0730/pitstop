@@ -61,8 +61,8 @@ const Contact = () => {
   return (
     <>
       {loading && <Loading />}
-      <div className="h-content flex justify-center items-center">
-        <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200 font-light">
+      <div className="min-h-content flex justify-center items-center">
+        <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto my-10 text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200 font-light">
           <form ref={form} name="contact" onSubmit={handleSubmit}>
             <h2 className="text-center text-2xl text-orange-theme mb-4">
               Contact us
