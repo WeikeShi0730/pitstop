@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CurrentUserType, OrderHistoryItemType } from "../interfaces/index";
 import AccountOverviewLayout from "./account-overview-layout.component";
 import UpdatePassword from "./update-password.component";
+import smoothscroll from "smoothscroll-polyfill";
 
 interface AccountOverviewType {
   currentUser: CurrentUserType["currentUser"];
@@ -94,7 +95,8 @@ const AccountOverview = ({
               <div className="px-4">
                 Total:{" "}
                 <span className="text-lg font-normal">
-                  CAD {latestOrderHistory && latestOrderHistory.total.toFixed(2)}
+                  CAD{" "}
+                  {latestOrderHistory && latestOrderHistory.total.toFixed(2)}
                 </span>
               </div>
             </div>
@@ -102,6 +104,7 @@ const AccountOverview = ({
               className="self-end py-2 px-4 underline-primary font-normal text-lg text-right"
               onClick={() => {
                 setCurrentSelection(3);
+                smoothscroll.polyfill();
                 window.scroll({
                   top: 0,
                   left: 0,

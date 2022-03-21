@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const paths = ids.map((id) => ({ params: { id: id } }));
     return {
       paths,
-      fallback: false, //??????!?!?!??!??!!?
+      fallback: false,
     };
   } catch (error: any) {
     console.error(error.message);

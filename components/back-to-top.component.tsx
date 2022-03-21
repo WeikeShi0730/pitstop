@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BiArrowToTop } from "react-icons/bi";
+import smoothscroll from "smoothscroll-polyfill";
 
 const BackToTop = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
@@ -14,7 +15,9 @@ const BackToTop = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleClick = () => {
+    smoothscroll.polyfill();
     window.scroll({
       top: 0,
       left: 0,

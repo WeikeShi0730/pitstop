@@ -1,6 +1,6 @@
 import { Tab } from "@headlessui/react";
 import { useEffect } from "react";
-
+import smoothscroll from "smoothscroll-polyfill";
 interface PageNumberType {
   setCurrentPage: (currentPage: number) => void;
   numPages: number;
@@ -50,6 +50,7 @@ const Pagination = ({
   }, [currentPage, numPages]);
 
   const backToTop = () => {
+    smoothscroll.polyfill();
     window.scroll({
       top: scroll,
       left: 0,
