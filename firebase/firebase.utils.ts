@@ -22,8 +22,6 @@ import {
   onAuthStateChanged,
   signOut,
   sendPasswordResetEmail,
-  updatePassword,
-  reauthenticateWithCredential,
   User,
 } from "firebase/auth";
 
@@ -200,11 +198,7 @@ export const updateUserCartFirestore = async (
         case "SET": {
           if ((count as number) >= 0) {
             cartItems[cartItems.indexOf(cartItem[0])].count = count as number;
-          }
-          // else if ((count as number) === 0) {
-          //   cartItems.splice(cartItems.indexOf(cartItem[0]), 1);
-          // }
-          else {
+          } else {
             throw Error("Input amount not valid.");
           }
           break;
@@ -219,9 +213,8 @@ export const updateUserCartFirestore = async (
           break;
         }
 
-        // default:
-        //   {
-        //   }
+        default:
+          break;
       }
       await updateDoc(currentUserRef, {
         cartItems: cartItems,
@@ -393,14 +386,6 @@ export const subscribeToCurrentUserData = (
   const currentUserRef = doc(db, "users", uid);
   return onSnapshot(currentUserRef, snapshot);
 };
-
-// export const subscribeToCurrentUserWishlistItems = (
-//   uid: string,
-//   snapshot: SnapshotFnType["snapshotfn"]
-// ) => {
-//   const currentUserRef = doc(db, "users", uid);
-//   return onSnapshot(currentUserRef, snapshot);
-// };
 
 //** Auth *****************************/
 export const signInWithGoogle = async () => {

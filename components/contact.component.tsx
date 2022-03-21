@@ -27,7 +27,7 @@ const Contact = () => {
         form.current!,
         process.env.NEXT_PUBLIC_USER_ID!
       );
-      router.back();
+      // router.back();
       setLoading(false);
       toast.success("Thanks for your email, we'll get back to you ASAP!", {
         position: "top-center",

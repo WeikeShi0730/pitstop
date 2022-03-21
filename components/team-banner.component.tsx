@@ -1,17 +1,47 @@
+import { useEffect, useRef } from "react";
 import NoScrollLink from "./no-scroll-link.component";
 import Image from "next/image";
 import { imgLoader } from "../utils/image-loader";
-import Tilt from "react-parallax-tilt";
+import VanillaTilt from "vanilla-tilt";
 interface TeamOnTeamsPageType {
   id: string;
   backgroundImg: string;
   name: string;
 }
 
-const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
+const Tilt = ({
+  options,
+  children,
+  ...otherProps
+}: {
+  options: {
+    scale: number;
+    speed: number;
+    max: number;
+  };
+  children: React.ReactNode;
+}) => {
+  const tilt = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    VanillaTilt.init(tilt.current as HTMLDivElement, options);
+  }, [options]);
+
   return (
-    <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-      <div className="relative w-full h-32 rounded-lg my-3 hover:h-36 hover:scale-105 hover:z-10 transition-all duration-200 ease-in-out">
+    <div ref={tilt} {...otherProps}>
+      {children}
+    </div>
+  );
+};
+
+const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
+  const options = {
+    scale: 1.1,
+    speed: 500,
+    max: 10,
+  };
+  return (
+    <Tilt options={options}>
+      <div className="relative w-full h-32 rounded-lg my-3 transition-all duration-200 ease-in-out">
         <Image
           priority
           className="object-cover rounded-md"
