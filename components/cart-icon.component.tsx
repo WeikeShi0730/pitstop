@@ -32,10 +32,12 @@ const CartIcon = ({ cartItems }: CartItems) => {
         onClick={handleClick}
       >
         <FiShoppingCart />
-        <div className="p-1 w-8 flex justify-start">
+        <div className="px-1 w-8 flex justify-start">
           {cartItemCount && cartItemCount > 0 ? (
             <div>{cartItemCount}</div>
-          ) : null}
+          ) : (
+            <div />
+          )}
         </div>
       </button>
       <Transition

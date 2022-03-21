@@ -22,7 +22,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
             );
           })
         ) : (
-          <div className="h-full flex flex-col justify-center items-center text-2xl m-5">
+          <div className="flex flex-col justify-center items-center text-2xl m-5">
             Your cart is empty
           </div>
         )}

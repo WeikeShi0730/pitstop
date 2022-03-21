@@ -17,7 +17,6 @@ interface Product {
 
 const Product = ({ product, wishlistItems, setLoading }: Product) => {
   const { name, imageUrl, price } = product;
-  console.log(imageUrl)
   const [heart, setHeart] = useState<boolean>(false);
 
   useEffect(() => {
