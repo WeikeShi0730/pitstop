@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ProductType } from "../interfaces";
 import Image from "next/image";
 import withSubscribtion from "./hoc.component";
-import { imgLoader } from "../utils/image-loader";
+// import { imgLoader } from "../utils/image-loader";
 import {
   updateUserCartFirestore,
   updateWishlist,
@@ -17,6 +17,7 @@ interface Product {
 
 const Product = ({ product, wishlistItems, setLoading }: Product) => {
   const { name, imageUrl, price } = product;
+  console.log(imageUrl)
   const [heart, setHeart] = useState<boolean>(false);
 
   useEffect(() => {
@@ -118,7 +119,7 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
               priority
               src={imageUrl}
               className="object-contain"
-              loader={imgLoader}
+              // loader={imgLoader}
               unoptimized
               alt={`${name} image`}
               layout="fill"
