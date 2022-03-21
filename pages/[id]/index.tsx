@@ -15,8 +15,8 @@ interface Team {
 const TeamHomePage = ({ team }: Team) => {
   return (
     <Layout title={`Pitstop | ${team.name}`}>
-        <PageBackground info={team} />
-        <ProductsList productsList={team.productsList as ProductType[]} />
+      <PageBackground info={team} />
+      <ProductsList productsList={team.productsList as ProductType[]} />
     </Layout>
   );
 };
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const paths = ids.map((id) => ({ params: { id: id } }));
     return {
       paths,
-      fallback: "blocking", //??????!?!?!??!??!!?
+      fallback: false, //??????!?!?!??!??!!?
     };
   } catch (error: any) {
     console.error(error.message);

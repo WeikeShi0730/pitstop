@@ -11,6 +11,7 @@ const About = () => {
           <div className="md:-rotate-90">
             <div className="relative w-48 h-48 md:w-72 md:h-48 my-5 md:-my-28 md:-translate-y-10">
               <Image
+                priority
                 src="/pitstop-logos/pitstop.png"
                 className="object-contain rounded-lg"
                 unoptimized
@@ -42,6 +43,7 @@ const About = () => {
           <div>
             <div className="relative w-48 h-48 md:w-56 md:h-82 my-5 md:-my-28 rounded-lg shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
               <Image
+                priority
                 src="/about/me.jpg"
                 className="object-cover rounded-lg"
                 unoptimized

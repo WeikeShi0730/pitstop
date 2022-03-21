@@ -36,6 +36,7 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
         <div className="image flex flex-col relative w-1/3 h-20">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg">
             <Image
+              priority
               src={imageUrl}
               className="object-contain"
               unoptimized

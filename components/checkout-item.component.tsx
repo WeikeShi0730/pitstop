@@ -72,6 +72,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
           <div className="image flex flex-col relative w-1/3 h-48">
             <div className="relative w-full h-full bg-[#F8F8F8] rounded-l-lg">
               <Image
+                priority
                 src={imageUrl}
                 className="object-contain rounded-l-lg"
                 unoptimized

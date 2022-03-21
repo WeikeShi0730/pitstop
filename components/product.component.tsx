@@ -8,7 +8,6 @@ import {
   updateWishlist,
 } from "../firebase/firebase.utils";
 import { toast } from "react-toastify";
-import Loading from "./loading.component";
 
 interface Product {
   product: ProductType;
@@ -119,7 +118,7 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
               priority
               src={imageUrl}
               className="object-contain"
-              // loader={imgLoader}
+              loader={imgLoader}
               unoptimized
               alt={`${name} image`}
               layout="fill"

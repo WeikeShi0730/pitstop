@@ -13,6 +13,7 @@ const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
     <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
       <div className="relative w-full h-32 rounded-lg my-3 hover:h-36 hover:scale-105 hover:z-10 transition-all duration-200 ease-in-out">
         <Image
+          priority
           className="object-cover rounded-md"
           loader={imgLoader}
           unoptimized
