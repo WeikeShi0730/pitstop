@@ -55,7 +55,7 @@ const AccountOverview = ({
 
   return (
     <div className="m-10 flex flex-col w-full gap-y-5 text-sm md:text-base">
-      <div className="w-fit flex justify-start text-slate-700 text-xl md:text-3xl py-1 border-b border-slate-700">
+      <div className="w-fit flex justify-start text-slate-700 text-lg md:text-2xl py-1 border-b border-slate-700">
         Overview
       </div>
       <div className="my-5 text-xl md:text-3xl flex justify-center">

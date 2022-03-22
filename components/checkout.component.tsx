@@ -64,7 +64,7 @@ const Checkout = ({ cartItems }: CartItems) => {
       <div className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-start">
         <div className="relative w-full lg:w-3/4 my-10">
           <div className="flex justify-center m-2">
-            <div className="flex w-full sm:w-2/3 m-5 justify-start text-xl md:text-3xl py-1 border-b border-slate-700">
+            <div className="flex w-full sm:w-2/3 m-5 justify-start text-lg md:text-2xl py-1 border-b border-slate-700">
               Your cart 🛒
             </div>
           </div>
@@ -80,7 +80,7 @@ const Checkout = ({ cartItems }: CartItems) => {
               );
             })
           ) : (
-            <div className="flex flex-col flex-auto h-full justify-center items-center">
+            <div className="flex flex-grow flex-col h-full justify-center items-center">
               <div className="flex justify-center items-center text-base md:text-xl">
                 Your cart is empty!
               </div>
@@ -101,7 +101,7 @@ const Checkout = ({ cartItems }: CartItems) => {
           )}
         </div>
         <div className="w-full lg:w-1/4 flex lg:my-10 justify-center lg:items-start">
-          <div className="fixed bottom-0 z-40 w-full bg-slate-100 bg-opacity-30 lg:bg-transparent lg:sticky lg:top-32">
+          <div className="fixed bottom-0 z-40 w-full bg-slate-100 bg-opacity-30 backdrop-blur-md lg:backdrop-blur-0 lg:bg-transparent lg:sticky lg:top-32">
             <div className="flex flex-row lg:flex-col items-center justify-evenly">
               {cartItems && cartItems.length > 0 && (
                 <div className="lg:flex">

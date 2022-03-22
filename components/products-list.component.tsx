@@ -131,7 +131,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
             </p>
           ) : (
             dividedList.length > 0 && (
-              <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-base md:text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+              <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-lg md:text-2xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
                 All products:
               </p>
             )

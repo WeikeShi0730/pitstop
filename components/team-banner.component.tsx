@@ -53,7 +53,7 @@ const TeamBanner = ({ backgroundImg, name, id }: TeamOnTeamsPageType) => {
         />
         <div className="flex justify-center items-center absolute w-full h-full opacity-0 hover:opacity-95 hover:backdrop-blur-sm rounded-md">
           <NoScrollLink href={`/${id}`}>
-            <a className="bg-slate-700 text-slate-100 w-48 p-3 text-center rounded-md shadow-slate-700 shadow-md hover:bg-slate-600 hover:text-white transition-all ease-in-out duration-200">
+            <a className="text-sm md:text-base bg-slate-700 text-slate-100 w-48 p-3 text-center rounded-md shadow-slate-700 shadow-md hover:bg-slate-600 hover:text-white transition-all ease-in-out duration-200">
               Shop {name}
             </a>
           </NoScrollLink>

@@ -37,7 +37,7 @@ const Carousel = ({ featuredProducts }: ProductsType) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="flex m-3 justify-self-start items-end text-slate-700 text-xl md:text-3xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+      <div className="flex m-3 justify-self-start items-end text-slate-700 text-lg md:text-2xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
         Featured stickers
       </div>
       <div className="w-full">

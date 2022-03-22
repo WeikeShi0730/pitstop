@@ -64,7 +64,7 @@ const Contact = () => {
       <div className="min-h-content flex justify-center items-center text-sm md:text-base">
         <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto my-10 text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200 font-light">
           <form ref={form} name="contact" onSubmit={handleSubmit}>
-            <h2 className="text-center text-xl md:text-3xl text-orange-theme mb-4">
+            <h2 className="text-center text-lg md:text-2xl text-orange-theme mb-4">
               Contact us
             </h2>
             <p className="text-center text-slate-700 sm:w-2/3 w-full mx-auto mb-8">
