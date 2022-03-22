@@ -44,12 +44,12 @@ const UpdatePassword = ({ currentUser }: CurrentUserType) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="text-center self-start m-3 text-lg">
+      <div className="text-center self-start m-3 text-lg md:text-xl">
         Update my password?
       </div>
       <button
         onClick={handleClick}
-        className="m-3 bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
+        className="text-sm md:text-base m-3 bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
       >
         Send a password update email
       </button>

@@ -54,27 +54,27 @@ const AccountOverview = ({
   }, [orderHistoryItems]);
 
   return (
-    <div className="m-10 flex flex-col w-full gap-y-5">
-      <div className="w-fit flex justify-start text-slate-700 text-xl py-1 border-b border-slate-700">
+    <div className="m-10 flex flex-col w-full gap-y-5 text-sm md:text-base">
+      <div className="w-fit flex justify-start text-slate-700 text-xl md:text-3xl py-1 border-b border-slate-700">
         Overview
       </div>
-      <div className="my-5 text-3xl flex justify-center">
+      <div className="my-5 text-xl md:text-3xl flex justify-center">
         Hi, {currentUser?.displayName}!
       </div>
 
       <AccountOverviewLayout>
-        <div className="text-center self-start m-3 text-lg">Summary</div>
+        <div className="text-center self-start m-3 text-lg md:text-xl">Summary</div>
         <div className="m-3">
           <div className="text-center py-2 px-4 leading-8">
             You&apos;ve bought{" "}
-            <span className="underline-primary font-normal text-lg">
+            <span className="underline-primary font-normal text-lg md:text-xl">
               {orderHistorySummary.count}
             </span>{" "}
             stickers!
           </div>
           <div className="text-center py-2 px-4 leading-8">
             CAD{" "}
-            <span className="underline-primary font-normal text-lg">
+            <span className="underline-primary font-normal text-lg md:text-xl">
               {orderHistorySummary.total.toFixed(2)}
             </span>{" "}
             in total. 💸
@@ -82,26 +82,26 @@ const AccountOverview = ({
         </div>
       </AccountOverviewLayout>
       <AccountOverviewLayout>
-        <div className="text-center self-start m-3 text-lg">Latest Order</div>
+        <div className="text-center self-start m-3 text-lg md:text-xl">Latest Order</div>
         {orderHistoryItems && orderHistoryItems.length > 0 ? (
           <>
             <div className="m-3 self-start">
               <div className="px-4">
                 Order date:{" "}
-                <span className="text-lg font-normal">
+                <span className="text-lg md:text-xl font-normal">
                   {latestOrderHistory && latestOrderHistory.timeStamp}
                 </span>
               </div>
               <div className="px-4">
                 Total:{" "}
-                <span className="text-lg font-normal">
+                <span className="text-lg md:text-xl font-normal">
                   CAD{" "}
                   {latestOrderHistory && latestOrderHistory.total.toFixed(2)}
                 </span>
               </div>
             </div>
             <button
-              className="self-end py-2 px-4 underline-primary font-normal text-lg text-right"
+              className="self-end py-2 px-4 underline-primary font-normal text-lg md:text-xl text-right"
               onClick={() => {
                 setCurrentSelection(3);
                 smoothscroll.polyfill();
@@ -123,9 +123,9 @@ const AccountOverview = ({
         <UpdatePassword currentUser={currentUser} />
       </AccountOverviewLayout>
       <AccountOverviewLayout>
-        <div className="text-center self-start m-3 text-lg">Need support?</div>
+        <div className="text-center self-start m-3 text-lg md:text-xl">Need support?</div>
         <Link href="/contact">
-          <a className="m-3 bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200">
+          <a className="text-sm md:text-base m-3 bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200">
             Contact us
           </a>
         </Link>

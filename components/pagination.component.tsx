@@ -68,7 +68,7 @@ const Pagination = ({
           backToTop();
         }}
       >
-        <Tab.List className="flex w-fit max-w-full p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
+        <Tab.List className="flex w-fit max-w-full p-1 gap-x-1 bg-slate-300 rounded-lg shadow text-sm md:text-base">
           <button
             className="buttonPrev w-8 py-1 leading-5 text-slate-700 rounded-lg hover:bg-slate-100"
             disabled={currentPage === 1}

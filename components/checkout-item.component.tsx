@@ -64,7 +64,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700">
+      <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700 text-sm md:text-base">
         <div
           ref={ref}
           className="flex w-full bg-opacity-30 bg-slate-100 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500"
@@ -83,22 +83,22 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
           </div>
           <div className="text flex flex-col justify-evenly mx-4 w-2/3">
             <div className="title flex justify-start">
-              <div className="name text-2xl">{name}</div>
+              <div className="name text-lg md:text-2xl">{name}</div>
             </div>
             <div className="details flex flex-col md:flex-row items-center justify-between">
               <div className="unt flex items-end justify-start">
                 <div>CAD</div>
-                <div className="text-xl ml-1">{price}</div>
+                <div className="text-base md:text-xl ml-1">{price}</div>
                 <div className="">/ea</div>
               </div>
               <div className="qty flex items-center">
                 <div className="">Qty:</div>
-                <div className="mx-3 text-xl">
+                <div className="mx-3 text-base md:text-xl">
                   <button onClick={handleClick} name="REMOVE">
                     ⊖
                   </button>
                 </div>
-                <div className="flex justify-center text-xl">
+                <div className="flex justify-center text-base md:text-xl">
                   <form>
                     <input
                       className="w-10 bg-transparent text-center underline underline-offset-2 decoration-1 outline-none"
@@ -112,12 +112,12 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                     />
                   </form>
                 </div>
-                <div className="mx-3 text-xl">
+                <div className="mx-3 text-base md:text-xl">
                   <button onClick={handleClick} name="ADD">
                     ⊕
                   </button>
                 </div>
-                <div className="delete text-2xl">
+                <div className="delete text-lg md:text-2xl">
                   <button onClick={handleClick} name="DELETE">
                     🅧
                   </button>
@@ -126,7 +126,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
             </div>
             <div className="subtotal flex w-full justify-end items-end space-x-2">
               <div className="">Subtotal: CAD</div>
-              <div className="text-2xl">{subtotal}</div>
+              <div className="text-lg md:text-2xl">{subtotal}</div>
             </div>
           </div>
         </div>

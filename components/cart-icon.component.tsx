@@ -26,7 +26,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
     : 0;
 
   return (
-    <div className="relative">
+    <div className="relative text-sm md:text-base">
       <button
         className="flex items-center justify-center space-x-2"
         onClick={handleClick}

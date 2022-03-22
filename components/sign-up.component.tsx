@@ -71,7 +71,7 @@ const SignUp = () => {
               required
               name="displayName"
               type="text"
-              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="displayName"
               placeholder="Your username"
               onChange={handleChange}
@@ -84,7 +84,7 @@ const SignUp = () => {
               required
               name="email"
               type="email"
-              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="email"
               placeholder="Your email"
               onChange={handleChange}
@@ -96,7 +96,7 @@ const SignUp = () => {
               required
               name="password"
               type="password"
-              className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
               id="password"
               placeholder="Your password"
               minLength={6}
@@ -106,7 +106,7 @@ const SignUp = () => {
           <div className="flex justify-center items-center mt-6">
             <button
               type="submit"
-              className="md:text-sm bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
+              className="text-sm md:text-base bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
             >
               Sign up
             </button>

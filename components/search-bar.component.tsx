@@ -35,7 +35,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-2 overflow-hidden">
+    <div className="flex justify-center items-center gap-2 overflow-hidden text-sm md:text-base">
       <button
         className="flex justify-center items-center py-2"
         onClick={handleOnClick}

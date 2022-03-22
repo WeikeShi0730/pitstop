@@ -44,7 +44,7 @@ const SignOut = () => {
   return (
     <>
       {loading && <Loading />}
-      <a onClick={clearCurrentUser} className="font-light w-full text-left">
+      <a onClick={clearCurrentUser} className="font-light w-full text-left text-sm md:text-base">
         Sign out
       </a>
     </>

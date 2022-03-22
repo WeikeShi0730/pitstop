@@ -16,7 +16,7 @@ const SortingBar = ({ handleChange }: SortingBarType) => {
   return (
     <div>
       <Tab.Group onChange={(index) => handleChange(index)}>
-        <Tab.List className="flex w-[21rem] p-1 gap-x-1 bg-slate-300 rounded-lg shadow">
+        <Tab.List className="flex w-[21rem] p-1 gap-x-1 bg-slate-300 rounded-lg shadow text-sm md:text-base">
           <Tab className={({ selected }) => tabStyle(selected)}>Popular</Tab>
           <Tab className={({ selected }) => tabStyle(selected)}>
             Price

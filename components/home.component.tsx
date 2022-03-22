@@ -26,10 +26,10 @@ const Home = ({ featuredProducts }: ProductsType) => {
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-center p-5 gap-y-10 lg:gap-x-10">
           <NoScrollLink href="/products">
-            <a className="homepage-button">Shop all</a>
+            <a className="text-sm md:text-base homepage-button">Shop all</a>
           </NoScrollLink>
           <NoScrollLink href="/teams">
-            <a className="homepage-button">Shop by teams</a>
+            <a className="text-sm md:text-base homepage-button">Shop by teams</a>
           </NoScrollLink>
         </div>
         <DownArrow />
@@ -41,7 +41,7 @@ const Home = ({ featuredProducts }: ProductsType) => {
         <PageBackground info={info} />
       </div>
       <div className="flex justify-center items-center mb-10">
-        <p className="text-lg md:text-3xl text-center text-slate-700 italic">
+        <p className="text-xl md:text-3xl text-center text-slate-700 italic">
           2022 season products coming soon...
         </p>
       </div>

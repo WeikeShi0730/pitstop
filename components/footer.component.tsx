@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="flex flex-col justify-center w-full bg-slate-700 text-slate-100 gap-y-10 pb-20 lg:pb-0 bg-opacity-90">
+    <div className="flex flex-col justify-center w-full bg-slate-700 text-slate-100 gap-y-10 pb-20 lg:pb-0 bg-opacity-90 text-sm md:text-base">
       <div className="logo flex justify-center mt-10">
         <div className="relative w-48 h-16 mx-10">
           <Image

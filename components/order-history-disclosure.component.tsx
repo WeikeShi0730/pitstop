@@ -21,7 +21,7 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
       {({ open }) => (
         <>
           <Disclosure.Button className="font-light flex justify-between items-center w-full px-4 py-2 text-left text-slate-700 bg-slate-400 rounded-lg bg-opacity-50 backdrop-blur-sm hover:bg-slate-400 transition-all ease-in-out duration-200">
-            <span>{timeStamp}</span>
+            <span className="text-base md:text-xl">{timeStamp}</span>
             <RiArrowUpSLine
               className={`${open ? "transform rotate-180" : ""} w-5 h-5`}
             />
@@ -66,21 +66,21 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                       </div>
                       <div className="text flex flex-col justify-evenly mx-2 w-2/3">
                         <div className="title flex justify-start">
-                          <div className="name text-lg">{name}</div>
+                          <div className="name text-base md:text-xl">{name}</div>
                         </div>
                         <div className="details flex items-center justify-between text-slate-500">
-                          <div className="unt flex items-center justify-start">
+                          <div className="unt flex items-center justify-start text-sm md:text-base">
                             <div>CAD</div>
-                            <div className="text-lg ml-1">{price}</div>
+                            <div className="text-base md:text-xl ml-1">{price}</div>
                             <div className="">/ea</div>
                           </div>
-                          <div className="qty flex items-center">
+                          <div className="qty flex items-center text-sm md:text-base">
                             <div className="">Qty: {count}</div>
                           </div>
                         </div>
                         <div className="subtotal flex w-full justify-end items-end space-x-2 text-slate-600">
-                          <div className="">Subtotal: CAD</div>
-                          <div className="text-lg">{subtotal}</div>
+                          <div className="text-sm md:text-base">Subtotal: CAD</div>
+                          <div className="text-base md:text-xl">{subtotal}</div>
                         </div>
                       </div>
                     </div>

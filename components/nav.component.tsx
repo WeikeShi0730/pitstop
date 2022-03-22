@@ -25,7 +25,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
 
   return (
     <nav>
-      <div className="bg-slate-700 text-slate-200 flex items-center p-2 h-20">
+      <div className="bg-slate-700 text-slate-200 flex items-center p-2 h-20 text-sm md:text-base">
         <NoScrollLink href="/">
           <a>
             <div className="relative w-40 h-16 mx-5">

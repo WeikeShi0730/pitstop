@@ -24,7 +24,7 @@ const AccountMenu = ({
   };
 
   return (
-    <div className="flex items-start justify-center h-full md:min-h-content">
+    <div className="flex items-start justify-center h-full md:min-h-content text-sm md:text-base">
       <div className="mx-5 my-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg sticky top-32">
         <Tab.Group
           defaultIndex={1}

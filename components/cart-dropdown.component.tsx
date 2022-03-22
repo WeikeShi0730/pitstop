@@ -12,7 +12,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
     ?.toFixed(2);
 
   return (
-    <div className="shadow-md shadow-slate-500 rounded-lg text-slate-700">
+    <div className="shadow-md shadow-slate-500 rounded-lg text-slate-700 text-sm md:text-base">
       {/* h-fit-content */}
       <div className="relative w-full max-h-96 overflow-auto disable-scrollbars shadow-sm">
         {cartItems && cartItems.length > 0 ? (
@@ -22,18 +22,18 @@ const CartDropdown = ({ cartItems }: CartItems) => {
             );
           })
         ) : (
-          <div className="flex flex-col justify-center items-center text-2xl m-5">
-            Your cart is empty
+          <div className="flex flex-col justify-center items-center text-lg md:text-2xl m-5">
+            Your cart is empty.
           </div>
         )}
       </div>
       <div className="flex items-end justify-end p-2 space-x-2 bg-slate-300">
         <div>Total: CAD</div>
-        <div className="text-2xl">{total}</div>
+        <div className="text-lg md:text-2xl">{total}</div>
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <NoScrollLink href="/checkout">
-          <a className="p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-100 transition-all ease-in-out duration-200">
+          <a className="text-base p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-100 transition-all ease-in-out duration-200">
             Checkout
           </a>
         </NoScrollLink>

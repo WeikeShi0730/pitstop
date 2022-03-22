@@ -49,14 +49,14 @@ const CheckoutResult = () => {
         {data && (data?.payment_intent?.status !== "succeeded" || error) ? (
           <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
             <div className="text-4xl">😭</div>
-            <div className="text leading-8 text-center">
+            <div className="text-sm md:text-base leading-8 text-center">
               Your order didn&apos;t go through, please try again!
             </div>
           </div>
         ) : (
           <div className="flex flex-col justify-center items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg m-auto gap-y-5 p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
             <div className="text-4xl">🥳</div>
-            <div className="text leading-8 text-center">
+            <div className="text-sm md:text-base leading-8 text-center">
               Your order has been confirmed!
             </div>
           </div>

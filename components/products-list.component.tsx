@@ -122,16 +122,16 @@ const ProductsList = ({ productsList }: ProductsList) => {
           name !== null &&
           name.length > 0 &&
           dividedList.length > 0 ? (
-            <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+            <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-base md:text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
               Search results for
-              <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
+              <span className="text-lg md:text-2xl underline underline-offset-4 decoration-orange-theme italic">
                 &quot;{name}&quot;
               </span>
               :
             </p>
           ) : (
             dividedList.length > 0 && (
-              <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
+              <p className="flex gap-x-2 justify-self-start items-end text-slate-700 text-base md:text-xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700">
                 All products:
               </p>
             )
@@ -157,9 +157,9 @@ const ProductsList = ({ productsList }: ProductsList) => {
               );
             })
           ) : (
-            <p className="flex p-5 gap-x-2 items-end text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
+            <p className="flex p-5 gap-x-2 items-end text-base md:text-xl col-span-1 lg:col-span-2 2xl:col-span-3">
               Couldn&apos;t find products related to
-              <span className="text-2xl underline underline-offset-4 decoration-orange-theme italic">
+              <span className="text-lg md:text-2xl underline underline-offset-4 decoration-orange-theme italic">
                 &quot;{name}&quot;
               </span>
               .

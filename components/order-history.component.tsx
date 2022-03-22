@@ -28,7 +28,7 @@ const OrderHistory = ({ orderHistoryItems }: OrderHistoryItems) => {
           orderHistoryItems !== null &&
           orderHistoryItems.length > 0 ? (
             <>
-              <p className="flex justify-self-start text-slate-700 text-xl col-span-1 py-1 border-b border-slate-700">
+              <p className="flex justify-self-start text-slate-700 text-xl md:text-3xl col-span-1 py-1 border-b border-slate-700">
                 My order history
               </p>
               {dividedList.map((orderHistoryItem, index) => (
@@ -41,7 +41,7 @@ const OrderHistory = ({ orderHistoryItems }: OrderHistoryItems) => {
               ))}
             </>
           ) : (
-            <p className="flex justify-center items-center h-full px-5 gap-x-2 text-xl col-span-1">
+            <p className="flex justify-center items-center h-full px-5 gap-x-2 text-lg md:text-2xl col-span-1">
               Your order history is empty!
             </p>
           )}
