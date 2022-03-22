@@ -29,7 +29,7 @@ const CartDropdown = ({ cartItems }: CartItems) => {
       </div>
       <div className="flex items-end justify-end p-2 space-x-2 bg-slate-300">
         <div>Total: CAD</div>
-        <div className="text-lg md:text-2xl">{total}</div>
+        <div className="text-lg md:text-2xl font-normal">{total}</div>
       </div>
       <div className="flex justify-center relative inset-x-0 bottom-0 w-full">
         <NoScrollLink href="/checkout">

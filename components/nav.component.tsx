@@ -79,7 +79,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         <div className="flex items-center justify-between lg:hidden mx-5">
           <button
             onClick={handleOnClick}
-            className="flex h-6 w-6 items-center space-x-2 focus:outline-none"
+            className="flex h-6 w-6 items-center space-x-2 focus:outline-none font-light"
           >
             <div className="w-6 flex items-center justify-center relative">
               <span

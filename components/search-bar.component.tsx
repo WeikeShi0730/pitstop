@@ -37,7 +37,7 @@ const SearchBar = () => {
   return (
     <div className="flex justify-center items-center gap-2 overflow-hidden text-sm md:text-base">
       <button
-        className="flex justify-center items-center py-2"
+        className="flex font-light justify-center items-center py-2"
         onClick={handleOnClick}
       >
         <FiSearch />
@@ -62,7 +62,7 @@ const SearchBar = () => {
               placeholder="Search..."
               onChange={handleChange}
             />
-            <button type="submit">&rarr;</button>
+            <button className="font-light" type="submit">&rarr;</button>
           </form>
         </div>
       </Transition>

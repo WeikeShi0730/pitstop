@@ -83,16 +83,16 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
           </div>
           <div className="text flex flex-col justify-evenly mx-4 w-2/3">
             <div className="title flex justify-start">
-              <div className="name text-lg md:text-2xl">{name}</div>
+              <div className="font-normal text-lg md:text-2xl">{name}</div>
             </div>
             <div className="details flex flex-col md:flex-row items-center justify-between">
-              <div className="unt flex items-end justify-start">
+              <div className="unt flex items-end justify-start text-sm md:text-base text-slate-500">
                 <div>CAD</div>
                 <div className="text-base md:text-xl ml-1">{price}</div>
                 <div className="">/ea</div>
               </div>
               <div className="qty flex items-center">
-                <div className="">Qty:</div>
+                <div className="text-sm md:text-base">Qty:</div>
                 <div className="mx-3 text-base md:text-xl">
                   <button onClick={handleClick} name="REMOVE">
                     ⊖
@@ -125,8 +125,8 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
               </div>
             </div>
             <div className="subtotal flex w-full justify-end items-end space-x-2">
-              <div className="">Subtotal: CAD</div>
-              <div className="text-lg md:text-2xl">{subtotal}</div>
+              <div className="text-sm md:text-base">Subtotal: CAD</div>
+              <div className="font-normal text-lg md:text-2xl">{subtotal}</div>
             </div>
           </div>
         </div>

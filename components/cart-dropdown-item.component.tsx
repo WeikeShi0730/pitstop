@@ -46,7 +46,7 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
           </div>
         </div>
         <div className="text ml-2 w-2/3">
-          <div className="name">{name}</div>
+          <div className="font-normal">{name}</div>
           <div className="qty flex">
             <div className="">Qty:</div>
             <div className="mx-2">
@@ -61,7 +61,7 @@ const CartDropdownItem = ({ cartItem }: CartItem) => {
               </button>
             </div>
           </div>
-          <div className="Unt">Price: {price}</div>
+          <div className="text-slate-500">{price}/ea</div>
         </div>
         <div className="delete flex right-4 absolute">
           <button onClick={handleClick} name="DELETE">

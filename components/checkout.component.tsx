@@ -84,9 +84,11 @@ const Checkout = ({ cartItems }: CartItems) => {
               <div className="flex justify-center items-center text-base md:text-xl">
                 Your cart is empty!
               </div>
-              <div className="flex justify-center items-center m-5 underline-primary font-normal text-base md:text-xl">
-                <NoScrollLink href="/products">
-                  <a>Go to shop →</a>
+              <div className="flex justify-center items-center m-5">
+                <NoScrollLink href="/">
+                  <a className="underline-primary font-normal text-base md:text-xl">
+                    Go to shop →
+                  </a>
                 </NoScrollLink>
               </div>
             </div>
@@ -95,7 +97,7 @@ const Checkout = ({ cartItems }: CartItems) => {
             <div className="flex justify-center m-2">
               <div className="flex w-full sm:w-2/3 m-5 justify-end items-end space-x-2 py-1 border-t border-slate-700">
                 <div className="text-base md:text-xl">Total: CAD</div>
-                <div className="text-xl md:text-3xl">{total}</div>
+                <div className="text-xl md:text-3xl font-normal">{total}</div>
               </div>
             </div>
           )}
@@ -107,7 +109,9 @@ const Checkout = ({ cartItems }: CartItems) => {
                 <div className="lg:flex">
                   <div className="flex w-full lg:w-48 xl:w-60 2xl:w-72 justify-center lg:justify-end items-end my-2 mx-1 lg:m-5 space-x-2 py-1 lg:border-b border-slate-700">
                     <div className="text-base md:text-xl">Total: CAD</div>
-                    <div className="text-lg md:text-2xl">{total}</div>
+                    <div className="text-lg md:text-2xl font-normal">
+                      {total}
+                    </div>
                   </div>
                 </div>
               )}
@@ -118,7 +122,7 @@ const Checkout = ({ cartItems }: CartItems) => {
                   type="submit"
                   className="text-sm md:text-base flex justify-center items-center w-48 xl:w-60 2xl:w-72 my-2 mx-1 lg:m-5 rounded-lg bg-indigo-600 text-slate-200 hover:text-slate-100 hover:bg-indigo-500 shadow-md hover:shadow-indigo-700 transition-all duration-200 ease-in-out"
                 >
-                  <div className="m-1">Checkout with</div>
+                  <div className="m-1 font-light">Checkout with</div>
                   <div className="m-1">
                     <FaCcStripe size={50} />
                   </div>

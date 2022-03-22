@@ -66,10 +66,10 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                       </div>
                       <div className="text flex flex-col justify-evenly mx-2 w-2/3">
                         <div className="title flex justify-start">
-                          <div className="name text-base md:text-xl">{name}</div>
+                          <div className="font-normal text-base md:text-xl">{name}</div>
                         </div>
                         <div className="details flex items-center justify-between text-slate-500">
-                          <div className="unt flex items-center justify-start text-sm md:text-base">
+                          <div className="unt flex items-end justify-start text-sm md:text-base">
                             <div>CAD</div>
                             <div className="text-base md:text-xl ml-1">{price}</div>
                             <div className="">/ea</div>
@@ -80,15 +80,15 @@ const OrderHistoryDisclosure = ({ orderHistoryItem }: OrderHistoryItem) => {
                         </div>
                         <div className="subtotal flex w-full justify-end items-end space-x-2 text-slate-600">
                           <div className="text-sm md:text-base">Subtotal: CAD</div>
-                          <div className="text-base md:text-xl">{subtotal}</div>
+                          <div className="font-normal text-base md:text-xl">{subtotal}</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 );
               })}
-              <div className="flex w-full justify-end items-end m-2 text-xl">
-                Total: {total}
+              <div className="flex w-full justify-end items-end m-2 text-base md:text-xl">
+                Total:{" "}<span className="font-normal text-lg md:text-2xl">{total}</span>
               </div>
             </Disclosure.Panel>
             {/* )} */}

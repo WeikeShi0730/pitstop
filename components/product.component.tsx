@@ -126,18 +126,18 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
           </div>
         </div>
         <div className="flex flex-col justify-center relative m-3 py-2 border-y-2 border-slate-50">
-          <div className="text-base md:text-xl my-1 text-left h-8 md:h-12">{name}</div>
+          <div className="font-normal text-base md:text-xl my-1 text-left h-8 md:h-12">{name}</div>
           <div className="text my-1 text-left text-lg md:text-2xl">
             <button onClick={handleClickHeart}>{heart ? "♥" : "♡"}</button>
           </div>
           <div className="flex items-center justify-between my-1 gap-3">
             <div className="flex items-end gap-1">
               <div className="text-sm md:text-base">CAD</div>
-              <div className="text-base md:text-xl">{price}</div>
+              <div className="font-normal text-base md:text-xl">{price}</div>
             </div>
             <button
               onClick={handleClick}
-              className="bg-orange-theme text-slate-100 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
+              className="bg-orange-theme font-light text-slate-100 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
             >
               Add to cart
             </button>
