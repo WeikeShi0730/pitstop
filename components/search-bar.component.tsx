@@ -55,7 +55,7 @@ const SearchBar = () => {
           <form onSubmit={handleSubmit}>
             <input
               ref={inputRef}
-              className="bg-transparent outline-none border-b border-orange-theme w-36"
+              className="bg-transparent outline-none border-b border-orange-theme w-36 rounded-none"
               autoComplete="off"
               type="text"
               name="name"

@@ -72,7 +72,7 @@ const ResetPassword = () => {
                   required
                   name="email"
                   type="email"
-                  className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4"
+                  className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
                   id="email"
                   placeholder="Your email"
                   onChange={handleChange}
