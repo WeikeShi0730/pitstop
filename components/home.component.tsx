@@ -34,7 +34,7 @@ const Home = ({ featuredProducts }: ProductsType) => {
         </div>
         <DownArrow />
       </div>
-      <div className="m-10">
+      <div className="m-1 sm:m-5 md:m-8">
         <Carousel featuredProducts={featuredProducts} />
       </div>
       <div className="my-10">
