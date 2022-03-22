@@ -39,40 +39,40 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             </div>
           </a>
         </NoScrollLink>
-        <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/">
-            <a>Home</a>
+            <a className="hover:underline-primary hover:underline-offset-4">Home</a>
           </NoScrollLink>
         </div>
-        <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/products">
-            <a>Products</a>
+            <a className="hover:underline-primary hover:underline-offset-4">Products</a>
           </NoScrollLink>
         </div>
-        <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/teams">
-            <a>Teams</a>
+            <a className="hover:underline-primary hover:underline-offset-4">Teams</a>
           </NoScrollLink>
         </div>
-        <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/contact">
-            <a>Contact</a>
+            <a className="hover:underline-primary hover:underline-offset-4">Contact</a>
           </NoScrollLink>
         </div>
-        <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 hidden lg:flex">
           <SearchBar />
         </div>
-        <div className="mx-5 ml-auto flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 ml-auto flex ">
           <CartIcon cartItems={cartItems} />
         </div>
-        <div className="mx-5 hidden lg:flex hover:underline-primary hover:underline-offset-4">
+        <div className="mx-5 hidden lg:flex">
           {currentUser ? (
             <NoScrollLink href={`/account/${currentUser?.uid as string}`}>
-              <a>{currentUser.displayName}</a>
+              <a className="hover:underline-primary hover:underline-offset-4">{currentUser.displayName}</a>
             </NoScrollLink>
           ) : (
             <NoScrollLink href="/login">
-              <a>Sign In</a>
+              <a className="hover:underline-primary hover:underline-offset-4">Sign In</a>
             </NoScrollLink>
           )}
         </div>

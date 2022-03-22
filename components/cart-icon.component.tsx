@@ -28,7 +28,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
   return (
     <div className="relative text-sm md:text-base">
       <button
-        className="flex items-center justify-center space-x-2 font-light"
+        className="flex items-center justify-center space-x-2 font-light hover:underline-primary hover:underline-offset-4"
         onClick={handleClick}
       >
         <FiShoppingCart />
