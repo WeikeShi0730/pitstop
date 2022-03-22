@@ -26,8 +26,16 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="flex flex-col h-full w-full justify-start">
-        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10">
+      <div className="flex flex-col h-auto lg:h-full w-full justify-start">
+        <div
+          className={`${
+            wishlistItems !== undefined &&
+            wishlistItems !== null &&
+            wishlistItems.length > 0
+              ? "h-auto"
+              : "h-full"
+          } grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10`}
+        >
           {wishlistItems !== undefined &&
           wishlistItems !== null &&
           wishlistItems.length > 0 ? (
@@ -36,10 +44,7 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
                 My wishlist
               </p>
               {dividedList.map((wishlistItem) => (
-                <div
-                  key={wishlistItem.id}
-                  className="w-80"
-                >
+                <div key={wishlistItem.id} className="w-80">
                   <Product
                     product={wishlistItem}
                     wishlistItems={wishlistItems}
@@ -49,9 +54,11 @@ const Wishlist = ({ wishlistItems }: WishlistItemType) => {
               ))}
             </>
           ) : (
-            <p className="flex justify-center items-center h-full px-5 gap-x-2 text-lg md:text-2xl col-span-1 lg:col-span-2 2xl:col-span-3">
-              Your wishlist is empty!
-            </p>
+            <div className="flex flex-grow justify-center items-center h-full col-span-1 lg:col-span-2 2xl:col-span-3">
+              <p className="px-5 gap-x-2 text-lg md:text-2xl">
+                Your wishlist is empty!
+              </p>
+            </div>
           )}
         </div>
         {dividedList.length > 0 && (

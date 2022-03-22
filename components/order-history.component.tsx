@@ -22,8 +22,16 @@ const OrderHistory = ({ orderHistoryItems }: OrderHistoryItems) => {
 
   return (
     <>
-      <div className="flex flex-col w-full">
-        <div className="grid grid-cols-1 gap-10 justify-items-center m-10">
+      <div className="flex flex-col h-auto lg:h-full w-full">
+        <div
+          className={`${
+            orderHistoryItems !== undefined &&
+            orderHistoryItems !== null &&
+            orderHistoryItems.length > 0
+              ? "h-auto"
+              : "h-full"
+          } grid grid-cols-1 gap-10 h-full justify-items-center m-10`}
+        >
           {orderHistoryItems !== undefined &&
           orderHistoryItems !== null &&
           orderHistoryItems.length > 0 ? (
@@ -41,9 +49,11 @@ const OrderHistory = ({ orderHistoryItems }: OrderHistoryItems) => {
               ))}
             </>
           ) : (
-            <p className="flex justify-center items-center h-full px-5 gap-x-2 text-lg md:text-2xl col-span-1">
-              Your order history is empty!
-            </p>
+            <div className="flex flex-grow justify-center items-center h-full col-span-1">
+              <p className="px-5 gap-x-2 text-lg md:text-2xl">
+                Your order history is empty!
+              </p>
+            </div>
           )}
         </div>
         {dividedList.length > 0 && (

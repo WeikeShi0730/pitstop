@@ -62,7 +62,7 @@ const Checkout = ({ cartItems }: CartItems) => {
     <>
       {loading && <Loading />}
       <div className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-start">
-        <div className="relative w-full lg:w-3/4 my-10">
+        <div className="relative flex flex-col flex-auto h-full lg:h-auto w-full lg:w-3/4 my-10">
           <div className="flex justify-center m-2">
             <div className="flex w-full sm:w-2/3 m-5 justify-start text-lg md:text-2xl py-1 border-b border-slate-700">
               Your cart 🛒
@@ -80,7 +80,7 @@ const Checkout = ({ cartItems }: CartItems) => {
               );
             })
           ) : (
-            <div className="flex flex-grow flex-col h-full justify-center items-center">
+            <div className="flex flex-auto flex-col h-full justify-center items-center">
               <div className="flex justify-center items-center text-base md:text-xl">
                 Your cart is empty!
               </div>
@@ -107,7 +107,7 @@ const Checkout = ({ cartItems }: CartItems) => {
                 <div className="lg:flex">
                   <div className="flex w-full lg:w-48 xl:w-60 2xl:w-72 justify-center lg:justify-end items-end my-2 mx-1 lg:m-5 space-x-2 py-1 lg:border-b border-slate-700">
                     <div className="text-base md:text-xl">Total: CAD</div>
-                    <div className="text-xl md:text-3xl">{total}</div>
+                    <div className="text-lg md:text-2xl">{total}</div>
                   </div>
                 </div>
               )}
