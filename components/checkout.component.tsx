@@ -7,6 +7,7 @@ import { FaCcStripe } from "react-icons/fa";
 import withSubscribtion from "./hoc.component";
 import Loading from "./loading.component";
 import NoScrollLink from "./no-scroll-link.component";
+import { toast } from "react-toastify";
 import {
   SiAmericanexpress,
   SiVisa,
@@ -39,23 +40,46 @@ const Checkout = ({ cartItems }: CartItems) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true);
-    const checkoutSession = await fetchPostJSON("/api/checkout-session", {
-      total: total,
-    });
-    if ((checkoutSession as any).statusCode === 500) {
-      console.error((checkoutSession as any).message);
-      setLoading(false);
-      return;
-    }
+    try {
+      setLoading(true);
+      const checkoutSession = await fetchPostJSON("/api/checkout-session", {
+        total: total,
+      });
+      if ((checkoutSession as any).statusCode === 500) {
+        setLoading(false);
+        console.error((checkoutSession as any).message);
+        toast.error("No items in cart.", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        return;
+      }
 
-    // Redirect to Checkout.
-    const stripe = await getStripe();
-    const { error } = await stripe!.redirectToCheckout({
-      sessionId: checkoutSession.id,
-    });
-    setLoading(false);
-    console.warn(error.message);
+      // Redirect to Checkout.
+      const stripe = await getStripe();
+      const { error } = await stripe!.redirectToCheckout({
+        sessionId: checkoutSession.id,
+      });
+      console.warn(error.message);
+    } catch (error: any) {
+      setLoading(false);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
   };
 
   return (
