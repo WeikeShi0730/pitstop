@@ -141,8 +141,8 @@ const Checkout = ({ cartItems }: CartItems) => {
               )}
               <form onSubmit={handleSubmit} method="POST">
                 {/* Notice */}
-                <div className="w-full text-red-700 text-center text-sm md:text-base">
-                  Please use the testing card number:{" "}
+                <div className="w-full text-red-700 text-left text-sm md:text-base">
+                  Please use the test card number:
                   <p className="italic text-lg md:text-2xl font-normal">
                     4242 4242 4242 4242
                   </p>
