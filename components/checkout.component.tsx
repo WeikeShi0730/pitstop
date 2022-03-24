@@ -140,6 +140,14 @@ const Checkout = ({ cartItems }: CartItems) => {
                 </div>
               )}
               <form onSubmit={handleSubmit} method="POST">
+                {/* Notice */}
+                <div className="w-full text-red-700 text-center text-sm md:text-base">
+                  Please use the testing card number:{" "}
+                  <p className="italic text-lg md:text-2xl font-normal">
+                    4242 4242 4242 4242
+                  </p>
+                  Any future expire date, any CVC.
+                </div>
                 <button
                   role="link"
                   id="submit"
