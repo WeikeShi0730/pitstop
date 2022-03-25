@@ -4,9 +4,15 @@ import smoothscroll from "smoothscroll-polyfill";
 
 const BackToTop = () => {
   const [scrollPosition, setScrollPosition] = useState(false);
+  let timer: any = null;
   const handleScroll = () => {
     const position = window.pageYOffset >= window.innerHeight / 8;
     setScrollPosition(position);
+
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      setScrollPosition(() => false);
+    }, 1000);
   };
 
   useEffect(() => {
