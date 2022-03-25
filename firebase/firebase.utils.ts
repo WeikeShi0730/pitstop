@@ -328,7 +328,6 @@ const updateOrderHistory = async () => {
           }
         );
         if (!found) {
-          console.log("Not found");
           orderHistory.push({
             timeStamp: currentTimeStamp,
             items: items,
