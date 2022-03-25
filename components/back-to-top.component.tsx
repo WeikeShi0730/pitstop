@@ -19,7 +19,9 @@ const BackToTop = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClick = () => {
@@ -32,13 +34,13 @@ const BackToTop = () => {
   };
 
   return (
-    <div className="fixed bottom-20 right-2 lg:bottom-10 lg:right-10 text-lg z-50 bg-slate-800 text-slate-100 bg-opacity-60 backdrop-blur-md rounded-lg hover:bg-opacity-80 transition-all ease-in-out duration-200">
+    <div
+      className={`fixed bottom-20 right-2 lg:bottom-10 lg:right-10 text-lg z-50 bg-slate-800 text-slate-100 bg-opacity-60 backdrop-blur-md rounded-lg hover:bg-opacity-80 transition-all ease-in-out duration-200 ${
+        scrollPosition || "opacity-0"
+      }`}
+    >
       <button onClick={handleClick}>
-        <div
-          className={`flex justify-center items-center relative w-8 h-8 text-sm md:text-base ${
-            scrollPosition || "hidden"
-          }`}
-        >
+        <div className="flex justify-center items-center relative w-8 h-8 text-sm md:text-base">
           <BiArrowToTop />
         </div>
       </button>
