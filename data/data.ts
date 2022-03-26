@@ -21,7 +21,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/mercedes/Angry Toto face.jpg",
+        imageUrl: "/products/mercedes/Angry Toto face.WebP",
         name: "Angry Toto face",
         price: 1.98,
         sold: 0,
@@ -30,7 +30,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mercedes/Lewis Hamilton's helmet.jpg",
+        imageUrl: "/products/mercedes/Lewis Hamilton's helmet.WebP",
         name: "Lewis Hamilton's helmet",
         price: 2.48,
         sold: 0,
@@ -39,7 +39,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mercedes/Lewis Hamilton figure.jpg",
+        imageUrl: "/products/mercedes/Lewis Hamilton figure.WebP",
         name: "Lewis Hamilton figure",
         price: 2.58,
         sold: 0,
@@ -48,7 +48,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mercedes/Angry Toto team radio.jpg",
+        imageUrl: "/products/mercedes/Angry Toto team radio.WebP",
         name: "Angry Toto team radio",
         price: 2.78,
         sold: 0,
@@ -57,7 +57,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mercedes/Valtteri Bottas number.jpg",
+        imageUrl: "/products/mercedes/Valtteri Bottas number.WebP",
         name: "Valtteri Bottas number",
         price: 1.88,
         sold: 0,
@@ -66,7 +66,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mercedes/Valtteri Bottas leaderboard.jpg",
+        imageUrl: "/products/mercedes/Valtteri Bottas leaderboard.WebP",
         name: "Valtteri Bottas leaderboard",
         price: 1.98,
         sold: 0,
@@ -88,7 +88,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/red bull/Max Verstappen symbol.jpg",
+        imageUrl: "/products/red bull/Max Verstappen symbol.WebP",
         name: "Max Verstappen symbol",
         price: 2.48,
         sold: 0,
@@ -97,7 +97,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/red bull/Max Verstappen number.jpg",
+        imageUrl: "/products/red bull/Max Verstappen number.WebP",
         name: "Max Verstappen number",
         price: 1.98,
         sold: 0,
@@ -106,7 +106,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/red bull/Sergio Pérez leaderboard.jpg",
+        imageUrl: "/products/red bull/Sergio Pérez leaderboard.WebP",
         name: "Sergio Pérez leaderboard",
         price: 1.88,
         sold: 0,
@@ -115,7 +115,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/red bull/Red Bull 2021 Car Japanese livery.jpg",
+        imageUrl: "/products/red bull/Red Bull 2021 Car Japanese livery.WebP",
         name: "Red Bull 2021 Car Japanese livery",
         price: 1.98,
         sold: 0,
@@ -124,7 +124,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/red bull/Sergio Pérez podium.jpg",
+        imageUrl: "/products/red bull/Sergio Pérez podium.WebP",
         name: "Sergio Pérez podium",
         price: 2.28,
         sold: 0,
@@ -133,7 +133,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/red bull/Sergio Pérez figure.jpg",
+        imageUrl: "/products/red bull/Sergio Pérez figure.WebP",
         name: "Sergio Pérez figure",
         price: 2.08,
         sold: 0,
@@ -155,7 +155,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/ferrari/Carlos and Charles.jpg",
+        imageUrl: "/products/ferrari/Carlos and Charles.WebP",
         name: "Carlos and Charles",
         price: 2.58,
         sold: 0,
@@ -164,7 +164,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/ferrari/Carlos Sainz chilli.jpg",
+        imageUrl: "/products/ferrari/Carlos Sainz chilli.WebP",
         name: "Carlos Sainz chilli",
         price: 1.78,
         sold: 0,
@@ -173,7 +173,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/ferrari/Mattia Binotto sad face.jpg",
+        imageUrl: "/products/ferrari/Mattia Binotto sad face.WebP",
         name: "Mattia Binotto sad face",
         price: 1.68,
         sold: 0,
@@ -182,7 +182,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/ferrari/Carlos Sainz's helmet.jpg",
+        imageUrl: "/products/ferrari/Carlos Sainz's helmet.WebP",
         name: "Carlos Sainz's helmet",
         price: 1.88,
         sold: 0,
@@ -191,7 +191,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/ferrari/Charles Leclerc figure.jpg",
+        imageUrl: "/products/ferrari/Charles Leclerc figure.WebP",
         name: "Charles Leclerc figure",
         price: 2.08,
         sold: 0,
@@ -200,7 +200,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/ferrari/Ferrari 2021 car.jpg",
+        imageUrl: "/products/ferrari/Ferrari 2021 car.WebP",
         name: "Ferrari 2021 car",
         price: 2.58,
         sold: 0,
@@ -222,7 +222,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/Lando Norris' helmet.jpg",
+        imageUrl: "/products/mclaren/Lando Norris' helmet.WebP",
         name: "Lando Norris' helmet",
         price: 2.28,
         sold: 0,
@@ -231,7 +231,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/Daniel Ricciardo shoey.jpg",
+        imageUrl: "/products/mclaren/Daniel Ricciardo shoey.WebP",
         name: "Daniel Ricciardo shoey",
         price: 2.68,
         sold: 0,
@@ -240,7 +240,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/McLaren team shoey.jpg",
+        imageUrl: "/products/mclaren/McLaren team shoey.WebP",
         name: "McLaren team shoey",
         price: 2.68,
         sold: 0,
@@ -249,7 +249,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/Daniel and Lando.jpg",
+        imageUrl: "/products/mclaren/Daniel and Lando.WebP",
         name: "Daniel and Lando",
         price: 2.18,
         sold: 0,
@@ -258,7 +258,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/McLaren 2021 car.jpg",
+        imageUrl: "/products/mclaren/McLaren 2021 car.WebP",
         name: "McLaren 2021 car",
         price: 1.88,
         sold: 0,
@@ -267,7 +267,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/Daniel Ricciardo's helmet.jpg",
+        imageUrl: "/products/mclaren/Daniel Ricciardo's helmet.WebP",
         name: "Daniel Ricciardo's helmet",
         price: 1.68,
         sold: 0,
@@ -276,7 +276,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/mclaren/Team one-two finish at Monza.jpg",
+        imageUrl: "/products/mclaren/Team one-two finish at Monza.WebP",
         name: "Team one-two finish at Monza",
         price: 2.68,
         sold: 0,
@@ -298,7 +298,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/alpine/Alpine 2021 car.jpg",
+        imageUrl: "/products/alpine/Alpine 2021 car.WebP",
         name: "Alpine 2021 car",
         price: 1.88,
         sold: 0,
@@ -307,7 +307,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpine/Esteban Ocon number.jpg",
+        imageUrl: "/products/alpine/Esteban Ocon number.WebP",
         name: "Esteban Ocon number",
         price: 1.68,
         sold: 0,
@@ -316,7 +316,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpine/Fernando Alonso leaderboard.jpg",
+        imageUrl: "/products/alpine/Fernando Alonso leaderboard.WebP",
         name: "Fernando Alonso leaderboard",
         price: 1.88,
         sold: 0,
@@ -325,7 +325,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpine/Fernando Alonso Spain flag.jpg",
+        imageUrl: "/products/alpine/Fernando Alonso Spain flag.WebP",
         name: "Fernando Alonso Spain flag",
         price: 1.68,
         sold: 0,
@@ -334,7 +334,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpine/Alpine F1 team logo.jpg",
+        imageUrl: "/products/alpine/Alpine F1 team logo.WebP",
         name: "Alpine F1 team logo",
         price: 1.98,
         sold: 0,
@@ -356,7 +356,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/aston martin/Sebastian Vettel number.jpg",
+        imageUrl: "/products/aston martin/Sebastian Vettel number.WebP",
         name: "Sebastian Vettel number",
         price: 1.98,
         sold: 0,
@@ -365,7 +365,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/aston martin/Sebastian Vettel cartoon figure.jpg",
+        imageUrl: "/products/aston martin/Sebastian Vettel cartoon figure.WebP",
         name: "Sebastian Vettel cartoon figure",
         price: 2.38,
         sold: 0,
@@ -375,7 +375,7 @@ export const teams: TeamType[] = [
       {
         id: uuidv4(),
         imageUrl:
-          "/products/aston martin/Sebastian Vettel sarcastic team radio.jpg",
+          "/products/aston martin/Sebastian Vettel sarcastic team radio.WebP",
         name: "Sebastian Vettel sarcastic team radio",
         price: 2.28,
         sold: 0,
@@ -384,7 +384,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/aston martin/Lance Stroll leaderboard.jpg",
+        imageUrl: "/products/aston martin/Lance Stroll leaderboard.WebP",
         name: "Lance Stroll leaderboard",
         price: 1.78,
         sold: 0,
@@ -393,7 +393,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/aston martin/Sebastian Vettel car.jpg",
+        imageUrl: "/products/aston martin/Sebastian Vettel car.WebP",
         name: "Sebastian Vettel car",
         price: 2.08,
         sold: 0,
@@ -402,7 +402,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/aston martin/Aston Martin F1 team logo.jpg",
+        imageUrl: "/products/aston martin/Aston Martin F1 team logo.WebP",
         name: "Aston Martin F1 team logo",
         price: 1.98,
         sold: 0,
@@ -424,7 +424,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/alpha tauri/Yuki Tsunoda in Japanese.jpg",
+        imageUrl: "/products/alpha tauri/Yuki Tsunoda in Japanese.WebP",
         name: "Yuki Tsunoda in Japanese",
         price: 1.78,
         sold: 0,
@@ -433,7 +433,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpha tauri/Pierre Gasly leaderboard.jpg",
+        imageUrl: "/products/alpha tauri/Pierre Gasly leaderboard.WebP",
         name: "Pierre Gasly leaderboard",
         price: 1.88,
         sold: 0,
@@ -442,7 +442,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpha tauri/Yuki Tsunoda leaderboard.jpg",
+        imageUrl: "/products/alpha tauri/Yuki Tsunoda leaderboard.WebP",
         name: "Yuki Tsunoda leaderboard",
         price: 1.88,
         sold: 0,
@@ -451,7 +451,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpha tauri/Pierre Gasly podium.jpg",
+        imageUrl: "/products/alpha tauri/Pierre Gasly podium.WebP",
         name: "Pierre Gasly podium",
         price: 2.28,
         sold: 0,
@@ -460,7 +460,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alpha tauri/Yuki and Pierre.jpg",
+        imageUrl: "/products/alpha tauri/Yuki and Pierre.WebP",
         name: "Yuki and Pierre",
         price: 2.08,
         sold: 0,
@@ -482,7 +482,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/alfa romeo/Kimi Räikkönen figure.jpg",
+        imageUrl: "/products/alfa romeo/Kimi Räikkönen figure.WebP",
         name: "Kimi Räikkönen figure",
         price: 2.68,
         sold: 0,
@@ -491,7 +491,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alfa romeo/Alfa Romeo 2021 car.jpg",
+        imageUrl: "/products/alfa romeo/Alfa Romeo 2021 car.WebP",
         name: "Alfa Romeo 2021 car",
         price: 1.88,
         sold: 0,
@@ -500,7 +500,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alfa romeo/Antonio Giovinazzi leaderboard.jpg",
+        imageUrl: "/products/alfa romeo/Antonio Giovinazzi leaderboard.WebP",
         name: "Antonio Giovinazzi leaderboard",
         price: 1.78,
         sold: 0,
@@ -509,7 +509,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/alfa romeo/Kimi Räikkönen leaderboard.jpg",
+        imageUrl: "/products/alfa romeo/Kimi Räikkönen leaderboard.WebP",
         name: "Kimi Räikkönen leaderboard",
         price: 1.98,
         sold: 0,
@@ -531,7 +531,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/williams/Nicholas Latifi headshot.jpg",
+        imageUrl: "/products/williams/Nicholas Latifi headshot.WebP",
         name: "Nicholas Latifi headshot",
         price: 1.78,
         sold: 0,
@@ -540,7 +540,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/williams/George Russell number.jpg",
+        imageUrl: "/products/williams/George Russell number.WebP",
         name: "George Russell number",
         price: 1.88,
         sold: 0,
@@ -549,7 +549,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/williams/Nicholas Latifi figure.jpg",
+        imageUrl: "/products/williams/Nicholas Latifi figure.WebP",
         name: "Nicholas Latifi figure",
         price: 1.88,
         sold: 0,
@@ -558,7 +558,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/williams/George Russell facts.jpg",
+        imageUrl: "/products/williams/George Russell facts.WebP",
         name: "George Russell facts",
         price: 1.98,
         sold: 0,
@@ -567,7 +567,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/williams/Williams F1 team logo.jpg",
+        imageUrl: "/products/williams/Williams F1 team logo.WebP",
         name: "Williams F1 team logo",
         price: 1.88,
         sold: 0,
@@ -589,7 +589,7 @@ export const teams: TeamType[] = [
     productsList: [
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Haas F1 team logo.jpg",
+        imageUrl: "/products/haas/Haas F1 team logo.WebP",
         name: "Haas F1 team logo",
         price: 1.88,
         sold: 0,
@@ -598,7 +598,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Nikita Mazepin leaderboard.jpg",
+        imageUrl: "/products/haas/Nikita Mazepin leaderboard.WebP",
         name: "Nikita Mazepin leaderboard",
         price: 1.68,
         sold: 0,
@@ -607,7 +607,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Mick Schumacher leaderboard.jpg",
+        imageUrl: "/products/haas/Mick Schumacher leaderboard.WebP",
         name: "Mick Schumacher leaderboard",
         price: 1.78,
         sold: 0,
@@ -616,7 +616,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Haas 2021 car.jpg",
+        imageUrl: "/products/haas/Haas 2021 car.WebP",
         name: "Haas 2021 car",
         price: 1.98,
         sold: 0,
@@ -625,7 +625,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Nikita Mazespin.jpg",
+        imageUrl: "/products/haas/Nikita Mazespin.WebP",
         name: "Nikita Mazespin",
         price: 1.88,
         sold: 0,
@@ -634,7 +634,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Very angry Steiner.jpg",
+        imageUrl: "/products/haas/Very angry Steiner.WebP",
         name: "Very angry Steiner",
         price: 2.58,
         sold: 0,
@@ -643,7 +643,7 @@ export const teams: TeamType[] = [
       },
       {
         id: uuidv4(),
-        imageUrl: "/products/haas/Mick Schumacher figure.jpg",
+        imageUrl: "/products/haas/Mick Schumacher figure.WebP",
         name: "Mick Schumacher figure",
         price: 1.88,
         sold: 0,
