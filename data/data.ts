@@ -147,7 +147,7 @@ export const teams: TeamType[] = [
     name: "Ferrari",
     fullname: "Scuderia Ferrari",
     teamBackgrounds: [
-      "https://i.ibb.co/b7Fh3Kv/image.png",
+      "https://i.ibb.co/LCb1QVt/image.png",
       "https://i.ibb.co/XFbT34Q/1.jpg",
       "https://i.ibb.co/B6XSdH2/2.jpg",
     ],
