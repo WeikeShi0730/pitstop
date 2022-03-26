@@ -31,7 +31,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             <div className="relative w-40 h-16 mx-5">
               <Image
                 priority
-                src="/pitstop-logos/pitstop.png"
+                src="/pitstop-logos/pitstop.WebP"
                 alt="logo"
                 layout="fill"
                 objectFit="contain"
@@ -41,22 +41,30 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         </NoScrollLink>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/">
-            <a className="hover:underline-primary hover:underline-offset-4">Home</a>
+            <a className="hover:underline-primary hover:underline-offset-4">
+              Home
+            </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/products">
-            <a className="hover:underline-primary hover:underline-offset-4">Products</a>
+            <a className="hover:underline-primary hover:underline-offset-4">
+              Products
+            </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/teams">
-            <a className="hover:underline-primary hover:underline-offset-4">Teams</a>
+            <a className="hover:underline-primary hover:underline-offset-4">
+              Teams
+            </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/contact">
-            <a className="hover:underline-primary hover:underline-offset-4">Contact</a>
+            <a className="hover:underline-primary hover:underline-offset-4">
+              Contact
+            </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
@@ -68,11 +76,15 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         <div className="mx-5 hidden lg:flex">
           {currentUser ? (
             <NoScrollLink href={`/account/${currentUser?.uid as string}`}>
-              <a className="hover:underline-primary hover:underline-offset-4">{currentUser.displayName}</a>
+              <a className="hover:underline-primary hover:underline-offset-4">
+                {currentUser.displayName}
+              </a>
             </NoScrollLink>
           ) : (
             <NoScrollLink href="/login">
-              <a className="hover:underline-primary hover:underline-offset-4">Sign In</a>
+              <a className="hover:underline-primary hover:underline-offset-4">
+                Sign In
+              </a>
             </NoScrollLink>
           )}
         </div>

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="relative w-48 h-16 mx-10">
           <Image
             priority
-            src="/pitstop-logos/pitstop.png"
+            src="/pitstop-logos/pitstop.WebP"
             alt="logo"
             layout="fill"
             objectFit="contain"

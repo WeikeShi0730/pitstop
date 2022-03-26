@@ -12,7 +12,7 @@ const About = () => {
             <div className="relative w-48 h-48 md:w-72 md:h-48 my-5 md:-my-28 md:-translate-y-10">
               <Image
                 priority
-                src="/pitstop-logos/pitstop.png"
+                src="/pitstop-logos/pitstop.WebP"
                 className="object-contain rounded-lg"
                 unoptimized
                 alt="Logo"
@@ -44,7 +44,7 @@ const About = () => {
             <div className="relative w-48 h-48 md:w-56 md:h-82 my-5 md:-my-28 rounded-lg shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200">
               <Image
                 priority
-                src="/about/me.jpg"
+                src="/about/me.WebP"
                 className="object-cover rounded-lg"
                 unoptimized
                 alt="My photo"
@@ -58,16 +58,35 @@ const About = () => {
               Weike
             </a>
             , and I&apos;m a HUGE Formula 1 fan. Also, I&apos;m a passionate{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">web developer</a>. This
-            website is created using some of the most trending technologies that
-            help with web development and UI/UX. Such as{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">Next.js</a>,{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">React</a>,{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">TailwindCSS</a>,{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">Typescript</a>,{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">Firebase</a>, and{" "}
-            <a className="underline-primary font-normal text-base md:text-xl">Stripe</a>. They ensure
-            to bring a smooth and quick web browsing experience.
+            <a className="underline-primary font-normal text-base md:text-xl">
+              web developer
+            </a>
+            . This website is created using some of the most trending
+            technologies that help with web development and UI/UX. Such as{" "}
+            <a className="underline-primary font-normal text-base md:text-xl">
+              Next.js
+            </a>
+            ,{" "}
+            <a className="underline-primary font-normal text-base md:text-xl">
+              React
+            </a>
+            ,{" "}
+            <a className="underline-primary font-normal text-base md:text-xl">
+              TailwindCSS
+            </a>
+            ,{" "}
+            <a className="underline-primary font-normal text-base md:text-xl">
+              Typescript
+            </a>
+            ,{" "}
+            <a className="underline-primary font-normal text-base md:text-xl">
+              Firebase
+            </a>
+            , and{" "}
+            <a className="underline-primary font-normal text-base md:text-xl">
+              Stripe
+            </a>
+            . They ensure to bring a smooth and quick web browsing experience.
           </p>
         </div>
         <div className={`${componentStyle}`}>

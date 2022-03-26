@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background-image: url("/background.jpeg");
+  background-image: url("/background/background.WebP");
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;

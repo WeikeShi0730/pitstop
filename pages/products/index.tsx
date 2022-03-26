@@ -12,7 +12,7 @@ interface ProductsType {
 const ProductsPage = ({ productsList }: ProductsType) => {
   const info = {
     fullname: "Pitstop™",
-    teamBackgrounds: ["/2021f1grid.jpeg"],
+    teamBackgrounds: ["/2021f1grid.WebP"],
   };
   return (
     <Layout title="Pitstop | Products">
