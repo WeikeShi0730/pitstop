@@ -10,14 +10,14 @@ interface ProductsType {
 }
 
 const Home = ({ featuredProducts }: ProductsType) => {
-  const info = { teamBackgrounds: ["/home/f12022.jpg"] };
+  const info = { teamBackgrounds: ["/home/f12022.WebP"] };
   return (
     <>
       <div className="shadow-lg h-content bg-slate-300">
         <div className="relative w-full h-4/6 lg:h-5/6">
           <Image
             priority
-            src="/pitstop-logos/homepage logo bg.jpg"
+            src="/home/homepage logo bg.WebP"
             className="object-contain scale-150 lg:scale-100"
             unoptimized
             alt="background image"
