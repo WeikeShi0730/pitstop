@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccountMenu /> shows content in <TeamsBanners /> 1`] = `
+<body>
+  <div>
+    <div
+      class="flex items-start justify-center h-full md:min-h-content text-sm md:text-base"
+    >
+      <div
+        class="mx-5 my-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg sticky top-32"
+      >
+        <div
+          aria-orientation="horizontal"
+          class="flex flex-col bg-slate-300 rounded-lg shadow"
+          role="tablist"
+        >
+          <button
+            aria-selected="true"
+            class="font-light h-14 m-1 flex items-center justify-start text-left px-2 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent transition-all ease-in-out duration-200 bg-orange-theme shadow text-slate-100"
+            id="headlessui-tabs-tab-1"
+            role="tab"
+            tabindex="0"
+            type="button"
+          >
+            Overview
+          </button>
+          <button
+            aria-selected="false"
+            class="font-light h-14 m-1 flex items-center justify-start text-left px-2 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent transition-all ease-in-out duration-200 hover:bg-slate-100"
+            id="headlessui-tabs-tab-2"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            Wishlist (
+            <span
+              class="underline underline-offset-1"
+            >
+              0
+            </span>
+            )
+          </button>
+          <button
+            aria-selected="false"
+            class="font-light h-14 m-1 flex items-center justify-start text-left px-2 text-slate-700 rounded-lg focus:outline-none border-2 border-transparent transition-all ease-in-out duration-200 hover:bg-slate-100"
+            id="headlessui-tabs-tab-3"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            Order history
+          </button>
+          <button
+            aria-selected="false"
+            class="font-light h-14 m-1 flex items-center justify-start text-left px-2 text-red-500 rounded-lg focus:outline-none border-2 border-transparent transition-all ease-in-out duration-200 hover:border-red-400"
+            id="headlessui-tabs-tab-4"
+            role="tab"
+            tabindex="-1"
+            type="button"
+          >
+            <a
+              class="font-light w-full text-left text-sm md:text-base"
+            >
+              Sign out
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
