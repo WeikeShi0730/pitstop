@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "firebase/firebase.utils.ts", "test/about.test.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "firebase/firebase.utils.ts", "jest.config.js", "test/config/jest.setup.js"],
   "exclude": ["node_modules"]
 }
