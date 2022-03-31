@@ -17,7 +17,7 @@ describe("<CartDropdown />", () => {
           {
             product: {
               imageUrl: "test",
-              name: "",
+              name: "test-name",
               price: 0,
               id: "",
 
@@ -30,6 +30,6 @@ describe("<CartDropdown />", () => {
         ]}
       />
     );
-    expect(documentBody.queryByText("Checkout")).toBeInTheDocument();
+    expect(documentBody.queryByText("test-name")).toBeInTheDocument();
   });
 });
