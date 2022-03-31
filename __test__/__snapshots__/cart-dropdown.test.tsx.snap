@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartDropdown /> shows empty content in <CartDropdown /> 1`] = `
+<body>
+  <div>
+    <div
+      class="shadow-md shadow-slate-500 rounded-lg text-slate-700 text-sm md:text-base"
+    >
+      <div
+        class="relative w-full max-h-96 overflow-auto disable-scrollbars shadow-sm"
+      >
+        <div
+          class="flex flex-col justify-center items-center text-lg md:text-2xl m-5"
+        >
+          Your cart is empty.
+        </div>
+      </div>
+      <div
+        class="flex items-end justify-end p-2 space-x-2 bg-slate-300"
+      >
+        <div>
+          Total: CAD
+        </div>
+        <div
+          class="text-lg md:text-2xl font-normal"
+        >
+          0.00
+        </div>
+      </div>
+      <div
+        class="flex justify-center relative inset-x-0 bottom-0 w-full"
+      >
+        <a
+          class="text-base p-3 text-center w-full bg-orange-theme text-slate-200 rounded-b-lg shadow-sm hover:bg-orange-500 hover:text-slate-100 transition-all ease-in-out duration-200"
+          href="/checkout"
+        >
+          Checkout
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;
