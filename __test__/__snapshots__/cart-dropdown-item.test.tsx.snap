@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartDropdownItem /> shows content in <CartDropdownItem /> 1`] = `
+<body>
+  <div>
+    <div
+      class="flex items-center m-2 text-slate-700 transition-all duration-500 ease-in-out text-sm md:text-base"
+    >
+      <div
+        class="image flex flex-col relative w-1/3 h-20"
+      >
+        <div
+          class="relative w-full h-full bg-[#F8F8F8] rounded-lg"
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+          >
+            <img
+              alt=" image"
+              class="object-contain"
+              data-nimg="fill"
+              decoding="async"
+              src="test"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="text ml-2 w-2/3"
+      >
+        <div
+          class="font-normal"
+        />
+        <div
+          class="qty flex"
+        >
+          <div
+            class=""
+          >
+            Qty:
+          </div>
+          <div
+            class="mx-2"
+          >
+            <button
+              name="REMOVE"
+            >
+              ⊖
+            </button>
+          </div>
+          <div
+            class="px-1 w-6 flex justify-center"
+          >
+            0
+          </div>
+          <div
+            class="mx-2"
+          >
+            <button
+              name="ADD"
+            >
+              ⊕
+            </button>
+          </div>
+        </div>
+        <div
+          class="text-slate-500"
+        >
+          0
+          /ea
+        </div>
+      </div>
+      <div
+        class="delete flex right-4 absolute"
+      >
+        <button
+          name="DELETE"
+        >
+          🅧
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
