@@ -185,4 +185,4 @@ const Checkout = ({ cartItems }: CartItems) => {
   );
 };
 
-export default Checkout;
+export default withSubscribtion(Checkout);
