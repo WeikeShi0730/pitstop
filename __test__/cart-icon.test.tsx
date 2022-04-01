@@ -50,7 +50,7 @@ describe("<CartIcon />", () => {
     expect(documentBody.queryByText("15")).toBeInTheDocument();
   });
 
-  it("shows <CartDropdown /> on click", () => {
+  it("shows <CartIcon /> on click", () => {
     documentBody = render(<CartIcon cartItems={[]} />);
     expect(screen.queryByText("Checkout")).not.toBeInTheDocument();
     const button = screen.getByRole("button");

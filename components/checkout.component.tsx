@@ -99,7 +99,7 @@ const Checkout = ({ cartItems }: CartItems) => {
                   key={cartItem.product.id}
                   className="flex justify-center m-2"
                 >
-                  <CheckoutItem key={cartItem.product.id} cartItem={cartItem} />
+                  <CheckoutItem cartItem={cartItem} />
                 </div>
               );
             })

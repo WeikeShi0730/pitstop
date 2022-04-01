@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch"
+    "test": "jest --watch --verbose"
   },
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
