@@ -5,15 +5,8 @@ jest.mock("./__mock__/mocked-hoc.component");
 
 let documentBody: RenderResult;
 describe("<Checkout />", () => {
-  // it("shows empty in <Checkout />", () => {
-  //   documentBody = render(<Checkout cartItems={[]} />);
-  //   expect(documentBody.queryByText("Your cart is empty!")).toBeInTheDocument();
-  //   const { baseElement } = documentBody;
-  //   expect(baseElement).toMatchSnapshot();
-  // });
-
   it("shows content in <Checkout />", () => {
-    documentBody = render(<Checkout cartItems={[]}/>);
+    documentBody = render(<Checkout cartItems={[]} />);
 
     expect(documentBody.queryByText("0.72")).toBeInTheDocument();
     expect(documentBody.queryByText("7.20")).toBeInTheDocument();
