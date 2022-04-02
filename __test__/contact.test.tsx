@@ -1,7 +1,6 @@
 import {
   render,
   RenderResult,
-  screen,
   fireEvent,
 } from "@testing-library/react";
 import Contact from "../components/contact.component";
@@ -70,7 +69,5 @@ describe("<Contact />", () => {
         }) as HTMLInputElement
       ).value
     ).toBe("Test Message");
-    // fireEvent.submit(documentBody.getByRole("button", { name: /submit/i }));
-    // expect(onSubmit).toBeCalled();
   });
 });
