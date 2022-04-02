@@ -8,8 +8,8 @@ import Contact from "../components/contact.component";
 
 let documentBody: RenderResult;
 describe("<Contact />", () => {
+  beforeEach(() => (documentBody = render(<Contact />)));
   it("shows basic fields in <Contact />", () => {
-    documentBody = render(<Contact submitForm={() => {}} />);
     expect(
       documentBody.getByRole("heading", { name: /Contact us/i })
     ).toBeInTheDocument();
@@ -29,9 +29,21 @@ describe("<Contact />", () => {
     const { baseElement } = documentBody;
     expect(baseElement).toMatchSnapshot();
   });
-
+  it("Name field in <Contact />", () => {
+    fireEvent.change(documentBody.getByRole("textbox", { name: /name/i }), {
+      target: {
+        value: "Test Name",
+      },
+    });
+    expect(
+      (
+        documentBody.getByRole("textbox", {
+          name: /name/i,
+        }) as HTMLInputElement
+      ).value
+    ).toBe("Test Name");
+  });
   it("Email field in <Contact />", () => {
-    documentBody = render(<Contact submitForm={() => {}} />);
     fireEvent.change(documentBody.getByRole("textbox", { name: /email/i }), {
       target: {
         value: "Test Email",
@@ -46,8 +58,6 @@ describe("<Contact />", () => {
     ).toBe("Test Email");
   });
   it("Message field in <Contact />", () => {
-    const onSubmit = jest.fn();
-    documentBody = render(<Contact submitForm={onSubmit} />);
     fireEvent.change(documentBody.getByRole("textbox", { name: /message/i }), {
       target: {
         value: "Test Message",
@@ -60,7 +70,7 @@ describe("<Contact />", () => {
         }) as HTMLInputElement
       ).value
     ).toBe("Test Message");
-    fireEvent.click(documentBody.getByRole("button", { name: /submit/i }));
+    // fireEvent.submit(documentBody.getByRole("button", { name: /submit/i }));
     // expect(onSubmit).toBeCalled();
   });
 });
