@@ -12,7 +12,7 @@ import {
   OrderHistoryItemType,
 } from "../interfaces/index";
 
-const withSubscribtion = <P extends object>(
+const withSubscription = <P extends object>(
   Component: React.FunctionComponent<P>
 ) => {
   const useComponent = (props: P) => {
@@ -76,4 +76,4 @@ const withSubscribtion = <P extends object>(
   return useComponent;
 };
 
-export default withSubscribtion;
+export default withSubscription;

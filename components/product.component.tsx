@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductType } from "../interfaces";
 import Image from "next/image";
-import withSubscribtion from "./hoc.component";
+import withSubscription from "./hoc.component";
 // import { imgLoader } from "../utils/image-loader";
 import {
   updateUserCartFirestore,
@@ -126,7 +126,9 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
           </div>
         </div>
         <div className="flex flex-col justify-center relative m-3 py-2 border-y-2 border-slate-50">
-          <div className="font-normal text-base md:text-xl my-1 text-left h-8 md:h-12">{name}</div>
+          <div className="font-normal text-base md:text-xl my-1 text-left h-8 md:h-12">
+            {name}
+          </div>
           <div className="text my-1 text-left text-lg md:text-2xl">
             <button onClick={handleClickHeart}>{heart ? "♥" : "♡"}</button>
           </div>
@@ -148,4 +150,4 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
   );
 };
 
-export default withSubscribtion(Product);
+export default withSubscription(Product);

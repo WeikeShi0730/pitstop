@@ -4,7 +4,7 @@ import getStripe from "../utils/get-stripejs";
 import { fetchPostJSON } from "../utils/api-helpers";
 import { CartItemType } from "../interfaces/index";
 import { FaCcStripe } from "react-icons/fa";
-import withSubscribtion from "./hoc.component";
+import withSubscription from "./hoc.component";
 import Loading from "./loading.component";
 import NoScrollLink from "./no-scroll-link.component";
 import { toast } from "react-toastify";
@@ -185,4 +185,4 @@ const Checkout = ({ cartItems }: CartItems) => {
   );
 };
 
-export default withSubscribtion(Checkout);
+export default withSubscription(Checkout);

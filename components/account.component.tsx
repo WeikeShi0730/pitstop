@@ -8,7 +8,7 @@ import AccountMenu from "./account-menu.component";
 import AccountOverview from "./account-overview.component";
 import Wishlist from "./wishlist.component";
 import OrderHistory from "./order-history.component";
-import withSubscribtion from "./hoc.component";
+import withSubscription from "./hoc.component";
 
 interface AccountPageType {
   wishlistItems: ProductType[];
@@ -56,4 +56,4 @@ const Account = ({
   );
 };
 
-export default withSubscribtion(Account);
+export default withSubscription(Account);

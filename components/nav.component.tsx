@@ -5,7 +5,7 @@ import Image from "next/image";
 import CartIcon from "./cart-icon.component";
 import SearchBar from "./search-bar.component";
 import { CurrentUserType, CartItemType } from "../interfaces";
-import withSubscribtion from "./hoc.component";
+import withSubscription from "./hoc.component";
 import { useClickOutside } from "../utils/use-click-outside";
 
 interface UserAndCart {
@@ -180,4 +180,4 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
   );
 };
 
-export default withSubscribtion(Nav);
+export default withSubscription(Nav);
