@@ -1,7 +1,7 @@
 import { render, RenderResult } from "@testing-library/react";
 import Checkout from "../components/checkout.component";
 
-jest.mock("./__mock__/mocked-hoc.component");
+jest.mock("./__mocked__/mocked-hoc.component");
 
 let documentBody: RenderResult;
 describe("<Checkout />", () => {
