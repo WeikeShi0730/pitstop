@@ -12,7 +12,6 @@ const MockedWithSubscription = <P extends object>(
 ) => {
   const useComponent = (props: P) => {
     // const currentUser: CurrentUserType = null;
-    console.log("helloooooo")
     const cartItems: CartItemType[] = [
       {
         product: {
