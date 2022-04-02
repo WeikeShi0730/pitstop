@@ -1,10 +1,12 @@
-import { render, RenderResult } from "@testing-library/react";
+import { render, RenderResult, screen } from "@testing-library/react";
 import Checkout from "../components/checkout.component";
-jest.mock("../components/hoc.component",() => (Component: any) => {
-  const useComponent = (props: any) => (
-    <Component
-      {...props}
-      cartItems={[
+import { CartItemType } from "../interfaces/index";
+jest.mock("../components/hoc.component", () => {
+  const MockedWithSubscription = <P extends object>(
+    Component: React.FunctionComponent<P>
+  ) => {
+    const useComponent = (props: P) => {
+      const cartItems: CartItemType[] = [
         {
           product: {
             imageUrl: "test",
@@ -29,19 +31,24 @@ jest.mock("../components/hoc.component",() => (Component: any) => {
           },
           count: 10,
         },
-      ]}
-    />
-  );
-  return useComponent;
+      ];
+      return (
+        <Component
+          {...(props as P)}
+          cartItems={cartItems}
+        />
+      );
+    };
+    return useComponent;
+  };
+  return MockedWithSubscription;
 });
-
-// const MockedHocComponent = MockedWithSubscription(Checkout);
 
 let documentBody: RenderResult;
 describe("<Checkout />", () => {
   test("shows content in <Checkout />", () => {
     documentBody = render(<Checkout cartItems={[]} />);
-
+    screen.debug();
     // expect(documentBody.queryByText("0.72")).toBeInTheDocument();
     // expect(documentBody.queryByText("7.20")).toBeInTheDocument();
     // expect(documentBody.queryByText("0.55")).toBeInTheDocument();
