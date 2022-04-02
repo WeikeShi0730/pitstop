@@ -48,7 +48,6 @@ let documentBody: RenderResult;
 describe("<Checkout />", () => {
   test("shows content in <Checkout />", () => {
     documentBody = render(<Checkout cartItems={[]} />);
-    screen.debug();
     // expect(documentBody.queryByText("0.72")).toBeInTheDocument();
     // expect(documentBody.queryByText("7.20")).toBeInTheDocument();
     // expect(documentBody.queryByText("0.55")).toBeInTheDocument();

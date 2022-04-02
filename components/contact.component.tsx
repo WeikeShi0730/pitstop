@@ -1,13 +1,8 @@
-import { useRef, useState } from "react";
-import { sendForm } from "@emailjs/browser";
-import { toast } from "react-toastify";
+import { useRef } from "react";
 import Loading from "./loading.component";
-import { useRouter } from "next/router";
 
-const Contact = () => {
+const Contact = ({ submitForm, loading }:any) => {
   const form = useRef<HTMLFormElement>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const router = useRouter();
 
   const handleChange = (
     event:
@@ -17,53 +12,12 @@ const Contact = () => {
     event.preventDefault();
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    try {
-      setLoading(true);
-      await sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-        form.current!,
-        process.env.NEXT_PUBLIC_USER_ID!
-      );
-      // router.back();
-      setLoading(false);
-      toast.success("Thanks for your email, we'll get back to you ASAP!", {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    } catch (error) {
-      setLoading(false);
-      toast.error(
-        "Sorry, it seems your message wasn't sent successfully, please try again!",
-        {
-          position: "top-center",
-          autoClose: 1000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        }
-      );
-      console.error(error);
-    }
-  };
-
   return (
     <>
       {loading && <Loading />}
       <div className="min-h-content flex justify-center items-center text-sm md:text-base">
         <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto my-10 text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200 font-light">
-          <form ref={form} name="contact" onSubmit={handleSubmit}>
+          <form ref={form} name="contact" onSubmit={submitForm}>
             <h2 className="text-center text-lg md:text-2xl text-orange-theme mb-4">
               Contact us
             </h2>
