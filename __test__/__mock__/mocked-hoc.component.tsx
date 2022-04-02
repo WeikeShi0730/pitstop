@@ -43,7 +43,7 @@ const MockedWithSubscription = <P extends object>(
     return (
       <Component
         {...(props as P)}
-        // currentUser={currentUser}
+        // currentUser={}
         cartItems={cartItems}
         // wishlistItems={wishlistItems}
         // orderHistoryItems={orderHistoryItems}
