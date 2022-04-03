@@ -3,7 +3,7 @@ import Nav from "../components/nav.component";
 
 let documentBody: RenderResult;
 describe("<Nav />", () => {
-  it("shows basic fields in <Nav />", () => {
+  it("Test <Nav />", () => {
     documentBody = render(<Nav currentUser={null} cartItems={[]} />);
 
     const { baseElement } = documentBody;
