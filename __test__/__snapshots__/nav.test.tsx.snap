@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> shows basic fields in <Nav /> 1`] = `
+<body>
+  <div>
+    <nav>
+      <div
+        class="bg-slate-700 text-slate-200 flex items-center p-2 h-20 text-sm md:text-base"
+      >
+        <a
+          href="/"
+        >
+          <div
+            class="relative w-40 h-16 mx-5"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt="logo"
+                data-nimg="fill"
+                decoding="async"
+                sizes="100vw"
+                src="/_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=3840&q=75"
+                srcset="/_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=640&q=75 640w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=750&q=75 750w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=828&q=75 828w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=1080&q=75 1080w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=1200&q=75 1200w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=1920&q=75 1920w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=2048&q=75 2048w, /_next/image?url=%2Fpitstop-logos%2Fpitstop.WebP&w=3840&q=75 3840w"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </span>
+          </div>
+        </a>
+        <div
+          class="mx-5 hidden lg:flex"
+        >
+          <a
+            class="hover:underline-primary hover:underline-offset-4"
+            href="/"
+          >
+            Home
+          </a>
+        </div>
+        <div
+          class="mx-5 hidden lg:flex"
+        >
+          <a
+            class="hover:underline-primary hover:underline-offset-4"
+            href="/products"
+          >
+            Products
+          </a>
+        </div>
+        <div
+          class="mx-5 hidden lg:flex"
+        >
+          <a
+            class="hover:underline-primary hover:underline-offset-4"
+            href="/teams"
+          >
+            Teams
+          </a>
+        </div>
+        <div
+          class="mx-5 hidden lg:flex"
+        >
+          <a
+            class="hover:underline-primary hover:underline-offset-4"
+            href="/contact"
+          >
+            Contact
+          </a>
+        </div>
+        <div
+          class="mx-5 hidden lg:flex"
+        >
+          <div
+            class="flex justify-center items-center gap-2 overflow-hidden text-sm md:text-base"
+          >
+            <button
+              class="flex font-light justify-center items-center py-2"
+            >
+              <svg
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="8"
+                />
+                <line
+                  x1="21"
+                  x2="16.65"
+                  y1="21"
+                  y2="16.65"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="mx-5 ml-auto flex "
+        >
+          <div
+            class="relative text-sm md:text-base"
+          >
+            <button
+              class="flex items-center justify-center space-x-2 font-light hover:underline-primary hover:underline-offset-4"
+            >
+              <svg
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="9"
+                  cy="21"
+                  r="1"
+                />
+                <circle
+                  cx="20"
+                  cy="21"
+                  r="1"
+                />
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                />
+              </svg>
+              <div
+                class="px-1 w-8 flex justify-start"
+              >
+                <div />
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="mx-5 hidden lg:flex"
+        >
+          <a
+            class="hover:underline-primary hover:underline-offset-4"
+            href="/login"
+          >
+            Sign In
+          </a>
+        </div>
+        <div
+          class="flex items-center justify-between lg:hidden mx-5"
+        >
+          <button
+            class="flex h-6 w-6 items-center space-x-2 focus:outline-none font-light"
+          >
+            <div
+              class="w-6 flex items-center justify-center relative"
+            >
+              <span
+                class="hamburger -translate-y-2"
+              />
+              <span
+                class="hamburger opacity-100"
+              />
+              <span
+                class="hamburger translate-y-2"
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="false"
+      />
+      <div
+        class="absolute h-screen top-0 right-0 -z-50 pt-20"
+      />
+    </nav>
+  </div>
+</body>
+`;

@@ -1,8 +1,4 @@
-import {
-  render,
-  RenderResult,
-  fireEvent,
-} from "@testing-library/react";
+import { render, RenderResult, fireEvent } from "@testing-library/react";
 import Contact from "../components/contact.component";
 
 let documentBody: RenderResult;
