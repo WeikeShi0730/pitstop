@@ -1,5 +1,5 @@
 import { render, RenderResult } from "@testing-library/react";
-import PageBackground from "../components/PageBackground.component";
+import PageBackground from "../components/page-background.component";
 
 let documentBody: RenderResult;
 describe("<PageBackground />", () => {
@@ -7,41 +7,12 @@ describe("<PageBackground />", () => {
     () =>
       (documentBody = render(
         <PageBackground
-          orderHistoryItem={{
-            items: [
-              {
-                product: {
-                  imageUrl: "test",
-                  name: "",
-                  price: 0,
-                  id: "",
-                  featured: false,
-                  sold: 0,
-                  teamId: "",
-                },
-                count: 10,
-              },
-              {
-                product: {
-                  imageUrl: "test",
-                  name: "",
-                  price: 0,
-                  id: "",
-                  featured: false,
-                  sold: 0,
-                  teamId: "",
-                },
-                count: 5,
-              },
-            ],
-            timeStamp: "2022-02-22",
-          }}
+          info={{ teamBackgrounds: ["test"], fullname: "test name" }}
         />
       ))
   );
   it("Test <PageBackground />", () => {
-    expect(documentBody.queryByText("2022-02-22")).toBeInTheDocument();
-
+    expect(documentBody.queryByText("test name")).toBeInTheDocument();
     const { baseElement } = documentBody;
     expect(baseElement).toMatchSnapshot();
   });

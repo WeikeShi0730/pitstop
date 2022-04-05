@@ -1,40 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<OrderHistoryDisclosure /> Test <OrderHistoryDisclosure /> 1`] = `
+exports[`<PageBackground /> Test <PageBackground /> 1`] = `
 <body>
   <div>
-    <button
-      aria-expanded="false"
-      class="font-light flex justify-between items-center w-full px-4 py-2 text-left text-slate-700 bg-slate-400 rounded-lg bg-opacity-50 backdrop-blur-sm hover:bg-slate-400 transition-all ease-in-out duration-200"
-      id="headlessui-disclosure-button-1"
-      type="button"
+    <div
+      class="relative bg-slate-100 flex p-10 shadow-2xl hover:shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200"
     >
-      <span
-        class="text-base md:text-xl"
+      <div
+        class="flex relative w-full h-96 2xl:h-100"
       >
-        2022-02-22
-      </span>
-      <svg
-        class=" w-5 h-5"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        stroke-width="0"
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
+        <span
+          style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+        >
+          <img
+            alt="background image"
+            class="object-cover rounded-lg"
+            data-nimg="fill"
+            decoding="async"
+            src="test"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
           />
-          <path
-            d="M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z"
-          />
-        </g>
-      </svg>
-    </button>
+        </span>
+        <div
+          class="w-full h-96 2xl:h-100 flex justify-center md:justify-end z-10"
+        >
+          <div
+            class="w-full md:w-1/2 h-full flex justify-center md:justify-end items-center md:bg-gradient-to-l from-slate-50 via-slate-50 opacity-95"
+          >
+            <div
+              class="w-1/2 flex justify-center text-center md:text-right text-xl md:text-3xl text-slate-100 md:text-slate-700 bg-slate-700 p-3 rounded-lg backdrop-blur-md bg-opacity-80 md:backdrop-blur-none md:bg-opacity-100 md:bg-transparent hover:text-slate-100 hover:bg-slate-500 hover:backdrop-blur-md hover:shadow-lg md:hover:text-slate-500 md:hover:bg-transparent md:hover:backdrop-blur-none md:hover:bg-opacity-100 md:hover:shadow-none "
+            >
+              test name
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 `;
