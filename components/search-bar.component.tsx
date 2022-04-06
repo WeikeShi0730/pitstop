@@ -58,11 +58,13 @@ const SearchBar = () => {
               className="bg-transparent outline-none border-b border-orange-theme w-36 rounded-none"
               autoComplete="off"
               type="text"
-              name="name"
+              name="input"
               placeholder="Search..."
               onChange={handleChange}
             />
-            <button className="font-light" type="submit">&rarr;</button>
+            <button className="font-light" type="submit">
+              &rarr;
+            </button>
           </form>
         </div>
       </Transition>
