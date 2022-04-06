@@ -126,7 +126,7 @@ const SignIn = () => {
               type="submit"
               className="text-sm md:text-base bg-slate-700 py-2 px-4 text-slate-100 rounded outline-none font-light hover:shadow-md hover:shadow-slate-700 hover:bg-slate-500 hover:text-white transition-all ease-in-out duration-200"
             >
-              Sign In
+              Sign in
             </button>
           </div>
         </form>
