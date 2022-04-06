@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortingBar /> Test <SortingBar /> 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-orientation="horizontal"
+        class="flex w-[21rem] p-1 gap-x-1 bg-slate-300 rounded-lg shadow text-sm md:text-base"
+        role="tablist"
+      >
+        <button
+          aria-selected="true"
+          class="font-light w-full p-1 leading-5 flex justify-center items-center text-slate-700 rounded-lg focus:outline-none transition-all ease-in-out duration-200 bg-orange-theme shadow text-slate-100"
+          id="headlessui-tabs-tab-1"
+          role="tab"
+          tabindex="0"
+          type="button"
+        >
+          Popular
+        </button>
+        <button
+          aria-selected="false"
+          class="font-light w-full p-1 leading-5 flex justify-center items-center text-slate-700 rounded-lg focus:outline-none transition-all ease-in-out duration-200 hover:bg-slate-100 text-slate-700"
+          id="headlessui-tabs-tab-2"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          $
+        </button>
+        <button
+          aria-selected="false"
+          class="font-light w-full p-1 leading-5 flex justify-center items-center text-slate-700 rounded-lg focus:outline-none transition-all ease-in-out duration-200 hover:bg-slate-100 text-slate-700"
+          id="headlessui-tabs-tab-3"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          $$$
+        </button>
+        <button
+          aria-selected="false"
+          class="font-light w-full p-1 leading-5 flex justify-center items-center text-slate-700 rounded-lg focus:outline-none transition-all ease-in-out duration-200 hover:bg-slate-100 text-slate-700"
+          id="headlessui-tabs-tab-4"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          A-Z
+        </button>
+        <button
+          aria-selected="false"
+          class="font-light w-full p-1 leading-5 flex justify-center items-center text-slate-700 rounded-lg focus:outline-none transition-all ease-in-out duration-200 hover:bg-slate-100 text-slate-700"
+          id="headlessui-tabs-tab-5"
+          role="tab"
+          tabindex="-1"
+          type="button"
+        >
+          Z-A
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
