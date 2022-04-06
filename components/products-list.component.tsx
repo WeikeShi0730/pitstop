@@ -38,58 +38,60 @@ const ProductsList = ({ productsList }: ProductsList) => {
   }, [name, productsList]);
 
   const handleChange = (index: number) => {
-    switch (index) {
-      case 0: {
-        filteredList.sort(
-          (product1, product2) => product2.sold - product1.sold
-        );
-        break;
+    if (filteredList.length > 0) {
+      switch (index) {
+        case 0: {
+          filteredList.sort(
+            (product1, product2) => product2.sold - product1.sold
+          );
+          break;
+        }
+        case 1: {
+          filteredList.sort(
+            (product1, product2) => product1.price - product2.price
+          );
+          break;
+        }
+        case 2: {
+          filteredList.sort(
+            (product1, product2) => product2.price - product1.price
+          );
+          break;
+        }
+        case 3: {
+          filteredList.sort((product1, product2) => {
+            var nameProduct1 = product1.name.toUpperCase();
+            var nameProduct2 = product2.name.toUpperCase();
+            if (nameProduct1 < nameProduct2) {
+              return -1;
+            }
+            if (nameProduct1 > nameProduct2) {
+              return 1;
+            }
+            return 0;
+          });
+          break;
+        }
+        case 4: {
+          filteredList.sort((product1, product2) => {
+            var nameProduct1 = product1.name.toUpperCase();
+            var nameProduct2 = product2.name.toUpperCase();
+            if (nameProduct1 > nameProduct2) {
+              return -1;
+            }
+            if (nameProduct1 < nameProduct2) {
+              return 1;
+            }
+            return 0;
+          });
+          break;
+        }
+        default:
+          break;
       }
-      case 1: {
-        filteredList.sort(
-          (product1, product2) => product1.price - product2.price
-        );
-        break;
-      }
-      case 2: {
-        filteredList.sort(
-          (product1, product2) => product2.price - product1.price
-        );
-        break;
-      }
-      case 3: {
-        filteredList.sort((product1, product2) => {
-          var nameProduct1 = product1.name.toUpperCase();
-          var nameProduct2 = product2.name.toUpperCase();
-          if (nameProduct1 < nameProduct2) {
-            return -1;
-          }
-          if (nameProduct1 > nameProduct2) {
-            return 1;
-          }
-          return 0;
-        });
-        break;
-      }
-      case 4: {
-        filteredList.sort((product1, product2) => {
-          var nameProduct1 = product1.name.toUpperCase();
-          var nameProduct2 = product2.name.toUpperCase();
-          if (nameProduct1 > nameProduct2) {
-            return -1;
-          }
-          if (nameProduct1 < nameProduct2) {
-            return 1;
-          }
-          return 0;
-        });
-        break;
-      }
-      default:
-        break;
+      const sortedList = filteredList.map((product) => product);
+      setSortedList(sortedList);
     }
-    const sortedList = filteredList.map((product) => product);
-    setSortedList(sortedList);
   };
 
   useEffect(() => {
@@ -144,10 +146,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
           {dividedList.length > 0 ? (
             dividedList.map((product: ProductType, index: number) => {
               return (
-                <div
-                  key={index}
-                  className="w-80"
-                >
+                <div key={index} className="w-80">
                   <Product
                     product={product}
                     wishlistItems={[]}
