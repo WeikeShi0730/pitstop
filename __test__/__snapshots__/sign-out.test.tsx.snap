@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignOut /> Test <SignOut /> 1`] = `
+<body>
+  <div>
+    <a
+      class="font-light w-full text-left text-sm md:text-base"
+    >
+      Sign out
+    </a>
+  </div>
+</body>
+`;
