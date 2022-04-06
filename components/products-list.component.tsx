@@ -26,7 +26,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
     keys: ["name"],
   };
   const fuse = new Fuse(productsList, options);
-  const { name } = router.query;
+  const name = router.query.name;
   useEffect(() => {
     const filteredList =
       name !== undefined && name !== null && name.length > 0
