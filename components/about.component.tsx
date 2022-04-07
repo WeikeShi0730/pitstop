@@ -121,15 +121,15 @@ const About = () => {
               Twitter
             </a>
             , and my{" "}
-            <a
-              target="_blank"
-              href=""
-              rel="noopener noreferrer"
+            <span
+              // target="_blank"
+              // href=""
+              // rel="noopener noreferrer"
               className="underline-primary font-normal text-base md:text-xl"
             >
               portfolio website
-            </a>
-            .
+            </span>{" "}
+            (coming soon!).
           </p>
         </div>
       </div>
