@@ -177,15 +177,13 @@ exports[`<About /> shows content in <About /> 1`] = `
             </a>
             , and my
              
-            <a
+            <span
               class="underline-primary font-normal text-base md:text-xl"
-              href=""
-              rel="noopener noreferrer"
-              target="_blank"
             >
               portfolio website
-            </a>
-            .
+            </span>
+             
+            (coming soon!).
           </p>
         </div>
       </div>
