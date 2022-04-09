@@ -6,9 +6,9 @@ describe("add items", () => {
     cy.findByRole("link", { name: /sign in/i }).click();
 
     cy.findByRole("textbox", { name: /displayName/i }).type("cy");
-    cy.findByRole("textbox", { name: /email/i }).type("cy@cy.com");
-    cy.get("#password").type("cycycy{enter}");
+    cy.findByRole("textbox", { name: /signUpEmail/i }).type("cy@cy.com");
+    cy.get("#signUpPassword").type("cycycy");
 
-    cy.findByRole("button", { name: /sign up/i }).click();
+    cy.get("#signUnButton").click();
   });
 });
