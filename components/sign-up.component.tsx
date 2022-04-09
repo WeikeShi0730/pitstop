@@ -70,6 +70,7 @@ const SignUp = () => {
             <input
               required
               name="displayName"
+              aria-label="displayName"
               type="text"
               className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
               id="displayName"
@@ -83,6 +84,7 @@ const SignUp = () => {
             <input
               required
               name="email"
+              aria-label="email"
               type="email"
               className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
               id="email"
@@ -95,6 +97,7 @@ const SignUp = () => {
             <input
               required
               name="password"
+              aria-label="password"
               type="password"
               className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
               id="password"
