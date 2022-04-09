@@ -7,7 +7,7 @@ describe("add items", () => {
 
     cy.findByRole("textbox", { name: /displayName/i }).type("cy");
     cy.findByRole("textbox", { name: /email/i }).type("cy@cy.com");
-    cy.findByRole("textbox", { name: /password/i }).type("cycycy");
+    cy.get("#password").type("cycycy{enter}");
 
     cy.findByRole("button", { name: /sign up/i }).click();
   });
