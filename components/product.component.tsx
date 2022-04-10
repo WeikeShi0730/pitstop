@@ -138,6 +138,7 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
               <div className="font-normal text-base md:text-xl">{price}</div>
             </div>
             <button
+              id="addToCart"
               onClick={handleClick}
               className="bg-orange-theme font-light text-slate-100 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
             >

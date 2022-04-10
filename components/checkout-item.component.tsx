@@ -94,7 +94,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
               <div className="qty flex items-center">
                 <div className="text-sm md:text-base">Qty:</div>
                 <div className="mx-3 text-base md:text-xl">
-                  <button onClick={handleClick} name="REMOVE">
+                  <button onClick={handleClick} name="REMOVE" id="remove">
                     ⊖
                   </button>
                 </div>
@@ -113,12 +113,12 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                   </form>
                 </div>
                 <div className="mx-3 text-base md:text-xl">
-                  <button onClick={handleClick} name="ADD">
+                  <button onClick={handleClick} name="ADD" id="add">
                     ⊕
                   </button>
                 </div>
                 <div className="delete text-lg md:text-2xl">
-                  <button onClick={handleClick} name="DELETE">
+                  <button onClick={handleClick} name="DELETE" id="delete">
                     🅧
                   </button>
                 </div>

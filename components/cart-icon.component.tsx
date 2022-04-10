@@ -31,7 +31,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
         className="flex items-center justify-center space-x-2 font-light hover:underline-primary hover:underline-offset-4"
         onClick={handleClick}
       >
-        <FiShoppingCart />
+        <FiShoppingCart id="cartIcon"/>
         <div className="px-1 w-8 flex justify-start">
           {cartItemCount && cartItemCount > 0 ? (
             <div>{cartItemCount}</div>
