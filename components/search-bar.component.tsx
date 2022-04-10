@@ -39,6 +39,7 @@ const SearchBar = () => {
       <button
         className="flex font-light justify-center items-center py-2"
         onClick={handleOnClick}
+        id="searchBtn"
       >
         <FiSearch />
       </button>
@@ -55,6 +56,7 @@ const SearchBar = () => {
           <form onSubmit={handleSubmit}>
             <input
               ref={inputRef}
+              id="searchTextbox"
               className="bg-transparent outline-none border-b border-orange-theme w-36 rounded-none"
               autoComplete="off"
               type="text"

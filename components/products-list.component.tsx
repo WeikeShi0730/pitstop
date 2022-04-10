@@ -119,7 +119,7 @@ const ProductsList = ({ productsList }: ProductsList) => {
     <>
       {loading && <Loading />}
       <div className="flex flex-col h-full w-full justify-start items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10 lg:my-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center my-10 lg:my-16" id="productList">
           {name !== undefined &&
           name !== null &&
           name.length > 0 &&
