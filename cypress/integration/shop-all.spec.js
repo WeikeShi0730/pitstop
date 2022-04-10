@@ -16,6 +16,10 @@ describe("Shop all", () => {
     cy.findByRole("tab", { name: /\$\$\$/i }).click();
     // Add
     cy.get("#addToCart").first().click();
+
+    cy.findByRole("link", { name: /products/i }).click();
+    // Sort
+    cy.findByRole("tab", { name: /\$\$\$/i }).click();
     // 3rd page
     cy.findByRole("tab", { name: /3/i }).click();
     // Add
