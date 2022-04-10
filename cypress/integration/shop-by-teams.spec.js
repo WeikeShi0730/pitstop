@@ -12,9 +12,16 @@ describe("Shop by teams", () => {
 
     // Shop by teams
     cy.findByRole("link", { name: /shop by teams/i }).click();
-    // Sort
-    cy.findByRole("link", { name: /shop mclaren/i }).click();
     // Add
+    cy.findByRole("link", { name: /shop mclaren/i }).click();
+    cy.get("#addToCart").first().click();
+
+    // const navigation = cy.findByRole("navigation");
+    cy.findByRole("link", { name: /teams/i })
+      .within(cy.findByRole("navigation"))
+      .click();
+    // Add
+    cy.findByRole("link", { name: /shop redbull/i }).click();
     cy.get("#addToCart").first().click();
 
     // Cart dropdown
