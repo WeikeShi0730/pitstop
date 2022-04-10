@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "firebase/firebase.utils.ts", "jest.config.js", "test/config/jest.setup.js", "cypress/integration/sign-up.spec.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "firebase/firebase.utils.ts", "jest.config.js", "test/config/jest.setup.js", "cypress/integration/auth.spec.js"],
   "exclude": ["node_modules"]
 }
