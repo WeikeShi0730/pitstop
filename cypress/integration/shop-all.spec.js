@@ -31,8 +31,8 @@ describe("Shop all", () => {
     cy.findByRole("link", { name: /checkout/i }).click();
 
     // Should contain products
-    cy.contains("Angry Toto team radio");
-    cy.contains("Aston Martin F1 team logo");
+    cy.get("#checkout").should("contain","Angry Toto team radio");
+    cy.get("#checkout").should("contain","Aston Martin F1 team logo");
     // Delete items
     // cy.get("#delete").click();
 
