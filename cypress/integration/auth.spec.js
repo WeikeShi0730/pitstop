@@ -1,5 +1,5 @@
 describe("add items", () => {
-  it("user can sign up", () => {
+  it("user can sign up/in/out", () => {
     cy.visit("http://localhost:3000/");
 
     // Sign up
