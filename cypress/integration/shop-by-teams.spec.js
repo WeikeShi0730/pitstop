@@ -16,12 +16,9 @@ describe("Shop by teams", () => {
     cy.findByRole("link", { name: /shop mclaren/i }).click();
     cy.get("#addToCart").first().click();
 
-    // const navigation = cy.findByRole("navigation");
-    cy.findByRole("link", { name: /teams/i })
-      .within(cy.findByRole("navigation"))
-      .click();
+    cy.get("#nav").findByRole("link", { name: /teams/i }).click();
     // Add
-    cy.findByRole("link", { name: /shop redbull/i }).click();
+    cy.findByRole("link", { name: /shop red bull/i }).click();
     cy.get("#addToCart").first().click();
 
     // Cart dropdown
@@ -31,6 +28,7 @@ describe("Shop by teams", () => {
 
     // Should contain products
     cy.contains("Lando Norris' helmet");
+    cy.contains("Max Verstappen symbol");
     // Delete items
     // cy.get("#delete").click();
 
