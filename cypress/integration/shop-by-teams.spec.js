@@ -27,8 +27,8 @@ describe("Shop by teams", () => {
     cy.findByRole("link", { name: /checkout/i }).click();
 
     // Should contain products
-    cy.contains("Lando Norris' helmet");
-    cy.contains("Max Verstappen symbol");
+    cy.get("#checkout").should("contain", "Lando Norris' helmet");
+    cy.get("#checkout").should("contain", "Max Verstappen symbol");
     // Delete items
     // cy.get("#delete").click();
 
