@@ -18,7 +18,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   const ref = useRef<HTMLDivElement>(null);
   const [loading, handler] = useCartItemChange();
 
-  const subtotal = ((displayValue as number) * price).toFixed(2);
+  const subtotal = (count * price).toFixed(2);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -41,6 +41,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     } else {
       let setValue = intValue <= intMax ? intValue : intMax;
       setValue = setValue >= intMin ? setValue : intMin;
+      setDisplayValue(intValue)
       handler(cartItem, name, ref, setValue);
     }
   };
@@ -57,14 +58,17 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   };
 
   useEffect(() => {
-    setDisplayValue(() => count);
+    setDisplayValue(count);
     return () => setDisplayValue("");
-  }, [count]);
+  }, [count, price]);
 
   return (
     <>
       {loading && <Loading />}
-      <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700 text-sm md:text-base" id="checkoutItem">
+      <div
+        className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700 text-sm md:text-base"
+        id="checkoutItem"
+      >
         <div
           ref={ref}
           className="flex w-full bg-opacity-30 bg-slate-100 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500"
@@ -104,6 +108,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
                       className="w-10 bg-transparent text-center underline underline-offset-2 decoration-1 outline-none"
                       type="number"
                       name="SET"
+                      id="input"
                       value={displayValue}
                       onChange={handleChange}
                       onBlur={handleOnBlur}
