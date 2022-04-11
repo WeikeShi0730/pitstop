@@ -64,7 +64,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700 text-sm md:text-base">
+      <div className="flex justify-center w-full sm:w-2/3 mx-5 text-slate-700 text-sm md:text-base" id="checkoutItem">
         <div
           ref={ref}
           className="flex w-full bg-opacity-30 bg-slate-100 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500"

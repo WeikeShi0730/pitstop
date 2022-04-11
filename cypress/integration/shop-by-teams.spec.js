@@ -12,11 +12,13 @@ describe("Shop by teams", () => {
 
     // Shop by teams
     cy.findByRole("link", { name: /shop by teams/i }).click();
+    cy.wait(150);
     // Add
     cy.findByRole("link", { name: /shop mclaren/i }).click();
     cy.get("#addToCart").first().click();
 
     cy.get("#nav").findByRole("link", { name: /teams/i }).click();
+    cy.wait(150);
     // Add
     cy.findByRole("link", { name: /shop red bull/i }).click();
     cy.get("#addToCart").first().click();
@@ -27,10 +29,10 @@ describe("Shop by teams", () => {
     cy.findByRole("link", { name: /checkout/i }).click();
 
     // Should contain products
-    cy.get("#checkout").should("contain", "Lando Norris' helmet");
-    cy.get("#checkout").should("contain", "Max Verstappen symbol");
+    cy.get("[id=checkoutItem]").its("length").should("be.eq", 2);
     // Delete items
-    // cy.get("#delete").click();
+    cy.get("[id=delete]").click({ multiple: true });
+    cy.get("#checkout").should("not.contain", "#product")
 
     // Sign out
     cy.findByRole("link", { name: /cy/i }).click();

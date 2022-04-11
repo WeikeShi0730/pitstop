@@ -31,10 +31,10 @@ describe("Shop all", () => {
     cy.findByRole("link", { name: /checkout/i }).click();
 
     // Should contain products
-    cy.get("#checkout").should("contain", "Angry Toto team radio");
-    cy.get("#checkout").should("contain", "Aston Martin F1 team logo");
+    cy.get("[id=checkoutItem]").its("length").should("be.eq", 2);
     // Delete items
-    // cy.get("#delete").click();
+    cy.get("[id=delete]").click({ multiple: true });
+    cy.get("#checkout").should("not.contain", "#product")
 
     // Sign out
     cy.findByRole("link", { name: /cy/i }).click();

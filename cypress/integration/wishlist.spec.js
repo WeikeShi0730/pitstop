@@ -33,10 +33,8 @@ describe("Shop all", () => {
     cy.get("[id=product]").its("length").should("be.eq", 2);
 
     // Remove heart
-    cy.get("#heart").click();
-    cy.wait(150);
-    cy.get("#heart").click();
-    cy.get("#wishlist").find("#product").should("have.length", 0);
+    cy.get("[id=heart]").click({ multiple: true });
+    cy.get("#wishlist").should("not.contain", "#product")
 
     // Sign out
     cy.findByRole("tab", { name: /sign out/i }).click();
