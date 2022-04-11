@@ -2,20 +2,12 @@ import { useRef, useState } from "react";
 import { sendForm } from "@emailjs/browser";
 import { toast } from "react-toastify";
 import Loading from "./loading.component";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  // const router = useRouter();
-
-  const handleChange = (
-    event:
-      | React.FormEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    event.preventDefault();
-  };
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -27,7 +19,7 @@ const Contact = () => {
         form.current!,
         process.env.NEXT_PUBLIC_USER_ID!
       );
-      // router.back();
+      router.push("/");
       setLoading(false);
       toast.success("Thanks for your email, we'll get back to you ASAP!", {
         position: "top-center",
@@ -63,7 +55,7 @@ const Contact = () => {
       {loading && <Loading />}
       <div className="min-h-content flex justify-center items-center text-sm md:text-base">
         <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl m-auto my-10 text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg py-8 px-10 shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200 font-light">
-          <form ref={form} name="contact" onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <h2 className="text-center text-lg md:text-2xl text-orange-theme mb-4">
               Contact us
             </h2>
@@ -78,10 +70,9 @@ const Contact = () => {
               <input
                 type="text"
                 id="name"
-                name="user_name"
+                name="name"
                 autoComplete="off"
                 required
-                onChange={handleChange}
                 className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
               />
             </div>
@@ -92,9 +83,8 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
-                name="user_email"
+                name="email"
                 required
-                onChange={handleChange}
                 className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
               />
             </div>
@@ -107,7 +97,6 @@ const Contact = () => {
                 name="message"
                 rows={4}
                 required
-                onChange={handleChange}
                 className="text-sm md:text-base w-full h-auto p-2 border border-slate-700 outline-none bg-transparent my-4 rounded-lg"
               />
             </div>

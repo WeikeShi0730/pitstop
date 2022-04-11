@@ -1,5 +1,5 @@
-describe("Shop all", () => {
-  it("user can shop all the products and add to cart", () => {
+describe("Wishlist", () => {
+  it("user can add/remove items to wishlist", () => {
     cy.visit("http://localhost:3000/");
 
     // Sign in
