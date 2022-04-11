@@ -6,11 +6,11 @@ describe("Search", () => {
     cy.get("#searchBtn").click();
     cy.get("#searchTextbox").type("vettle");
     cy.findByRole("button", { name: /→/i }).click();
-    cy.get("#productList").should("contain", "Sebastian Vettel cartoon figure");
+    cy.get("[id=product]").its("length").should("be.gt", 0);
 
     // Input
     cy.get("#searchBtn").click();
-    cy.get("#searchTextbox").type("abcdefg{enter}");
+    cy.get("#searchTextbox").clear().type("abcdefg{enter}");
     cy.get("#productList").should("contain", "Couldn't find products");
   });
 });
