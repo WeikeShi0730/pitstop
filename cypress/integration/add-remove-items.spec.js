@@ -1,5 +1,3 @@
-const { waitForDebugger } = require("inspector");
-
 describe("Add/remove/delete items", () => {
   it("user can add/remove/delete items in cart", () => {
     cy.visit("http://localhost:3000/");
