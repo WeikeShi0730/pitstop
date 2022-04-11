@@ -8,6 +8,7 @@ exports[`<SearchBar /> Test <SearchBar /> 1`] = `
     >
       <button
         class="flex font-light justify-center items-center py-2"
+        id="searchBtn"
       >
         <svg
           fill="none"

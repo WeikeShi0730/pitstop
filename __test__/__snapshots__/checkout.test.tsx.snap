@@ -5,6 +5,7 @@ exports[`<Checkout /> shows content in <Checkout /> 1`] = `
   <div>
     <div
       class="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-start"
+      id="checkout"
     >
       <div
         class="relative flex flex-col flex-auto h-full lg:h-auto w-full lg:w-3/4 my-10"

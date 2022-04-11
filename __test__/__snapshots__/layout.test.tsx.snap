@@ -7,7 +7,9 @@ exports[`<Layout /> Test <Layout /> 1`] = `
       <header
         class="sticky top-0 z-50"
       >
-        <nav>
+        <nav
+          id="nav"
+        >
           <div
             class="bg-slate-700 text-slate-200 flex items-center p-2 h-20 text-sm md:text-base"
           >
@@ -80,6 +82,7 @@ exports[`<Layout /> Test <Layout /> 1`] = `
               >
                 <button
                   class="flex font-light justify-center items-center py-2"
+                  id="searchBtn"
                 >
                   <svg
                     fill="none"
@@ -119,6 +122,7 @@ exports[`<Layout /> Test <Layout /> 1`] = `
                   <svg
                     fill="none"
                     height="1em"
+                    id="cartIcon"
                     stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"

@@ -8,6 +8,7 @@ exports[`<Wishlist /> shows content in <Wishlist /> 1`] = `
     >
       <div
         class="h-auto grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10"
+        id="wishlist"
       >
         <p
           class="flex gap-x-2 justify-self-start text-slate-700 text-lg md:text-2xl col-span-1 lg:col-span-2 2xl:col-span-3 py-1 border-b border-slate-700"
@@ -19,6 +20,7 @@ exports[`<Wishlist /> shows content in <Wishlist /> 1`] = `
         >
           <div
             class="p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500 text-sm md:text-base"
+            id="product"
           >
             <div
               class="flex relative w-full h-56 justify-center items-center m-auto p-3"
@@ -51,7 +53,9 @@ exports[`<Wishlist /> shows content in <Wishlist /> 1`] = `
               <div
                 class="text my-1 text-left text-lg md:text-2xl"
               >
-                <button>
+                <button
+                  id="heart"
+                >
                   ♡
                 </button>
               </div>
@@ -74,6 +78,7 @@ exports[`<Wishlist /> shows content in <Wishlist /> 1`] = `
                 </div>
                 <button
                   class="bg-orange-theme font-light text-slate-100 w-fit p-3 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 ease-in-out hover:shadow-md hover:shadow-orange-600"
+                  id="addToCart"
                 >
                   Add to cart
                 </button>
@@ -129,6 +134,7 @@ exports[`<Wishlist /> shows empty in <Wishlist /> 1`] = `
     >
       <div
         class="h-full grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 justify-items-center m-10"
+        id="wishlist"
       >
         <div
           class="flex flex-grow justify-center items-center h-full col-span-1 lg:col-span-2 2xl:col-span-3"
