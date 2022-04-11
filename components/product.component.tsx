@@ -111,7 +111,7 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
 
   return (
     <>
-      <div className="p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500 text-sm md:text-base">
+      <div className="p-5 rounded-lg text-slate-700 bg-opacity-30 bg-slate-100 transition-all duration-200 ease-in-out shadow-md hover:shadow-slate-500 text-sm md:text-base" id="product">
         <div className="flex relative w-full h-56 justify-center items-center m-auto p-3">
           <div className="relative w-full h-full bg-[#F8F8F8] rounded-lg shadow-md transition-all duration-200 ease-in-out hover:shadow-slate-500">
             <Image
@@ -130,7 +130,7 @@ const Product = ({ product, wishlistItems, setLoading }: Product) => {
             {name}
           </div>
           <div className="text my-1 text-left text-lg md:text-2xl">
-            <button onClick={handleClickHeart}>{heart ? "♥" : "♡"}</button>
+            <button onClick={handleClickHeart} id="heart">{heart ? "♥" : "♡"}</button>
           </div>
           <div className="flex items-center justify-between my-1 gap-3">
             <div className="flex items-end gap-1">
