@@ -91,5 +91,11 @@ input[type="number"] {
 }
 
 input[type="text"]:focus ~ .input-text {
-  @apply transform -translate-y-7 -translate-x-2 scale-90 text-slate-500;
+  @apply transform -translate-y-8 -translate-x-2 scale-90 text-slate-500;
+}
+input[type="email"]:focus ~ .input-text {
+  @apply transform -translate-y-8 -translate-x-2 scale-90 text-slate-500;
+}
+input[type="password"]:focus ~ .input-text {
+  @apply transform -translate-y-8 -translate-x-2 scale-90 text-slate-500;
 }

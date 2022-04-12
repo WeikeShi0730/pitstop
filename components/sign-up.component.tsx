@@ -65,48 +65,54 @@ const SignUp = () => {
           Don&apos;t have an account? Sign up 🔐
         </h1>
         <form onSubmit={handleSignUpFormSubmit}>
-          <div>
-            <label className="relative">
+          <div className="my-5">
+            <label className="relative text-sm md:text-base">
               <input
                 required
                 name="displayName"
                 aria-label="displayName"
                 type="text"
-                className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
                 id="displayName"
                 onChange={handleChange}
                 maxLength={10}
               />
-              <span className="text-sm md:text-base absolute left-0 top-0 px-2 transition duration-200 input-text">
+              <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
                 Username
               </span>
             </label>
           </div>
-          <div>
-            <label className="text-sm md:text-base">Email</label>
-            <input
-              required
-              name="email"
-              aria-label="signUpEmail"
-              type="email"
-              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="email"
-              placeholder="Your email"
-              onChange={handleChange}
-            />
+          <div className="my-5">
+            <label className="relative text-sm md:text-base">
+              <input
+                required
+                name="email"
+                aria-label="signUpEmail"
+                type="email"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="email"
+                onChange={handleChange}
+              />
+              <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
+                Email
+              </span>
+            </label>
           </div>
-          <div>
-            <label className="text-sm md:text-base">Password</label>
-            <input
-              required
-              name="password"
-              type="password"
-              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="signUpPassword"
-              placeholder="Your password"
-              minLength={6}
-              onChange={handleChange}
-            />
+          <div className="my-5">
+            <label className="relative text-sm md:text-base">
+              <input
+                required
+                name="password"
+                type="password"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="signUpPassword"
+                minLength={6}
+                onChange={handleChange}
+              />
+              <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
+                Password
+              </span>
+            </label>
           </div>
           <div className="flex justify-center items-center mt-6">
             <button
