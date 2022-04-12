@@ -89,3 +89,7 @@ input[type="number"] {
   color: #334155 !important;
   transition: opacity 0.5s;
 }
+
+input[type="text"]:focus ~ .input-text {
+  @apply transform -translate-y-7 -translate-x-2 scale-90 text-slate-500;
+}

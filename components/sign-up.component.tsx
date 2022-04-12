@@ -66,18 +66,21 @@ const SignUp = () => {
         </h1>
         <form onSubmit={handleSignUpFormSubmit}>
           <div>
-            <label className="text-sm md:text-base">Username</label>
-            <input
-              required
-              name="displayName"
-              aria-label="displayName"
-              type="text"
-              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="displayName"
-              placeholder="Your username"
-              onChange={handleChange}
-              maxLength={10}
-            />
+            <label className="relative">
+              <input
+                required
+                name="displayName"
+                aria-label="displayName"
+                type="text"
+                className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="displayName"
+                onChange={handleChange}
+                maxLength={10}
+              />
+              <span className="text-sm md:text-base absolute left-0 top-0 px-2 transition duration-200 input-text">
+                Username
+              </span>
+            </label>
           </div>
           <div>
             <label className="text-sm md:text-base">Email</label>
