@@ -74,6 +74,7 @@ const SignUp = () => {
                 type="text"
                 className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
                 id="displayName"
+                placeholder=" "
                 onChange={handleChange}
                 maxLength={10}
               />
@@ -89,6 +90,7 @@ const SignUp = () => {
                 name="email"
                 aria-label="signUpEmail"
                 type="email"
+                placeholder=" "
                 className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
                 id="email"
                 onChange={handleChange}
@@ -106,6 +108,7 @@ const SignUp = () => {
                 type="password"
                 className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
                 id="signUpPassword"
+                placeholder=" "
                 minLength={6}
                 onChange={handleChange}
               />
