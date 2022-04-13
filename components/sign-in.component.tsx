@@ -97,30 +97,38 @@ const SignIn = () => {
           Alrady have an account? Sign in 🔐
         </div>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label className="text-sm md:text-base">Email</label>
-            <input
-              required
-              name="email"
-              aria-label="signInEmail"
-              type="email"
-              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="email"
-              placeholder="Your email"
-              onChange={handleChange}
-            />
+          <div className="my-5">
+            <label className="relative text-sm md:text-base">
+              <input
+                required
+                name="email"
+                aria-label="signInEmail"
+                type="email"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="email"
+                placeholder=" "
+                onChange={handleChange}
+              />
+              <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
+                Email
+              </span>
+            </label>
           </div>
-          <div>
-            <label className="text-sm md:text-base">Password</label>
-            <input
-              required
-              name="password"
-              type="password"
-              className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="signInPassword"
-              placeholder="Your password"
-              onChange={handleChange}
-            />
+          <div className="my-5">
+            <label className="relative text-sm md:text-base">
+              <input
+                required
+                name="password"
+                type="password"
+                className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="signInPassword"
+                placeholder=" "
+                onChange={handleChange}
+              />
+              <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
+                Password
+              </span>
+            </label>
           </div>
           <div className="flex justify-center items-center mt-6">
             <button
