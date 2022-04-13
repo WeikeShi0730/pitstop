@@ -64,29 +64,35 @@ const Contact = () => {
               to speak your mind, and we actaully reply <span>😃</span>
             </p>
             <div className="relative mb-4 sm:w-2/3 w-full m-auto">
-              <label htmlFor="name" className="text-sm md:text-base">
-                Name
+              <label htmlFor="name" className="relative text-sm md:text-base">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autoComplete="off"
+                  placeholder=" "
+                  required
+                  className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                />
+                <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
+                  Name
+                </span>
               </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                autoComplete="off"
-                required
-                className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              />
             </div>
             <div className="relative mb-4 sm:w-2/3 w-full m-auto">
-              <label htmlFor="email" className="text-sm md:text-base">
-                Email
+              <label htmlFor="email" className="relative text-sm md:text-base">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder=" "
+                  required
+                  className="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                />
+                <span className="absolute left-0 top-0 px-2 transition duration-200 input-text">
+                  Email
+                </span>
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              />
             </div>
             <div className="relative mb-4 sm:w-2/3 w-full m-auto">
               <label htmlFor="message" className="text-sm md:text-base">
