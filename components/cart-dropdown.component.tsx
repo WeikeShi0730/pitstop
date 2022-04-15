@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { CartItemType } from "../interfaces";
 import CartDropdownItem from "./cart-dropdown-item.component";
 import NoScrollLink from "./no-scroll-link.component";
@@ -5,11 +6,13 @@ interface CartItems {
   cartItems: CartItemType[] | undefined | null;
 }
 const CartDropdown = ({ cartItems }: CartItems) => {
-  const total = cartItems
-    ?.reduce((acc: number, currentValue) => {
-      return acc + currentValue.count * currentValue.product.price;
-    }, 0)
-    ?.toFixed(2);
+  const total = useMemo(() => {
+    return cartItems
+      ?.reduce((acc: number, currentValue: CartItemType) => {
+        return acc + currentValue.count * currentValue.product.price;
+      }, 0)
+      ?.toFixed(2);
+  }, [cartItems]);
 
   return (
     <div className="shadow-md shadow-slate-500 rounded-lg text-slate-700 text-sm md:text-base">
