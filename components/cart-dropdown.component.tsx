@@ -16,7 +16,6 @@ const CartDropdown = ({ cartItems }: CartItems) => {
 
   return (
     <div className="shadow-md shadow-slate-500 rounded-lg text-slate-700 text-sm md:text-base">
-      {/* h-fit-content */}
       <div className="relative w-full max-h-96 overflow-auto disable-scrollbars shadow-sm">
         {cartItems && cartItems.length > 0 ? (
           cartItems.map((cartItem) => {
