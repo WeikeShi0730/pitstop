@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import CheckoutItem from "./checkout-item.component";
 import getStripe from "../utils/get-stripejs";
 import { fetchPostJSON } from "../utils/api-helpers";
@@ -32,11 +32,13 @@ const Checkout = ({ cartItems }: CartItems) => {
     };
   }, [cartItems]);
 
-  const total = cartItems
-    ?.reduce((acc: number, currentItem: CartItemType) => {
-      return acc + currentItem.count * currentItem.product.price;
-    }, 0)
-    ?.toFixed(2);
+  const total = useMemo(() => {
+    return cartItems
+      ?.reduce((acc: number, currentItem: CartItemType) => {
+        return acc + currentItem.count * currentItem.product.price;
+      }, 0)
+      ?.toFixed(2);
+  }, [cartItems]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -85,7 +87,10 @@ const Checkout = ({ cartItems }: CartItems) => {
   return (
     <>
       {loading && <Loading />}
-      <div className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-start" id="checkout">
+      <div
+        className="relative text-slate-700 min-h-content w-full flex flex-col lg:flex-row justify-start"
+        id="checkout"
+      >
         <div className="relative flex flex-col flex-auto h-full lg:h-auto w-full lg:w-3/4 my-10">
           <div className="flex justify-center m-2">
             <div className="flex w-full sm:w-2/3 m-5 justify-start text-lg md:text-2xl py-1 border-b border-slate-700">
