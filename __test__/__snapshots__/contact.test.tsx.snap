@@ -27,36 +27,46 @@ exports[`<Contact /> shows basic fields in <Contact /> 1`] = `
             class="relative mb-4 sm:w-2/3 w-full m-auto"
           >
             <label
-              class="text-sm md:text-base"
+              class="relative text-sm md:text-base"
               for="name"
             >
-              Name
+              <input
+                autocomplete="off"
+                class="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="name"
+                name="name"
+                placeholder=" "
+                required=""
+                type="text"
+              />
+              <span
+                class="absolute left-0 top-0 px-2 transition duration-200 input-text"
+              >
+                Name
+              </span>
             </label>
-            <input
-              autocomplete="off"
-              class="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="name"
-              name="name"
-              required=""
-              type="text"
-            />
           </div>
           <div
             class="relative mb-4 sm:w-2/3 w-full m-auto"
           >
             <label
-              class="text-sm md:text-base"
+              class="relative text-sm md:text-base"
               for="email"
             >
-              Email
+              <input
+                class="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+                id="email"
+                name="email"
+                placeholder=" "
+                required=""
+                type="email"
+              />
+              <span
+                class="absolute left-0 top-0 px-2 transition duration-200 input-text"
+              >
+                Email
+              </span>
             </label>
-            <input
-              class="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-              id="email"
-              name="email"
-              required=""
-              type="email"
-            />
           </div>
           <div
             class="relative mb-4 sm:w-2/3 w-full m-auto"

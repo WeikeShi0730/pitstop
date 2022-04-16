@@ -12,54 +12,72 @@ exports[`<SignUp /> Test <SignUp /> 1`] = `
         Don't have an account? Sign up 🔐
       </h1>
       <form>
-        <div>
+        <div
+          class="my-5"
+        >
           <label
-            class="text-sm md:text-base"
+            class="relative text-sm md:text-base"
           >
-            Username
+            <input
+              aria-label="displayName"
+              class="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+              id="displayName"
+              maxlength="10"
+              name="displayName"
+              placeholder=" "
+              required=""
+              type="text"
+            />
+            <span
+              class="absolute left-0 top-0 px-2 transition duration-200 input-text"
+            >
+              Username
+            </span>
           </label>
-          <input
-            aria-label="displayName"
-            class="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-            id="displayName"
-            maxlength="10"
-            name="displayName"
-            placeholder="Your username"
-            required=""
-            type="text"
-          />
         </div>
-        <div>
+        <div
+          class="my-5"
+        >
           <label
-            class="text-sm md:text-base"
+            class="relative text-sm md:text-base"
           >
-            Email
+            <input
+              aria-label="signUpEmail"
+              class="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+              id="email"
+              name="email"
+              placeholder=" "
+              required=""
+              type="email"
+            />
+            <span
+              class="absolute left-0 top-0 px-2 transition duration-200 input-text"
+            >
+              Email
+            </span>
           </label>
-          <input
-            aria-label="signUpEmail"
-            class="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-            id="email"
-            name="email"
-            placeholder="Your email"
-            required=""
-            type="email"
-          />
         </div>
-        <div>
+        <div
+          class="my-5"
+        >
           <label
-            class="text-sm md:text-base"
+            class="relative text-sm md:text-base"
           >
-            Password
+            <input
+              class="w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none transition duration-200"
+              id="signUpPassword"
+              minlength="6"
+              name="password"
+              placeholder=" "
+              required=""
+              type="password"
+            />
+            <span
+              class="absolute left-0 top-0 px-2 transition duration-200 input-text"
+            >
+              Password
+            </span>
           </label>
-          <input
-            class="text-sm md:text-base w-full p-2 border-b border-slate-700 outline-none bg-transparent mb-4 rounded-none"
-            id="signUpPassword"
-            minlength="6"
-            name="password"
-            placeholder="Your password"
-            required=""
-            type="password"
-          />
         </div>
         <div
           class="flex justify-center items-center mt-6"
