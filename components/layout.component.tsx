@@ -21,7 +21,7 @@ const Layout = ({ children, title = "" }: Props) => {
         <link rel="icon" href="/pitstop-logos/favicon.ico" />
       </Head>
       <header className="sticky top-0 z-50">
-        <Nav currentUser={null} cartItems={null} />
+        <Nav currentUser={null} cartItems={[]} />
       </header>
       <motion.div
         initial={{ opacity: 0.5, x: -100, y: 0 }}
