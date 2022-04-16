@@ -27,13 +27,11 @@ const withSubscription = <P extends object>(
 
     useEffect(() => {
       let isSubscribed = true;
-
       subscribeToAuthState((user: CurrentUserType["currentUser"]) => {
         if (isSubscribed) {
           setCurrentUser(user);
         }
       });
-
       // cancel subscription to useEffect
       return () => {
         isSubscribed = false;
@@ -42,21 +40,24 @@ const withSubscription = <P extends object>(
 
     useEffect(() => {
       let isSubscribed = true;
-      currentUser
-        ? subscribeToCurrentUserData(
-            currentUser?.uid as string,
-            (snapshot: SnapshotType["snapshot"]) => {
-              if (isSubscribed) {
-                const cartItems = snapshot.data()?.cartItems;
-                setCartItems(cartItems);
-                const wishlistItems = snapshot.data()?.wishlistItems;
-                setWishlistItems(wishlistItems);
-                const orderHistoryItems = snapshot.data()?.orderHistoryItems.reverse();
-                setOrderHistoryItems(orderHistoryItems);
-              }
+      currentUser;
+      if (currentUser) {
+        subscribeToCurrentUserData(
+          currentUser?.uid as string,
+          (snapshot: SnapshotType["snapshot"]) => {
+            if (isSubscribed) {
+              const cartItems = snapshot.data()?.cartItems;
+              setCartItems(cartItems);
+              const wishlistItems = snapshot.data()?.wishlistItems;
+              setWishlistItems(wishlistItems);
+              const orderHistoryItems = snapshot
+                .data()
+                ?.orderHistoryItems.reverse();
+              setOrderHistoryItems(orderHistoryItems);
             }
-          )
-        : () => {};
+          }
+        );
+      }
       // cancel subscription to useEffect
       return () => {
         isSubscribed = false;

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { Transition } from "@headlessui/react";
 import { FiShoppingCart } from "react-icons/fi";
 import CartDropdown from "./cart-dropdown.component";
@@ -19,11 +19,13 @@ const CartIcon = ({ cartItems }: CartItems) => {
     setOpen(() => !open);
   };
 
-  const cartItemCount = cartItems
-    ? cartItems.reduce((acc: number, currentValue: CartItemType) => {
-        return acc + currentValue.count;
-      }, 0)
-    : 0;
+  const cartItemCount = useMemo(() => {
+    return cartItems
+      ? cartItems.reduce((acc: number, currentValue: CartItemType) => {
+          return acc + currentValue.count;
+        }, 0)
+      : 0;
+  }, [cartItems]);
 
   return (
     <div className="relative text-sm md:text-base">
@@ -31,7 +33,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
         className="flex items-center justify-center space-x-2 font-light hover:underline-primary hover:underline-offset-4"
         onClick={handleClick}
       >
-        <FiShoppingCart id="cartIcon"/>
+        <FiShoppingCart id="cartIcon" />
         <div className="px-1 w-8 flex justify-start">
           {cartItemCount && cartItemCount > 0 ? (
             <div>{cartItemCount}</div>

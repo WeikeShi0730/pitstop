@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { CartItemType } from "../interfaces";
 import useCartItemChange from "../utils/use-cart-item-action";
@@ -18,7 +18,9 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
   const ref = useRef<HTMLDivElement>(null);
   const [loading, handler] = useCartItemChange();
 
-  const subtotal = (count * price).toFixed(2);
+  const subtotal = useMemo(() => {
+    return (count * price).toFixed(2);
+  }, [count, price]);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -41,7 +43,7 @@ const CheckoutItem = ({ cartItem }: CartItem) => {
     } else {
       let setValue = intValue <= intMax ? intValue : intMax;
       setValue = setValue >= intMin ? setValue : intMin;
-      setDisplayValue(intValue)
+      setDisplayValue(intValue);
       handler(cartItem, name, ref, setValue);
     }
   };
