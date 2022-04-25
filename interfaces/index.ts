@@ -1,4 +1,3 @@
-import { Action } from "redux";
 import { User } from "firebase/auth";
 import { DocumentSnapshot } from "firebase/firestore";
 
@@ -57,21 +56,3 @@ export interface SnapshotFnType {
 export interface SnapshotType {
   snapshot: DocumentSnapshot;
 }
-
-// export interface CurrentUserState {
-//   currentUser: CurrentUserType;
-// }
-
-// export interface CurrentUserAction extends Action {
-//   type: string;
-//   currentUser: CurrentUserType;
-// }
-
-// export interface CartState {
-//   cart: CartItemType;
-// }
-
-// export interface CartAction extends Action {
-//   type: string;
-//   cart: CartItemType[];
-// }
