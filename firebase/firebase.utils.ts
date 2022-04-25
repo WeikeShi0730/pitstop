@@ -71,7 +71,6 @@ const uploadData = async () => {
 // uploadData();
 
 //** Get data */
-// Optimize with Graphql!!!!!
 export const firestoreGetTeamsDocs = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "teams"));

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ProductType } from "../interfaces";
 import Image from "next/image";
 import withSubscription from "./hoc.component";
-// import { imgLoader } from "../utils/image-loader";
 import {
   updateUserCartFirestore,
   updateWishlist,
