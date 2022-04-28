@@ -1,4 +1,4 @@
-import { render, RenderResult, fireEvent } from "@testing-library/react";
+import { render, RenderResult } from "@testing-library/react";
 import SignOut from "../components/sign-out.component";
 
 let documentBody: RenderResult;
