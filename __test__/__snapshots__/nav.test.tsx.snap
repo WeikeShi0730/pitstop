@@ -7,7 +7,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
       id="nav"
     >
       <div
-        class="bg-slate-700 text-slate-200 flex items-center p-2 h-20 text-sm md:text-base"
+        class="bg-slate-700 text-slate-200 flex items-center p-2 h-20 text-sm md:text-base z-50"
       >
         <a
           href="/"

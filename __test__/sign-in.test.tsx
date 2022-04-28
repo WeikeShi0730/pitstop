@@ -1,6 +1,6 @@
 import { render, RenderResult, fireEvent } from "@testing-library/react";
 import SignIn from "../components/sign-in.component";
-import createMockRouter from "../test-utils/createMockRouter";
+import createMockRouter from "./test-utils/createMockRouter";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 
 let documentBody: RenderResult;

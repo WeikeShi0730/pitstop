@@ -1,6 +1,6 @@
 import { render, RenderResult } from "@testing-library/react";
 import ProductsList from "../components/products-list.component";
-import createMockRouter from "../test-utils/createMockRouter";
+import createMockRouter from "./test-utils/createMockRouter";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 
 let documentBody: RenderResult;
