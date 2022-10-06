@@ -71,7 +71,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
           </a>
         </div>
         <div
-          class="mx-5 hidden lg:flex"
+          class="mx-5 hidden lg:flex h-6 link-underline link-underline:hover"
         >
           <div
             class="flex justify-center items-center gap-2 overflow-hidden text-sm md:text-base"
@@ -116,7 +116,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
               class="flex items-center justify-center space-x-2 font-light"
             >
               <svg
-                class="link-underline link-underline:hover"
+                class="link-underline link-underline:hover h-6"
                 fill="none"
                 height="1em"
                 id="cartIcon"

@@ -10,7 +10,7 @@ exports[`<CartIcon /> shows empty in <CartIcon /> 1`] = `
         class="flex items-center justify-center space-x-2 font-light"
       >
         <svg
-          class="link-underline link-underline:hover"
+          class="link-underline link-underline:hover h-6"
           fill="none"
           height="1em"
           id="cartIcon"

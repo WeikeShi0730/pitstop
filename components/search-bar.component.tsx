@@ -57,7 +57,7 @@ const SearchBar = () => {
             <input
               ref={inputRef}
               id="searchTextbox"
-              className="bg-transparent outline-none border-b border-orange-theme w-36 rounded-none"
+              className="bg-transparent outline-none w-36 rounded-none"
               autoComplete="off"
               type="text"
               name="input"

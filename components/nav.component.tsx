@@ -41,33 +41,25 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         </NoScrollLink>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/">
-            <a className="link-underline link-underline:hover">
-              Home
-            </a>
+            <a className="link-underline link-underline:hover">Home</a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/products">
-            <a className="link-underline link-underline:hover">
-              Products
-            </a>
+            <a className="link-underline link-underline:hover">Products</a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/teams">
-            <a className="link-underline link-underline:hover">
-              Teams
-            </a>
+            <a className="link-underline link-underline:hover">Teams</a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/contact">
-            <a className="link-underline link-underline:hover">
-              Contact
-            </a>
+            <a className="link-underline link-underline:hover">Contact</a>
           </NoScrollLink>
         </div>
-        <div className="mx-5 hidden lg:flex">
+        <div className="mx-5 hidden lg:flex h-6 link-underline link-underline:hover">
           <SearchBar />
         </div>
         <div className="mx-5 ml-auto flex ">
@@ -82,9 +74,7 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
             </NoScrollLink>
           ) : (
             <NoScrollLink href="/login">
-              <a className="link-underline link-underline:hover">
-                Sign In
-              </a>
+              <a className="link-underline link-underline:hover">Sign In</a>
             </NoScrollLink>
           )}
         </div>
