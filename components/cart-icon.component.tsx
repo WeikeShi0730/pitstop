@@ -30,16 +30,17 @@ const CartIcon = ({ cartItems }: CartItems) => {
   return (
     <div className="relative text-sm md:text-base">
       <button
-        className="flex items-center justify-center space-x-2 font-light hover:underline-primary hover:underline-offset-4"
+        className="flex items-center justify-center space-x-2 font-light"
         onClick={handleClick}
       >
-        <FiShoppingCart id="cartIcon" />
+        <FiShoppingCart
+          id="cartIcon"
+          className="link-underline link-underline:hover"
+        />
         <div className="px-1 w-8 flex justify-start">
           {cartItemCount && cartItemCount > 0 ? (
             <div>{cartItemCount}</div>
-          ) : (
-            <div />
-          )}
+          ) : null}
         </div>
       </button>
       <Transition

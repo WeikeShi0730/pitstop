@@ -40,6 +40,20 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(232 113 33 / var(--tw-bg-opacity)), rgb(232 113 33 / var(--tw-bg-opacity)));
+  background-size: 0 1px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  transition: background-size .2s ease-in-out;
+}
+
+.link-underline:hover {
+  background-size: 100% 1px;
+  background-position: 50% 100%
+}
+
 @layer components {
   .underline-primary {
     @apply underline decoration-orange-theme decoration-1 underline-offset-2;

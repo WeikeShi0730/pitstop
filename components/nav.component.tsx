@@ -41,28 +41,28 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         </NoScrollLink>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/">
-            <a className="hover:underline-primary hover:underline-offset-4">
+            <a className="link-underline link-underline:hover">
               Home
             </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/products">
-            <a className="hover:underline-primary hover:underline-offset-4">
+            <a className="link-underline link-underline:hover">
               Products
             </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/teams">
-            <a className="hover:underline-primary hover:underline-offset-4">
+            <a className="link-underline link-underline:hover">
               Teams
             </a>
           </NoScrollLink>
         </div>
         <div className="mx-5 hidden lg:flex">
           <NoScrollLink href="/contact">
-            <a className="hover:underline-primary hover:underline-offset-4">
+            <a className="link-underline link-underline:hover">
               Contact
             </a>
           </NoScrollLink>
@@ -76,13 +76,13 @@ const Nav = ({ currentUser, cartItems }: UserAndCart) => {
         <div className="mx-5 hidden lg:flex">
           {currentUser ? (
             <NoScrollLink href={`/account/${currentUser?.uid as string}`}>
-              <a className="hover:underline-primary hover:underline-offset-4">
+              <a className="link-underline link-underline:hover">
                 {currentUser.displayName}
               </a>
             </NoScrollLink>
           ) : (
             <NoScrollLink href="/login">
-              <a className="hover:underline-primary hover:underline-offset-4">
+              <a className="link-underline link-underline:hover">
                 Sign In
               </a>
             </NoScrollLink>
