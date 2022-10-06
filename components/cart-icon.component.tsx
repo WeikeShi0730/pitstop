@@ -35,7 +35,7 @@ const CartIcon = ({ cartItems }: CartItems) => {
       >
         <FiShoppingCart
           id="cartIcon"
-          className="link-underline link-underline:hover"
+          className="link-underline link-underline:hover h-6"
         />
         <div className="px-1 w-8 flex justify-start">
           {cartItemCount && cartItemCount > 0 ? (
