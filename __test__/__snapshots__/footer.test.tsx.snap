@@ -115,25 +115,25 @@ exports[`<Footer /> shows content in <Footer /> 1`] = `
         class="links flex justify-center gap-8"
       >
         <a
-          class="hover:underline-primary hover:underline-offset-4"
+          class="link-underline link-underline:hover"
           href="/"
         >
           Home
         </a>
         <a
-          class="hover:underline-primary hover:underline-offset-4"
+          class="link-underline link-underline:hover"
           href="/teams"
         >
           Teams
         </a>
         <a
-          class="hover:underline-primary hover:underline-offset-4"
+          class="link-underline link-underline:hover"
           href="/contact"
         >
           Contact
         </a>
         <a
-          class="hover:underline-primary hover:underline-offset-4"
+          class="link-underline link-underline:hover"
           href="/about"
         >
           About

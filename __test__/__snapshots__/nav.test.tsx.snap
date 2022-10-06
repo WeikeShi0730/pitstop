@@ -34,7 +34,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
           class="mx-5 hidden lg:flex"
         >
           <a
-            class="hover:underline-primary hover:underline-offset-4"
+            class="link-underline link-underline:hover"
             href="/"
           >
             Home
@@ -44,7 +44,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
           class="mx-5 hidden lg:flex"
         >
           <a
-            class="hover:underline-primary hover:underline-offset-4"
+            class="link-underline link-underline:hover"
             href="/products"
           >
             Products
@@ -54,7 +54,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
           class="mx-5 hidden lg:flex"
         >
           <a
-            class="hover:underline-primary hover:underline-offset-4"
+            class="link-underline link-underline:hover"
             href="/teams"
           >
             Teams
@@ -64,7 +64,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
           class="mx-5 hidden lg:flex"
         >
           <a
-            class="hover:underline-primary hover:underline-offset-4"
+            class="link-underline link-underline:hover"
             href="/contact"
           >
             Contact
@@ -113,9 +113,10 @@ exports[`<Nav /> Test <Nav /> 1`] = `
             class="relative text-sm md:text-base"
           >
             <button
-              class="flex items-center justify-center space-x-2 font-light hover:underline-primary hover:underline-offset-4"
+              class="flex items-center justify-center space-x-2 font-light"
             >
               <svg
+                class="link-underline link-underline:hover"
                 fill="none"
                 height="1em"
                 id="cartIcon"
@@ -143,9 +144,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
               </svg>
               <div
                 class="px-1 w-8 flex justify-start"
-              >
-                <div />
-              </div>
+              />
             </button>
           </div>
         </div>
@@ -153,7 +152,7 @@ exports[`<Nav /> Test <Nav /> 1`] = `
           class="mx-5 hidden lg:flex"
         >
           <a
-            class="hover:underline-primary hover:underline-offset-4"
+            class="link-underline link-underline:hover"
             href="/login"
           >
             Sign In
