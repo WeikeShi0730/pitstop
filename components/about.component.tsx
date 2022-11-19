@@ -4,6 +4,8 @@ import NoScrollLink from "./no-scroll-link.component";
 const About = () => {
   const componentStyle =
     "max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl flex justify-center items-center m-auto my-24 h-full text-slate-700 bg-slate-100 bg-opacity-30 rounded-lg shadow-md hover:shadow-slate-500 transition-all ease-in-out duration-200";
+  const clickableStyle =
+    "underline-primary font-normal text-base md:text-xl hover:drop-shadow-md transition duration-200";
   return (
     <div className="min-h-content flex justify-center items-center text-sm md:text-base">
       <div className="m-auto">
@@ -98,7 +100,7 @@ const About = () => {
               target="_blank"
               href="https://github.com/WeikeShi0730"
               rel="noopener noreferrer"
-              className="underline-primary font-normal text-base md:text-xl"
+              className={clickableStyle}
             >
               Github
             </a>
@@ -107,7 +109,7 @@ const About = () => {
               target="_blank"
               href="https://www.linkedin.com/in/weike-shi/"
               rel="noopener noreferrer"
-              className="underline-primary font-normal text-base md:text-xl"
+              className={clickableStyle}
             >
               LinkedIn
             </a>
@@ -116,20 +118,20 @@ const About = () => {
               target="_blank"
               href="https://twitter.com/vicshi97"
               rel="noopener noreferrer"
-              className="underline-primary font-normal text-base md:text-xl"
+              className={clickableStyle}
             >
               Twitter
             </a>
             , and my{" "}
-            <span
-              // target="_blank"
-              // href=""
-              // rel="noopener noreferrer"
-              className="underline-primary font-normal text-base md:text-xl"
+            <a
+              target="_blank"
+              href="https://weike-shi.vercel.app/"
+              rel="noopener noreferrer"
+              className={clickableStyle}
             >
               portfolio website
-            </span>{" "}
-            (coming soon!).
+            </a>
+            .
           </p>
         </div>
       </div>
