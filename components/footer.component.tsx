@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NoScrollLink from "./no-scroll-link.component";
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
+import { CgWebsite } from "react-icons/cg";
 import {
   SiAmericanexpress,
   SiVisa,
@@ -23,6 +24,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="social-media flex justify-center gap-10">
+        <div>
+          <a
+            target="_blank"
+            href="https://weike-shi.vercel.app/"
+            rel="noopener noreferrer"
+          >
+            <CgWebsite />
+          </a>
+        </div>
         <div>
           <a
             target="_blank"
@@ -53,24 +63,16 @@ const Footer = () => {
       </div>
       <div className="links flex justify-center gap-8">
         <NoScrollLink href="/">
-          <a className="link-underline link-underline:hover">
-            Home
-          </a>
+          <a className="link-underline link-underline:hover">Home</a>
         </NoScrollLink>
         <NoScrollLink href="/teams">
-          <a className="link-underline link-underline:hover">
-            Teams
-          </a>
+          <a className="link-underline link-underline:hover">Teams</a>
         </NoScrollLink>
         <NoScrollLink href="/contact">
-          <a className="link-underline link-underline:hover">
-            Contact
-          </a>
+          <a className="link-underline link-underline:hover">Contact</a>
         </NoScrollLink>
         <NoScrollLink href="/about">
-          <a className="link-underline link-underline:hover">
-            About
-          </a>
+          <a className="link-underline link-underline:hover">About</a>
         </NoScrollLink>
       </div>
       <div className="cards flex flex-col items-center justify-center">
