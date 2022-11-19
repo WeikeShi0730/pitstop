@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import Loading from "../components/loading.component";
+import { Analytics } from "@vercel/analytics/react";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         >
           <Component {...pageProps} key={router.pathname} />
+          <Analytics />
         </AnimatePresence>
         <ToastContainer />
       </div>
