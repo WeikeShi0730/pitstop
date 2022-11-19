@@ -95,7 +95,16 @@ const About = () => {
           <p className="leading-8 py-5 px-10 text-justify">
             I love to learn new skills and am passionate about creating web
             applications to solve real problems and find solutions to human
-            laziness using the latest tech. You can find me on{" "}
+            laziness using the latest tech. You can find me on my{" "}
+            <a
+              target="_blank"
+              href="https://weike-shi.vercel.app/"
+              rel="noopener noreferrer"
+              className={clickableStyle}
+            >
+              portfolio website
+            </a>
+            ,{" "}
             <a
               target="_blank"
               href="https://github.com/WeikeShi0730"
@@ -113,7 +122,7 @@ const About = () => {
             >
               LinkedIn
             </a>
-            ,{" "}
+            , and{" "}
             <a
               target="_blank"
               href="https://twitter.com/vicshi97"
@@ -121,15 +130,6 @@ const About = () => {
               className={clickableStyle}
             >
               Twitter
-            </a>
-            , and my{" "}
-            <a
-              target="_blank"
-              href="https://weike-shi.vercel.app/"
-              rel="noopener noreferrer"
-              className={clickableStyle}
-            >
-              portfolio website
             </a>
             .
           </p>
